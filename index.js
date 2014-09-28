@@ -1,5 +1,5 @@
-$(document).ready() {function(
-
-	document.write("hello world");
-
-)};
+$(document).ready(function() {
+	
+	$("#msgid").html("This is Hello World by JQuery");
+	
+});
