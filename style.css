@@ -2,6 +2,7 @@ body {
 	margin: 0;
 	font-family: Verdana, Geneva, sans-serif;
 	background-color: white;
+	color: maroon;
 }
 
 a {
@@ -21,6 +22,7 @@ h2 {
 	background-color: white;
 	text-align: left;
 	font-size: 2.5em;
+	border-bottom: dotted maroon;
 }
 
 #title > a {
@@ -109,7 +111,7 @@ h2 {
 
 #graphic2 {
 	float: left;
-	margin-top: 400px;
+	margin-top: 450px;
 	margin-left: -30%;
 	width: 100px ;
 	height: 100px;
@@ -128,5 +130,23 @@ h2 {
 	margin-right: 20px;
 	margin-top: 160px;
 	width: 40%;
-	height: 200px;
+	height: 300px;
+}
+
+#main2 > div {
+	float: left;
+	margin-right: 20px;
+}
+
+#footer {
+	float: left;
+	margin-top: 40px;
+	width: 100%;
+	border-top: dotted maroon;
+	text-align: right;
+}
+
+#footer > p {
+	margin-right: 10px;
+	font-size: 10px;
 }
