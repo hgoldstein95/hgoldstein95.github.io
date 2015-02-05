@@ -1,0 +1,196 @@
+/* http://pltts.me/palettes/143880 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+  -moz-box-sizing: border-box !important; }
+
+body {
+  background-color: #333333;
+  text-align: center;
+  font-size: 0;
+  max-width: 46.2cm;
+  margin-left: auto;
+  margin-right: auto; }
+
+a {
+  color: #C02942;
+  text-decoration: none; }
+
+.page {
+  display: inline-block;
+  text-align: left;
+  font-size: 0;
+  width: 21.6cm;
+  height: 27.8cm;
+  margin: 0.5cm;
+  padding-top: 1.4cm;
+  padding-bottom: 1.4cm;
+  padding-left: 1.8cm;
+  padding-right: 1.8cm;
+  background-color: #fafafa;
+  position: relative; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'PT Sans'; }
+
+body {
+  font-family: 'Montserrat'; }
+
+.pageheader {
+  font-size: 0;
+  margin-bottom: 5.5mm; }
+  .pageheader > img, .pageheader > section {
+    display: inline-block;
+    vertical-align: top; }
+  .pageheader img {
+    height: 25mm;
+    width: 15.625mm;
+    margin-right: 0.5cm; }
+  .pageheader h1 {
+    color: #542437;
+    font-size: 10mm;
+    display: inline-block;
+    height: 12.5mm;
+    position: relative; }
+    .pageheader h1 em {
+      font-style: normal;
+      color: #b8273f; }
+    .pageheader h1:after {
+      content: "";
+      display: block;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0px;
+      border-bottom: 0.5mm solid #542437; }
+    .pageheader h1:after {
+      bottom: -0.25mm; }
+  .pageheader h2 {
+    font-size: 7mm;
+    color: #6c1725; }
+  .pageheader .addrs {
+    height: 12.5mm;
+    padding-top: 3mm;
+    color: #666666; }
+  .pageheader address {
+    display: inline;
+    font-size: 4mm;
+    margin: 0;
+    font-style: normal; }
+    .pageheader address:nth-child(2n + 1):not(:last-child):after {
+      content: "|";
+      margin-left: 2mm;
+      margin-right: 2mm; }
+    .pageheader address:nth-child(2n):after {
+      content: "\A";
+      white-space: pre; }
+
+.notes h1 {
+  font-size: 6mm;
+  color: #b8273f;
+  display: inline-block;
+  margin: 0; }
+.notes h2 {
+  font-size: 4mm;
+  color: #6c1725;
+  font-weight: bold; }
+.notes p {
+  font-size: 3mm;
+  font-weight: normal;
+  font-family: 'Montserrat';
+  line-height: 4mm;
+  color: #666666; }
+  .notes p sub {
+    display: inline-block;
+    position: relative;
+    top: 0.3em;
+    vertical-align: bottom; }
+.notes li {
+  list-style-type: none; }
+.notes .nested > ul {
+  margin-left: 0.5mm; }
+.notes .nested > ul > li {
+  margin-bottom: 1mm; }
+
+.minor {
+  display: inline-block;
+  vertical-align: top;
+  width: 6.6cm;
+  margin-right: 8mm; }
+  .minor > li:not(.nested) > ul > li {
+    font-size: 3mm;
+    line-height: 4.5mm;
+    color: #666666;
+    margin-bottom: 0.0cm; }
+  .minor > li {
+    margin-left: 0.5mm; }
+
+.major {
+  display: inline-block;
+  vertical-align: top;
+  width: 10.6cm; }
+  .major .nested {
+    margin-bottom: 5mm; }
+  .major aside {
+    margin-top: 3mm;
+    display: inline-block;
+    height: 3mm;
+    font-size: 3mm;
+    color: #666666; }
+
+.info {
+  display: block;
+  font-size: 3mm;
+  font-size: 0; }
+  .info li {
+    display: inline-block;
+    font-size: 3mm;
+    margin-top: 0.4mm;
+    margin-bottom: 0.4mm; }
+    .info li:not(:last-child):after {
+      content: "||";
+      display: inline-block;
+      margin-left: 2mm;
+      margin-right: 2mm;
+      color: #c24027; }
+
+.footer {
+  display: inline-block;
+  position: absolute;
+  bottom: 1.4cm;
+  right: 1.8cm;
+  text-align: right;
+  color: #666666;
+  font-size: 3mm; }
+
+.tex sub, .latex sub, .latex sup {
+  text-transform: uppercase;
+  font-family: Times;
+}
+
+.tex sub, .latex sub {
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em;
+}
+
+.tex, .latex, .tex sub, .latex sub {
+  font-size: 1em;
+  font-family: Times;
+}
+
+.latex sup {
+  font-size: 0.85em;
+  vertical-align: 0.15em;
+  margin-left: -0.36em;
+  margin-right: -0.15em;
+}
+
+@page {
+  margin: 0; }
+@media print {
+  .page {
+    margin: 0; } }
+
+/*# sourceMappingURL=style_red.css.map*/

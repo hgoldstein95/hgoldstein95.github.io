@@ -10,7 +10,7 @@ a {
 	color: inherit;
 }
 
-h2 {
+h1, h2 {
 	text-decoration: none;
 	font-weight: normal;
 }
@@ -78,7 +78,6 @@ h2 {
 }
 
 #blurb {
-	width: 100;
 	min-height: 50px;
 	margin-right: 20px;
 	margin-left: 20px;
@@ -87,11 +86,6 @@ h2 {
 	padding-top: 10px;
 	padding-right: 10px;
 	font-size: 1em;
-	transition: all 0.2s ease 0s;
-}
-
-#blurb:hover {
-
 }
 
 #main1, #main2 {
@@ -171,14 +165,6 @@ h2 {
 	margin-bottom: 25px;
 }
 
-#main2 > div > .fa-check {
-	transition: all 0.2s ease 0s;
-}
-
-#main2 > div:hover > .fa-check {
-	font-size: 1.2em;
-}
-
 #main2 > div > span {
 	font-size: 1.1em;
 }
@@ -195,4 +181,32 @@ h2 {
 #footer > p {
 	margin-right: 10px;
 	font-size: 10px;
+}
+
+/** project pages */
+
+.project_page {
+	min-height: 100px;
+	margin-right: 20px;
+	margin-left: 20px;
+	border: dotted maroon;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 20px;
+	font-size: 1em;
+}
+
+.project_page > img {
+	width: 60%;
+}
+
+.project_page > div {
+	width: 35%;
+	margin-right: 20px;
+	float: right;
+}
+
+.project_link {
+	border: solid maroon 1px;
+	padding: 2px;
 }
