@@ -32,10 +32,10 @@ a {
   position: relative; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'PT Sans'; }
+  font-family: PT Sans; }
 
 body {
-  font-family: 'Montserrat'; }
+  font-family: Montserrat; }
 
 .pageheader {
   font-size: 0;
@@ -67,7 +67,7 @@ body {
     .pageheader h1:after {
       bottom: -0.25mm; }
   .pageheader h2 {
-    font-size: 7mm;
+    font-size: 6mm;
     color: #6c1725; }
   .pageheader .addrs {
     height: 12.5mm;
@@ -96,10 +96,10 @@ body {
   color: #6c1725;
   font-weight: bold; }
 .notes p {
-  font-size: 3mm;
+  font-size: 3.2mm;
   font-weight: normal;
-  font-family: 'Montserrat';
-  line-height: 4mm;
+  font-family: Montserrat;
+  line-height: 4.2mm;
   color: #666666; }
   .notes p sub {
     display: inline-block;
@@ -119,7 +119,7 @@ body {
   width: 6.6cm;
   margin-right: 8mm; }
   .minor > li:not(.nested) > ul > li {
-    font-size: 3mm;
+    font-size: 3.2mm;
     line-height: 4.5mm;
     color: #666666;
     margin-bottom: 0.0cm; }
@@ -135,17 +135,17 @@ body {
   .major aside {
     margin-top: 3mm;
     display: inline-block;
-    height: 3mm;
-    font-size: 3mm;
+    height: 3.2mm;
+    font-size: 3.2mm;
     color: #666666; }
 
 .info {
   display: block;
-  font-size: 3mm;
+  font-size: 3.2mm;
   font-size: 0; }
   .info li {
     display: inline-block;
-    font-size: 3mm;
+    font-size: 3.2mm;
     margin-top: 0.4mm;
     margin-bottom: 0.4mm; }
     .info li:not(:last-child):after {
@@ -162,35 +162,30 @@ body {
   right: 1.8cm;
   text-align: right;
   color: #666666;
-  font-size: 3mm; }
-
-.tex sub, .latex sub, .latex sup {
-  text-transform: uppercase;
-  font-family: Times;
-}
-
-.tex sub, .latex sub {
-  vertical-align: -0.5ex;
-  margin-left: -0.1667em;
-  margin-right: -0.125em;
-}
-
-.tex, .latex, .tex sub, .latex sub {
-  font-size: 1em;
-  font-family: Times;
-}
-
-.latex sup {
-  font-size: 0.85em;
-  vertical-align: 0.15em;
-  margin-left: -0.36em;
-  margin-right: -0.15em;
-}
+  font-size: 3.2mm; }
 
 @page {
   margin: 0; }
 @media print {
   .page {
     margin: 0; } }
+.tex sub, .latex sub, .latex sup {
+  text-transform: uppercase;
+  font-family: Times; }
 
-/*# sourceMappingURL=style_red.css.map*/
+.tex sub, .latex sub {
+  vertical-align: -0.5ex;
+  margin-left: -0.1667em;
+  margin-right: -0.125em; }
+
+.tex, .latex, .tex sub, .latex sub {
+  font-size: 1em;
+  font-family: Times; }
+
+.latex sup {
+  font-size: 0.85em;
+  vertical-align: 0.15em;
+  margin-left: -0.36em;
+  margin-right: -0.15em; }
+
+/*# sourceMappingURL=resume_style.css.map */
