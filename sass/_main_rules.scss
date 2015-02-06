@@ -1,0 +1,200 @@
+body {
+	margin: 0;
+	background: $bgcolor;
+	color: $main-text-color;
+	font-family: $fnt-major;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h2 {
+	padding: 0px;
+	margin: 0px;
+}
+
+header {
+	height: 100px;
+}
+
+#logo {
+	float: left;
+	font-size: 2.5em;
+	height: 100px;
+	line-height: 100px;
+	width: 400px;
+	text-align: center;
+	color: $main-text-color;
+	margin-left: 30px;
+	transition: letter-spacing 0.2s ease 0s;
+}
+#logo:hover {
+	letter-spacing: 0.5px;
+}
+
+#links {
+	text-align: center;
+	height: 100px;
+	font-size: 1.5em;
+	float: right;
+	width: 600px;
+	line-height: 100px;
+	margin-right: 30px;
+}
+
+#links > a {
+	float: left;
+	width: 200px;
+}
+
+#links > a > span {
+	float: right;
+	width: 0px;
+	overflow: hidden;
+	transition: all 0.2s ease 0s;
+}
+#links > a:hover > span {
+	width: 125px;
+}
+
+#blurb {
+	font-family: $fnt-minor;
+	border: dashed $main-text-color 2px;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+}
+
+#top {
+	width: 100%;
+}
+
+#projects {
+	font-family: $fnt-minor;
+	padding: 20px;
+	width: 50%;
+	margin: 30px;
+	border: dashed $main-text-color 2px;
+	min-height: 125px;
+	overflow: hidden;
+}
+
+.project {
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	float: left;
+	margin: 25px;
+	transition: all 0.2s ease 0s;
+}
+
+.project:hover {
+	transform: translate(0px, 10px);
+}
+
+#bottom {
+	width: 100%;
+}
+
+#qual {
+	font-family: $fnt-minor;
+	float: right;
+	padding: 20px;
+	width: 50%;
+	margin-left: 30px;
+	margin-right: 30px;
+	margin-bottom: 30px;
+	border: dashed $main-text-color 2px;
+	min-height: 125px;
+	overflow: hidden;
+}
+
+#qual > div {
+	float: left;
+	margin-top: 25px;
+	margin-right: 25px;
+	margin-bottom: 25px;
+}
+
+#qual > div > span {
+	font-size: 1.1em;
+}
+
+footer {
+	font-family: $fnt-minor;
+	float: left;
+	min-height: 50px;
+	width: 100%;
+	border-top: dashed $main-text-color 2px;
+	text-align: right;
+}
+
+footer > p {
+	margin-right: 10px;
+	font-size: 10px;
+}
+
+@media (max-width: 1200px) {
+	#logo {
+		width: 300px;
+		font-size: 1.5em;
+	}
+
+	#links {
+		width: 300px;
+		font-size: 1em;
+	}
+
+	#links > a {
+		float: left;
+		width: 100px;
+	}
+
+	#links > a > span {
+		float: right;
+		width: 0px;
+		overflow: hidden;
+		transition: all 0.2s ease 0s;
+	}
+	#links > a:hover > span {
+		width: 80px;
+	}
+}
+
+@media (max-width: 700px) {
+	header {
+		margin: 0px auto;
+		width: 320px;
+	}
+
+	#logo {
+		margin: 0px auto;
+		width: 320px;
+		font-size: 1.2em;
+		height: 50px;
+		line-height: 50px;
+	}
+
+	#links {
+		margin: 0px auto;
+		width: 320px;
+		font-size: 0.8em;
+		height: 50px;
+		line-height: 50px;
+	}
+
+	#links > a {
+		float: left;
+		width: 100px;
+	}
+
+	#links > a > span {
+		float: right;
+		width: 80px;
+		overflow: hidden;
+	}
+}
