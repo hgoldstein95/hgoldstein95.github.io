@@ -67,6 +67,7 @@ header {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	padding: 10px;
+	font-size: 1em;
 }
 
 #top {
@@ -76,7 +77,7 @@ header {
 #projects {
 	font-family: $fnt-minor;
 	padding: 20px;
-	width: 50%;
+	width: 40%;
 	margin: 30px;
 	border: dashed $main-text-color 2px;
 	min-height: 125px;
@@ -90,6 +91,10 @@ header {
 	float: left;
 	margin: 25px;
 	transition: all 0.2s ease 0s;
+
+	span {
+		font-size: 0.8em;
+	}
 }
 
 .project:hover {

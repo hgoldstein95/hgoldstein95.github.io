@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: #EFEFEF;
+  background: white;
   color: maroon;
   font-family: PT Sans; }
 
@@ -58,7 +58,8 @@ header {
   margin-right: 30px;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 10px; }
+  padding: 10px;
+  font-size: 1em; }
 
 #top {
   width: 100%; }
@@ -66,7 +67,7 @@ header {
 #projects {
   font-family: Montserrat;
   padding: 20px;
-  width: 50%;
+  width: 40%;
   margin: 30px;
   border: dashed maroon 2px;
   min-height: 125px;
@@ -79,6 +80,8 @@ header {
   float: left;
   margin: 25px;
   transition: all 0.2s ease 0s; }
+  .project span {
+    font-size: 0.8em; }
 
 .project:hover {
   transform: translate(0px, 10px); }

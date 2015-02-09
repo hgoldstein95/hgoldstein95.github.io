@@ -69,10 +69,18 @@ body {
   .pageheader h2 {
     font-size: 6mm;
     color: #6c1725; }
+  .pageheader h3 {
+    font-size: 4mm;
+    color: #6c1725; }
   .pageheader .addrs {
     height: 12.5mm;
     padding-top: 3mm;
     color: #555555; }
+  .pageheader .mailing {
+    margin-left: 20px;
+    margin-top: 10px; }
+    .pageheader .mailing address {
+      font-size: 3.5mm; }
   .pageheader address {
     display: inline;
     font-size: 4mm;

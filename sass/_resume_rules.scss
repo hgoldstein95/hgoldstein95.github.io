@@ -120,10 +120,24 @@ body{
 
 	}
 
+	h3{
+		font-size: $header-size-small;
+		color: $color-h2;
+	}
+
 	.addrs{
 		height:$logoheight/2;
 		padding-top: 3mm;
 		color: $grey;
+	}
+
+	.mailing {
+		margin-left: 20px;
+		margin-top: 10px;
+
+		address {
+			font-size: 3.5mm;
+		}
 	}
 
 	address{
