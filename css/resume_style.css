@@ -72,7 +72,7 @@ body {
   .pageheader .addrs {
     height: 12.5mm;
     padding-top: 3mm;
-    color: #666666; }
+    color: #555555; }
   .pageheader address {
     display: inline;
     font-size: 4mm;
@@ -100,12 +100,20 @@ body {
   font-weight: normal;
   font-family: Montserrat;
   line-height: 4.2mm;
-  color: #666666; }
+  color: #555555; }
   .notes p sub {
     display: inline-block;
     position: relative;
     top: 0.3em;
     vertical-align: bottom; }
+.notes ul#content_list {
+  font-size: 3.2mm;
+  font-weight: normal;
+  font-family: Montserrat;
+  line-height: 4.2mm;
+  color: #555555; }
+  .notes ul#content_list li:not(:last-child) {
+    margin-bottom: 4px; }
 .notes li {
   list-style-type: none; }
 .notes .nested > ul {
@@ -116,12 +124,12 @@ body {
 .minor {
   display: inline-block;
   vertical-align: top;
-  width: 6.6cm;
+  width: 7cm;
   margin-right: 8mm; }
   .minor > li:not(.nested) > ul > li {
     font-size: 3.2mm;
     line-height: 4.5mm;
-    color: #666666;
+    color: #555555;
     margin-bottom: 0.0cm; }
   .minor > li {
     margin-left: 0.5mm; }
@@ -129,7 +137,7 @@ body {
 .major {
   display: inline-block;
   vertical-align: top;
-  width: 10.6cm; }
+  width: 10.2cm; }
   .major .nested {
     margin-bottom: 5mm; }
   .major aside {
@@ -137,7 +145,7 @@ body {
     display: inline-block;
     height: 3.2mm;
     font-size: 3.2mm;
-    color: #666666; }
+    color: #555555; }
 
 .info {
   display: block;
@@ -161,7 +169,7 @@ body {
   bottom: 1.4cm;
   right: 1.8cm;
   text-align: right;
-  color: #666666;
+  color: #555555;
   font-size: 3.2mm; }
 
 @page {

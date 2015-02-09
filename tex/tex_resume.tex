@@ -4,10 +4,12 @@
 \documentclass{res}
 %\usepackage{helvetica} % uses helvetica postscript font (download helvetica.sty)
 %\usepackage{newcent}   % uses new century schoolbook postscript font 
-\setlength{\textheight}{11in} % increase text height to fit on 1-page 
+\setlength{\textheight}{10in} % increase text height to fit on 1-page 
 \addtolength{\topmargin}{-.5in}
+\addtolength{\topsep}{-1mm}
 
 \usepackage{hyperref}
+\usepackage{enumitem}
 
 \begin{document} 
 
@@ -21,51 +23,62 @@
   Ithaca, NY 14853 & www.harrisongoldstein.me & Freehold, NJ 07728 \\
 \end{ncolumn}
 
-\section{OBJECTIVE}
-	Summer internship in computer science.
-
 \section{EDUCATION}
 	CORNELL UNIVERSITY, College of Engineering, Ithaca, NY \\
 	Pursuing Bachelor of Science in Computer Science: Class of 2018 \\
-	G.P.A. 3.9/4.0 \\\\
+	G.P.A. 3.9/4.0 \vspace{5pt}\\
 	MANALAPAN HIGH SCHOOL, Science and Engineering Learning Center, Englishtown, NJ \\
 	Diploma: June 2014
 
 \section{RELEVANT COURSEWORK}
-  Honors Object Oriented Programming and Data Structures \\
-  Digital Logic and Computer Organization \\
-  Foundations of Engineering Leadership \\
-  Discrete Structures \\
-  UNIX Tools and Scripting
+  Honors Object Oriented Programming and Data Structures, Digital Logic and Computer Organization, Foundations of Engineering Leadership, Discrete Structures, UNIX Tools and Scripting
  
 \section{WORK EXPERIENCE}
-  \vspace{-0.1in}	
+  \vspace{-5pt}	
   \begin{tabbing}
     \hspace{2.3in}\= \hspace{2.4in}\= \kill % set up two tab positions
     {\bf Developer} \>TIMAN LLC, Freehold, NJ \>Summer 2014-Present\\
-  \end{tabbing}\vspace{-30pt}
-  Built systems to automate financial data acquisition and manipulation for more efficient company stock valuation. Wrote tools in Python and in Java that were compatible with Windows and OSX systems.
+  \end{tabbing}\vspace{-15pt}
+  \begin{itemize}[leftmargin=*, nolistsep]
+    \item[-] Built systems to automate financial data acquisition and manipulation for more efficient company stock valuation.
+    \item[-] Began with a Python web scraper designed to obtain data for analysis, but faced problems making code compatible with Windows and OSX.
+    \item[-] Successfully completed the cross-compatible Python scraper over the course of 2 months.
+    \item[-] Later created a Java version of the scraper which included a JavaFX GUI.
+  \end{itemize}
    
     
 \section{PROJECTS}    
-	\vspace{-0.1in}
+	\vspace{-5pt}
 	\begin{tabbing}
     \hspace{2.3in}\= \hspace{2.4in}\= \kill
     {\bf Designer} \>ASL Interpreting Glove \>Fall 2013\\
-  \end{tabbing}\vspace{-30pt}
-  This project that aimed to build a glove that translated American Sign Language into speech. The project was part of a high school Senior Project program, and was completed over the course of a semester. The project also entailed frequent presentation of the team's progress to the class.
+  \end{tabbing}\vspace{-15pt}
+  \begin{itemize}[leftmargin=*, nolistsep]
+    \item[-] Worked with a partner to design and build a glove that interprets American Sign Language letters.
+    \item[-] Designed sensor circuits for measuring features of hand positions, including finger bend and proximity.
+    \item[-] Wrote code in C that reads data from a TI-MSP430 microcontroller, and code in Python that interpreted those signals based on mathematical models.
+    \item[-] Project was completed in the Science and Engineering Learning Center at Manalapan High School.
+  \end{itemize}
   \vspace{-10pt}
   \begin{tabbing}
     \hspace{2.3in}\= \hspace{2.4in}\= \kill
     {\bf Programmer} \>an$\backslash$note \>Fall 2014\\
-  \end{tabbing}\vspace{-30pt}
-  This Hack-A-Thon project was completed over the course of 48 hours at Cornell's Big Red Hacks. an$\backslash$note is a note-taking application for use at the high school and university levels. It provides tools for organizing notes in real time, as well as formatting notes for readability. Can be found at \textit{annoteapp.me}.
+  \end{tabbing}\vspace{-15pt}
+  \begin{itemize}[leftmargin=*, nolistsep]
+    \item[-] Worked with a team to create an$\backslash$note, a note-taking web application designed for High School and University students.
+    \item[-] Built Javascript interpreter that converted plaintext input into nicely formatted and organized output. Also worked on HTML and CSS elements of the site.
+    \item[-] Project was completed at Big Red Hacks 2014 over the course of 48 hours.
+  \end{itemize}
   \vspace{-10pt}
   \begin{tabbing}
     \hspace{2.3in}\= \hspace{2.4in}\= \kill
     {\bf Programmer} \>n-body Simulation \>Spring 2014\\
-  \end{tabbing}\vspace{-30pt}
-  Things happened.
+  \end{tabbing}\vspace{-15pt}
+  \begin{itemize}[leftmargin=*, nolistsep]
+    \item[-] Worked with a partner to create a Python simulation of the \"n-body problem\", a common problem in physics that can be easily modeled as n planets in gravitational orbit.
+    \item[-] Used the classical Runge-Kutta method to calculate planet positions over time, and vPython to generate a 3D graphical representation.
+    \item[-] Project was completed in the Science and Engineering Learning Center at Manalapan High School.
+  \end{itemize}
  
 \section{HONORS AND AWARDS}
 	Eagle Scout, Boy Scouts of America \\
