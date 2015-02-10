@@ -1,0 +1,41 @@
+@import 'config';
+@import 'main_rules';
+
+content {
+	img {
+		width: 45%;
+		margin-left: 2%;
+		margin-right: 2%;
+		margin-top: 20px;
+		margin-bottom: 40px;
+	}
+	.project_content {
+		width: 45%;
+		border: 2px dashed $main_text_color;
+		float: right;
+		margin-right: 2%;
+		margin-top: 20px;
+		padding: 10px;
+		margin-bottom: 40px;
+
+		h3 {
+			margin: 0px;
+		}
+
+		ul li {
+			font-family: $fnt-minor;
+			text-align: left;
+		}
+
+		a {
+			padding: 3px;
+			border: 1px solid $main_text_color;
+			font-family: $fnt-minor;
+		}
+
+		.project_links {
+			text-align: center;
+			margin: 20px auto;
+		}
+	}
+}
