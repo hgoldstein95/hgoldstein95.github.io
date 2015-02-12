@@ -171,7 +171,8 @@ footer > p {
     overflow: hidden; } }
 @media screen and (max-device-width: 480px) {
   body {
-    -webkit-text-size-adjust: none; } }
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%; } }
 .tex sub, .latex sub, .latex sup {
   text-transform: uppercase;
   font-family: Times; }

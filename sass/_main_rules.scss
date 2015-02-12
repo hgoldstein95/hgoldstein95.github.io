@@ -205,6 +205,7 @@ footer > p {
 
 @media screen and (max-device-width: 480px){
   body{
-    -webkit-text-size-adjust: none;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }
