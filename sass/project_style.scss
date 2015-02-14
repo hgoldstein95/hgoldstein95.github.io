@@ -2,40 +2,42 @@
 @import 'main_rules';
 
 content {
-	img {
-		width: 45%;
-		margin-left: 2%;
-		margin-right: 2%;
-		margin-top: 20px;
-		margin-bottom: 40px;
-	}
-	.project_content {
-		width: 45%;
-		border: 2px dashed $main_text_color;
-		float: right;
-		margin-right: 2%;
-		margin-top: 20px;
-		padding: 10px;
-		margin-bottom: 40px;
+    img {
+        width: 45%;
+        margin-top: 20px;
+        margin-right: 2%;
+        margin-bottom: 40px;
+        margin-left: 2%;
+    }
+    .project_content {
+        float: right;
 
-		h3 {
-			margin: 0px;
-		}
+        width: 45%;
+        margin-top: 20px;
+        margin-right: 2%;
+        margin-bottom: 40px;
+        padding: 10px;
 
-		ul li {
-			font-family: $fnt-minor;
-			text-align: left;
-		}
+        border: 2px dashed $main_text_color;
+        h3 {
+            margin: 0;
+        }
+        ul li {
+            font-family: $fnt-minor;
 
-		a {
-			padding: 3px;
-			border: 1px solid $main_text_color;
-			font-family: $fnt-minor;
-		}
+            text-align: left;
+        }
+        a {
+            font-family: $fnt-minor;
 
-		.project_links {
-			text-align: center;
-			margin: 20px auto;
-		}
-	}
+            padding: 3px;
+
+            border: 1px solid $main_text_color;
+        }
+        .project_links {
+            margin: 20px auto;
+
+            text-align: center;
+        }
+    }
 }
