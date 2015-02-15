@@ -34,6 +34,9 @@ content {
 
             border: 1px solid $main_text_color;
         }
+        p {
+            font-family: $fnt-minor;
+        }
         .project_links {
             margin: 20px auto;
 
