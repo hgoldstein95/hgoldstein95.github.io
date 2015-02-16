@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.16)  14 FEB 2015 09:34
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.4.16)  16 FEB 2015 13:38
 entering extended mode
 **C:/Users/Harry/Documents/GitHub/hgoldstein95.github.io/tex/tex_resume.tex
 (C:/Users/Harry/Documents/GitHub/hgoldstein95.github.io/tex/tex_resume.tex
@@ -211,18 +211,18 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 42.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 94.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 95.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 94.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 94.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 94.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 94.
  ) 
 Here is how much of TeX's memory you used:
- 4586 strings out of 493921
- 69632 string characters out of 3144876
+ 4585 strings out of 493921
+ 69626 string characters out of 3144876
  149215 words of memory out of 3000000
  7904 multiletter control sequences out of 15000+200000
  4553 words of font info for 17 fonts, out of 3000000 for 9000
@@ -233,9 +233,9 @@ Here is how much of TeX's memory you used:
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
 rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Progr
 am Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on tex_resume.pdf (2 pages, 71054 bytes).
+Output written on tex_resume.pdf (1 page, 70439 bytes).
 PDF statistics:
- 35 PDF objects out of 1000 (max. 8388607)
- 3 named destinations out of 1000 (max. 500000)
+ 31 PDF objects out of 1000 (max. 8388607)
+ 2 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
