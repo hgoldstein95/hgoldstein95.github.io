@@ -1,6 +1,6 @@
 # hgoldstein95.github.io
 
-## Harrison Goldstein's Personal Website
+## Harrison Goldstein -- Personal Website
 
 ### Goal
 
