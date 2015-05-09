@@ -1,0 +1,189 @@
+*
+	box-sizing: border-box
+
+p
+	font-family: $body-copy
+	line-height: 25px
+
+h1, h2, h3, h4, h5, h6
+	font-family: $header-font
+
+header
+	background: $main-color
+	background-size: 15px 30px
+	width: 100%
+	box-shadow: 0px 0px 30px #000
+	height: 150px
+	+media($small)
+		height: 100px
+	+media($large)
+		width: 75%
+		height: 150px
+		margin: 0px auto
+
+.content
+	width: 90%
+	+media($large)
+		width: 70%
+	margin: 70px auto
+	position: relative
+	+clearfix
+	.icons
+		margin-top: 50px
+		position: relative
+		height: 400px
+		width: 180px
+		overflow: hidden
+		float: left
+		.icon-pallate
+			right: 220px
+			+size(400px)
+			border: 2px $main-color solid
+			border-radius: 50%
+			position: relative
+			.icon
+				text-align: center
+				position: absolute
+				&#linkedin
+					color: $color-2
+					right: 90px
+					top: 60px
+				&#github
+					color: $color-3
+					right: 40px
+					top: 165px
+				&#resume
+					color: $color-4
+					right: 90px
+					bottom: 60px
+		.inner-pallate
+			background: #FFF
+			border: 2px $main-color solid
+			+size(120px)
+			position: absolute
+			border-radius: 50%
+			top: 140px
+			left: 150px
+	+media($small)
+		margin-top: 10px
+		.icons
+			height: 80px
+			width: 100%
+			.icon-pallate
+				background: none
+				+outer-container
+				right: 0px
+				height: 80px
+				width: 90%
+				border: none
+				border-bottom: 2px $main-color solid
+				border-radius: 10%
+				.icon
+					+span-columns(4)
+					font-size: 0.8em
+					position: relative
+					margin-top: 15px
+					&#linkedin
+						right: 0px
+						top: 0px
+					&#github
+						right: 0px
+						top: 0px
+					&#resume
+						right: 0px
+						bottom: 0px
+						margin-right: 0px
+			.inner-pallate
+				display: none
+	.blurb
+		color: $color-2
+		width: 45%
+		margin-left: 7%
+		float: left
+		margin-top: 20px
+		+media($small)
+			width: 100%
+			margin-top: 30px
+			margin-left: 0px
+			.blurb-title
+				text-align: center
+		+media($large)
+			width: 75%
+	.projects
+		float: right
+		margin-top: 35px
+		border-left: solid 2px $main-color
+		padding-left: 20px
+		.title
+			color: $color-2
+			margin: none
+			margin-bottom: 30px
+			text-align: center
+			border-bottom: 2px $main-color solid
+		.project
+			+size(75px)
+			display: block
+			margin-bottom: 30px 
+			text-align: center
+			line-height: 110px
+		.project:nth-child(3n-1)
+			color: $color-2
+		.project:nth-child(3n-2)
+			color: $color-3
+		.project:nth-child(3n)
+			color: $color-4
+		+media($small)
+			width: 100%
+			border: none
+			padding: none
+			.title
+				border: none
+				font-size: 1.3em
+			.project
+				line-height: 100px
+				font-size: .9em
+				width: 40%
+				float: left
+				margin-left: 5%
+				margin-right: 5%
+				margin-bottom: 50px
+				border: 2px solid $main-color
+				border-radius: 5px
+		+media($large)
+			margin-top: 50px
+			width: 75%
+			float: left
+			margin-left: 7%
+			border: none
+			border-top: 2px solid $main-color
+			padding: none
+			padding-top: 5px
+			+display(flex)
+			.title
+				border: none
+				height: auto
+				width: 120px
+				margin-top: 35px
+				float: left
+				margin-bottom: 0px
+				border-right: 2px solid $main-color
+				padding-right: 30px
+				padding-top: 15px
+			.proj-icons
+				margin-top: 20px
+				.project
+					margin-top: 15px
+					line-height: 100px
+					float: left
+					margin-bottom: 0px
+					margin-left: 40px
+
+footer
+	margin-top: 40px
+	width: 100%
+	.info
+		float: right
+		color: $main-color
+		font-size: 12px
+		margin-right: 40px
+		margin-bottom: 20px
