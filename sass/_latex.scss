@@ -1,32 +1,3 @@
-.tex sub,
-.latex sub,
-.latex sup {
-    font-family: Times;
 
-    text-transform: uppercase;
-}
 
-.tex sub,
-.latex sub {
-    margin-right: -.125em;
-    margin-left: -.1667em;
-
-    vertical-align: -.5ex;
-}
-
-.tex,
-.latex,
-.tex sub,
-.latex sub {
-    font-family: Times;
-    font-size: 1em;
-}
-
-.latex sup {
-    font-size: .85em;
-
-    margin-right: -.15em;
-    margin-left: -.36em;
-
-    vertical-align: .15em;
-}
+/*# sourceMappingURL=_latex.scss.map */
