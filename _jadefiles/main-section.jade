@@ -1,0 +1,101 @@
+main
+  .container#cards
+    .card#name.hide-on-med-and-up
+      .card-content
+        .card-title Harrison Goldstein
+    .section.row
+      .col.m8
+        .card
+          .card-content
+            span.card-title Who Am I?
+            p My name is Harrison Goldstein, and I am studying Computer Science at Cornell University. My love for learning underpins almost everything I do, and I take every chance I get to learn and grow. I am driven, focused, and goal-oriented, bringing thoe values to all of the work I do.
+            hr
+            a(href='').btn See My Resume
+      .col.m4
+        .card.second
+          .card-content
+            span.card-title What do I do?
+            p I spend a lot of time on pet-projects, often to learn a new technology or framework. You can see my latest work on GitHub.
+            hr
+            a(href='').btn Go To GitHub
+    
+    .section#slider              
+      .slider
+        ul.slides
+          li
+            img(src='/assets/img/aslglove.jpeg')
+            .caption
+              h2 ASL Glove
+              h5 A glove that translates the user's American Sign Language "letters" onto the display of a computer screen.
+              br
+              a(href='').btn Learn More About the ASL Glove
+          li
+            img(src='/assets/img/mafia.png')
+            .caption.center-align
+              h2 Mafia Web App
+              h5 An app that helps a group of people play the party game <em>Mafia</em>, complete with customizable cards and roles.
+              br
+              a(href='').btn Check Out the App
+              span.btn-floating OR
+              a(href='').btn  Explore the Repo
+          li
+            img(src='/assets/img/nbody.png')
+            .caption.right-align
+              h2 n-Body Simulation
+              h5 A visualization of the physics behind the n-body problem,
+                | built with vPython, and using Runge-Kutta differentiation.
+              br
+              a(href='').btn View the Repo On GitHub
+    
+    .section#columns
+      .row
+        .col.m4
+          //img.responsive-img.circle(src='http://lorempixel.com/200/200/technics/1')
+          .icon.responsive-img
+            include ../assets/img/embed2.svg
+          h4 My Skills
+          p In my studies, I have learned lanugages like
+            strong  Java
+            |  and 
+            strong  C++
+            | , as well as competencies like
+            strong  Object Oriented Programming
+            |  and
+            strong  Data Structures.
+            |  Outside of classes, I've explored
+            strong  Ruby
+            |  and 
+            strong  Python
+            | , as well as other popular and up-and-coming languages. Outside of the realm of programming, I am trained in
+            strong  Public Speaking
+            |  and other leadership skills.
+        .col.m4
+          //img.responsive-img.circle(src='http://lorempixel.com/200/200/technics/3')
+          .icon.responsive-img
+            include ../assets/img/users.svg
+          h4 My Values
+          p I value 
+            strong  learning
+            |  and 
+            strong  intelligence
+            |  very highly, and I am driven by the pursuit of knowledge. My interest in computers is largely due to the fact that I value
+            strong  order
+            | , and I feel that writing code is an exercise in coaxing order out of chaos. In my personal life, my most important value is
+            strong  self-worth
+            |  as it empowers me to be resilient against adversity and failure.
+        .col.m4
+          //img.responsive-img.circle(src='http://lorempixel.com/200/200/technics/5')
+          .icon.responsive-img
+            include ../assets/img/pacman.svg
+          h4 My Interests
+          p Even outside of academics, I enjoy writing code. Over the past year,
+            strong  web development
+            |  has become very interesting to me, and most of the new technologies that I have explored have been web-based like
+            strong  node.js
+            |  and
+            strong  Sass
+            | . I also enjoy playing 
+            strong  video games
+            |  with my friends, and
+            strong  cooking
+            |  for my friends and roommates.

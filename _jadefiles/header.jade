@@ -1,0 +1,23 @@
+- github=''
+- linkedin=''
+- resume=''
+
+header
+  nav
+    .nav-wrapper.container
+      a(href='/')
+        .brand-logo.hide-on-small-only Harrison Goldstein
+        .brand-logo.hide-on-med-and-up
+          #logo-container
+            span#logo-small H
+      a(href="", data-activates="mobile-menu", class="button-collapse").right: i.material-icons menu
+      a(href='/')#logo-container
+          span#logo.hide-on-small-only H
+      ul.right.hide-on-med-and-down
+        li: a(href='#{resume}') Resume
+        li: a(href='#{github}') GitHub
+        li: a(href='#{linkedin}') LinkedIn
+      ul#mobile-menu.side-nav
+        li: a(href='#{resume}') Resume
+        li: a(href='#{github}') GitHub
+        li: a(href='#{linkedin}') LinkedIn

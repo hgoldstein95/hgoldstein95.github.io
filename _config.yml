@@ -1,0 +1,8 @@
+name: Harrison Goldstein
+markdown: redcarpet
+exclude: ["node_modules",
+  "gulpfile.js",
+  "package.json",
+  "preview.jpg",
+  "README.md"]
+github: http://github.com/hgoldstein95

@@ -1,0 +1,28 @@
+header
+  #logo,
+  #logo-small
+    display: block
+    background: white
+    font-family: 'Slabo'
+    color: $primary-color
+    border-radius: 50%
+    text-align: center
+    font-size: 30px
+    width: 40px
+    height: 40px
+    line-height: 40px
+
+  #logo-container
+    display: flex
+    align-items: center
+    height: 100%
+
+  nav
+    background: $primary-color
+  @media #{$large-and-up}
+    #logo-container
+      float: right
+      margin-left: 10px
+  @media #{$small-and-down}
+    #logo-container
+      height: 56px
