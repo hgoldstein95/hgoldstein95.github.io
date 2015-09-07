@@ -1,3 +1,6 @@
+- github=''
+- resume='/resume'
+
 main
   .container#cards
     .card#name.hide-on-med-and-up
@@ -10,14 +13,14 @@ main
             span.card-title Who Am I?
             p My name is Harrison Goldstein, and I am studying Computer Science at Cornell University. My love for learning underpins almost everything I do, and I take every chance I get to learn and grow. I am driven, focused, and goal-oriented, bringing thoe values to all of the work I do.
             hr
-            a(href='').btn See My Resume
+            a(href='#{resume}').btn See My Resume
       .col.m4
         .card.second
           .card-content
             span.card-title What do I do?
             p I spend a lot of time on pet-projects, often to learn a new technology or framework. You can see my latest work on GitHub.
             hr
-            a(href='').btn Go To GitHub
+            a(href='#{github}').btn Go To GitHub
     
     .section#slider              
       .slider
