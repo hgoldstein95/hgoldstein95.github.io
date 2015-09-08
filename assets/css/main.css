@@ -2029,7 +2029,7 @@ ul {
 .z-depth-0 {
   box-shadow: none !important; }
 
-.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav {
+.z-depth-1, nav, .card-panel, .card, .toast, .btn, .btn-large, .btn-floating, .dropdown-content, .collapsible, .side-nav, main #slider .slider .btn-floating:hover {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); }
 
 .z-depth-1-half, .btn:hover, .btn-large:hover, .btn-floating:hover {
@@ -5721,7 +5721,12 @@ header nav {
     height: 56px; } }
 
 footer.page-footer {
+  color: white;
   background: #03a9f4; }
+  footer.page-footer a {
+    color: white; }
+  footer.page-footer .row {
+    margin-bottom: 0; }
   footer.page-footer .footer-copyright {
     background: #03a9f4; }
 
@@ -5770,7 +5775,8 @@ main #slider .slider .btn-floating {
   margin: 0 10px;
   font-weight: 700;
   text-align: center;
-  background: #03a9f4; }
+  background: #03a9f4;
+  cursor: default; }
 main #slider .slider .caption {
   color: black;
   border-radius: 5px; }
