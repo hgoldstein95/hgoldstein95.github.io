@@ -5851,3 +5851,15 @@ main #columns {
     width: 100%;
     margin: 20px 0;
     float: none; } }
+
+.nbody img {
+  width: 50%;
+  float: left;
+  margin: 0 20px 20px 0; }
+.nbody .card .card-title {
+  color: black; }
+@media only screen and (max-width: 600px) {
+  .nbody img {
+    width: 100%;
+    margin: 20px 0;
+    float: none; } }
