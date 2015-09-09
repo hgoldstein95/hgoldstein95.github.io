@@ -44,6 +44,8 @@ main
       .slides
         img
           display: none
+      .btn
+        margin: 4px
       .slide-image
         background:
           repeat: no-repeat
@@ -106,3 +108,17 @@ main
           line-height: 30px
           display: block
           margin-bottom: 10px
+
+  @media (max-width: 800px)
+    #slider
+      .btn
+        height: auto
+        line-height: 1
+        padding: 10px
+      h2
+        font-size: 40px
+      .btn-floating
+        display: none
+      h5
+        margin: 0
+        padding: 0

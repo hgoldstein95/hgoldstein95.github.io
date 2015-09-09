@@ -5766,6 +5766,8 @@ main #cards .card hr {
   border-top: rgba(160, 160, 160, 0.2) 1px solid; }
 main #slider .slider .slides img {
   display: none; }
+main #slider .slider .btn, main #slider .slider .btn-large {
+  margin: 4px; }
 main #slider .slider .slide-image {
   background-repeat: no-repeat;
   background-position: center;
@@ -5825,6 +5827,18 @@ main #columns {
     line-height: 30px;
     display: block;
     margin-bottom: 10px; } }
+@media (max-width: 800px) {
+  main #slider .btn, main #slider .btn-large {
+    height: auto;
+    line-height: 1;
+    padding: 10px; }
+  main #slider h2 {
+    font-size: 40px; }
+  main #slider .btn-floating {
+    display: none; }
+  main #slider h5 {
+    margin: 0;
+    padding: 0; } }
 
 .aslglove img {
   width: 50%;
