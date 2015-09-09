@@ -41,8 +41,24 @@ main
 
   #slider
     .slider
-      img
-        filter: blur(1px) grayscale(80%)
+      .slides
+        img
+          display: none
+      .slide-image
+        background:
+          repeat: no-repeat
+          position: center
+          size: cover
+        box-shadow: inset 0 0 0 1000px rgba(240, 240, 240, 0.65)
+        height: 100%
+        width: 100%
+        //filter: blur(1px)
+        &#image-1
+          background-image: url(/assets/img/aslglove.jpeg)
+        &#image-2
+          background-image: url(/assets/img/mafia.png)
+        &#image-3
+          background-image: url(/assets/img/nbody.png)
       .indicators
         .indicator-item.active
           background: $accent-color
@@ -58,14 +74,6 @@ main
           @extend .z-depth-1
       .caption
         color: black
-        border-radius: 5px
-        h2,
-        h5
-          background: rgba(255, 255, 255, 0.6)
-          padding: 3px
-          border-radius: 3px
-        h2
-          display: inline-block
         h5
           @extend .light
 

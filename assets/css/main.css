@@ -5764,9 +5764,21 @@ main #cards .card hr {
   margin: 15px -10%;
   border-bottom: none;
   border-top: rgba(160, 160, 160, 0.2) 1px solid; }
-main #slider .slider img {
-  -webkit-filter: blur(1px) grayscale(80%);
-          filter: blur(1px) grayscale(80%); }
+main #slider .slider .slides img {
+  display: none; }
+main #slider .slider .slide-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(240, 240, 240, 0.65);
+  height: 100%;
+  width: 100%; }
+  main #slider .slider .slide-image#image-1 {
+    background-image: url(/assets/img/aslglove.jpeg); }
+  main #slider .slider .slide-image#image-2 {
+    background-image: url(/assets/img/mafia.png); }
+  main #slider .slider .slide-image#image-3 {
+    background-image: url(/assets/img/nbody.png); }
 main #slider .slider .indicators .indicator-item.active {
   background: #ffab40; }
 main #slider .slider .indicators .indicator-item:not(.active):hover {
@@ -5778,15 +5790,7 @@ main #slider .slider .btn-floating {
   background: #03a9f4;
   cursor: default; }
 main #slider .slider .caption {
-  color: black;
-  border-radius: 5px; }
-  main #slider .slider .caption h2,
-  main #slider .slider .caption h5 {
-    background: rgba(255, 255, 255, 0.6);
-    padding: 3px;
-    border-radius: 3px; }
-  main #slider .slider .caption h2 {
-    display: inline-block; }
+  color: black; }
 main #columns {
   margin: 50px 0; }
   main #columns .icon {
@@ -5806,3 +5810,15 @@ main #columns {
     line-height: 30px;
     display: block;
     margin-bottom: 10px; } }
+
+.aslglove img {
+  width: 50%;
+  float: left;
+  margin: 0 20px 20px 0; }
+.aslglove .card .card-title {
+  color: black; }
+@media only screen and (max-width: 600px) {
+  .aslglove img {
+    width: 100%;
+    margin: 20px 0;
+    float: none; } }
