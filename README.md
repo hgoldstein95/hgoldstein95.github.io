@@ -8,4 +8,4 @@ This website is designed to summarize Harrison's skillset and to showcase some o
 
 ### Specifications
 
-The site is written in HTML and is styled with Sass. It is based on the Materialize CSS framework, that follows the Google Material Design specification. All source code as well as compiled CSS files are viewable in this repository.
+The site is written in HTML and is styled with Sass. It is based on the Materialize CSS framework, that follows Google's Material Design specification. All source code as well as compiled CSS files are viewable in this repository.
