@@ -1,0 +1,23 @@
+$l-primary-color-name: 'red'
+$l-accent-color-name: 'amber'
+
+$l-primary-color: color($l-primary-color-name, 'base')
+$l-primary-color-light: color($l-primary-color-name, 'lighten-2')
+$l-primary-color-dark: color($l-primary-color-name, 'darken-3')
+
+$l-accent-color: color($l-accent-color-name , 'accent-2')
+$l-accent-color-light: color($l-accent-color-name , 'accent-3')
+
+.leadership-container
+  header
+    nav
+      background: $l-primary-color
+  footer.page-footer,
+  footer.page-footer .footer-copyright
+    background: $l-primary-color
+
+.leadership-portfolio
+  #side-nav
+    position: fixed
+    margin-top: 40px
+    margin-left: -20px

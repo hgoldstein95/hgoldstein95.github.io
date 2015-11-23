@@ -5862,3 +5862,14 @@ main #columns {
     width: 100%;
     margin: 20px 0;
     float: none; } }
+
+.leadership-container header nav {
+  background: #F44336; }
+.leadership-container footer.page-footer,
+.leadership-container footer.page-footer .footer-copyright {
+  background: #F44336; }
+
+.leadership-portfolio #side-nav {
+  position: fixed;
+  margin-top: 40px;
+  margin-left: -20px; }
