@@ -8,14 +8,6 @@ $(document).ready(function() {
   $('.tooltipped').tooltip({
     delay: 10
   });
-  $('.purpose-video').hover(function() {
-    if (this.hasAttribute("controls")) {
-      this.removeAttribute("controls");
-    }
-    else {
-      this.setAttribute("controls", "controls")
-    }
-  });
   $('a[href*=#]:not([href=#]):not(.c-tab)').click(function() {
     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
       var target = $(this.hash);
