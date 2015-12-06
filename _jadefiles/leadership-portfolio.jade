@@ -1,15 +1,15 @@
 .leadership-portfolio.container
-  .collection#side-nav.hide-on-small-only
-    a(href="#scroll-header").collection-item Introduction
-    a(href="#strengths").collection-item My Strengths
-    a(href="#obstacles").collection-item My Obstacles
-    a(href="#values").collection-item My Values
-    a(href="#purpose").collection-item My Purpose
-    a(href="#growth").collection-item My Growth
-    a(href="#skills").collection-item My Skills
-    a(href="#ethics").collection-item My Ethics
-    a(href="#courage").collection-item My Courage
-    a(href="#goals").collection-item My Goals
+  #side-nav.hide-on-small-only
+    a(href="#scroll-header").item Introduction
+    a(href="#strengths").item My Strengths
+    a(href="#obstacles").item My Obstacles
+    a(href="#values").item My Values
+    a(href="#purpose").item My Purpose
+    a(href="#growth").item My Growth
+    a(href="#skills").item My Skills
+    a(href="#ethics").item My Ethics
+    a(href="#courage").item My Courage
+    a(href="#goals").item My Goals
 
   .section.row
     .col.m10.push-m2
@@ -19,7 +19,7 @@
     .col.m10.push-m2
       h4 My Strengths
       p Starting off on my leadership journey, it made sense to assess my strengths. By taking inventory of what I am good at, I could increase my effectiveness in teams and on my own. <em>Click on the strengths below to read more.</em>
-      ul.collapsible.accordion(data-collapsible='accordion')
+      ul.collapsible.popout(data-collapsible='accordion')
         li
           .collapsible-header Eccentric Presence
           .collapsible-body: p Early on in the leadership program we learned about our presence. This isn't our leadership style, nor is it the way we see ourselves. Instead, it is a reflection of the effect we have on others by simply walking into a room. I discovered that my presence is <strong>eccentric</strong>. I can use this presence to my advantage by making others around me feel more comfortable and included. By being my quirky and goofy self, I make other people want to be themselves too.
@@ -119,16 +119,32 @@
       .row
         .col.m6.s12
           ul.collection
-            li.collection-item Goal Setting
-            li.collection-item Persuasion and Influence
-            li.collection-item Conflict Resolution
-            li.collection-item Decision Making
+            li.collection-item
+              span.secondary-content: i.material-icons done
+              | Goal Setting
+            li.collection-item 
+              span.secondary-content: i.material-icons power_settings_new 
+              | Persuasion and Influence
+            li.collection-item 
+              span.secondary-content: i.material-icons thumb_up
+              | Conflict Resolution
+            li.collection-item 
+              span.secondary-content: i.material-icons trending_up
+              | Decision Making
         .col.m6.s12
           ul.collection
-            li.collection-item Active Listening
-            li.collection-item Effective Feedback
-            li.collection-item Negotiation
-            li.collection-item Time Management
+            li.collection-item 
+              span.secondary-content: i.material-icons hearing
+              | Active Listening
+            li.collection-item 
+              span.secondary-content: i.material-icons question_answer
+              | Effective Feedback
+            li.collection-item 
+              span.secondary-content: i.material-icons business
+              | Negotiation
+            li.collection-item 
+              span.secondary-content: i.material-icons av_timer
+              | Time Management
   .section.row#ethics
     .col.m10.push-m2
       h4 My Ethics

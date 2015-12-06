@@ -8608,21 +8608,38 @@ main #columns {
     float: none; } }
 
 .leadership-container header nav {
-  background: #F44336; }
+  background: #8bc34a; }
 .leadership-container footer.page-footer,
 .leadership-container footer.page-footer .footer-copyright {
-  background: #F44336; }
+  background: #8bc34a; }
 
 .leadership-portfolio #side-nav {
-  position: fixed;
-  margin-top: 40px;
-  margin-left: -30px; }
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-top: 2px solid #8bc34a;
+  border-bottom: 2px solid #8bc34a; }
+  .leadership-portfolio #side-nav .item {
+    display: block;
+    margin: 2px 0;
+    transition: all 0.2s ease;
+    line-height: 1.7em; }
+    .leadership-portfolio #side-nav .item:hover {
+      font-weight: 700; }
+    .leadership-portfolio #side-nav .item.active {
+      font-weight: 700; }
   .leadership-portfolio #side-nav a {
-    color: #C62828; }
+    color: black; }
 .leadership-portfolio em {
   font-weight: 700;
   font-style: normal;
-  color: #E57373; }
+  color: #00bcd4; }
 .leadership-portfolio #title {
   margin-top: 10px; }
 .leadership-portfolio .purpose-idea {
@@ -8632,6 +8649,8 @@ main #columns {
   .leadership-portfolio .purpose-idea svg {
     width: 50px;
     height: 50px; }
+    .leadership-portfolio .purpose-idea svg path {
+      fill: #00bcd4; }
 .leadership-portfolio .purpose-video {
   max-width: 600px;
   width: 100%;
@@ -8651,11 +8670,12 @@ main #columns {
     margin-top: 120px;
     font-size: 50px;
     height: 50px;
-    width: 100%; }
+    width: 100%;
+    color: #00bcd4; }
 .leadership-portfolio #values .tabs .tab a {
-  color: #F44336; }
+  color: #00bcd4; }
 .leadership-portfolio #values .tabs .indicator {
-  background-color: #F44336; }
+  background-color: #00bcd4; }
 .leadership-portfolio .lower {
   margin-top: 50px; }
 .leadership-portfolio .courage-warning {
@@ -8665,3 +8685,7 @@ main #columns {
     max-width: 100%;
     height: 100px;
     width: 100px; }
+    .leadership-portfolio .courage-warning svg path {
+      fill: #00bcd4; }
+.leadership-portfolio .secondary-content {
+  color: #00bcd4; }
