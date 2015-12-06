@@ -8607,9 +8607,6 @@ main #columns {
     margin: 20px 0;
     float: none; } }
 
-#title {
-  margin-top: 10px; }
-
 .leadership-container header nav {
   background: #F44336; }
 .leadership-container footer.page-footer,
@@ -8622,22 +8619,25 @@ main #columns {
   margin-left: -30px; }
   .leadership-portfolio #side-nav a {
     color: #C62828; }
-
-.purpose-idea {
-  text-align: center; }
-  .purpose-idea svg {
-    width: 100px;
-    height: 100px; }
-    .purpose-idea svg path {
-      fill: #fdd835; }
-
-.purpose-video {
+.leadership-portfolio em {
+  font-weight: 700;
+  font-style: normal;
+  color: #E57373; }
+.leadership-portfolio #title {
+  margin-top: 10px; }
+.leadership-portfolio .purpose-idea {
+  text-align: center;
+  padding-left: 20px;
+  padding-right: 20px; }
+  .leadership-portfolio .purpose-idea svg {
+    width: 50px;
+    height: 50px; }
+.leadership-portfolio .purpose-video {
   max-width: 600px;
   width: 100%;
   display: block;
   margin: 0 auto; }
-
-.growth-arrow {
+.leadership-portfolio .growth-arrow {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
@@ -8647,26 +8647,21 @@ main #columns {
   -webkit-justify-content: center;
       -ms-flex-pack: center;
           justify-content: center; }
-  .growth-arrow i {
+  .leadership-portfolio .growth-arrow i {
     margin-top: 120px;
     font-size: 50px;
     height: 50px;
     width: 100%; }
-
-#values .tabs .tab a {
+.leadership-portfolio #values .tabs .tab a {
   color: #F44336; }
-#values .tabs .indicator {
-  background-color: #ffd740; }
-
-.lower {
+.leadership-portfolio #values .tabs .indicator {
+  background-color: #F44336; }
+.leadership-portfolio .lower {
   margin-top: 50px; }
-
-.courage-warning {
+.leadership-portfolio .courage-warning {
   text-align: center;
   margin-top: 50px; }
-  .courage-warning svg {
+  .leadership-portfolio .courage-warning svg {
     max-width: 100%;
     height: 100px;
     width: 100px; }
-    .courage-warning svg path {
-      fill: #c62828; }
