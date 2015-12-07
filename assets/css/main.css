@@ -8637,7 +8637,6 @@ main #columns {
   .leadership-portfolio #side-nav a {
     color: black; }
 .leadership-portfolio em {
-  font-weight: 700;
   font-style: normal;
   color: #00bcd4; }
 .leadership-portfolio #title {
@@ -8676,8 +8675,6 @@ main #columns {
   color: #00bcd4; }
 .leadership-portfolio #values .tabs .indicator {
   background-color: #00bcd4; }
-.leadership-portfolio .lower {
-  margin-top: 50px; }
 .leadership-portfolio .courage-warning {
   text-align: center;
   margin-top: 50px; }
@@ -8689,3 +8686,6 @@ main #columns {
       fill: #00bcd4; }
 .leadership-portfolio .secondary-content {
   color: #00bcd4; }
+@media only screen and (min-width: 601px) {
+  .leadership-portfolio .lower {
+    margin-top: 50px; } }

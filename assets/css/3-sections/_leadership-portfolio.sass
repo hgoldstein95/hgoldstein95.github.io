@@ -40,7 +40,6 @@ $l-accent-color-light: color($l-accent-color-name , 'accent-3')
 
   em
     font:
-      weight: 700
       style: normal
     color: $l-accent-color
 
@@ -80,9 +79,6 @@ $l-accent-color-light: color($l-accent-color-name , 'accent-3')
       .indicator
         background-color: $l-accent-color
 
-  .lower
-    margin-top: 50px
-
   .courage-warning
     text-align: center
     margin-top: 50px
@@ -95,3 +91,7 @@ $l-accent-color-light: color($l-accent-color-name , 'accent-3')
 
   .secondary-content
     color: $l-accent-color
+
+  @media #{$medium-and-up}
+    .lower
+      margin-top: 50px
