@@ -8504,7 +8504,7 @@ main #cards .card .card-action a {
     main #cards .card .card-action a svg path {
       fill: #ffab40; }
 main #cards .card hr {
-  margin: 15px -10%;
+  margin: 15px 0;
   border-bottom: none;
   border-top: rgba(160, 160, 160, 0.2) 1px solid; }
 main #slider .slider .slides img {
