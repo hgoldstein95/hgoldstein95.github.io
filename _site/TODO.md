@@ -1,4 +1,0 @@
-- Contact me
-- Interesting footer
-- Colors
-- Pictures or icons (580x250, 200x200)
