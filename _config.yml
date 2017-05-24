@@ -1,0 +1,17 @@
+title: Harrison Goldstein
+email: hgoldstein95@gmail.com
+description: > #
+  Ugh.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: hgoldstein95
+github_username: hgoldstein95
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+  - jekyll-feed
+exclude:
+  - Gemfile
+  - Gemfile.lock
