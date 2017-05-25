@@ -52,8 +52,8 @@ functors, it would be smart to choose two *adjoined* functors.
 
 
 Since we'd like this construct to be useful, we want candidates for $$L$$ and
-$$R$$ that are endofunctors in the category of types and functions (sometimes
-called $$Hask$$, for Haskell). One such adjunction is
+$$R$$ that are endofunctors in the category of types and pure functions
+(sometimes called $$Hask$$, named after Haskell). One such adjunction is
 
 $$ (X, -) \dashv (X \to -) $$
 
@@ -99,26 +99,26 @@ to be able to specify what type `k` actually is; that requires passing a type to
 encrypt as if it were data.
 
 Now that we have the `Encrypted` functor, we can make a guess at what `L` is
-supposed to be. The name I settled on was `Decryptor`; this is because the key
+supposed to be. The name I settled on was `Decrypter`; this is because the key
 contained within the tuple can be used to decrypt some encrypted value.
 
 {% highlight haskell %}
-data Decryptor k a = MkDecryptor k a
+data Decrypter k a = MkDecrypter k a
 {% endhighlight %}
 
 If we rewrite `counit` from before, we can finally get:
 
 {% highlight haskell %}
-decrypt : Decryptor k (Encrypted k a) -> a
-decrypt (MkDecryptor x (MkEncrypted f)) = f x
+decrypt : Decrypter k (Encrypted k a) -> a
+decrypt (MkDecrypter x (MkEncrypted f)) = f x
 {% endhighlight %}
 
 With all of this machinery, we can:
 0. Pick a type `k`; in a dependently typed language, this type can be a proof of
    some sort.
 0. Call `encrypt k` on some value of type `a` to get an `Encrypted k a`.
-0. Use the `MkDecryptor` constructor, along with a valid value of type `k` to
-   make a `Decryptor k (Encrypted k a)`.
+0. Use the `MkDecrypter` constructor, along with a valid value of type `k` to
+   make a `Decrypter k (Encrypted k a)`.
 0. Call `decrypt` to get the original value out.
 
 ---
@@ -130,7 +130,7 @@ Category Theory interacts with real-world programming problems. While the end
 result is not particularly useful, it does give some interesting insight into
 what a *proof-relevant* encryption system would look like.
 
-In addition, I found it extremely interesting how two *inverse* concepts like
+In addition, I found it extremely interesting how two inverse concepts like
 encryption and decryption map nicely onto adjoined functors. While it is easy to
 see that adjoined functors are inverses conceptually, it is nice to see how they
 model those behaviors in practice.
