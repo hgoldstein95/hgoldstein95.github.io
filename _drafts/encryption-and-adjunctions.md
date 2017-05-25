@@ -1,9 +1,9 @@
 ---
 layout: post
 title: Encryption and Adjunctions
-date:   2017-05-24
 categories: category-theory
 ---
+
 > For explanations of some of the Category Theory concepts used in this post, I
 > highly recommend [this blog](https://bartoszmilewski.com/2014/10/28/category-theory-for-programmers-the-preface/).
 > The post on [adjunctions](https://bartoszmilewski.com/2016/04/18/adjunctions/)
