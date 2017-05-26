@@ -122,8 +122,7 @@ With all of this machinery, we can:
 0. Call `decrypt` to get the original value out.
 
 ---
-
-### Conclusion
+<br>
 
 My main purpose with this exporation was to gain a deeper understanding of how
 Category Theory interacts with real-world programming problems. While the end
