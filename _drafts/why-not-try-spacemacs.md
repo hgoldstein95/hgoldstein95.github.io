@@ -1,31 +1,34 @@
 ---
 layout: post
-title: Spacemacs is Cool
+title: Why not try Spacemacs?
 categories: misc
 ---
 
+> **Disclaimer**: I hope this post does not offend anyone. I do mention both
+> **vim** and **emacs**, so reader disgression is advised.
+
 When I first started programming, my teacher forced us to write our code in
-Windows notepad. Not even notepad++. Notepad. Looking back, I suppose I
-understand his rationale; if we learned to write code with all of the assistance
-that an IDE provides, we wouldn't understand what is actually going on.
-(Clicking "Run" is a whole lot different from typing `javac` at the command
-line, and I'm glad that I started off with that deeper understanding.) By the
-time that I was headed to college, I understood that I could be a programmer
+Windows notepad. Not even *notepad++*. Notepad.
+
+Looking back, I suppose I understand his rationale; if we learned to write code
+with all of the assistance that an IDE provides, we wouldn't understand what is
+actually going on. (Clicking "Run" is very different from typing `javac` at the
+command line, and I'm glad that I started off with that deeper understanding.)
+By the time that I was headed to college, I understood that I could write code
 even without the bells and whistles of IDEs and code editors.
 
-But not necessarily a *good* programmer.
+But that didn't mean I could write *good* code.
 
 Since those days, I have learned to rely on and appreciate the tools that are
 available to help me do my work. Writing code is constant multitasking: a
 programmer is simultaneously solving high level problems and dealing with the
 nuance of implementing the solutions. Any experienced programmer will tell you
 that it takes a lot of focus to write good code, so I am glad that there is such
-a rich ecosystem of tools to make the process of writing code easier. I have
-used a number of code editors and IDEs, from Eclipse to Sublime Text to, most
-recently, Vim. For the last year or so, I have learned to love Vim and it's
-amazingly efficient editing style. It's how I write most of my code, as well as
-most things that aren't code. It's completely changed the way that I think about
-programming.
+a rich ecosystem of tools to make the process easier. I have used a number of
+code editors and IDEs, from Eclipse to Sublime Text to, most recently, Vim. For
+the last year or so, I learned to love Vim and it's amazingly efficient editing
+style. It's how I write most of my code, as well as most things that aren't
+code. It's completely changed the way that I think about programming.
 
 Lately, though, I have gotten a little bit frustrated with Vim. While I
 appreciate its philosophy of configurability, it has become increasingly
@@ -58,7 +61,7 @@ saves the current buffer, and `SPC g s` displays an interactive window with Git
 status information. In keeping with Vim's philosophy, these bindings all all
 mnemonic; "f s" corresponds to "file, save", "g s" for "git, status", etc. It
 was shocking how quick it was to get used to, and before I knew it I had written
-a couple thousand lines of code and this blog post in spacemacs.
+a couple thousand lines of code (and this blog post) in spacemacs.
 
 So, if you happen to be like me (comfortable with Vim, but looking for a more
 powerful code editor), give spacemacs a try. I can say for sure that it is the

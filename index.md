@@ -2,15 +2,13 @@
 layout: home
 ---
 
-<img align="right" src="https://www.fillmurray.com/200/300" /> Harrison
-Goldstein is an undergraduate at Cornell University, studying Computer Science.
-His love for learning underpins almost everything he does, and he takes every
-chance he can to learn and grow. Harrison is driven, focused, and goal-oriented,
-bringing those values to all of the work that he does.
+I am an undergraduate at Cornell University, studying Computer Science. My love
+for learning underpins almost everything that I do, and I take every chance I
+can to learn and grow. I am driven, focused, and goal-oriented, and I bring
+those values to all of the work that I do.
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit.  Donec hendrerit
-tempor tellus.  Donec pretium posuere tellus.  Proin quam nisl, tincidunt et,
-mattis eget, convallis nec, purus.  Cum sociis natoque penatibus et magnis dis
-parturient montes, nascetur ridiculus mus.  Nulla posuere.  Donec vitae dolor.
-Nullam tristique diam non turpis.  Cras placerat accumsan nulla.  Nullam rutrum.
-Nam vestibulum accumsan nisl.
+The blog posts on this site are written with no particular audience in mind, and
+so you might find that some are more useful to you than others. If you want more
+information about any of the things I've written about, feel free to send me an
+email or tweet at me. Also, if you like my work, feel free to share it with your
+friends!
