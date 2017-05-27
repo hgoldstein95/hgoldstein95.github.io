@@ -64,7 +64,7 @@ $$ (X, -) \dashv (X \to -) $$
 
 where $$L$$ is the product (or `Tuple`) functor, and $$R$$ is the exponential
 (or `Reader`) functor. Using actual code (I'm
-using [Idris](https://www.idris-lang.org/)) here), the functors are just data
+using [Idris](https://www.idris-lang.org/) here), the functors are just data
 types, and are written as follows:
 
 {% highlight haskell %}
