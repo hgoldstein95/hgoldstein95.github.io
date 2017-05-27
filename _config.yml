@@ -5,7 +5,7 @@ description: > #
   Science at Cornell University. His main area of interest is programming
   languages theory.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://harrisongoldste.in" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: hgoldstein95
 github_username: hgoldstein95
 
