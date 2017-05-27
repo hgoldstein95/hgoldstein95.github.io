@@ -92,12 +92,24 @@ Haskell doesn't mind that you've written a non-terminating program. Also, even
 though it is statically typed with a very powerful type system, Haskell types
 can't depend on program values.
 
-Idris, on the other hand, has a totality checker, along with a dependent type
-system that allows you to make strong guarantees about your programs. Again, I
-prefer this kind of experience to the alternative. Of course, there are plenty
-of times that I end up fighting with the Idris compiler because it won't let me
-do something, but often I realize that the thing that I was trying to do was a
-mistake anyway. I'd take Ike as a friend over Henry any day.
+Idris, on the other hand, has a totality checker, which means that it can tell
+if a program will terminate or not. Obviously, a completely correct totality
+checker would solve the halting problem, but it turns out that writing a
+*mostly* correct totality checker is possible, using the right heuristics. In
+the case of Idris, the totality checker decides if a program *might not* halt,
+occasionally drawing an overly conservative conclusion. If the programmer is
+confident that his or her program does, in fact, halt, he or she can provide a
+proof that it does. Also, if a program is supposed to loop forever (i.e. a
+server or REPL), it can be marked as `partial`.
+
+In addition to totality checking, Idris has a dependent type system that allows
+you to make strong guarantees about your programs. Types can contain values, so
+things like "a list of length *n*", or even "a balanced binary tree" can be
+expressed in types. Again, I prefer this kind of experience to the alternative.
+Of course, there are plenty of times that I end up fighting with the Idris
+compiler because it won't let me do something, but often I realize that the
+thing that I was trying to do was a mistake anyway. I'd take Ike as a friend
+over Henry any day.
 
 ## In all seriousness...
 As silly as all of this is, I do really believe that a compiler (like a good
