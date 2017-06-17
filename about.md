@@ -4,10 +4,12 @@ title: About
 permalink: /about/
 ---
 
-This website is both my personal website and my blog. If you are a potential
-employer, you can find my resume [here](//harrisongoldste.in/resume) and my
-GitHub account [here](//github.com/hgoldstein95). You can also feel free to read
-my blog posts.
+This website is both my **personal website** and my **blog**. If you are a
+potential employer, you can find my resume [here](//harrisongoldste.in/resume)
+and my GitHub account [here](//github.com/hgoldstein95). You can also feel free
+to read my blog posts.
+
+<br>
 
 If you are here specifically for my blog, you might be interested to hear why I
 decided to start blogging. I spend a lot of my spare time exploring new and
