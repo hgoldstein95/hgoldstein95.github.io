@@ -152,7 +152,7 @@ for implementing them:
 0. Run the DFA on the input string.
 
 There are things that I love about this algorithm too. It relies on the amazing
-result that regular expressions, NFA's, and DFA's are all the same, and the
+result that regular expressions, NFAs, and DFAs are all the same, and the
 Thompson construction itself is really brilliant. But there's just something
 that feels so nice and PL-ey about the derivative approach. Rather than deal
 with intermediate representations and stateful algorithms, we can just define
@@ -180,21 +180,21 @@ Notes:
 
 [^1]: For those of you who don't get the joke, this
     [stack overflow answer](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454)
-    is a must read.
+    is a must-read.
 
 [^2]: Technically, this is the Brzozowski *Syntactic* Derivative. There is also
-    a Semantic Derivative that deals with DFA's and their denotations.
+    a Semantic Derivative that deals with DFAs and their denotations.
 
-[^3]: If you squint at these last two definitions, admittedly pretty hard, you
-    might see something familiar. The structure of the concatenation and star
-    rules sort of mimics the product and power rules for derivatives in
-    calculus. I doubt this is just a coincidence, and if I ever find a satisfying
-    reason why this is, I'll probably write another post about it.
+[^3]: If you reeeeally squint at these last two definitions you might see
+    something familiar. The concatenation and star rules here are similar in
+    structure to the product and power rules for derivatives in calculus. I
+    doubt this is just a coincidence. If I find a satisfying reason why, I'll
+    probably write another post about it.
 
-[^4]: I'm being sort of sloppy with my notation. What I really mean is that
-    $$[\![\varnothing + r ]\!] = [\![ r ]\!]$$, etc., so $$E(r)$$ might not
-    actually be equal to $$\varepsilon$$ or $$\varnothing$$, but it will always
-    be denotationally equal to one or the other.
+[^4]: I'm being sort of sloppy with my notation around equality. What I really
+    mean is that $$[\![\varnothing + r ]\!] = [\![ r ]\!]$$, etc., so $$E(r)$$
+    might not actually be equal to $$\varepsilon$$ or $$\varnothing$$, but it
+    will always be denotationally equal to one or the other.
 
 [^5]: To be clear, there's nothing wrong with "just solving the problem"---in
     fact, that's usually a far more effective approach.
