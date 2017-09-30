@@ -24,9 +24,9 @@ $$ r ::= \varnothing \mid a \mid r_1 + r_2 \mid r_1 r_2 \mid r^* \quad\quad a
 \in \Sigma $$
 
 Note that this definition is minimal---I don't include things like $$r^+$$ or
-$$r?$$ because they can be written in terms of the other operators. One bit
-of notation that I *will* use is $$\varepsilon \iff \varnothing^*$$, the regular
-expression denoting the empty string.
+$$r?$$ because they can be written in terms of the other operators. One bit of
+common notation that I *will* use is $$\varepsilon$$ to instead of
+$$\varnothing^*$$; both are the regular expression denoting the empty string.
 
 At this point, I'll assume you have a general understanding of how to interpret
 regular expressions; so if I write $$a^*b^* + c$$, you should know that it
@@ -49,24 +49,32 @@ altogether. For each of the other pieces, we just took a $$b$$ off of the front.
 Now that we understand what we're going for, let's actually define a way to
 compute $$D_a(r)$$. We'll do it inductively, step by step.
 
+---
+
 $$ D_a(\varnothing) = \varnothing $$
 
 This one should be pretty obvious. If you take $$a$$ off of every string in
 $$\varnothing$$... well there were no strings to begin with.
 
+---
+
 $$ D_a(c) = \begin{cases}
-\varnothing & a \neq c \\
-\varepsilon & a = c
+\varepsilon & a = c \\
+\varnothing & a \neq c
 \end{cases} $$
 
 The idea here is that if you try to take $$a$$ off of the string $$a$$, you get
 an empty string back, and if you try to take $$a$$ off of the string $$c$$
 (where $$c$$ is some character that isn't $$a$$), you just can't do it.
 
+---
+
 $$ D_a(r_1 + r_2) = D_a(r_1) + D_a(r_2) $$
 
 If you want to take an $$a$$ off the front of an alternation, you can either
 take it off of the first expression, or off of the second.
+
+---
 
 $$ D_a(r_1r_2) = D_a(r_1)r_2 + E(r_1)D_a(r_2) $$
 
@@ -76,6 +84,8 @@ $$r$$ can denote the empty string, and $$\varnothing$$ otherwise. With that in
 mind, this statement says that taking $$a$$ off of a concatenation either means
 taking $$a$$ off of the first expression, or **if the first expression can be
 empty** taking $$a$$ off of the second expression.
+
+---
 
 $$ D_a(r^*) = D_a(r)r^* $$
 
@@ -118,18 +128,20 @@ We're finally ready to implement a regular expression matcher. Let's can extend
 our derivative function from earlier to handle entire strings:
 
 $$ \begin{aligned}
-\hat{D}_{\varepsilon}(r) &= r \\
-\hat{D}_{ax}(r) &= \hat{D}_x(D_a(r))
+\textbf{D}_{\varepsilon}(r) &= r \\
+\textbf{D}_{ax}(r) &= \textbf{D}_x(D_a(r))
 \end{aligned} $$
 
-I now claim that $$r$$ matches a string $$x$$ if and only if
+You can think of this as taking a derivative with respect to each character of
+the string, in order, and accumulating the result. I now claim that $$r$$
+matches a string $$x$$ if and only if
 
-$$ E(\hat{D}_x(r)) = \varepsilon $$
+$$ E(\textbf{D}_x(r)) = \varepsilon $$
 
-So how does this work? Well, $$\hat{D}_x(r)$$ goes character-by-character in
-$$x$$, taking each character off of $$r$$, in turn. This means that by the end,
-we will have a regular expression that matches everything left in $$r$$ after
-taking the string $$x$$ off the front.
+So how does this work? Well, $$\textbf{D}_x(r)$$ goes character-by-character in
+$$x$$, taking each character off of $$r$$. This means that by the end, we will
+have a regular expression that matches everything left in $$r$$ after taking the
+string $$x$$ off the front.
 
 If we take $$x$$ off of the strings in $$r$$ and that set contains the empty
 string, then it must be the case that $$x$$ was in $$r$$ to start with!
