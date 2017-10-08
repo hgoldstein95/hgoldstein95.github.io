@@ -8,7 +8,7 @@ layout: home
 chance I can to learn and grow. I am **driven**, **focused**, and
 **goal-oriented**, and I bring those values to all of the work that I do.
 
-I am an undergraduate at **Cornell University**, studying **Computer Science.**
+I am an undergraduate at Cornell University, studying Computer Science.
 
 <br>
 
