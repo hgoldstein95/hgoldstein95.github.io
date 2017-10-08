@@ -63,6 +63,14 @@ function `fun p -> q`.
 
 ---
 
+$$ \neg P \longleftrightarrow P \to \bot $$
+
+Negation is also a function, but the codomain is *bottom* (also called **False**
+or **Void**). Since $$\bot$$ is uninhabited, a function from $$P$$ to $$\bot$$
+is equivalent to saying that $$P$$ cannot be inhabited.
+
+---
+
 $$ \forall (x : D). P(x) \longleftrightarrow \Pi(x : D). P(x) $$
 
 Universal quantification corresponds to a $$\Pi$$-type, or a dependent function.
@@ -79,8 +87,23 @@ pair. A value of this type is a pair, but the type of the second element can
 depend on the first element. Often this manifests as a pair of a value and proof
 of some property of that value.
 
-### Keeping it Clean
+### The Philosophical Divide
 The nature of constructive logic leads to a number of different philosophical
-interpretations.
+interpretations. Many argue that constructive logic is the "right" way to do
+logic; they argue that the only real way to believe something is to be shown
+evidence, and constructive logic embodies that mentality. Others argue that
+classical logic makes more sense. Those people say that $$P \vee \neg P$$ is
+obviously true, and that proof by contradiction is a very natural way to think
+about math.
 
 ### The Classical Monad
+We'll call our classical monad `C`. First and foremost, we know it
+should turn a normal constructive proposition into one that is somehow
+*labelled* as classical; since propositions are isomorphic to types, we can
+express $$\mathcal{C}$$ as a function at the type level. Next, we want
+$$\mathcal{C}$$ to be a valid monad. It should have operations $$\eta$$ and a
+$$\mu$$ or `return` and `join`/`bind`.
+
+The final property that we want is for the monad to somehow express the
+condition that $$P \vee \neg P$$ might have been used to construct the enclosed
+proposition. (Note that we could construct $$\mathcal{C} (A \implies A)$$)
