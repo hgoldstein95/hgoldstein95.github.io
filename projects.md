@@ -17,7 +17,7 @@ applications easier.
 The research that I am currently doing involves creating typed abstractions for
 various machine learning workflows. I worked for a while on a type system for
 features; Opal now has supports type-safe features that mitigate mistakes when
-working with large datasets. More recently, I have been working on typed
+working with large data-sets. More recently, I have been working on typed
 interactions with natural language systems. We want to allow programmers using
 NLU systems to generate configurations from the types in their program.
 
@@ -55,10 +55,10 @@ person forms the letters with his or her hand. The glove also allowed the user
 to play *Rock, Paper, Scissors* against the computer.
 
 We detected the user's hand position using custom-made optical bend sensors,
-which we made from aquarium tubing and photodiodes. With these sensors, we were
-able to get a general idea of how much each of the user's fingers was beinding.
+which we made from aquarium tubing and photo-diodes. With these sensors, we were
+able to get a general idea of how much each of the user's fingers was bending.
 Hall effect sensors and magnets mounted between the fingers allowed us to get
-more precise measurements. We used a TI microcontroller to interpret the signals
+more precise measurements. We used a TI micro-controller to interpret the signals
 and pass them on to a computer, at which point a Python script did the final
 translation and printed out the results.
 
@@ -93,11 +93,11 @@ Check out the project [here](https://github.com/hgoldstein95/n-body-simulator).
 
 ## *Mafia* Web App
 *Mafia* is a strategic party game played by many at Cornell. The game is both
-logical and psychological---ometimes players need to use the facts at their
+logical and psychological---sometimes players need to use the facts at their
 disposal to draw conclusions, and other times they need to "read" other players
 to determine who is lying.
 
 As co-presidents of the Cornell Mafia club, a friend and I decided to create a
 web application to make playing the game easier. The each game is run by a
-"moderator", but sometimes that person's job can be farly difficult. We created
+"moderator", but sometimes that person's job can be fairly difficult. We created
 a node.js app using Meteor that provided tools to make moderating easier.
