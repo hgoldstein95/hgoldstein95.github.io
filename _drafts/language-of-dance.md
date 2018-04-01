@@ -26,8 +26,7 @@ The basic East Coast Swing step is a six-count pattern---depending on the tempo 
 the pattern is either "rock step, triple step, triple step" or "rock step, step,
 step". Often, dancers will also incorporate elements of *Lindy Hop*, a very
 closely related dance, which uses the eight-count pattern "rock step, triple
-step, step, step, triple step". The latter can be seen above in a move called
-the "swing-out". I'll talk more about that later.
+step, step, step, triple step". The latter can be seen in the gif above.
 
 Of course, there's a lot more to dancing than footwork. In swing, partners dance
 done in a number of different holds and positions. There are also tons of
@@ -104,7 +103,7 @@ is a valid dance, but
 
 > right-side pass, basic
 
-is not (since you can't do a right-side pass from closed position** and neither
+is not (since you can't do a right-side pass from closed position) and neither
 is
 
 > tuck-turn, left-side-pass, left-side pass
@@ -129,10 +128,10 @@ The automata above are both (mostly) deterministic. This means that the current
 state completely determines the effect of a move. Put more simply, it means that
 there are no two arrows with the same label and the same source state.
 
-Technically speaking, labeling both "closed" and "closed, 8-count" is a form of
-non-determinism, but this is resolved as soon as the dance starts, so it isn't
-very interesting. A more interesting form of non-determinism is
-"$$\varepsilon$$-transitions". An $$\varepsilon$$-transition is a transition
+Technically speaking, labeling both "closed" and "closed, 8-count" as start
+states is a form of non-determinism, but this is resolved as soon as the dance
+starts, so it isn't very interesting. A more interesting form of non-determinism
+is "$$\varepsilon$$-transitions". An $$\varepsilon$$-transition is a transition
 that happens without a symbol being read, or, in this case, without a move being
 done. It turns out that these transitions don't actually change the set of
 languages that automata can represent, but they do offer a compact and intuitive
@@ -193,7 +192,8 @@ I think I got something pretty cool out of it.
 [^1]: If you are already familiar with automata, you'll notice that I'm ignoring
     accepting states. We could theoretically use accepting states to decide
     which moves are "fun" to end a routine on and which aren't. Here, for the
-    sake of simplicity, I'm going to assume that every state is accepting.
+    sake of simplicity, I'm going to assume that every state is accepting except
+    for the implicit "trap" state.
 
 [^2]: For sufficiently musical definitions of fun.
 
