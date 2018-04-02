@@ -20,16 +20,17 @@ like a regular language.
 
 The dance that I've been learning is usually called
 [East Coast Swing](https://en.wikipedia.org/wiki/East_Coast_Swing). It's a
-really fun social dance that is usually set to quick swing music.
+really fun social dance that is set to quick swing music.
 
-The basic East Coast Swing step is a six-count pattern---depending on the tempo of the music,
-the pattern is either "rock step, triple step, triple step" or "rock step, step,
-step". Often, dancers will also incorporate elements of *Lindy Hop*, a very
-closely related dance, which uses the eight-count pattern "rock step, triple
-step, step, step, triple step". The latter can be seen in the gif above.
+The basic East Coast Swing step is a six-count pattern---depending on the tempo
+of the music, the pattern is either "rock step, triple step, triple step" or
+"rock step, step, step". Often, dancers will also incorporate elements of *Lindy
+Hop*, a very closely related dance, which uses the eight-count pattern "rock
+step, triple step, step, step, triple step". The latter is what's happening in
+the gif above.
 
 Of course, there's a lot more to dancing than footwork. In swing, partners dance
-done in a number of different holds and positions. There are also tons of
+in a number of different holds and positions, and there are also tons of
 different moves that make the dance fun and interesting. I highly recommend
 checking out some YouTube videos of people dancing to get an idea of what I
 mean.
@@ -39,19 +40,20 @@ mean.
 When I started learning different swing moves, I realized that each move was
 sort of a "transition" from one "state" to another. For example, the partners
 might be dancing in closed position and the lead might use a "tuck-turn" to
-transition to open position. More subtly, a left-side pass might leave the
-couple in open position, but with the leader's hand on top of the follow's hand
-(normal open position has the leader's hands under the follow's).
+transition to open position. More subtly, a left-side pass from open position
+might leave the couple back in open position, but with the leader's hand on top
+of the follow's hand (normal open position has the leader's hands under the
+follow's).
 
 As a computer scientist, when I hear "states" and "transitions" I immediately
 think of
 [finite automata](https://en.wikipedia.org/wiki/Deterministic_finite_automaton).
 A finite automaton is a mathematical structure that is often written out as a
 graph like the ones below. The nodes are states, and the edges represent
-transitions. Essentially, when a node *p* has an edge labeled *a* to another
-node *q*, you're allowed to "do *a*" to transition from *p* to *q*. Here is an
-automata that I built based on the first few moves that I learned when I started
-doing swing.[^1]
+transitions. When a node *p* has an edge labeled *a* to another node *q*, you're
+allowed to "do *a*" to transition from *p* to *q*. Here is an automata that I
+built based on the first few moves that I learned when I started doing
+swing.[^1]
 
 <div style="text-align: center; margin: 20px">
   <img width="90%" src="../../../../img/dance.svg" />
@@ -73,13 +75,14 @@ complicated automaton that incorporates some 8-count "Lindy Hop" moves.
   <img width="90%" src="../../../../img/dance2.svg" />
 </div>
 
-The main thing to notice is that when I added some 8-count Lindy Hop moves, I
-added extra states. Strictly speaking, dancing 8-count moves doesn't correspond
-to a different *physical* position, but it does correspond to a different
-*mental* position. When leading, it is important to be able to tell your partner
-that you want to start dancing 8-count patterns when you've been doing 6-count,
-or vice versa. Since my partners and I are usually beginners, I try to use a
-simple move (like a basic) to go between standard East Coast and Lindy.
+The main thing to notice is that when I added 8-count moves, I added extra
+states. Strictly speaking, dancing 8-count moves doesn't correspond to a
+different *physical* position, but it does correspond to a different *mental*
+position. When leading, it is important to be able to communicate your intent.
+Your partner needs to know that you want to start dancing 8-count patterns after
+a while of doing 6-count, and vice versa. Since my partners and I are usually
+beginners, I try to use a simple move (like a basic) to go between standard East
+Coast and Lindy.
 
 ### Speaking My Language
 
@@ -126,7 +129,7 @@ For now, I'll just mention a couple of my ideas.
 
 The automata above are both (mostly) deterministic. This means that the current
 state completely determines the effect of a move. Put more simply, it means that
-there are no two arrows with the same label and the same source state.
+there are no two arrows with the same label coming from the same source state.
 
 Technically speaking, labeling both "closed" and "closed, 8-count" as start
 states is a form of non-determinism, but this is resolved as soon as the dance
