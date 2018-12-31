@@ -6,7 +6,10 @@ layout: home
 chance I can to learn and grow. I am **driven**, **focused**, and
 **goal-oriented**, and I bring those values to all of the work that I do.
 
-I am a masters student at Cornell University, studying Computer Science.
+I am currently working as a Software Engineer at
+[Broadway Technology](https://www.broadwaytechnology.com/). In August 2019 I
+will be starting work towards a PhD in programming languages at the University
+of Pennsylvania.
 
 <br>
 

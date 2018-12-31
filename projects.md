@@ -10,16 +10,13 @@ these or other projects that I have been involved with, don't hesitate to
 contact me.
 
 ## Opal
-I am currently working with Adrian Sampson at Cornell on a language called Opal.
-The language has built-in abstractions to make writing machine learning
-applications easier.
+As part of my Masters degree, I wokred with Adrian Sampson at Cornell on a
+language called Opal. The language has built-in abstractions to make writing
+machine learning applications easier.
 
-The research that I am currently doing involves creating typed abstractions for
-various machine learning workflows. I worked for a while on a type system for
-features; Opal now has supports type-safe features that mitigate mistakes when
-working with large data-sets. More recently, I have been working on typed
-interactions with natural language systems. We want to allow programmers using
-NLU systems to generate configurations from the types in their program.
+Some of the work that I did includes creating typed abstractions for various
+machine learning workflows, and facilitating typed interactions with natural
+language systems.
 
 <br>
 
