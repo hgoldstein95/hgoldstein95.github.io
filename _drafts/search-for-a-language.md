@@ -7,7 +7,7 @@ categories: misc
 ## Necessary Features
 ### Static Types
 I wrote a blog post last week about
-[Rust and Idris]({{ site.baseurl }}{% post_url 2017-05-26-sitcoms-and-compilers %}).
+[Rust and Idris]({{ site.baseurl }}).
 My basic goal was to explain why I prefer languages with powerful type systems
 and compilers that catch your errors earlier. I like languages where the
 statement "if it compiles, then it runs" is **almost always** true, and where
