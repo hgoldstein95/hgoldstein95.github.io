@@ -4,10 +4,12 @@ title: Tourist
 categories: projects
 ---
 
-My roommate and I have spent a lot of time lately working on a project that
-we're really excited about. The application is called Tourist, and our goal
-is to empower developers with an interesting new way of writing
-documentation. Our project page says,
+I've been spending a lot of time lately working on a project that I'm really
+excited about. With the help of my roommate Jason, I've been working on an
+application Tourist. It's goal is to empower developers with an interesting
+new way of writing documentation.
+
+The project page says,
 
 > Tourist is a new approach to documentation that allows programmers to explain
 > low-level technical details of a system while simultaneously providing the
@@ -28,7 +30,7 @@ documentation in the appropriate context.
 A tour is a series of code locations (a particular line in a particular file)
 along with a markdown description of why that location is significant. The
 locations (or "stops") can be in different files and even in different git
-repositories.
+repositories.[^1]
 
 Tourist provides a simple interface for building and viewing tours. The GIF
 below shows what it's like to view a tour in Visual Studio Code.
@@ -43,7 +45,7 @@ created, you can simply right click in a file and ask tourist to add a stop
 at that location. From there you can edit the stop content, move the stop
 around, and reorder stops as needed.
 
-(This demo is fairly simple, and our first version of the extension is
+(This demo is fairly simple, and the first version of the extension is
 planned to stay that way. That being said, we have lots of cool ideas for how
 the extension can be made more powerful in the future, and we welcome
 suggestions.)
@@ -63,14 +65,13 @@ Inline comments have a different issue: context. When you read inline
 comments, you're generally only reading to understand a particular line or
 set of lines. Maybe a docstring on a module or function gives you
 *sligtly* more context, but the main goal is still to explain the code that's
-written *right here*. To be clear, I don't think this limitation is a bad
-thing for inline comments -- it's actually kind of important. At a certain
-point, too many inline comments can start to make it hard to read the actual
-code. Tourist's idea of documentation that is connected to a code location
-but not written inline is an attractive solution to this problem.
+written *right here*. When inline comments to try to explain broader context,
+it can start to get hard to read the actual code. Tourist's idea of
+documentation that is connected to a code location but not written inline is
+an attractive solution to this problem.
 
 Of course, both inline comments and long-form documentation are important,
-and Tourist doesn't necessarily intend to replace them. Long-form
+and Tourist doesn't necessarily intend to replace either. Long-form
 documentation is still crucial for less technical documentation like user
 manuals, as well as for more external techncial things like release notes.
 Inline comments provide important insight into the nitty-gritty details of an
@@ -80,9 +81,9 @@ architectural concerns and low-level information about the code itself.
 
 ## What can I use it for?
 
-This technology is still super new, and we expect that people will come up
+This technology is still really new, and we expect that people will come up
 with all sorts of interesting ways to use it. That being said, here are a few
-things that we think tours are really good for:
+things that I think tours are really good for:
 
 - **Onboarding.** Getting started with a new codebase is always a challenge, and
   it's often really helpful to have someone who already knows the code walk
@@ -105,19 +106,36 @@ what we can do with this framework.
 
 # How can I get it?
 
-Tourist is in extremely early alpha, so it'll take a little work to get up
-and running. First and foremost, you'll need `tourist` from
+Tourist is in extremely early alpha, so you'll need to build everything
+yourself. First and foremost, you'll need `tourist` from
 [hgoldstein95/tourist](https://github.com/hgoldstein95/tourist), and unless
 you're going to write your own editor extension, you'll want `tourist-vscode`
 at
 [hgoldstein95/tourist-vscode](https://github.com/hgoldstein95/tourist-vscode).
-Getting tourist set up should be fairly straightforward -- the README should
-have enough information. Starting the extension is where you may run into
-some issues, but we're hoping to get those worked out soon. (The short
-version is that using native code -- which we rely on for git support -- from
-electron is problematic. The README should have some information to get you
-started debugging those issues.)
+Getting `tourist` set up should be fairly straightforward -- the README
+should have enough information. Once that's built, you can run 
+```bash
+npm install
+```
+from `tourist-vscode` and start the extension with the debugger.
 
 If you're trying to get tourist up and running on your machine, feel free to
 send me an email or create an issue on either of the above repositories. I'm
 happy to help anyone who wants to help us keep moving tourist forward.
+
+<br/>
+
+Watch this blog for more about tourist! As we move towards a feature-complete
+launch, I'll keep this page updated, and I'll probably post again with news
+and information.
+
+
+<br/>
+
+-----------------------
+<br/>
+
+[^1]: As of now, Tourist requires that all of the code you reference is
+    versioned using git. In the future we hope to add support for subversion and
+    mercurial, but git is universal enough that we think this is the right place
+    to start.
