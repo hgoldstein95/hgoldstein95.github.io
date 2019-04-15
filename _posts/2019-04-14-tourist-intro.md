@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tourist
+title: Introducing Tourist
 categories: projects
 ---
 
