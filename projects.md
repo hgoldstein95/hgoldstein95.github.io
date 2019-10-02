@@ -14,9 +14,29 @@ As part of my Masters degree, I wokred with Adrian Sampson at Cornell on a
 language called Opal. The language has built-in abstractions to make writing
 machine learning applications easier.
 
-Some of the work that I did includes creating typed abstractions for various
-machine learning workflows, and facilitating typed interactions with natural
-language systems.
+My work included creating typed abstractions for various machine learning
+workflows, and facilitating typed interactions with natural language systems.
+
+My work on Opal contributed to a paper in SysML 2018, titled *Programming
+Language Support for Natural Language Interaction*. You can read the paper
+[here](https://www.sysml.cc/doc/2018/56.pdf).
+
+
+<br>
+
+---
+<br>
+
+## Tourist
+
+Tourist is a new approach to documentation that allows programmers to explain low-level technical
+details of a system while simultaneously providing the context of how those details fit into the
+broader architecture. It lets programmers document code in the same way that they would explain it
+in person: by walking the consumer step-by-step through the important parts of a codebase.
+
+You can read my post about tourist
+[here](https://harrisongoldste.in/projects/2019/04/14/tourist-intro.html), and you can view the
+organization on [GitHub](https://github.com/tourist-doc).
 
 <br>
 
