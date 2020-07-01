@@ -5,7 +5,8 @@ description: > #
   University. He is currently a PhD student at the University of Pennsylvania
   studying programming languages.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://harrisongoldste.in" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://harrisongoldste.in"
+site_url: "https://harrisongoldste.in"
 twitter_username: hgoldstein95
 github_username: hgoldstein95
 
