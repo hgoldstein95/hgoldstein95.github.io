@@ -2,7 +2,7 @@
 layout: home
 ---
 
-**My love for learning underpins almost everything that I do**, and I take every
+My love for learning underpins almost everything that I do, and I take every
 chance I can to learn and grow. I am **driven**, **focused**, and
 **goal-oriented**, and I bring those values to all of the work that I do.
 
