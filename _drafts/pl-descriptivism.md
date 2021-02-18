@@ -16,27 +16,12 @@ argue that users of that language should follow those rules. Descriptivists, on 
 examine the way people _actually use_ a language, without passing judgment on whether or not
 their usage is correct.
 
-For example, a prescriptive linguist might argue that
-
-> Well then,,,
-
-is incorrect English. Three commas in a row ",,," means nothing in "Standard English", and thus it
-is wrong. On the other hand, a descriptivist might notice that when younger people on the internet
-say
-
-> Well then,,,
-
-instead of
-
-> Well then...
-
-they mean something slightly different.[^1] The descriptivist asks what the language users are
-gaining by bending the so-called rules, whereas the prescriptivist is adamant that the rules
-should be followed.
-
-[^1]:
-    I don't actually understand the full nuance, but from what I've gathered the ",,," version is
-    either more ironic or more dramatic than the standard "..." used to mean trailing off.
+For example, a prescriptive linguist might insist that "ten items or less" is incorrect English.
+The word "less" is for collective nouns; "fewer" should be used for discrete items. Meanwhile, a
+descriptivist would likely point out that no one is ever confused by the phrase "ten items or
+less" and note that the less/fewer divide isn't as firm as some might think. The descriptivist
+only seeks to understand how language is used, whereas the prescriptivist is adamant that "the
+rules" should be followed.
 
 What does any of this have to do with programming languages? Maybe nothing, but I think I've
 noticed a bit of a prescriptivist streak in myself and other PL people that I'd like to explore a
@@ -130,11 +115,11 @@ series where Tom strays from the path and tells people how language _should be_,
 _is_. In a video on
 [Gender Neutral Pronouns](https://www.youtube.com/watch?v=46ehrFk-gLk&list=PL96C35uN7xGLDEnHuhD7CTZES3KXFnwm0&index=23),
 Tom says that singular "they" is a better approach than using gendered pronouns like "he" to refer
-to a person of unknown gender.[^3] Now, I happen to agree with that stance, but even if I hadn't
+to a person of unknown gender.[^1] Now, I happen to agree with that stance, but even if I hadn't
 the fact that Tom is a consistent descriptivist made his uncharacteristic prescription much more
 powerful. When a descriptivist makes a prescription, that means something.
 
-[^3]:
+[^1]:
     The video isn't perfect---it was made in 2013, and in 2019 Tom went back and made a bunch of
     corrections in the comments. But for the most part I think the points are sound and he has
     the right idea.
