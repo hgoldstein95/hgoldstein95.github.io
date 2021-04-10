@@ -10,12 +10,29 @@ url: "https://harrisongoldste.in"
 site_url: "https://harrisongoldste.in"
 twitter_username: hgoldstein95
 github_username: hgoldstein95
+profile_picture: img/profile.png
 
 # Build settings
 markdown: kramdown
-theme: minima
 gems:
   - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
+
+footer: yes
+footer_url: "https://github.com/hgoldstein95/hgoldstein95.github.io"
+footer_text: "Website source on GitHub"
+
+sass:
+    style: compressed
+    sass_dir: _sass
+
+nav:
+ - name: "Blog"
+   link: "/blog/"
+#  - name: "About"
+#    link: "/about/"
+ - name: "Resume"
+   link: "/resume.pdf"
+
