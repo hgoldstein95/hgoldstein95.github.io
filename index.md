@@ -6,14 +6,21 @@ layout: default
 
 <img class="profile-picture" src="img/profile.png" style="margin-top: 5px;">
 
-My love for learning underpins almost everything that I do---I take every
-chance I can to learn and grow. I am **driven**, **focused**, and
-**goal-oriented**, and I bring those values to all of the work that I do.
+My love for learning underpins almost everything that I do; I take every chance I get to learn and
+to grow.
 
-I am currently a PhD student at the **University of Pennsylvania**, studying
-programming languages under Professor Benjamin Pierce.
+I am currently a PhD student at the University of Pennsylvania, studying programming languages
+under Professor Benjamin Pierce. My research currently focuses on property-based testing and random
+test-case generation. I hope to broaden the reach of principled randomized testing by tackling
+important theoretical and practical barriers to entry.
+
+I love to collaborate, so feel free to reach out if you have anything you'd like to discuss.
 
 ## Publications
+
+- <i>Ungenerators</i> (2<sup>nd</sup> Place Graduate, Student Research Competition)<br>
+Harrison Goldstein<br>
+ICFP 2021 [Poster](papers/icfpsrc21.pdf)
 
 - <i>Do Judge a Test by its Cover: Combining Combinatorial and Property-Based Testing</i><br>
 Harrison Goldstein, John Hughes, Leonidas Lampropoulos, Benjamin C. Pierce<br>
