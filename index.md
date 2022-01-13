@@ -10,10 +10,10 @@ margin-left: 5px; margin-bottom: 5px;">
 My love for learning underpins almost everything that I do; I take every chance I get to learn and
 to grow.
 
-I am currently a PhD student at the University of Pennsylvania, studying programming languages
-under Professor Benjamin Pierce. My research currently focuses on property-based testing and random
-test-case generation. I hope to broaden the reach of principled randomized testing by tackling
-important theoretical and practical barriers to entry.
+I am currently a PhD student at the University of Pennsylvania, studying programming languages under
+Professor Benjamin Pierce. My research is focused on property-based testing and random test-case
+generation. I hope to broaden the reach of principled randomized testing by tackling important
+theoretical and practical barriers to entry.
 
 I love to collaborate, so feel free to reach out if you have anything you'd like to discuss.
 
