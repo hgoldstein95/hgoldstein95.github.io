@@ -4,7 +4,8 @@ layout: default
 
 ## About Me
 
-<img class="profile-picture" src="img/profile.png" style="margin-top: 5px;">
+<img class="profile-picture" src="img/profile.png" style="margin-top: 5px;
+margin-left: 5px; margin-bottom: 5px;">
 
 My love for learning underpins almost everything that I do; I take every chance I get to learn and
 to grow.
