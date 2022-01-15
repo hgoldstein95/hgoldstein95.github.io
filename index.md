@@ -4,18 +4,25 @@ layout: default
 
 ## About Me
 
-<img class="profile-picture" src="img/profile.png" style="margin-top: 5px;
-margin-left: 5px; margin-bottom: 5px;">
-
+<div class="about-me">
+<img class="profile-picture" src="img/park-bench.jpeg">
+<p>
 My love for learning underpins almost everything that I do; I take every chance I get to learn and
 to grow.
+</p>
 
+<p>
 I am currently a PhD student at the University of Pennsylvania, studying programming languages under
 Professor Benjamin Pierce. My research is focused on property-based testing and random test-case
 generation. I hope to broaden the reach of principled randomized testing by tackling important
 theoretical and practical barriers to entry.
+</p>
 
+<p>
 I love to collaborate, so feel free to reach out if you have anything you'd like to discuss.
+</p>
+<div style="clear: right;"></div>
+</div>
 
 ## Publications
 
