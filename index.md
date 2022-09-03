@@ -26,6 +26,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Publications
 
+- <i>Parsing Randomness</i>
+Harrison Goldstein, Benjamin C. Pierce<br>
+OOPSLA 2022 [PDF](papers/oopsla22.pdf)
+
 - <i>Ungenerators</i> (2<sup>nd</sup> Place Graduate, Student Research Competition)<br>
 Harrison Goldstein<br>
 ICFP 2021 [Poster](papers/icfpsrc21.pdf)
