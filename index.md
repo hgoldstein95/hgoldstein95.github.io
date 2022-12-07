@@ -26,13 +26,13 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Publications
 
-- <i>Some Problems with Properties: A Study on Property-Based Testing in Industry</i>
-Harrison Goldstein, Joseph W. Cutler, Adam Stein, Andrew Head, Benjamin C. Pierce<br>
-HATRA 2022 [PDF](papers/hatra2022.pdf) [Slides](slides/hatra2022.pptx)
-
 - <i>Parsing Randomness</i>
 Harrison Goldstein, Benjamin C. Pierce<br>
 OOPSLA 2022 [PDF](papers/oopsla22.pdf)
+
+- <i>Some Problems with Properties: A Study on Property-Based Testing in Industry</i>
+Harrison Goldstein, Joseph W. Cutler, Adam Stein, Andrew Head, Benjamin C. Pierce<br>
+HATRA 2022 [PDF](papers/hatra2022.pdf) [Slides](slides/hatra2022.pptx)
 
 - <i>Ungenerators</i> (2<sup>nd</sup> Place Graduate, Student Research Competition)<br>
 Harrison Goldstein<br>
