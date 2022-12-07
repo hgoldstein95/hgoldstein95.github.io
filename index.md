@@ -26,11 +26,11 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Publications
 
-- <i>Parsing Randomness</i>
+- <i>Parsing Randomness</i><br/>
 Harrison Goldstein, Benjamin C. Pierce<br>
 OOPSLA 2022 [PDF](papers/oopsla22.pdf)
 
-- <i>Some Problems with Properties: A Study on Property-Based Testing in Industry</i>
+- <i>Some Problems with Properties: A Study on Property-Based Testing in Industry</i><br/>
 Harrison Goldstein, Joseph W. Cutler, Adam Stein, Andrew Head, Benjamin C. Pierce<br>
 HATRA 2022 [PDF](papers/hatra2022.pdf) [Slides](slides/hatra2022.pptx)
 
