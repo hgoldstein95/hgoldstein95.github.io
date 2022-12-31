@@ -4,13 +4,28 @@ title: Advent of Code 2022 in OCaml
 categories: languages
 ---
 
-**TODO**
+I always try to use [Advent of Code](https://adventofcode.com/) as an excuse to learn or re-learn a
+programming language. Using a language for 25 days (even if it's just for toy problems about elves,
+elephants, and monkeys) is a shockingly good way to get comfortable with the language's idioms.
 
-OCaml is a powerful language, and, combined with Jane Street's Core as a standard library, it gives
-you the tools to solve problems with the elegance of the best functional languages, without
-sacrificing practicality. I'll talk about my positive experience using OCaml's imperative features
-and the module system, as well as my praise of Jane Street's tools like the Core library,
-`ppx_jane`, and expect tests.
+This year I decided to work in OCaml. I've been spending a lot of time lately interviewing
+[Jane Street](https://www.janestreet.com/) developers for my research (check out my
+[paper](papers/hatra22.pdf) from HATRA'22 if you want to know more), and I thought it would be good
+to refresh my memory of how it feels to write OCaml. Technically I did already know OCaml---I taught
+it to myself in college---but it's been over 5 years and I had never worked with Jane Street's
+[Core](https://opensource.janestreet.com/core/) standard library replacement, so there was plenty
+to learn.
+
+My experience with AoC this year led me to two blog post ideas. This post is the first: I'll discuss
+my impressions of OCaml and Core and give my honest thoughts on their benefits and drawbacks. Then,
+in the next few weeks, I'll write another post on my use of Z3 to solve some of the AoC problems.
+But for now, what did I think of OCaml and Core?
+
+My high level take is this: OCaml is a powerful language, and, combined with Core as a standard
+library, it gives you the tools to solve problems with the elegance of the best functional
+languages, without sacrificing practicality. I'll talk about my positive experience using OCaml's
+imperative features and the module system, as well as my praise of Jane Street's tools like the Core
+library, `ppx_jane`, and expect tests.
 
 But, in my opinion, OCaml's flexibility is also a problem for usability. The fluid movement between
 imperative and functional code means it is hard for library authors to signal when their APIs are
@@ -22,7 +37,55 @@ Overall, I was really happy I chose OCaml to do Advent of Code, and I plan to ke
 the future. The limitations I discuss are largely fixable by better documentation and examples, but
 they also point to larger language-design questions that go far beyond OCaml and its ecosystem.
 
-# What I liked!
+## What I liked!
+
+### Imperative Features
+```ocaml
+let floyd_warshall edges nodes =
+  let dist : int Hashtbl.M(StringPair).t = Hashtbl.create (module KeyPair) in
+
+  List.iter edges ~f:(fun (node, successors) ->
+      List.iter successors ~f:(fun successor ->
+          Hashtbl.set dist ~key:(node, successor) ~data:1));
+
+  List.iter nodes ~f:(fun node ->
+      Hashtbl.set dist ~key:(node, node) ~data:0);
+
+  List.iter nodes ~f:(fun k ->
+      List.iter nodes ~f:(fun i ->
+          List.iter nodes ~f:(fun j ->
+              let dist_ik = Hashtbl.find dist (i, k) in
+              let dist_kj = Hashtbl.find dist (k, j) in
+              let dist_ij = Hashtbl.find dist (i, j) in
+              match (dist_ik, dist_kj, dist_ij) with
+              | Some dist_ik, Some dist_kj, Some dist_ij
+                when dist_ik + dist_kj < dist_ij ->
+                  Hashtbl.set dist ~key:(i, j)
+                    ~data:(dist_ik + dist_kj)
+              | Some dist_ik, Some dist_kj, None ->
+                  (* dist_ij = ∞ *)
+                  Hashtbl.set dist ~key:(i, j)
+                    ~data:(dist_ik + dist_kj)
+              | _ -> ())));
+  dist
+```
+
+```
+let dist be a |V| × |V| array of minimum distances initialized to ∞ (infinity)
+for each edge (u, v) do
+    dist[u][v] ← w(u, v)  // The weight of the edge (u, v)
+for each vertex v do
+    dist[v][v] ← 0
+for k from 1 to |V|
+    for i from 1 to |V|
+        for j from 1 to |V|
+            if dist[i][j] > dist[i][k] + dist[k][j]
+                dist[i][j] ← dist[i][k] + dist[k][j]
+            end if
+```
+[Wikipedia](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm)
+
+### Module System
 **TODO**
 - Pros
   - Usefulness of imperative features (especially state)
@@ -31,7 +94,7 @@ they also point to larger language-design questions that go far beyond OCaml and
   - I was surprised by how well the `ppx_jane` pre-processors replaced type classes
   - `expect_test`
 
-# What I didn't like as much.
+## What I didn't like as much.
 **TODO**
 - Cons
   - I still really wanted some way to explicitly mark that a function mutated its input
