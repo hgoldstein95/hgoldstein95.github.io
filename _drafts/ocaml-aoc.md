@@ -112,20 +112,19 @@ out how to fit the stateful code into a pure program. I found this to be a refre
 OCaml, given that I usually do my work in Haskell.
 
 ### Module System
-**TODO**
-- Pros
-  - Usefulness of imperative features (especially state)
-  - Modules are a nice way of organizing code; I really like the `M.t` idiom now
-  - Base and Core are nicely designed and intuitive to use
-  - I was surprised by how well the `ppx_jane` pre-processors replaced type classes
-  - `expect_test`
+
+### Core
+
+#### General Organization
+
+#### `ppx_jane`
+
+#### Expect Tests
 
 ## What I didn't like as much.
-**TODO**
-- Cons
-  - I still really wanted some way to explicitly mark that a function mutated its input
-  - Documentation is embarrassingly lacking
-  - In general, I think OCaml relies entirely too much on conventions for usability---you can get
-    derailed really really quickly if someone decides to go a different way
-  - `dune` and `opam` are great if everything is set up just so; not as great if you want to do
-    something different
+
+### Imperative Issues
+
+### Module Complexity
+
+### Competing Conventions
