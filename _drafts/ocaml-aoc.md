@@ -9,7 +9,7 @@ programming language. Using a language for 25 days (even if it's just for toy pr
 elephants, and monkeys) is a shockingly good way to get comfortable with the language's idioms.
 
 This year I decided to work in OCaml. I've been spending a lot of time lately interviewing
-[Jane Street](https://www.janestreet.com/) developers for my research (check out my
+developers at [Jane Street](https://www.janestreet.com/) for my research (check out my
 [paper](papers/hatra22.pdf) from HATRA'22 if you want to know more), and I thought it would be good
 to refresh my memory of how it feels to write OCaml. Technically I did already know OCaml---I taught
 it to myself in college---but it's been over 5 years and I had never worked with Jane Street's
@@ -37,19 +37,19 @@ Overall, I was really happy I chose OCaml to do Advent of Code, and I plan to ke
 the future. The limitations I discuss are largely fixable by better documentation and examples, but
 they also point to larger language-design questions that go far beyond OCaml and its ecosystem.
 
-## What I liked!
-
-### Imperative Features
+## Imperative Features
 
 Functional programmers are sometimes dogmatic about functional code being "better" than imperative
 code, but dogma almost never the right way to make engineering decisions. I won't get into the
 benefits and drawbacks of functional vs. imperative programming in this post; instead, I'll just
-give an example of why, on occasion, I opted to use OCaml's imperative features to augment my
+give some examples of why, on occasion, I opted to use OCaml's imperative features to augment my
 primarily-functional programming style.
 
-The specific example I have in mind was day 16 of AoC, which required measuring the shortest paths
-between all nodes on a graph. I remembered that the Floyd-Warshall algorithm would compute the
-required distances, but I didn't quite remember how to implement it, so I turned to
+### Replicating Pseudo-code
+
+My first example is day 16 of AoC, which required measuring the shortest paths between all nodes on
+a graph. I remembered that the Floyd-Warshall algorithm would compute the required distances, but I
+didn't quite remember how to implement it, so I turned to
 [Wikipedia](https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm). The pseudo-code from
 that article looks like this:
 ```
@@ -75,7 +75,7 @@ bulletproof so I could focus on fixing bugs in the rest of the code. So I just r
 Wikipedia pseudo-code more or less line for line:
 ```ocaml
 let floyd_warshall edges nodes =
-  let dist : int Hashtbl.M(StringPair).t = Hashtbl.create (module KeyPair) in
+  let dist = Hashtbl.create (module Tuple.Hashable_t(String)(String)) in
 
   List.iter edges ~f:(fun (node, successors) ->
       List.iter successors ~f:(fun successor ->
@@ -105,26 +105,58 @@ let floyd_warshall edges nodes =
 It's a bit more verbose because I wanted things to be type-safe, but this is more or less exactly
 the same as above, and it worked like a charm.
 
-Of course, I'm not claiming that this would have been impossible in other functional languages, but
-it felt very natural in OCaml. It was really nice to be able to just sit down, copy the code from
+This would all have been possible in other functional languages, but maybe not easy. By contrast, it
+felt very natural in OCaml. It was really nice to be able to just sit down, copy the code from
 Wikipedia, and have it work without needing to think about the details of the algorithm or figure
-out how to fit the stateful code into a pure program. I found this to be a refreshing benefit of
-OCaml, given that I usually do my work in Haskell.
+out how to fit the stateful code into a pure program.
 
-### Module System
+### Saving Intermediate Results
 
-### Core
+### Keeping Track of Mutation
 
-#### General Organization
+While I found OCaml's imperative features quite useful, I kept coming back to one feature that I
+desperately wanted: mutability markers.
 
-#### `ppx_jane`
+As a refresher, here's how mutability works in OCaml. Most values are immutable by default; `int`s,
+`string`s, `float`s, `list`s, etc. are all immutable and cannot be reassigned. There are a just few
+examples of values are are mutable:
 
-#### Expect Tests
+- References. A value of type `'a ref` is a mutable reference holding a value of type `'a`. These
+  can be reassigned by anyone who has access to the reference.
+- Arrays. A value of type `'a array` is essentially a collection of references to `'a`s.
+- Mutable fields. A record of type `{ mutable foo : 'a }` has a field named `foo` that can be
+  reassigned.
 
-## What I didn't like as much.
+These types can be used to build bigger, more complex kinds of mutable data, like Core's
+`Hashtbl.t`.
 
-### Imperative Issues
+The problem with this setup is that mutable values can be mutated through immutable values. A record
+of type `{ foo : 'a ref }` can still be mutated, even though `foo` is not marked mutable, since
+`'a ref` is mutable. Worse, a record of type `{ foo : bar }` is also mutable if `bar` contains a
+mutable type anywhere inside of it. One could argue that this is why languages like Haskell
+quarantine mutation in a monad, but it seems like there must be a lighter-weight solution.
 
-### Module Complexity
+In particular, I'd love to know why OCaml doesn't have mutability annotations like those in Rust,
+Swift, and Ada. It would be so nice to be able to write a signature like:
+```ocaml
+val create : unit -> mut ('a Hash_set.t)
+val add : mut ('a Hash_set.t) -> 'a -> unit
+```
+The signature for `create` signals that the resulting value can, in fact, be mutated, and the
+signature for `add` requires that the provided hash set is marked mutable. Importantly, this API
+would allow someone to mark a particular hash set as *immutable*, something that is currently not
+possible. I would have liked something like this in the Floyd-Warshall algorithm above, which uses
+mutation to build a hash table, but then returns a hash table which should really be immutable.
 
-### Competing Conventions
+If anyone has pointers on information about (1) what is particularly hard about mutability
+annotations in ML, and/or (2) if anyone has thought about implementing them, I'd love to know about
+it.
+
+## Modules and Core
+
+### An Idiom for Every Problem
+
+### Intuitive Tooling
+
+- `ppx_jane`
+- Expect Tests
