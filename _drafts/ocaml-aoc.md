@@ -8,8 +8,9 @@ I always try to use [Advent of Code](https://adventofcode.com/) as an excuse to 
 programming language. Using a language for 25 days (even if it's just for toy problems about elves,
 elephants, and monkeys) is a shockingly good way to get comfortable with the language's idioms.
 
-This year I decided to work in OCaml. I've been spending a lot of time lately interviewing
-developers at [Jane Street](https://www.janestreet.com/) for my research (check out my
+This year I decided to work in OCaml (code on [GitHub](https://github.com/hgoldstein95/aoc2022)).
+I've been spending a lot of time lately interviewing developers at
+[Jane Street](https://www.janestreet.com/) for my research (check out my
 [paper](papers/hatra22.pdf) from HATRA'22 if you want to know more), and I thought it would be good
 to refresh my memory of how it feels to write OCaml. Technically I did already know OCaml---I taught
 it to myself in college---but it's been over 5 years and I had never worked with Jane Street's
@@ -112,6 +113,15 @@ out how to fit the stateful code into a pure program.
 
 ### Saving Intermediate Results
 
+Later on in the code for day 16, there is another great reason to have imperative features easily
+within reach. I had written an algorithm for part 1 that was not quite correct for part 2. I could
+have re-architected the code, but I realized that if I simply saved some intermediate state from the
+part 1 algorithm in a hash table, I could analyze those intermediate steps to get the part 2
+solution. You can take a look at
+[the code](https://github.com/hgoldstein95/aoc2022/blob/main/day16/Day16.ml#L136) to see the
+specifics. This, again, would have been possible to do functionally, but the imperative version fit
+better with my intuition about the code and got me to a part 2 solution much more quickly.
+
 ### Keeping Track of Mutation
 
 While I found OCaml's imperative features quite useful, I kept coming back to one feature that I
@@ -136,23 +146,65 @@ of type `{ foo : 'a ref }` can still be mutated, even though `foo` is not marked
 mutable type anywhere inside of it. One could argue that this is why languages like Haskell
 quarantine mutation in a monad, but it seems like there must be a lighter-weight solution.
 
-In particular, I'd love to know why OCaml doesn't have mutability annotations like those in Rust,
-Swift, and Ada. It would be so nice to be able to write a signature like:
+In particular, I'd love to know if mutability annotations like those in Rust, Swift, and Ada could
+be adapted to work in OCaml. It would be so nice to be able to write a signature like:
 ```ocaml
-val create : unit -> mut ('a Hash_set.t)
-val add : mut ('a Hash_set.t) -> 'a -> unit
+val create : unit -> 'a Hash_set.t mut
+val add : 'a Hash_set.t mut -> 'a -> unit
 ```
-The signature for `create` signals that the resulting value can, in fact, be mutated, and the
-signature for `add` requires that the provided hash set is marked mutable. Importantly, this API
-would allow someone to mark a particular hash set as *immutable*, something that is currently not
-possible. I would have liked something like this in the Floyd-Warshall algorithm above, which uses
-mutation to build a hash table, but then returns a hash table which should really be immutable.
+The signature for `create` signals that the resulting value can be mutated, and the signature for
+`add` requires that the provided hash set is marked mutable. Importantly, this API would allow
+someone to mark a particular hash set as *immutable*, something that is currently not possible. I
+would have liked something like this in the Floyd-Warshall algorithm above, which uses mutation to
+build a hash table, but then returns a hash table which should really be immutable.
 
 If anyone has pointers on information about (1) what is particularly hard about mutability
 annotations in ML, and/or (2) if anyone has thought about implementing them, I'd love to know about
 it.
 
 ## Modules and Core
+
+Throughout my work on AoC, I made heavy use of Jane Street's
+[Core](https://opensource.janestreet.com/core/) library. The library aims to replace OCaml's
+standard library with a larger variety of built-in functionality and more consistent APIs.
+
+I tried to use Core in the most idiomatic way I could---any time it felt like the library was
+pushing me towards a certain style of programming I followed it. This was made more difficult by a
+general lack of documentation; the library documentation is scarce at best, rarely giving context
+for why things are the way they are, and almost never providing usage examples. I would love to see
+that improve, but luckily, the [Real World OCaml](https://dev.realworldocaml.org/) book uses Core
+(and its younger sibling Base) extensively, and it is *fantastic*. In fact, it seems like Real World
+OCaml is as or more useful than Google for most OCaml questions.
+
+When I managed to get my bearings with the structure and idioms of Core, I was quite pleasantly
+surprised. I found that most design decisions either made sense to me immediately, or seemed strange
+until I worked with them for a while and realized that they solved some nasty problem I hadn't
+anticipated. For example, the way to declare a hash table with string keys and integer values is:
+```ocaml
+int Hashtbl.M(String).t
+```
+This looks fairly ridiculous, especially if your knowledge of functors is rusty; I think most people
+would expect:
+```ocaml
+(int, string) Hashtbl.t
+```
+But as I got comfortable with `deriving` attributes it became clear that the former approach is a
+nice solution to a quirk of the module system. Writing
+```ocaml
+type t = int Hashtbl.M(String).t [@@deriving compare, equal]
+```
+works just fine, whereas the other version of the type breaks the preprocessor.
+
+And breaking the preprocessor is a huge issue; Core relies heavily the preprocessor to improve the
+ergonomics of things like equality, comparisons, hashing, random generation, and pretty-printing.
+Languages like Haskell and Rust use type-classes and traits for these kinds of universal behaviors,
+but the preprocessor provides an almost-acceptable alternative. To compare two `t`s, as defined
+above, you can write:
+```ocaml
+[%compare: t] x y
+```
+It's not quite as nice as Haskell's `Ord` type class, and it's awkward to need macros to get
+something approaching ad-hoc polymorphism, but it works in a pinch.
 
 ### An Idiom for Every Problem
 
