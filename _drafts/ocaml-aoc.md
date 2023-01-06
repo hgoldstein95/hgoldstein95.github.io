@@ -252,11 +252,6 @@ class and do-notation built into the language, so no one has to wonder if a part
 same interface as the others.
 
 I think the big difference is that OCaml seems to not standard library design seriously enough as an
-aspect of language design. Core picks up the slack, but ultimately Core feels like a dialect of
-OCaml---mutually intelligible, but you'd be hard-pressed to "speak" one if you only spent time with
-the other.
-
-### Intuitive Tooling
-
-- `ppx_jane`
-- Expect Tests
+aspect of language design. Core picks up some of the slack, but ultimately Core feels like a dialect
+of OCaml---mutually intelligible, but you'd be hard-pressed to "speak" one if you only spent time
+with the other.
