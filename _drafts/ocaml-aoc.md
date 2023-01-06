@@ -206,52 +206,33 @@ above, you can write:
 It's not quite as nice as Haskell's `Ord` type class, and it's awkward to need macros to get
 something approaching ad-hoc polymorphism, but it works in a pinch.
 
-### An Idiom for Every Problem
+### Standard Library Design is Language Design
 
-The problem is that none of the meticulous consistency of Core is *enforced*. I expect that changes
-to Core itself probably go through careful code review to make sure that everything lines up, but
-other libraries hoping to inter-operate with Core's idioms may not be as careful. Consider many of
-my favorite small features of Core:
+Standard library design is often overlooked as an aspect of language design, but it is incredibly
+important. The structures and idioms that the standard library uses become the structures an idioms
+that libraries use, which then become muscle-memory for the language's users. Unfortunately, OCaml's
+standard library impoverished enough that others felt the need to step in and make some of their own
+design decisions. The end result is that OCaml+Core feels like a dialect of OCaml---they're mutually
+intelligible, but you'd be hard-pressed to "speak" one if you only spent time with the other.
 
-- A module `M` always has a type `t` so `M.t` is always conceptually "an `M`". (e.g. `'a List.t`,
-  `'a Set.t`).
-- Monads have a `Let_syntax` sub-module so you can always confidently write:
-  ```ocaml
-  let open M.Let_syntax in
-  let%bind x = m1
-  let%bind y = m1
-  return (x, y)
-  ```
-- Operations on a data structure take the structure as the first argument, and all other parameters
-  are named (e.g., `List.map : 'a List.t -> ~f:('a -> 'b) -> 'b List.t`).
+This becomes problematic when working with external libraries, or any code that does not very
+carefully follow Core's idioms. For example, working with the `z3` library caused friction because,
+I expected there to be a `Z3.Expr.t` (since, in Core, a module `M` always has a type `t` so `M.t` is
+always conceptually "an `M`") when instead the type was called `Z3.Expr.expr`.  This is minor, sure,
+but it was quite annoying to need to look up documentation for something that could have been
+automatic. There are internal inconsistencies too: data structure operations in Core take the
+structure as the first argument, and all other parameters are named (e.g.,
+`List.map : 'a List.t -> ~f:('a -> 'b) -> 'b List.t`), but for some reason `List.take` breaks that
+rule.
 
-These may seem like small things, but they have a huge impact on the amount of friction one feels
-when working in the language. Working with the `Z3` library was terribly painful when I couldn't
-find the `Z3.t` I was looking for, whereas I was incredibly pleased to find that
+In contrast, when a library does follow Core's idioms, life is great. On a whim, while working with
+the `angstrom` parser combinator library, I thought I'd see if they used Core's syntax for monads.
+To my delight, typing
 ```ocaml
 let open Angstrom.Let_syntax in
-...
+let%bind x = m1
+let%bind y = m1
+return (x, y)
 ```
-worked out of the box as expected.  The importance of consistent function signatures is actually
-clear without leaving Core: `List.take` breaks the named parameter rule, so it's a pain to work with
-as part of a long chain of functions.
-
-The real bummer is that there is no way to be sure that your library conforms to a set of standards
-like the ones above. And, there are other sets of standards! If you happen to pull down a library
-by someone who prefers a different standard library replacement, you're forced to work within those
-standards instead. OCaml's tools for code reuse and organization are so flexible that working in an
-unfamiliar module structure becomes like working in an entirely different language.
-
-Now, is any of this specific to OCaml? In a way, no. Other functional languages have similar
-flexibility around function argument order that causes confusion, and object oriented languages
-generally don't have consistent tools like a standard monad interface for building embedded DSLs.
-But object oriented languages like Java enforce the idea that a compilation unit has a type
-alongside it and the convention that functions operating on that type should differentiate between
-the primary argument (passed as `this` or `self`) and auxiliary arguments. Haskell has a monad type
-class and do-notation built into the language, so no one has to wonder if a particular monad has the
-same interface as the others.
-
-I think the big difference is that OCaml seems to not standard library design seriously enough as an
-aspect of language design. Core picks up some of the slack, but ultimately Core feels like a dialect
-of OCaml---mutually intelligible, but you'd be hard-pressed to "speak" one if you only spent time
-with the other.
+worked on the first try! The `crowbar` library also has a monad, but it doesn't use the same module
+structure or function names, so I had to take a few minutes to write a `Let_syntax` wrapper myself.
