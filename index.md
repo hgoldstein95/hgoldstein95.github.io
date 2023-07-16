@@ -26,6 +26,14 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Publications
 
+- <i>Reflecting on Random Generation</i><br/>
+Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce<br>
+ICFP 2023 [PDF](papers/icfp23-reflective.pdf)
+
+- <i>Etna: An Evaluation Platform for Property-Based Testing (Experience Report)</i><br/>
+Jessica Shi, Alperen Keles, Harrison Goldstein, Benjamin C. Pierce, Leonidas Lampropoulos<br>
+ICFP 2023 (Camera Ready Coming Soon)
+
 - <i>Parsing Randomness</i><br/>
 Harrison Goldstein, Benjamin C. Pierce<br>
 OOPSLA 2022 [PDF](papers/oopsla22.pdf)
