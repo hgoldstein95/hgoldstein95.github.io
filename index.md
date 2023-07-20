@@ -32,7 +32,7 @@ ICFP 2023 [PDF](papers/icfp23-reflective.pdf)
 
 - <i>Etna: An Evaluation Platform for Property-Based Testing (Experience Report)</i><br/>
 Jessica Shi, Alperen Keles, Harrison Goldstein, Benjamin C. Pierce, Leonidas Lampropoulos<br>
-ICFP 2023 (Camera Ready Coming Soon)
+ICFP 2023 [PDF](papers/icfp23-etna.pdf)
 
 - <i>Parsing Randomness</i><br/>
 Harrison Goldstein, Benjamin C. Pierce<br>
