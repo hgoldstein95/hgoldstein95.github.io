@@ -12,15 +12,28 @@ to grow.
 </p>
 
 <p>
-I am currently a PhD student at the University of Pennsylvania, studying programming languages under
-Professor Benjamin Pierce. My research is focused on property-based testing and random test-case
-generation. I hope to broaden the reach of principled randomized testing by tackling important
-theoretical and practical barriers to entry.
+I am currently a PhD student at the University of Pennsylvania, studying under Professor Benjamin
+Pierce. I combine tools from both programming languages and human-computer interaction to improve
+the usability and effectiveness of property-based testing.
 </p>
 
 <p>
 I love to collaborate, so feel free to reach out if you have anything you'd like to discuss.
 </p>
+
+<h3>News</h3>
+<p>
+<span class="highlight">Jul 29, 2023</span> Blog Post: <a class="post-link" href="{% post_url 2023-07-29-theforkjoin %}">I was on TheForkJoin!</a>
+</p>
+
+<p>
+<span class="highlight">Jul 18, 2023</span> Paper: <a class="post-link" href="papers/icfp23-reflective.pdf">Reflecting on Random Generation</a>
+</p>
+
+<p>
+<span class="highlight">Jul 18, 2023</span> Experience Report: <a class="post-link" href="papers/icfp23-etna.pdf">Etna</a>
+</p>
+
 <div style="clear: right;"></div>
 </div>
 
@@ -71,6 +84,14 @@ Not Yet Published [Draft](papers/drafts/wpe-ii.pdf)
 <br>
 ## Featured Blog Posts
 <ul>
+    <li>
+    <h3 style="display: inline-block;">
+        <a class="post-link" href="{% post_url 2023-07-29-theforkjoin %}">
+            I was on TheForkJoin!
+        </a>
+    </h3>
+    <span class="post-meta">Jul 29, 2023</span>
+    </li>
     <li>
     <h3 style="display: inline-block;">
         <a class="post-link" href="{% post_url 2018-04-02-language-of-dance %}">
