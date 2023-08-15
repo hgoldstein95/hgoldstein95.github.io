@@ -23,6 +23,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">Aug 15, 2023</span> UIST Demo: <a class="post-link" href="papers/uist23.pdf">Tyche</a>
+</p>
+
+<p>
 <span class="highlight">Jul 29, 2023</span> Blog Post: <a class="post-link" href="{% post_url 2023-07-29-theforkjoin %}">I was on TheForkJoin!</a>
 </p>
 
@@ -38,6 +42,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 </div>
 
 ## Publications
+
+- <i>Tyche: In Situ Analysis of Random Testing Effectiveness (Demo)</i><br/>
+Harrison Goldstein, Benjamin C. Pierce, Andrew Head<br>
+UIST 2023 [Abstract](papers/uist23.pdf)
 
 - <i>Reflecting on Random Generation</i><br/>
 Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce<br>
