@@ -23,6 +23,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">Sep 10, 2023</span> Talk from ICFP: <a class="post-link" href="https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316">Reflecting on Random Generation</a>
+</p>
+
+<p>
 <span class="highlight">Aug 15, 2023</span> UIST Demo: <a class="post-link" href="papers/uist23.pdf">Tyche</a>
 </p>
 
@@ -30,30 +34,22 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 <span class="highlight">Jul 29, 2023</span> Blog Post: <a class="post-link" href="{% post_url 2023-07-29-theforkjoin %}">I was on TheForkJoin!</a>
 </p>
 
-<p>
-<span class="highlight">Jul 18, 2023</span> Paper: <a class="post-link" href="papers/icfp23-reflective.pdf">Reflecting on Random Generation</a>
-</p>
-
-<p>
-<span class="highlight">Jul 18, 2023</span> Experience Report: <a class="post-link" href="papers/icfp23-etna.pdf">Etna</a>
-</p>
-
 <div style="clear: right;"></div>
 </div>
 
 ## Publications
 
-- <i>Tyche: In Situ Analysis of Random Testing Effectiveness (Demo)</i><br/>
+- <i>Tyche: In Situ Analysis of Random Testing Effectiveness</i><br/>
 Harrison Goldstein, Benjamin C. Pierce, Andrew Head<br>
-UIST 2023 [Abstract](papers/uist23.pdf)
+UIST 2023 Demo [Abstract](papers/uist23.pdf)
 
-- <i>Reflecting on Random Generation</i><br/>
+- <i>Reflecting on Random Generation</i> (<strong>Distinguished Paper</strong>)<br/>
 Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce<br>
-ICFP 2023 [PDF](papers/icfp23-reflective.pdf)
+ICFP 2023 [PDF](papers/icfp23-reflective.pdf) [Talk](https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316)
 
-- <i>Etna: An Evaluation Platform for Property-Based Testing (Experience Report)</i><br/>
+- <i>Etna: An Evaluation Platform for Property-Based Testing</i><br/>
 Jessica Shi, Alperen Keles, Harrison Goldstein, Benjamin C. Pierce, Leonidas Lampropoulos<br>
-ICFP 2023 [PDF](papers/icfp23-etna.pdf)
+ICFP 2023 Experience Report [PDF](papers/icfp23-etna.pdf)
 
 - <i>Parsing Randomness</i><br/>
 Harrison Goldstein, Benjamin C. Pierce<br>
@@ -63,21 +59,24 @@ OOPSLA 2022 [PDF](papers/oopsla22.pdf)
 Harrison Goldstein, Joseph W. Cutler, Adam Stein, Andrew Head, Benjamin C. Pierce<br>
 HATRA 2022 [PDF](papers/hatra2022.pdf) [Slides](slides/hatra2022.pptx)
 
-- <i>Ungenerators</i> (2<sup>nd</sup> Place Graduate, Student Research Competition)<br>
-Harrison Goldstein<br>
-ICFP 2021 [Poster](papers/icfpsrc21.pdf)
-
 - <i>Do Judge a Test by its Cover: Combining Combinatorial and Property-Based Testing</i><br>
 Harrison Goldstein, John Hughes, Leonidas Lampropoulos, Benjamin C. Pierce<br>
 ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 
-- <i>Combinatorial Testing for Algebraic Data Types</i><br>
-Harrison Goldstein<br>
-POPL 2020 [Poster](papers/poplsrc20.pdf)
-
 - <i>Programming Language Support for Natural Language Interaction</i><br>
 Alex Renda, Harrison Goldstein, Sarah Bird, Chris Quirk, Adrian Sampson<br>
 SysML 2018 [PDF](papers/sysml18.pdf)
+
+## Talks & Speaking
+
+- <i>TheForkJoin Episode 2</i><br>
+TheForkJoin Podcast [VOD](https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n)
+
+- <i>Some Problems with Properties</i><br>
+NJPLS October 2022 [Abstract](http://njpls.org/oct22.html#goldstein)
+
+- <i>Reflecting on Random Generation</i><br>
+NJPLS May 2022 [Abstract](http://njpls.org/may22.html#goldstein)
 
 ## Other Content
 
@@ -87,7 +86,7 @@ SIGPLAN PL Perspectives - March 25, 2021 [Post](https://blog.sigplan.org/2021/03
 
 - <i>Delimited Continuations and Monads</i><br>
 Harrison Goldstein<br>
-Not Yet Published [Draft](papers/drafts/wpe-ii.pdf)
+Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
 
 <br>
 ## Featured Blog Posts
