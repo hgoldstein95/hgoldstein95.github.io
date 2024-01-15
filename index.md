@@ -23,6 +23,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">Jan 15, 2024</span> Upcoming ICSE Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
+</p>
+
+<p>
 <span class="highlight">Sep 10, 2023</span> Talk from ICFP: <a class="post-link" href="https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316">Reflecting on Random Generation</a>
 </p>
 
@@ -30,14 +34,14 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 <span class="highlight">Aug 15, 2023</span> UIST Demo: <a class="post-link" href="papers/uist23.pdf">Tyche</a>
 </p>
 
-<p>
-<span class="highlight">Jul 29, 2023</span> Blog Post: <a class="post-link" href="{% post_url 2023-07-29-theforkjoin %}">I was on TheForkJoin!</a>
-</p>
-
 <div style="clear: right;"></div>
 </div>
 
 ## Publications
+
+- <i>Property-Based Testing in Practice</i><br/>
+Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head<br>
+ICSE 2024 [Preprint](papers/icse24-pbt-in-practice.pdf)
 
 - <i>Tyche: In Situ Analysis of Random Testing Effectiveness</i><br/>
 Harrison Goldstein, Benjamin C. Pierce, Andrew Head<br>
