@@ -6,15 +6,15 @@ layout: default
 
 <div class="about-me">
 <img class="profile-picture" src="img/park-bench.jpeg">
-<p>
+<!-- <p>
 My love for learning underpins almost everything that I do; I take every chance I get to learn and
 to grow.
-</p>
+</p> -->
 
 <p>
 I am currently a PhD student at the University of Pennsylvania, studying under Professor Benjamin
-Pierce. I combine tools from both programming languages and human-computer interaction to improve
-the usability and effectiveness of property-based testing.
+Pierce. I combine tools from both programming languages and human-computer interaction address
+problems in software engineering.  My current focus is on property-based testing.
 </p>
 
 <p>
@@ -37,7 +37,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 <div style="clear: right;"></div>
 </div>
 
-## Publications
+## Selected Publications
 
 - <i>Property-Based Testing in Practice</i><br/>
 Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head<br>
@@ -67,11 +67,10 @@ HATRA 2022 [PDF](papers/hatra2022.pdf) [Slides](slides/hatra2022.pptx)
 Harrison Goldstein, John Hughes, Leonidas Lampropoulos, Benjamin C. Pierce<br>
 ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 
-- <i>Programming Language Support for Natural Language Interaction</i><br>
-Alex Renda, Harrison Goldstein, Sarah Bird, Chris Quirk, Adrian Sampson<br>
-SysML 2018 [PDF](papers/sysml18.pdf)
-
 ## Talks & Speaking
+
+- <i>Consider Collaboration</i> with Samantha Frohlich<br>
+PLMW @ POPL 2024 [VOD](https://www.youtube.com/live/Yqvub1h-gZs?si=ZB08itCPJ-i9Fysx&t=23892)
 
 - <i>TheForkJoin Episode 2</i><br>
 TheForkJoin Podcast [VOD](https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n)
