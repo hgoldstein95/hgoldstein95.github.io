@@ -18,20 +18,25 @@ problems in software engineering.  My current focus is on property-based testing
 </p>
 
 <p>
+Starting in Fall 2024 I will be a postdoc at the University of Maryland with Leo Lampropoulos as a
+Victor Basili Postdoctoral Fellow.
+</p>
+
+<p>
 I love to collaborate, so feel free to reach out if you have anything you'd like to discuss.
 </p>
 
 <h3>News</h3>
+<p>
+<span class="highlight">Feb 16, 2024</span> Victor Basili Fellowship <a href="{% post_url 2024-02-18-victor-basili %}">Announcement</a>
+</p>
+
 <p>
 <span class="highlight">Jan 15, 2024</span> Upcoming ICSE Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
 </p>
 
 <p>
 <span class="highlight">Sep 10, 2023</span> Talk from ICFP: <a class="post-link" href="https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316">Reflecting on Random Generation</a>
-</p>
-
-<p>
-<span class="highlight">Aug 15, 2023</span> UIST Demo: <a class="post-link" href="papers/uist23.pdf">Tyche</a>
 </p>
 
 <div style="clear: right;"></div>
