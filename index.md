@@ -32,7 +32,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 </p>
 
 <p>
-<span class="highlight">Jan 15, 2024</span> Upcoming ICSE Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
+<span class="highlight">Jan 15, 2024</span> Upcoming ICSE Distinguished Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
 </p>
 
 <p>
@@ -44,7 +44,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Selected Publications
 
-- <i>Property-Based Testing in Practice</i><br/>
+- <i>Property-Based Testing in Practice</i> (<strong>Distinguished Paper</strong>)<br/>
 Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head<br>
 ICSE 2024 [Preprint](papers/icse24-pbt-in-practice.pdf)
 
