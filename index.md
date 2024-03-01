@@ -13,7 +13,7 @@ to grow.
 
 <p>
 I am currently a PhD student at the University of Pennsylvania, studying under Professor Benjamin
-Pierce. I combine tools from both programming languages and human-computer interaction address
+Pierce. I combine tools from both programming languages and human-computer interaction to address
 problems in software engineering.  My current focus is on property-based testing.
 </p>
 
