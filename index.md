@@ -44,6 +44,14 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Selected Publications
 
+- <i>Stream Types</i><br/>
+Joseph W Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb Stanford, Benjamin Pierce<br/>
+PLDI 2024
+
+- <i>Dolon: Safer Document Parsing</i><br/>
+Iavor Diatchki, Mike Dodds, Harrison Goldstein, Bill Harris, David Holland, Benoit Razet, Cole Schlesinger, Simon Winwood<br/>
+PLDI 2024
+
 - <i>Property-Based Testing in Practice</i> (<strong>Distinguished Paper</strong>)<br/>
 Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head<br>
 ICSE 2024 [Preprint](papers/icse24-pbt-in-practice.pdf)
