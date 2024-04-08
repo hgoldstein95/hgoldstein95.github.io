@@ -32,7 +32,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 </p>
 
 <p>
-<span class="highlight">Jan 15, 2024</span> Upcoming ICSE Distinguished Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
+<span class="highlight">Jan 15, 2024</span> ICSE Distinguished Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
 </p>
 
 <p>
@@ -48,7 +48,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 Joseph W Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb Stanford, Benjamin Pierce<br/>
 PLDI 2024
 
-- <i>Dolon: Safer Document Parsing</i><br/>
+- <i>Daedalus: Safer Document Parsing</i><br/>
 Iavor Diatchki, Mike Dodds, Harrison Goldstein, Bill Harris, David Holland, Benoit Razet, Cole Schlesinger, Simon Winwood<br/>
 PLDI 2024
 
