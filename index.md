@@ -11,15 +11,17 @@ My love for learning underpins almost everything that I do; I take every chance 
 to grow.
 </p> -->
 
-<p>
-I am currently a PhD student at the University of Pennsylvania, studying under Professor Benjamin
-Pierce. I combine tools from both programming languages and human-computer interaction to address
-problems in software engineering.  My current focus is on property-based testing.
-</p>
+<blockquote>
+<strong>In Fall 2024 I will be on the academic job market!</strong> I am interested in tenure-track
+faculty positions in groups with strengths in programming languages, human-computer interaction,
+and/or software engineering. Please get in touch if you think I may be a good fit in your group.
+</blockquote>
 
 <p>
-Starting in Fall 2024 I will be a postdoc at the University of Maryland with Leo Lampropoulos as a
-Victor Basili Postdoctoral Fellow.
+I am currently finishing up my PhD at the University of Pennsylvania, studying under Professor
+Benjamin Pierce.
+In the Fall, I will start as a postdoc at the University of Maryland, working with Leo Lampropoulos
+as a Victor Basili Postdoctoral Fellow. My current research focus is on property-based testing.
 </p>
 
 <p>
