@@ -14,7 +14,7 @@ to grow.
 <blockquote>
 <strong>In Fall 2024 I will be on the academic job market!</strong> I am interested in tenure-track
 faculty positions in groups with strengths in programming languages, human-computer interaction,
-and/or software engineering. Please get in touch if you think I may be a good fit in your group.
+and/or software engineering. Please get in touch if you think I may be a good fit in your group!
 </blockquote>
 
 <p>
@@ -109,6 +109,14 @@ Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
 <br>
 ## Featured Blog Posts
 <ul>
+    <li>
+    <h3 style="display: inline-block;">
+        <a class="post-link" href="{% post_url 2024-04-22-dont-give-a-no-op-talk %}">
+            Don't Give a No-Op Talk
+        </a>
+    </h3>
+    <span class="post-meta">Apr 22, 2024</span>
+    </li>
     <li>
     <h3 style="display: inline-block;">
         <a class="post-link" href="{% post_url 2023-07-29-theforkjoin %}">

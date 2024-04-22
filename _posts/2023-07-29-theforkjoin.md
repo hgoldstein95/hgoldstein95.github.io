@@ -1,7 +1,7 @@
 ---
 layout: post
 title: I was on TheForkJoin!
-categories: media
+categories: announcement
 ---
 
 Last week I had the pleasure of being a guest on [TheForkJoin](https://twitch.tv/theforkjoin). I
