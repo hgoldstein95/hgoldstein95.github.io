@@ -48,7 +48,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 - <i>Stream Types</i><br/>
 Joseph W Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb Stanford, Benjamin Pierce<br/>
-PLDI 2024
+PLDI 2024 [Preprint](https://www.cis.upenn.edu/~jwc/assets/stream-types.pdf)
 
 - <i>Daedalus: Safer Document Parsing</i><br/>
 Iavor Diatchki, Mike Dodds, Harrison Goldstein, Bill Harris, David Holland, Benoit Razet, Cole Schlesinger, Simon Winwood<br/>
