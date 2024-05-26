@@ -78,6 +78,10 @@ OOPSLA 2022 [PDF](papers/oopsla22.pdf)
 Harrison Goldstein, Joseph W. Cutler, Adam Stein, Andrew Head, Benjamin C. Pierce<br>
 HATRA 2022 [PDF](papers/hatra2022.pdf) [Slides](slides/hatra2022.pptx)
 
+- <i>Everybody Clap Your Hands: The Cha-Cha Slide is Turing Complete</i><br>
+Harrison Goldstein<br>
+SIGBOVIK 2022 [PDF](papers/cha-cha-slide.pdf)
+
 - <i>Do Judge a Test by its Cover: Combining Combinatorial and Property-Based Testing</i><br>
 Harrison Goldstein, John Hughes, Leonidas Lampropoulos, Benjamin C. Pierce<br>
 ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
