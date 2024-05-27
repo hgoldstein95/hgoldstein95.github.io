@@ -12,16 +12,18 @@ to grow.
 </p> -->
 
 <blockquote>
-<strong>In Fall 2024 I will be on the academic job market!</strong> I am interested in tenure-track
-faculty positions in groups with strengths in programming languages, human-computer interaction,
-and/or software engineering. Please get in touch if you think I may be a good fit in your group!
+<strong>In Fall 2024 I will be on the academic job market!</strong> I am looking for tenure-track
+positions in groups that are hiring faculty with strengths in programming languages, human-computer
+interaction, and/or software engineering. Please get in touch if you think I may be a good fit for
+your group!
 </blockquote>
 
 <p>
-I am currently finishing up my PhD at the University of Pennsylvania, studying under Professor
-Benjamin Pierce.
-In the Fall, I will start as a postdoc at the University of Maryland, working with Leo Lampropoulos
-as a Victor Basili Postdoctoral Fellow. My current research focus is on property-based testing.
+I recently finished my PhD at the University of Pennsylvania, studying under Professor Benjamin
+Pierce. In the Fall, I will start as a postdoc at the University of Maryland, working with Leo
+Lampropoulos as a Victor Basili Postdoctoral Fellow; I will also retain a part-time position at the
+University of Pennsylvania. My current research focus is on theoretical and human aspects of
+property-based testing.
 </p>
 
 <p>
@@ -29,6 +31,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 </p>
 
 <h3>News</h3>
+<p>
+<span class="highlight">May 24, 2024</span> I defended my PhD!
+</p>
+
 <p>
 <span class="highlight">Feb 16, 2024</span> Victor Basili Fellowship <a href="{% post_url 2024-02-18-victor-basili %}">Announcement</a>
 </p>
