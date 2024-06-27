@@ -52,6 +52,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Selected Publications
 
+- <i>Demonstrating FEDT: Supporting Characterization Experiments in Fabrication Research</i><br/>
+Valkyrie Savage, Nóra Püsök, Harrison Goldstein, Chandrakana Nandi, Jia Yi Ren and Lora Oehlberg<br/>
+SCF 2024 Demo
+
 - <i>Stream Types</i><br/>
 Joseph W Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb Stanford, Benjamin Pierce<br/>
 PLDI 2024 [Preprint](https://www.cis.upenn.edu/~jwc/assets/stream-types.pdf)
