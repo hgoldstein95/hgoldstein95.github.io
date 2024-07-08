@@ -32,6 +32,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">May 24, 2024</span> Appeared on the <a href="{% post_url 2024-07-08-disseminate %}">Disseminate</a> podcast.
+</p>
+
+<p>
 <span class="highlight">May 24, 2024</span> I defended my PhD!
 </p>
 
@@ -43,14 +47,14 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 <span class="highlight">Jan 15, 2024</span> ICSE Distinguished Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
 </p>
 
-<p>
-<span class="highlight">Sep 10, 2023</span> Talk from ICFP: <a class="post-link" href="https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316">Reflecting on Random Generation</a>
-</p>
-
 <div style="clear: right;"></div>
 </div>
 
 ## Selected Publications
+
+- <i>Mica: Automated Differential Testing for OCaml Modules</i><br/>
+Ernest Ng, Harrison Goldstein, Benjamin C. Pierce<br/>
+OCaml Workshop 2024
 
 - <i>Demonstrating FEDT: Supporting Characterization Experiments in Fabrication Research</i><br/>
 Valkyrie Savage, Nóra Püsök, Harrison Goldstein, Chandrakana Nandi, Jia Yi Ren and Lora Oehlberg<br/>
@@ -58,11 +62,11 @@ SCF 2024 Demo
 
 - <i>Stream Types</i><br/>
 Joseph W Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb Stanford, Benjamin Pierce<br/>
-PLDI 2024 [Preprint](https://www.cis.upenn.edu/~jwc/assets/stream-types.pdf)
+PLDI 2024 [PDF](https://www.cis.upenn.edu/~jwc/assets/stream-types.pdf)
 
 - <i>Daedalus: Safer Document Parsing</i><br/>
 Iavor Diatchki, Mike Dodds, Harrison Goldstein, Bill Harris, David Holland, Benoit Razet, Cole Schlesinger, Simon Winwood<br/>
-PLDI 2024
+PLDI 2024 [DOI](https://dl.acm.org/doi/10.1145/3656410)
 
 - <i>Property-Based Testing in Practice</i> (<strong>Distinguished Paper</strong>)<br/>
 Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head<br>
@@ -123,6 +127,14 @@ Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
 <br>
 ## Featured Blog Posts
 <ul>
+    <li>
+    <h3 style="display: inline-block;">
+        <a class="post-link" href="{% post_url 2024-07-08-disseminate %}">
+            Appearance on Disseminate
+        </a>
+    </h3>
+    <span class="post-meta">Jul 8, 2024</span>
+    </li>
     <li>
     <h3 style="display: inline-block;">
         <a class="post-link" href="{% post_url 2024-04-22-dont-give-a-no-op-talk %}">
