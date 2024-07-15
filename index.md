@@ -102,11 +102,14 @@ ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 
 ## Talks & Speaking
 
+- <i>Property-Based Testing in Practice</i><br>
+Disseminate Podcast [Podcast](https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-property-based-testing-55)
+
 - <i>Consider Collaboration</i> with Samantha Frohlich<br>
 PLMW @ POPL 2024 [VOD](https://www.youtube.com/live/Yqvub1h-gZs?si=ZB08itCPJ-i9Fysx&t=23892)
 
 - <i>TheForkJoin Episode 2</i><br>
-TheForkJoin Podcast [VOD](https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n)
+TheForkJoin Podcast [Podcast](https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n)
 
 - <i>Some Problems with Properties</i><br>
 NJPLS October 2022 [Abstract](http://njpls.org/oct22.html#goldstein)
