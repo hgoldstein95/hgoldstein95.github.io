@@ -32,7 +32,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
-<span class="highlight">May 24, 2024</span> Appeared on the <a href="{% post_url 2024-07-08-disseminate %}">Disseminate</a> Podcast
+<span class="highlight">Jul 8, 2024</span> Appeared on the <a href="{% post_url 2024-07-08-disseminate %}">Disseminate</a> Podcast
 </p>
 
 <p>
