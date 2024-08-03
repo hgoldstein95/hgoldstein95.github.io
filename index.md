@@ -32,6 +32,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">Aug 2, 2024</span> UIST Paper: <a class="post-link" href="papers/uist24-tyche.pdf">Tyche: Making Sense of PBT Effectiveness</a>
+</p>
+
+<p>
 <span class="highlight">Jul 8, 2024</span> Appeared on the <a href="{% post_url 2024-07-08-disseminate %}">Disseminate</a> Podcast
 </p>
 
@@ -52,6 +56,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Selected Publications
 
+- <i>Tyche: Making Sense of Property-Based Testing Effectiveness</i><br/>
+Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head<br>
+UIST 2024 [Preprint](papers/uist24-tyche.pdf)
+
 - <i>Mica: Automated Differential Testing for OCaml Modules</i><br/>
 Ernest Ng, Harrison Goldstein, Benjamin C. Pierce<br/>
 OCaml Workshop 2024
@@ -70,11 +78,7 @@ PLDI 2024 [DOI](https://dl.acm.org/doi/10.1145/3656410)
 
 - <i>Property-Based Testing in Practice</i> (<strong>Distinguished Paper</strong>)<br/>
 Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head<br>
-ICSE 2024 [Preprint](papers/icse24-pbt-in-practice.pdf)
-
-- <i>Tyche: In Situ Analysis of Random Testing Effectiveness</i><br/>
-Harrison Goldstein, Benjamin C. Pierce, Andrew Head<br>
-UIST 2023 Demo [Abstract](papers/uist23.pdf)
+ICSE 2024 [PDF](papers/icse24-pbt-in-practice.pdf)
 
 - <i>Reflecting on Random Generation</i> (<strong>Distinguished Paper</strong>)<br/>
 Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce<br>
