@@ -62,7 +62,7 @@ UIST 2024 [Preprint](papers/uist24-tyche.pdf)
 
 - <i>Mica: Automated Differential Testing for OCaml Modules</i><br/>
 Ernest Ng, Harrison Goldstein, Benjamin C. Pierce<br/>
-OCaml Workshop 2024
+OCaml Workshop 2024 [Preprint](papers/ocaml24-mica.pdf)
 
 - <i>Demonstrating FEDT: Supporting Characterization Experiments in Fabrication Research</i><br/>
 Valkyrie Savage, Nóra Püsök, Harrison Goldstein, Chandrakana Nandi, Jia Yi Ren and Lora Oehlberg<br/>
