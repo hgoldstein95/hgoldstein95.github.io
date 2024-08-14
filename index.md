@@ -56,6 +56,12 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Selected Publications
 
+- <strong>Dissertation:</strong> <i>Property-Based Testing for the People</i><br/>
+Harrison Goldstein<br/>
+<i>advised by</i> Benjamin C. Pierce<br/>
+<i>approved by</i> Stephanie Weirich (committee chair), Andrew Head, Mayur Naik, Hila Peleg<br/>
+Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05JywB-xDE)
+
 - <i>Tyche: Making Sense of Property-Based Testing Effectiveness</i><br/>
 Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head<br>
 UIST 2024 [Preprint](papers/uist24-tyche.pdf)
@@ -120,6 +126,7 @@ NJPLS October 2022 [Abstract](http://njpls.org/oct22.html#goldstein)
 
 - <i>Reflecting on Random Generation</i><br>
 NJPLS May 2022 [Abstract](http://njpls.org/may22.html#goldstein)
+
 
 ## Other Content
 
