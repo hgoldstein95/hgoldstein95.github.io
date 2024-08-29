@@ -12,18 +12,16 @@ to grow.
 </p> -->
 
 <blockquote>
-<strong>In Fall 2024 I will be on the academic job market!</strong> I am looking for tenure-track
-positions in groups that are hiring faculty with strengths in programming languages, human-computer
-interaction, and/or software engineering. Please get in touch if you think I may be a good fit for
-your group!
+<strong>I am on the academic job market!</strong> My interests are broad, spanning programming
+languages, software engineering, and human-computer interaction. If your university is hiring
+tenure-track faculty in any of those areas, please get in touch!
 </blockquote>
 
 <p>
-I recently finished my PhD at the University of Pennsylvania, studying under Professor Benjamin
-Pierce. In the Fall, I will start as a postdoc at the University of Maryland, working with Leo
-Lampropoulos as a Victor Basili Postdoctoral Fellow; I will also retain a part-time position at the
-University of Pennsylvania. My current research focus is on theoretical and human aspects of
-property-based testing.
+I am a postdoc University of Maryland, working with Leo Lampropoulos as a Victor Basili Postdoctoral
+Fellow. I also have a part-time position at the University of Pennsylvania, where I recently
+finished my PhD with Professor Benjamin Pierce. My current research focus is on theoretical and
+human aspects of property-based testing.
 </p>
 
 <p>
@@ -55,12 +53,6 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 </div>
 
 ## Selected Publications
-
-- <strong>Dissertation:</strong> <i>Property-Based Testing for the People</i><br/>
-Harrison Goldstein<br/>
-<i>advised by</i> Benjamin C. Pierce<br/>
-<i>approved by</i> Stephanie Weirich (committee chair), Andrew Head, Mayur Naik, Hila Peleg<br/>
-Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05JywB-xDE)
 
 - <i>Tyche: Making Sense of Property-Based Testing Effectiveness</i><br/>
 Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head<br>
@@ -112,6 +104,9 @@ ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 
 ## Talks & Speaking
 
+- <span class="highlight">Upcoming</span><i>My PhD Compass: 6 Ways to Guide a PhD Towards Success</i><br>
+PLMW @ ICFP 2024 (Coming soon!)
+
 - <i>Property-Based Testing in Practice</i><br>
 Disseminate Podcast [Podcast](https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-property-based-testing-55)
 
@@ -129,6 +124,12 @@ NJPLS May 2022 [Abstract](http://njpls.org/may22.html#goldstein)
 
 
 ## Other Content
+
+- <strong>Dissertation:</strong> <i>Property-Based Testing for the People</i><br/>
+Harrison Goldstein<br/>
+<i>advised by</i> Benjamin C. Pierce<br/>
+<i>approved by</i> Stephanie Weirich (committee chair), Andrew Head, Mayur Naik, Hila Peleg<br/>
+Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05JywB-xDE)
 
 - <i> Conferences after COVID: An Early-Career Perspective</i><br>
 Joseph W. Cutler, Harry Goldstein, Andrew K. Hirsch, Jaemin Hong, Chandrakana Nandi<br>
