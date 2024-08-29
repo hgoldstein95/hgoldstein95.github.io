@@ -125,7 +125,8 @@ hr {
 .about-me {
     img {
         float: right;
-        width: 25%;
+        width: 40%;
+        max-width: 1080px;
         margin-left: 10px;
     }
 }

@@ -5,16 +5,16 @@ layout: default
 ## About Me
 
 <div class="about-me">
-<img class="profile-picture" src="img/park-bench.jpeg">
+<img class="profile-picture" src="img/defense-headshot-square-small.jpg">
 <!-- <p>
 My love for learning underpins almost everything that I do; I take every chance I get to learn and
 to grow.
 </p> -->
 
 <blockquote>
-<strong>I am on the academic job market!</strong> My interests are broad, spanning programming
-languages, software engineering, and human-computer interaction. If your university is hiring
-tenure-track faculty in any of those areas, please get in touch!
+<strong>I am on the academic job market!</strong> My interests span programming languages,
+software engineering, and human-computer interaction. If your university is hiring tenure-track
+faculty in any of those areas, please get in touch!
 </blockquote>
 
 <p>
