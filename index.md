@@ -18,7 +18,7 @@ faculty in any of those areas, please get in touch!
 </blockquote>
 
 <p>
-I am a postdoc University of Maryland, working with Leo Lampropoulos as a Victor Basili Postdoctoral
+I am a postdoc at the University of Maryland, working with Leo Lampropoulos as a Victor Basili Postdoctoral
 Fellow. I also have a part-time position at the University of Pennsylvania, where I recently
 finished my PhD with Professor Benjamin Pierce. My current research focus is on theoretical and
 human aspects of property-based testing.
