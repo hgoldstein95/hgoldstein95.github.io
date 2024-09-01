@@ -30,8 +30,8 @@ sass:
 nav:
  - name: "Blog"
    link: "/blog"
-#  - name: "About"
-#    link: "/about/"
  - name: "CV"
    link: "/resume.pdf"
+ - name: "Contact"
+   link: "#coordinates"
 

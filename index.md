@@ -2,6 +2,12 @@
 layout: default
 ---
 
+<blockquote>
+<strong>I am on the academic job market!</strong> My interests span programming languages,
+software engineering, and human-computer interaction. If your university is hiring tenure-track
+faculty in any of those areas, please get in touch!
+</blockquote>
+
 ## About Me
 
 <div class="about-me">
@@ -11,11 +17,6 @@ My love for learning underpins almost everything that I do; I take every chance 
 to grow.
 </p> -->
 
-<blockquote>
-<strong>I am on the academic job market!</strong> My interests span programming languages,
-software engineering, and human-computer interaction. If your university is hiring tenure-track
-faculty in any of those areas, please get in touch!
-</blockquote>
 
 <p>
 I am a postdoc at the University of Maryland, working with Leo Lampropoulos as a Victor Basili Postdoctoral
@@ -183,3 +184,40 @@ Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
     <span class="post-meta">Feb 24, 2019</span>
     </li>
 </ul>
+
+## Coordinates
+
+<table id="coordinates">
+    <tbody>
+    <tr>
+        <td>Website</td>
+        <td><a href="https://harrisongoldste.in">harrisongoldste.in</a></td>
+        <td>You are here!</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><a href="mailto:me@harrisongoldste.in">me@harrisongoldste.in</a></td>
+        <td><strong>Ideal way to get in touch.</strong></td>
+    </tr>
+    <tr>
+        <td>X/Twitter</td>
+        <td><a href="https://x.com/hgoldstein95">@hgoldstein95</a></td>
+        <td>Not on very often.</td>
+    </tr>
+    <tr>
+        <td>Mastodon</td>
+        <td><a href="https://hci.social/@harrisongoldstein">@harrisongoldstein@hci.social</a></td>
+        <td>Also not on a lot.</td>
+    </tr>
+    <tr>
+        <td>YouTube</td>
+        <td><a href="https://www.youtube.com/channel/UCcc1UtCXkMfmkKnjjFIC7Zg">@harrisongoldstein2137</a></td>
+        <td>Talk VODs and occasional shorts.</td>
+    </tr>
+    <tr>
+        <td>Office</td>
+        <td><a href="https://iribe.umd.edu/">Brendan Irebe Center</a> 5252</td>
+        <td>Usually in Tuesdays and Thursdays.</td>
+    </tr>
+    </tbody>
+</table>

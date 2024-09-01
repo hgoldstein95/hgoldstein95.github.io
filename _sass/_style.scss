@@ -199,3 +199,12 @@ hr {
     padding: 5px;
     border-radius: 5px;
 }
+
+#coordinates {
+    border: none;
+
+    tr,
+    td {
+        border: none;
+    }
+}
