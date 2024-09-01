@@ -219,5 +219,10 @@ Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
         <td><a href="https://iribe.umd.edu/">Brendan Irebe Center</a> 5252</td>
         <td>Usually in Tuesdays and Thursdays.</td>
     </tr>
+    <tr>
+        <td>Beli</td>
+        <td><a href="https://beliapp.co/profile/hgoldstein95">@hgoldstein95</a></td>
+        <td>Judge my taste in restaurants.</td>
+    </tr>
     </tbody>
 </table>
