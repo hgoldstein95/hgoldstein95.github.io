@@ -112,7 +112,7 @@ PLMW @ ICFP 2024 [VOD](https://www.youtube.com/live/pS_vJAwjcM4?si=yK18h_Y9ak2ZV
 Disseminate Podcast [Podcast](https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-property-based-testing-55)
 
 - <i>Consider Collaboration</i> with Samantha Frohlich<br>
-PLMW @ POPL 2024 [VOD](https://www.youtube.com/live/Yqvub1h-gZs?si=ZB08itCPJ-i9Fysx&t=23892)
+PLMW @ POPL 2024 [VOD](https://www.youtube.com/watch?v=sSl-856qUOA)
 
 - <i>TheForkJoin Episode 2</i><br>
 TheForkJoin Podcast [Podcast](https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n)
