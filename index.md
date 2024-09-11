@@ -53,6 +53,14 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 <div style="clear: right;"></div>
 </div>
 
+## Dissertation
+
+- <strong>Dissertation:</strong> <i>Property-Based Testing for the People</i><br/>
+Harrison Goldstein<br/>
+<i>advised by</i> Benjamin C. Pierce<br/>
+<i>approved by</i> Stephanie Weirich (committee chair), Andrew Head, Mayur Naik, Hila Peleg<br/>
+Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05JywB-xDE)
+
 ## Selected Publications
 
 - <i>Tyche: Making Sense of Property-Based Testing Effectiveness</i><br/>
@@ -125,12 +133,6 @@ NJPLS May 2022 [Abstract](http://njpls.org/may22.html#goldstein)
 
 
 ## Other Content
-
-- <strong>Dissertation:</strong> <i>Property-Based Testing for the People</i><br/>
-Harrison Goldstein<br/>
-<i>advised by</i> Benjamin C. Pierce<br/>
-<i>approved by</i> Stephanie Weirich (committee chair), Andrew Head, Mayur Naik, Hila Peleg<br/>
-Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05JywB-xDE)
 
 - <i> Conferences after COVID: An Early-Career Perspective</i><br>
 Joseph W. Cutler, Harry Goldstein, Andrew K. Hirsch, Jaemin Hong, Chandrakana Nandi<br>
