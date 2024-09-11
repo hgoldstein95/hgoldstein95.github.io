@@ -55,7 +55,7 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 ## Dissertation
 
-- <strong>Dissertation:</strong> <i>Property-Based Testing for the People</i><br/>
+- <i>Property-Based Testing for the People</i><br/>
 Harrison Goldstein<br/>
 <i>advised by</i> Benjamin C. Pierce<br/>
 <i>approved by</i> Stephanie Weirich (committee chair), Andrew Head, Mayur Naik, Hila Peleg<br/>
