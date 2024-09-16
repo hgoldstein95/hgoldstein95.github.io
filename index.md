@@ -3,8 +3,8 @@ layout: default
 ---
 
 <blockquote>
-<strong>I am on the academic job market!</strong> My interests span programming languages,
-software engineering, and human-computer interaction. If your university is hiring tenure-track
+<strong>I am on the academic job market!</strong> My interests span programming languages (PL),
+software engineering (SE), and human-computer interaction (HCI). If your university is hiring tenure-track
 faculty in any of those areas, please get in touch!
 </blockquote>
 
@@ -21,7 +21,7 @@ to grow.
 <p>
 I am a postdoc at the University of Maryland, working with Leo Lampropoulos as a Victor Basili Postdoctoral
 Fellow. I also have a part-time position at the University of Pennsylvania, where I recently
-finished my PhD with Professor Benjamin Pierce. My current research focus is on theoretical and
+finished my PhD with Professor Benjamin C. Pierce. My current research focus is on theoretical and
 human aspects of property-based testing.
 </p>
 
@@ -76,7 +76,8 @@ Valkyrie Savage, Nóra Püsök, Harrison Goldstein, Chandrakana Nandi, Jia Yi Re
 SCF 2024 Demo
 
 - <i>Stream Types</i><br/>
-Joseph W Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb Stanford, Benjamin Pierce<br/>
+Joseph W Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb
+Stanford, Benjamin C. Pierce<br/>
 PLDI 2024 [PDF](https://www.cis.upenn.edu/~jwc/assets/stream-types.pdf)
 
 - <i>Daedalus: Safer Document Parsing</i><br/>
@@ -147,11 +148,11 @@ Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
 <ul>
     <li>
     <h3 style="display: inline-block;">
-        <a class="post-link" href="{% post_url 2024-07-08-disseminate %}">
-            Appearance on Disseminate
+        <a class="post-link" href="{% post_url 2024-09-16-mocktail %}">
+            A Fun Little Mocktail
         </a>
     </h3>
-    <span class="post-meta">Jul 8, 2024</span>
+    <span class="post-meta">Sep 16, 2024</span>
     </li>
     <li>
     <h3 style="display: inline-block;">
@@ -160,14 +161,6 @@ Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
         </a>
     </h3>
     <span class="post-meta">Apr 22, 2024</span>
-    </li>
-    <li>
-    <h3 style="display: inline-block;">
-        <a class="post-link" href="{% post_url 2023-07-29-theforkjoin %}">
-            I was on TheForkJoin!
-        </a>
-    </h3>
-    <span class="post-meta">Jul 29, 2023</span>
     </li>
     <li>
     <h3 style="display: inline-block;">
