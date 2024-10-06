@@ -4,8 +4,9 @@ layout: default
 
 <blockquote>
 <strong>I am on the academic job market!</strong> My interests span programming languages (PL),
-software engineering (SE), and human-computer interaction (HCI). If your university is hiring tenure-track
-faculty in any of those areas, please get in touch!
+software engineering (SE), and human-computer interaction (HCI). Feel free to download my
+<a class="post-link" href="papers/job-market.pdf">application materials</a>
+if you want to know more about my work.
 </blockquote>
 
 ## About Me
