@@ -1,9 +1,6 @@
 title: Harrison Goldstein
 email: me@harrisongoldste.in
-description: > #
-  Harrison Goldstein has a masters degree in Computer Science from Cornell
-  University. He is currently a PhD student at the University of Pennsylvania
-  studying programming languages.
+description: ""
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://harrisongoldste.in"
 site_url: "https://harrisongoldste.in"
