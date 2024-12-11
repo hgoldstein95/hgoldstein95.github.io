@@ -13,11 +13,6 @@ if you want to know more about my work.
 
 <div class="about-me">
 <img class="profile-picture" src="img/defense-headshot-square-small.jpg">
-<!-- <p>
-My love for learning underpins almost everything that I do; I take every chance I get to learn and
-to grow.
-</p> -->
-
 
 <p>
 I am a postdoc at the University of Maryland, working with Leo Lampropoulos as a Victor Basili Postdoctoral
@@ -32,15 +27,11 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">Dec 11, 2024</span> Appeared on the <a href="https://haskell.foundation/podcast/59/">Haskell Interlude</a> Podcast
+</p>
+
+<p>
 <span class="highlight">Aug 2, 2024</span> UIST Paper: <a class="post-link" href="papers/uist24-tyche.pdf">Tyche: Making Sense of PBT Effectiveness</a>
-</p>
-
-<p>
-<span class="highlight">Jul 8, 2024</span> Appeared on the <a href="{% post_url 2024-07-08-disseminate %}">Disseminate</a> Podcast
-</p>
-
-<p>
-<span class="highlight">May 24, 2024</span> I defended my PhD!
 </p>
 
 <p>
@@ -114,6 +105,9 @@ Harrison Goldstein, John Hughes, Leonidas Lampropoulos, Benjamin C. Pierce<br>
 ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 
 ## Talks & Speaking
+
+- <i>Haskell Interlude 59</i><br>
+Haskell Interlude [Podcast](https://haskell.foundation/podcast/59/)
 
 - <i>My PhD Compass: 6 Ways to Guide a PhD Towards Success</i><br>
 PLMW @ ICFP 2024 [VOD](https://www.youtube.com/live/pS_vJAwjcM4?si=yK18h_Y9ak2ZVhMF&t=26173)
