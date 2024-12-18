@@ -55,13 +55,21 @@ Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05
 
 ## Selected Publications
 
+- <i>QED in Context: An Observation Study of Proof Assistant Users</i><br/>
+Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, Andrew Head<br/>
+OOPSLA 2025 [Preprint](https://jwshii.github.io/study.pdf)
+
+- <i>Designing Proof Deautomation in Rocq</i><br/>
+Jessica Shi, Cassia Torczon, Harrison Goldstein, Andrew Head, Benjamin Pierce<br/>
+PLATEAU 2025 [Preprint](https://jwshii.github.io/deauto.pdf)
+
 - <i>Tyche: Making Sense of Property-Based Testing Effectiveness</i><br/>
-Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head<br>
-UIST 2024 [Preprint](papers/uist24-tyche.pdf)
+Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head<br/>
+UIST 2024 [PDF](papers/uist24-tyche.pdf)
 
 - <i>Mica: Automated Differential Testing for OCaml Modules</i><br/>
 Ernest Ng, Harrison Goldstein, Benjamin C. Pierce<br/>
-OCaml Workshop 2024 [Preprint](papers/ocaml24-mica.pdf)
+OCaml Workshop 2024 [PDF](papers/ocaml24-mica.pdf)
 
 - <i>Demonstrating FEDT: Supporting Characterization Experiments in Fabrication Research</i><br/>
 Valkyrie Savage, Nóra Püsök, Harrison Goldstein, Chandrakana Nandi, Jia Yi Ren and Lora Oehlberg<br/>
