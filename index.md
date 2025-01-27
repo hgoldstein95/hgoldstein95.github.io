@@ -118,7 +118,7 @@ ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 Haskell Interlude [Podcast](https://haskell.foundation/podcast/59/)
 
 - <i>My PhD Compass: 6 Ways to Guide a PhD Towards Success</i><br>
-PLMW @ ICFP 2024 [VOD](https://www.youtube.com/live/pS_vJAwjcM4?si=yK18h_Y9ak2ZVhMF&t=26173)
+PLMW @ ICFP 2024 [VOD](https://youtu.be/UgABi44gMcI?si=F8_m3_8m7kjCbpfK)
 
 - <i>Property-Based Testing in Practice</i><br>
 Disseminate Podcast [Podcast](https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-property-based-testing-55)
