@@ -57,7 +57,7 @@ Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05
 
 - <i>QED in Context: An Observation Study of Proof Assistant Users</i><br/>
 Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, Andrew Head<br/>
-OOPSLA 2025 [Preprint](https://jwshii.github.io/study.pdf)
+OOPSLA 2025 [Preprint](https://jwshii.github.io/OOPSLA25.pdf)
 
 - <i>Designing Proof Deautomation in Rocq</i><br/>
 Jessica Shi, Cassia Torczon, Harrison Goldstein, Andrew Head, Benjamin Pierce<br/>
