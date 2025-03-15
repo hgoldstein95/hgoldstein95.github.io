@@ -27,6 +27,10 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">Mar 11, 2025</span> Received the <b>Morris and Dorothy Rubinoff Award</b> from the University of Pennsylvania Department of Computer and Information Science
+</p>
+
+<p>
 <span class="highlight">Dec 11, 2024</span> Appeared on the <a href="https://haskell.foundation/podcast/59/">Haskell Interlude</a> Podcast
 </p>
 
@@ -36,10 +40,6 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <p>
 <span class="highlight">Feb 16, 2024</span> Victor Basili Fellowship <a href="{% post_url 2024-02-18-victor-basili %}">Announcement</a>
-</p>
-
-<p>
-<span class="highlight">Jan 15, 2024</span> ICSE Distinguished Paper: <a class="post-link" href="papers/icse24-pbt-in-practice.pdf">PBT in Practice</a>
 </p>
 
 <div style="clear: right;"></div>
