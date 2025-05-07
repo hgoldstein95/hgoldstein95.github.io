@@ -3,22 +3,37 @@ layout: default
 ---
 
 <blockquote>
-<strong>I am on the academic job market!</strong> My interests span programming languages (PL),
-software engineering (SE), and human-computer interaction (HCI). Feel free to download my
-<a class="post-link" href="papers/job-market.pdf">application materials</a>
-if you want to know more about my work.
+<strong>I will be hiring PhD students in the Fall 2025 hiring cycle!</strong> If you are considering
+a PhD and interested in programming languages, software engineering, or human-computer interaction,
+please take a look at my recent publications below and consider applying!
+<br/><br/>
+I am happy to talk with prospective students via email, but please demonstrate concrete interest in
+working together; if your message looks AI-generated or like a form email, I may not have the
+bandwidth to read it.
 </blockquote>
 
-## About Me
+### About Me
 
 <div class="about-me">
-<img class="profile-picture" src="img/defense-headshot-square-small.jpg">
+<img class="profile-picture" style="max-width: 250px" src="img/profile.jpeg">
 
 <p>
-I am a postdoc at the University of Maryland, working with Leo Lampropoulos as a Victor Basili Postdoctoral
-Fellow. I also have a part-time position at the University of Pennsylvania, where I recently
-finished my PhD with Professor Benjamin C. Pierce. My current research focus is on theoretical and
-human aspects of property-based testing.
+I am an incoming Assistant Professor in the
+<a href="https://engineering.buffalo.edu/computer-science-engineering.html">Department of Computer Science and Engineering</a>
+at the
+<a href="https://www.buffalo.edu/">University at Buffalo</a>,
+starting in Fall 2025.
+Currently, I am finishing up a postdoc at the University of Maryland, working with Leo Lampropoulos
+as a Victor Basili Postdoctoral Fellow.
+I earned my PhD working with Professor Benjamin C. Pierce at the University of Pennsylvania.
+</p>
+
+<p>
+In my research, I make the software development process safer and more effective by building tools
+for software validation that address the needs of real users. My main area of study is programming
+languages, but I borrow motivation and techniques from both software engineering and human-computer
+interaction as well. Currently my projects center around the theoretical, practical, and human
+aspects of property-based testing and formal methods.
 </p>
 
 <p>
@@ -27,19 +42,11 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">May 7, 2025</span> Accepted a position as <b>Assistant Professor at the University at Buffalo</b>!
+</p>
+
+<p>
 <span class="highlight">Mar 11, 2025</span> Received the <b>Morris and Dorothy Rubinoff Award</b> from the University of Pennsylvania Department of Computer and Information Science
-</p>
-
-<p>
-<span class="highlight">Dec 11, 2024</span> Appeared on the <a href="https://haskell.foundation/podcast/59/">Haskell Interlude</a> Podcast
-</p>
-
-<p>
-<span class="highlight">Aug 2, 2024</span> UIST Paper: <a class="post-link" href="papers/uist24-tyche.pdf">Tyche: Making Sense of PBT Effectiveness</a>
-</p>
-
-<p>
-<span class="highlight">Feb 16, 2024</span> Victor Basili Fellowship <a href="{% post_url 2024-02-18-victor-basili %}">Announcement</a>
 </p>
 
 <div style="clear: right;"></div>
@@ -198,29 +205,19 @@ Unpublished PhD Milestone [Draft](papers/drafts/wpe-ii.pdf)
         <td><strong>Ideal way to get in touch.</strong></td>
     </tr>
     <tr>
-        <td>Bluesky</td>
+        <td>BlueSky</td>
         <td><a href="https://bsky.app/profile/harrisongoldste.in">@harrisongoldste.in</a></td>
-        <td>I'm around occasionally.</td>
-    </tr>
-    <tr>
-        <td>X/Twitter</td>
-        <td><a href="https://x.com/hgoldstein95">@hgoldstein95</a></td>
-        <td>Not on very often.</td>
+        <td>I check notifications every couple of weeks.</td>
     </tr>
     <tr>
         <td>Mastodon</td>
         <td><a href="https://hci.social/@harrisongoldstein">@harrisongoldstein@hci.social</a></td>
-        <td>Also not on a lot.</td>
+        <td>Similar to BlueSky</td>
     </tr>
     <tr>
         <td>YouTube</td>
         <td><a href="https://www.youtube.com/channel/UCcc1UtCXkMfmkKnjjFIC7Zg">@harrisongoldstein2137</a></td>
         <td>Talk VODs and occasional shorts.</td>
-    </tr>
-    <tr>
-        <td>Office</td>
-        <td><a href="https://iribe.umd.edu/">Brendan Irebe Center</a> 5252</td>
-        <td>Usually in Tuesdays and Thursdays.</td>
     </tr>
     <tr>
         <td>Beli</td>
