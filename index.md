@@ -42,11 +42,16 @@ I love to collaborate, so feel free to reach out if you have anything you'd like
 
 <h3>News</h3>
 <p>
+<span class="highlight">June 19, 2025</span> Received SIGPLAN's <a href="https://www.sigplan.org/Awards/Dissertation/">John C. Reynolds Doctoral Dissertation Award</a>.
+Congratulations to <a href="https://people.csail.mit.edu/rachit/">Rachit Nigam</a> who also received the award this year!
+</p>
+
+<p>
 <span class="highlight">May 7, 2025</span> Accepted a position as <b>Assistant Professor at the University at Buffalo</b>!
 </p>
 
 <p>
-<span class="highlight">Mar 11, 2025</span> Received the <b>Morris and Dorothy Rubinoff Award</b> from the University of Pennsylvania Department of Computer and Information Science
+<span class="highlight">Mar 11, 2025</span> Received the <b>Morris and Dorothy Rubinoff Award</b> from the University of Pennsylvania Department of Computer and Information Science.
 </p>
 
 <div style="clear: right;"></div>
