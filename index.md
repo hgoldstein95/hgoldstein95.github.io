@@ -126,6 +126,9 @@ ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 
 ## Talks & Speaking
 
+- <i>The Best New Programming Language is a Proof Assistant</i>
+DC Systems 006 [VOD](https://www.youtube.com/watch?v=c5LOYzZx-0c)
+
 - <i>Haskell Interlude 59</i><br>
 Haskell Interlude [Podcast](https://haskell.foundation/podcast/59/)
 
