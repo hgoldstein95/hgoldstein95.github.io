@@ -3,7 +3,7 @@ layout: default
 ---
 
 <blockquote>
-<strong>I will be hiring PhD students in the Fall 2025 hiring cycle!</strong> If you are considering
+<strong>I am hiring PhD students this cycle!</strong> If you are considering
 a PhD and interested in programming languages, software engineering, or human-computer interaction,
 please take a look at my recent publications below and consider applying!
 <br/><br/>
@@ -18,12 +18,11 @@ bandwidth to read it.
 <img class="profile-picture" style="max-width: 250px" src="img/profile.jpeg">
 
 <p>
-I am an incoming Assistant Professor in the
+I am an Assistant Professor in the
 <a href="https://engineering.buffalo.edu/computer-science-engineering.html">Department of Computer Science and Engineering</a>
 at the
-<a href="https://www.buffalo.edu/">University at Buffalo</a>,
-starting in Fall 2025.
-Currently, I am finishing up a postdoc at the University of Maryland, working with Leo Lampropoulos
+<a href="https://www.buffalo.edu/">University at Buffalo</a>.
+Previously, I was a postdoc at the University of Maryland, working with Leo Lampropoulos
 as a Victor Basili Postdoctoral Fellow.
 I earned my PhD working with Professor Benjamin C. Pierce at the University of Pennsylvania.
 </p>
@@ -66,6 +65,11 @@ Harrison Goldstein<br/>
 Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05JywB-xDE)
 
 ## Selected Publications
+
+- <i>Tuning Random Generators: Property-Based Testing as Probabilistic Programming</i><br/>
+Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin C. Pierce, Guy Van den
+Broeck<br/>
+OOPSLA 2025
 
 - <i>QED in Context: An Observation Study of Proof Assistant Users</i><br/>
 Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, Andrew Head<br/>
