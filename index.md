@@ -69,15 +69,20 @@ Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05
 - <i>Tuning Random Generators: Property-Based Testing as Probabilistic Programming</i><br/>
 Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin C. Pierce, Guy Van den
 Broeck<br/>
-OOPSLA 2025
+OOPSLA 2025 [Preprint](https://starai.cs.ucla.edu/papers/TjoaOOPSLA25.pdf)
 
 - <i>QED in Context: An Observation Study of Proof Assistant Users</i><br/>
 Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, Andrew Head<br/>
 OOPSLA 2025 [Preprint](https://jwshii.github.io/OOPSLA25.pdf)
 
+- <i>FEDT: Supporting Experiment Design and Execution in HCI Fabrication Research</i><br/>
+Valkyrie Savage, Harrison Goldstein, Nóra Püsök, Jia Yi Ren, Bhaskar Dutt, Chandrakana Nandi, Lora
+Oehlberg<br/>
+UIST 2025 [DOI](https://dl.acm.org/doi/10.1145/3746059.3747739)
+
 - <i>Designing Proof Deautomation in Rocq</i><br/>
 Jessica Shi, Cassia Torczon, Harrison Goldstein, Andrew Head, Benjamin Pierce<br/>
-PLATEAU 2025 [Preprint](https://jwshii.github.io/deauto.pdf)
+PLATEAU 2025 [PDF](https://jwshii.github.io/deauto.pdf)
 
 - <i>Tyche: Making Sense of Property-Based Testing Effectiveness</i><br/>
 Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head<br/>
@@ -157,7 +162,11 @@ NJPLS May 2022 [Abstract](http://njpls.org/may22.html#goldstein)
 
 ## Other Content
 
-- <i> Conferences after COVID: An Early-Career Perspective</i><br>
+- <i>Think Globally, Discuss PL Locally</i><br>
+Harrison Goldstein, Michael Greenberg, Noam Zilberstein<br>
+SIGPLAN PL Perspectives - September 16, 2025 [Post](https://blog.sigplan.org/2025/09/16/think-globally-discuss-pl-locally/)
+
+- <i>Conferences after COVID: An Early-Career Perspective</i><br>
 Joseph W. Cutler, Harry Goldstein, Andrew K. Hirsch, Jaemin Hong, Chandrakana Nandi<br>
 SIGPLAN PL Perspectives - March 25, 2021 [Post](https://blog.sigplan.org/2021/03/25/conferences-after-covid-an-early-career-perspective/)
 
