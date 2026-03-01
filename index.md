@@ -2,16 +2,6 @@
 layout: default
 ---
 
-<blockquote>
-<strong>I am hiring PhD students this cycle!</strong> If you are considering
-a PhD and interested in programming languages, software engineering, or human-computer interaction,
-please take a look at my recent publications below and consider applying!
-<br/><br/>
-I am happy to talk with prospective students via email, but please demonstrate concrete interest in
-working together; if your message looks AI-generated or like a form email, I may not have the
-bandwidth to read it.
-</blockquote>
-
 ### About Me
 
 <div class="about-me">
@@ -134,6 +124,9 @@ Harrison Goldstein, John Hughes, Leonidas Lampropoulos, Benjamin C. Pierce<br>
 ESOP 2021 [PDF](papers/quick-cover.pdf) [Video](https://youtu.be/VCCz1AL3Jkc)
 
 ## Talks & Speaking
+
+- <i>Metaprogramming the Next Generation of Testing Tools</i><br>
+Lean Together 2026 [VOD](https://www.youtube.com/watch?v=AFbnS9xuPhY)
 
 - <i>The Best New Programming Language is a Proof Assistant</i>
 DC Systems 006 [VOD](https://www.youtube.com/watch?v=c5LOYzZx-0c)
