@@ -157,6 +157,8 @@ PLMW @ POPL 2024 [VOD](https://www.youtube.com/watch?v=sSl-856qUOA)
 - [Segev Elazar Mittelman](https://www.cs.umd.edu/people/segevem) (UMD)
 - [Alperen Keles](https://alperenkeles.com) (UMD)
 - [Pierce Darragh](https://pdarragh.github.io) (UMD)
+- [Caspar Popova](https://cjpopova.github.io/) (UMD)
+- [Saketh Kasibatla](https://www.sakekasi.com/) (UCSD)
 
 <br>
 ## Featured Blog Posts
