@@ -1,0 +1,28 @@
+base_url = "https://harrisongoldste.in"
+title = "Harrison Goldstein"
+description = ""
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+[extra]
+author = "Harrison Goldstein"
+twitter_username = "hgoldstein95"
+github_username = "hgoldstein95"
+profile_picture = "/img/profile.jpeg"
+footer = true
+footer_url = "https://github.com/hgoldstein95/hgoldstein95.github.io"
+footer_text = "Website source on GitHub"
+
+[[extra.nav]]
+name = "Blog"
+link = "/blog/"
+
+[[extra.nav]]
+name = "CV"
+link = "/resume.pdf"
+
+[[extra.nav]]
+name = "Contact"
+link = "#coordinates"
