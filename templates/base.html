@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <title>
+      {% if page.title %}{{ page.title }}
+      {% elif section.title and section.title != config.title %}{{ section.title }}
+      {% else %}{{ config.title }}
+      {% endif %}
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="blog, {{ config.extra.author }}, {{ config.title }}">
+    <meta name="author" content="{{ config.extra.author }}">
+    {% set desc = config.description %}
+    {% if page.description %}
+      {% set desc = page.description %}
+    {% elif section.description %}
+      {% set desc = section.description %}
+    {% endif %}
+    {% set url = current_url | default(value = config.base_url) %}
+    <meta name="description" content="{{ desc }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ config.title }} RSS" href="/atom.xml"/>
+    <link rel="stylesheet" href="/style.css">
+    {% if config.extra.twitter_username %}
+      <link rel="author" href="https://twitter.com/{{ config.extra.twitter_username }}">
+    {% endif %}
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="{{ config.title }}">
+    <meta name="twitter:description" content="{{ desc }}">
+    <meta name="twitter:url" content="{{ url }}">
+    <meta name="twitter:image" content="{{ config.extra.profile_picture }}">
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div class="navbar">
+          <a id="author-name" class="alignable pull-left" href="/">{{ config.title }}
+            <small>(he/him)</small>
+          </a>
+          <ul id="navlist" class="alignable pull-right navbar-ul">
+            {% for x in config.extra.nav %}
+              {% if x.name == "CV" %}
+                <li class="alignable pull-left nav-list">
+                  <a target="_blank" href="{{ x.link }}">{{ x.name }}</a>
+                {% else %}
+                  <li class="alignable pull-left nav-list">
+                    <a href="{{ x.link }}">{{ x.name }}</a>
+                  {% endif %}
+                  {% if not loop.last %}
+                                &nbsp;/
+                            {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+        <div style="clear:both"></div>
+        <hr>
+        <div class="container content">
+          {% block content %}{% endblock %}
+          {% if config.extra.footer %}
+            <hr/>
+            <p style="text-align: center; margin-bottom: 10px">
+              <a href="{{ config.extra.footer_url }}" style="color: black">
+                <small>{{ config.extra.footer_text }}</small>
+              </a>
+            </p>
+          {% endif %}
+        </div>
+      </div>
+    </body>
+    <footer></footer>
+    <br>
+  </html>

@@ -1,0 +1,2 @@
+- Make sure this new SSG works with GitHub pages
+- Check all of the content
