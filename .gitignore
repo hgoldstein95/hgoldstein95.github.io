@@ -1,9 +1,4 @@
-_site
-.sass-cache
-.jekyll-metadata
-
 .vscode
-.jekyll-cache
 
 .DS_Store
 

@@ -1,2 +1,2 @@
-- Make sure this new SSG works with GitHub pages
+- In repo Settings → Pages → Source, switch from "Deploy from a branch" to "GitHub Actions"
 - Check all of the content
