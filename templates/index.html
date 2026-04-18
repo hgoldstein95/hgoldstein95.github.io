@@ -1,5 +1,126 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% set news = load_data(path="data/news.toml") %}
+{% set pubs = load_data(path="data/publications.toml") %}
+{% set talks = load_data(path="data/talks.toml") %}
+{% set students = load_data(path="data/students.toml") %}
+{% set posts = load_data(path="data/featured_posts.toml") %}
+{% set coords = load_data(path="data/coordinates.toml") %}
+
+<h3>About Me</h3>
+
+<div class="about-me">
+  <img class="profile-picture" style="max-width: 250px" src="/img/profile.jpeg">
+
   {{ section.content | safe }}
+
+  <h3>News</h3>
+  {% for item in news.items %}
+  <p><span class="highlight">{{ item.date }}</span> {{ item.text | markdown | replace(from="<p>", to="") | replace(from="</p>", to="") | safe }}</p>
+  {% endfor %}
+
+  <div style="clear: right;"></div>
+</div>
+
+<h2>Dissertation</h2>
+
+<ul>
+  <li>
+    <i>Property-Based Testing for the People</i><br>
+    Harrison Goldstein<br>
+    <i>advised by</i> Benjamin C. Pierce<br>
+    <i>approved by</i> Stephanie Weirich (committee chair), Andrew Head, Mayur Naik, Hila Peleg<br>
+    Defended May 24, 2024
+    [<a href="papers/dissertation.pdf">PDF</a>]
+    [<a href="https://youtu.be/S05JywB-xDE">Talk</a>]
+  </li>
+</ul>
+
+<h2>Selected Publications</h2>
+
+{% for section in pubs.sections %}
+<h3>{{ section.name }}</h3>
+<ul>
+  {% for paper in section.papers %}
+  <li>
+    <i>{{ paper.title }}</i>
+    {% if paper.awards %} (<strong>{{ paper.awards | join(sep=", ") }}</strong>){% endif %}<br>
+    {{ paper.authors }}<br>
+    {% if paper.venue_date %}
+    {{ paper.venue }} - {{ paper.venue_date }}
+    {% else %}
+    {{ paper.venue }}
+    {% endif %}
+    {% for link in paper.links %}
+    [<a href="{{ link.url }}">{{ link.label }}</a>]
+    {% endfor %}
+  </li>
+  {% endfor %}
+</ul>
+{% endfor %}
+
+<h2>Recent Talks</h2>
+
+<ul>
+  {% for item in talks.items %}
+  <li>
+    <i>{{ item.title }}</i>{% if item.with %} with {{ item.with }}{% endif %}<br>
+    {{ item.venue }}
+    {% for link in item.links %}
+    [<a href="{{ link.url }}">{{ link.label }}</a>]
+    {% endfor %}
+  </li>
+  {% endfor %}
+</ul>
+
+<h2>Students</h2>
+
+<h3>Current Students</h3>
+<ul>
+  {% for student in students.current %}
+  <li>
+    <a href="{{ student.url }}">{{ student.name }}</a>
+    {% if student.note %}({{ student.note }}){% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+<h3>Past Student Collaborators</h3>
+<ul>
+  {% for student in students.past %}
+  <li>
+    <a href="{{ student.url }}">{{ student.name }}</a>
+    {% if student.note %}({{ student.note }}){% endif %}
+  </li>
+  {% endfor %}
+</ul>
+
+<br>
+<h2>Featured Blog Posts</h2>
+<ul>
+  {% for post in posts.items %}
+  <li>
+    <h3 style="display: inline-block;">
+      <a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+    </h3>
+    <span class="post-meta">{{ post.date }}</span>
+  </li>
+  {% endfor %}
+</ul>
+
+<h2 id="coordinates">Coordinates</h2>
+
+<table>
+  <tbody>
+    {% for row in coords.rows %}
+    <tr>
+      <td>{{ row.label }}</td>
+      <td><a href="{{ row.url }}">{{ row.display }}</a></td>
+      <td>{{ row.note | markdown | replace(from="<p>", to="") | replace(from="</p>", to="") | safe }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
 {% endblock %}
