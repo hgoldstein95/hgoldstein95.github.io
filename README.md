@@ -32,8 +32,15 @@ The workflow installs Zola, runs `zola build`, and deploys `public/` using the A
 
 ```
 config.toml       # Site config: base URL, nav links, author info
+data/             # Structured homepage content (loaded by templates/index.html)
+  news.toml
+  publications.toml
+  talks.toml
+  students.toml
+  featured_posts.toml
+  coordinates.toml
 content/          # Markdown content (TOML front matter, +++ delimiters)
-  _index.md       # Homepage (uses template = "index.html")
+  _index.md       # Homepage prose (about-me paragraphs only)
   about.md
   resume.md
   blog/
@@ -41,7 +48,7 @@ content/          # Markdown content (TOML front matter, +++ delimiters)
     *.md          # Blog posts
 templates/        # Tera HTML templates
   base.html       # Base layout with nav and footer
-  index.html      # Homepage
+  index.html      # Homepage (loads data/ files via load_data)
   blog-list.html  # /blog/ listing page
   blog-page.html  # Individual blog post
   page.html       # Generic page (about, resume)
@@ -49,6 +56,19 @@ templates/        # Tera HTML templates
 sass/             # SCSS source, compiled to static/style.css
 static/           # Copied verbatim: images, PDFs, slides, CNAME
 ```
+
+## Updating Homepage Content
+
+Structured homepage data lives in `data/`. Edit the relevant TOML file:
+
+- **Publications** — `data/publications.toml`: sections with papers, each having `title`, `authors`, `venue`, `links`, and optional `awards`
+- **Talks** — `data/talks.toml`: items with `title`, `venue`, and `links`
+- **Students** — `data/students.toml`: `[[current]]` and `[[past]]` arrays
+- **News** — `data/news.toml`: items with `date` and `text` (supports markdown)
+- **Featured posts** — `data/featured_posts.toml`: manually curated list with `title`, `url`, `date`
+- **Coordinates** — `data/coordinates.toml`: contact rows with `label`, `url`, `display`, `note`
+
+The about-me prose lives in `content/_index.md` (body only, no front matter changes needed).
 
 ## Adding a Blog Post
 

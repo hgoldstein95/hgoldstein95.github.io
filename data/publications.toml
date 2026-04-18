@@ -1,0 +1,114 @@
+[[sections]]
+name = "Property-Based Testing"
+
+[[sections.papers]]
+title = "Tuning Random Generators: Property-Based Testing as Probabilistic Programming"
+authors = "Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin C. Pierce, Guy Van den Broeck"
+venue = "OOPSLA 2025"
+[[sections.papers.links]]
+label = "Preprint"
+url = "https://starai.cs.ucla.edu/papers/TjoaOOPSLA25.pdf"
+
+[[sections.papers]]
+title = "Tyche: Making Sense of Property-Based Testing Effectiveness"
+authors = "Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head"
+venue = "UIST 2024"
+[[sections.papers.links]]
+label = "PDF"
+url = "papers/uist24-tyche.pdf"
+
+[[sections.papers]]
+title = "Property-Based Testing in Practice"
+authors = "Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head"
+venue = "ICSE 2024"
+awards = ["Distinguished Paper"]
+[[sections.papers.links]]
+label = "PDF"
+url = "papers/icse24-pbt-in-practice.pdf"
+
+[[sections.papers]]
+title = "Reflecting on Random Generation"
+authors = "Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce"
+venue = "ICFP 2023"
+awards = ["Distinguished Paper"]
+[[sections.papers.links]]
+label = "PDF"
+url = "papers/icfp23-reflective.pdf"
+[[sections.papers.links]]
+label = "Talk"
+url = "https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316"
+
+[[sections.papers]]
+title = "Etna: An Evaluation Platform for Property-Based Testing"
+authors = "Jessica Shi, Alperen Keles, Harrison Goldstein, Benjamin C. Pierce, Leonidas Lampropoulos"
+venue = "ICFP 2023 Experience Report"
+[[sections.papers.links]]
+label = "PDF"
+url = "papers/icfp23-etna.pdf"
+
+[[sections.papers]]
+title = "Parsing Randomness"
+authors = "Harrison Goldstein, Benjamin C. Pierce"
+venue = "OOPSLA 2022"
+[[sections.papers.links]]
+label = "PDF"
+url = "papers/oopsla22.pdf"
+
+[[sections]]
+name = "Usable Formal Methods and Specification"
+
+[[sections.papers]]
+title = "QED in Context: An Observation Study of Proof Assistant Users"
+authors = "Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, Andrew Head"
+venue = "OOPSLA 2025"
+[[sections.papers.links]]
+label = "Preprint"
+url = "https://jwshii.github.io/OOPSLA25.pdf"
+
+[[sections.papers]]
+title = "FEDT: Supporting Experiment Design and Execution in HCI Fabrication Research"
+authors = "Valkyrie Savage, Harrison Goldstein, Nóra Püsök, Jia Yi Ren, Bhaskar Dutt, Chandrakana Nandi, Lora Oehlberg"
+venue = "UIST 2025"
+[[sections.papers.links]]
+label = "DOI"
+url = "https://dl.acm.org/doi/10.1145/3746059.3747739"
+
+[[sections.papers]]
+title = "Designing Proof Deautomation in Rocq"
+authors = "Jessica Shi, Cassia Torczon, Harrison Goldstein, Andrew Head, Benjamin Pierce"
+venue = "PLATEAU 2025"
+[[sections.papers.links]]
+label = "PDF"
+url = "https://jwshii.github.io/deauto.pdf"
+
+[[sections]]
+name = "Blog Posts"
+
+[[sections.papers]]
+title = "Think Globally, Discuss PL Locally"
+authors = "Harrison Goldstein, Michael Greenberg, Noam Zilberstein"
+venue = "SIGPLAN PL Perspectives"
+venue_date = "September 16, 2025"
+[[sections.papers.links]]
+label = "Post"
+url = "https://blog.sigplan.org/2025/09/16/think-globally-discuss-pl-locally/"
+
+[[sections.papers]]
+title = "Conferences after COVID: An Early-Career Perspective"
+authors = "Joseph W. Cutler, Harry Goldstein, Andrew K. Hirsch, Jaemin Hong, Chandrakana Nandi"
+venue = "SIGPLAN PL Perspectives"
+venue_date = "March 25, 2021"
+[[sections.papers.links]]
+label = "Post"
+url = "https://blog.sigplan.org/2021/03/25/conferences-after-covid-an-early-career-perspective/"
+
+[[sections]]
+name = "Fun Stuff"
+
+[[sections.papers]]
+title = "Everybody Clap Your Hands: The Cha-Cha Slide is Turing Complete"
+authors = "Harrison Goldstein"
+venue = "SIGBOVIK 2022"
+[[sections.papers.links]]
+label = "PDF"
+url = "papers/cha-cha-slide.pdf"
