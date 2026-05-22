@@ -8,3 +8,10 @@ _site
 .DS_Store
 
 .bundle
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+resume.pdf
