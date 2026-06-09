@@ -56,10 +56,18 @@ Defended May 24, 2024 [PDF](papers/dissertation.pdf) [Talk](https://youtu.be/S05
 
 ## Selected Publications
 
+- <i>The Search for Constrained Random Generators</i><br/>
+Harrison Goldstein, Hila Peleg, Cassia Torczon, Daniel Sainati, Leonidas Lampropoulos, Benjamin C. Pierce<br/>
+PLDI 2026 [DOI](https://doi.org/10.1145/3808329)
+
+- <i>Fail Faster: Staging and Fast Randomness for High-Performance PBT</i><br/>
+Cynthia Richey, Joseph W. Cutler, Harrison Goldstein, Benjamin C. Pierce<br/>
+OOPSLA 2026 [DOI](https://dl.acm.org/doi/pdf/10.1145/3798263)
+
 - <i>Tuning Random Generators: Property-Based Testing as Probabilistic Programming</i><br/>
 Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin C. Pierce, Guy Van den
 Broeck<br/>
-OOPSLA 2025 [Preprint](https://starai.cs.ucla.edu/papers/TjoaOOPSLA25.pdf)
+OOPSLA 2025 [DOI](https://dl.acm.org/doi/abs/10.1145/3763082)
 
 - <i>QED in Context: An Observation Study of Proof Assistant Users</i><br/>
 Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, Andrew Head<br/>
