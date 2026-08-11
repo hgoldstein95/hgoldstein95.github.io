@@ -2,12 +2,28 @@
 name = "Property-Based Testing"
 
 [[sections.papers]]
+title = "The Search for Constrained Random Generators"
+authors = "Harrison Goldstein, Hila Peleg, Cassia Torczon, Daniel Sainati, Leonidas Lampropoulos, Benjamin C. Pierce"
+venue = "PLDI 2026"
+[[sections.papers.links]]
+label = "DOI"
+url = "https://doi.org/10.1145/3808329"
+
+[[sections.papers]]
+title = "Fail Faster: Staging and Fast Randomness for High-Performance PBT"
+authors = "Cynthia Richey, Joseph W. Cutler, Harrison Goldstein, Benjamin C. Pierce"
+venue = "OOPSLA 2026"
+[[sections.papers.links]]
+label = "DOI"
+url = "https://dl.acm.org/doi/pdf/10.1145/3798263"
+
+[[sections.papers]]
 title = "Tuning Random Generators: Property-Based Testing as Probabilistic Programming"
 authors = "Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin C. Pierce, Guy Van den Broeck"
 venue = "OOPSLA 2025"
 [[sections.papers.links]]
-label = "Preprint"
-url = "https://starai.cs.ucla.edu/papers/TjoaOOPSLA25.pdf"
+label = "DOI"
+url = "https://dl.acm.org/doi/abs/10.1145/3763082"
 
 [[sections.papers]]
 title = "Tyche: Making Sense of Property-Based Testing Effectiveness"
