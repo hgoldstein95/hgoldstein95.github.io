@@ -3,8 +3,8 @@
 
   <head>
     <title>
-      {% if page.title %}{{ page.title }}
-      {% elif section.title and section.title != config.title %}{{ section.title }}
+      {% if page is defined and page.title %}{{ page.title }}
+      {% elif section is defined and section.title and section.title != config.title %}{{ section.title }}
       {% else %}{{ config.title }}
       {% endif %}
     </title>
@@ -14,9 +14,9 @@
     <meta name="keywords" content="blog, {{ config.extra.author }}, {{ config.title }}">
     <meta name="author" content="{{ config.extra.author }}">
     {% set desc = config.description %}
-    {% if page.description %}
+    {% if page is defined and page.description %}
       {% set desc = page.description %}
-    {% elif section.description %}
+    {% elif section is defined and section.description %}
       {% set desc = section.description %}
     {% endif %}
     {% set url = current_url | default(value = config.base_url) %}
