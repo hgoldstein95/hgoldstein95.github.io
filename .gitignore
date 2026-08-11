@@ -2,11 +2,14 @@
 
 .DS_Store
 
-.bundle
+# Zola build output
+public
+
+# LaTeX build artifacts (resume/resume.pdf is published as static/resume.pdf)
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 *.out
 *.synctex.gz
-resume.pdf
+resume/resume.pdf

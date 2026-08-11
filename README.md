@@ -53,9 +53,12 @@ templates/        # Tera HTML templates
   blog-page.html  # Individual blog post
   page.html       # Generic page (about, resume)
   redirect.html   # For aliases
-sass/             # SCSS source, compiled to static/style.css
+sass/             # SCSS source, compiled to public/style.css at build time
 static/           # Copied verbatim: images, PDFs, slides, CNAME
 ```
+
+Code blocks are highlighted with the `github-light` theme; Zola generates
+`public/giallo.css` for it, which `base.html` links alongside `style.css`.
 
 ## Updating Homepage Content
 
@@ -84,3 +87,23 @@ Post content here.
 ```
 
 Add `aliases = ["/old/path.html"]` if redirecting from a legacy URL.
+
+### Math
+
+Set `math = true` under `[extra]` in the front matter to load MathJax on that
+post. Markdown is parsed before MathJax runs, so it will mangle unprotected
+LaTeX (`$a^*b^*$` becomes `a^<em>b^</em>`). Two conventions avoid that:
+
+- **Display math** goes in a raw HTML block, which markdown passes through
+  verbatim — no escaping needed, so multi-line environments work as written:
+
+  ```
+  <div class="math">
+  $$
+  D_a(r^*) = D_a(r)r^*
+  $$
+  </div>
+  ```
+
+- **Inline math** uses single dollars, with `*` and `_` backslash-escaped:
+  `$a^\*b^\*$`. A literal LaTeX backslash pair must be written `\\\\`.
