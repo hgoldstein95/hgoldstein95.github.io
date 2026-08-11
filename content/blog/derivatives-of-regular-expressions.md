@@ -2,6 +2,9 @@
 title = "Derivatives of Regular Expressions"
 date = 2017-09-30
 aliases = ["/languages/2017/09/30/derivatives-of-regular-expressions.html"]
+
+[extra]
+math = true
 +++
 
 > Quick disclaimer: The ideas in this blog post are not my original work. I am
@@ -20,106 +23,142 @@ discovered Brzozowski derivatives.
 Before I start, let's take a step back and define exactly what we mean by
 regular expressions. Here's a nice inductive definition:
 
-$$ r ::= \varnothing \mid a \mid r_1 + r_2 \mid r_1 r_2 \mid r^* \quad\quad a
-\in \Sigma $$
+<div class="math">
+$$
+r ::= \varnothing \mid a \mid r_1 + r_2 \mid r_1 r_2 \mid r^* \quad\quad a
+\in \Sigma
+$$
+</div>
 
-Note that this definition is minimal---I don't include things like $$r^+$$ or
-$$r?$$ because they can be written in terms of the other operators. One bit of
-common notation that I *will* use is $$\varepsilon$$ to instead of
-$$\varnothing^*$$; both are the regular expression denoting the empty string.
+Note that this definition is minimal---I don't include things like $r^+$ or
+$r?$ because they can be written in terms of the other operators. One bit of
+common notation that I *will* use is $\varepsilon$ to instead of
+$\varnothing^\*$; both are the regular expression denoting the empty string.
 
 At this point, I'll assume you have a general understanding of how to interpret
-regular expressions; so if I write $$a^*b^* + c$$, you should know that it
-denotes any string that is either zero or more $$a$$'s followed zero or more
-$$b$$'s, or just $$c$$.
+regular expressions; so if I write $a^\*b^\* + c$, you should know that it
+denotes any string that is either zero or more $a$'s followed zero or more
+$b$'s, or just $c$.
 
 ### The Brzozowski Derivative
 With notation out of the way, we can start to look at what a Brzozowski
 derivative is.[^2] Intuitively, it is a way of partially interpreting a regular
-expression. The derivative of $$r$$ with respect to a character $$a$$,
-$$D_a(r)$$, is a new regular expression that matches all strings from $$r$$ that
-started with an $$a$$, but without the $$a$$. We "take $$a$$ off the front of
-$$r$$". For example,
+expression. The derivative of $r$ with respect to a character $a$,
+$D\_a(r)$, is a new regular expression that matches all strings from $r$ that
+started with an $a$, but without the $a$. We "take $a$ off the front of
+$r$". For example,
 
-$$ D_b(foo + bar + baz) = ar + az $$
+<div class="math">
+$$
+D_b(foo + bar + baz) = ar + az
+$$
+</div>
 
-Since $$foo$$ doesn't start with a $$b$$, we dropped that part of the expression
-altogether. For each of the other pieces, we just took a $$b$$ off of the front.
+Since $foo$ doesn't start with a $b$, we dropped that part of the expression
+altogether. For each of the other pieces, we just took a $b$ off of the front.
 
 Now that we understand what we're going for, let's actually define a way to
-compute $$D_a(r)$$. We'll do it inductively, step by step.
+compute $D\_a(r)$. We'll do it inductively, step by step.
 
 ---
 
-$$ D_a(\varnothing) = \varnothing $$
+<div class="math">
+$$
+D_a(\varnothing) = \varnothing
+$$
+</div>
 
-This one should be pretty obvious. If you take $$a$$ off of every string in
-$$\varnothing$$... well there were no strings to begin with.
+This one should be pretty obvious. If you take $a$ off of every string in
+$\varnothing$... well there were no strings to begin with.
 
 ---
 
-$$ D_a(c) = \begin{cases}
+<div class="math">
+$$
+D_a(c) = \begin{cases}
 \varepsilon & a = c \\
 \varnothing & a \neq c
-\end{cases} $$
+\end{cases}
+$$
+</div>
 
-The idea here is that if you try to take $$a$$ off of the string $$a$$, you get
-an empty string back, and if you try to take $$a$$ off of the string $$c$$
-(where $$c$$ is some character that isn't $$a$$), you just can't do it.
+The idea here is that if you try to take $a$ off of the string $a$, you get
+an empty string back, and if you try to take $a$ off of the string $c$
+(where $c$ is some character that isn't $a$), you just can't do it.
 
 ---
 
-$$ D_a(r_1 + r_2) = D_a(r_1) + D_a(r_2) $$
+<div class="math">
+$$
+D_a(r_1 + r_2) = D_a(r_1) + D_a(r_2)
+$$
+</div>
 
-If you want to take an $$a$$ off the front of an alternation, you can either
+If you want to take an $a$ off the front of an alternation, you can either
 take it off of the first expression, or off of the second.
 
 ---
 
-$$ D_a(r_1r_2) = D_a(r_1)r_2 + E(r_1)D_a(r_2) $$
+<div class="math">
+$$
+D_a(r_1r_2) = D_a(r_1)r_2 + E(r_1)D_a(r_2)
+$$
+</div>
 
-Uh oh. What does $$E(r)$$ mean? It's actually totally straightforward, and I'll
-define it in detail soon. For now, just know that $$E(r) = \varepsilon$$ if
-$$r$$ can denote the empty string, and $$\varnothing$$ otherwise. With that in
-mind, this statement says that taking $$a$$ off of a concatenation either means
-taking $$a$$ off of the first expression, or **if the first expression can be
-empty** taking $$a$$ off of the second expression.
+Uh oh. What does $E(r)$ mean? It's actually totally straightforward, and I'll
+define it in detail soon. For now, just know that $E(r) = \varepsilon$ if
+$r$ can denote the empty string, and $\varnothing$ otherwise. With that in
+mind, this statement says that taking $a$ off of a concatenation either means
+taking $a$ off of the first expression, or **if the first expression can be
+empty** taking $a$ off of the second expression.
 
 ---
 
-$$ D_a(r^*) = D_a(r)r^* $$
+<div class="math">
+$$
+D_a(r^*) = D_a(r)r^*
+$$
+</div>
 
-Finally, we can say that taking an $$a$$ off of a sequence of $$r$$'s means
-taking $$a$$ off of the first $$r$$, and leaving a sequence of $$r$$'s after
+Finally, we can say that taking an $a$ off of a sequence of $r$'s means
+taking $a$ off of the first $r$, and leaving a sequence of $r$'s after
 that. This looks a little silly, but if you play around with it for a bit, it
 should make sense.[^3]
 
 ### Making Observations
-Let's go back and define $$E(r)$$, which we'll call the observation function.
-Remember that it "observes" whether $$r$$ can denote the empty string, and
-returns $$\varepsilon$$ or $$\varnothing$$ accordingly. Here's the definition:
+Let's go back and define $E(r)$, which we'll call the observation function.
+Remember that it "observes" whether $r$ can denote the empty string, and
+returns $\varepsilon$ or $\varnothing$ accordingly. Here's the definition:
 
-$$ \begin{aligned}
+<div class="math">
+$$
+\begin{aligned}
 E(\varnothing) &= \varnothing \\
 E(a) &= \varnothing \\
 E(r_1 + r_2) &= E(r_1) + E(r_2) \\
 E(r_1r_2) &= E(r_1)E(r_2) \\
 E(r^*) &= \varepsilon
-\end{aligned} $$
+\end{aligned}
+$$
+</div>
 
-The only tricky thing here is convincing yourself that the $$+$$ and $$\cdot$$
+The only tricky thing here is convincing yourself that the $+$ and $\cdot$
 cases work. These facts might help:[^4]
 
-$$ \begin{aligned}
+<div class="math">
+$$
+\begin{aligned}
 \varnothing + r &= r \\
 r + \varnothing &= r \\
 \varnothing r &= \varnothing \\
 r \varnothing &= \varnothing \\
 \varepsilon r &= r \\
 r \varepsilon &= r
-\end{aligned} $$
+\end{aligned}
+$$
+</div>
 
-It turns out that $$E$$ will be more important than just helping us define the
+It turns out that $E$ will be more important than just helping us define the
 derivative. We can actually use the observation function to tell us about which
 strings match a given expression.
 
@@ -127,26 +166,34 @@ strings match a given expression.
 We're finally ready to implement a regular expression matcher. Let's can extend
 our derivative function from earlier to handle entire strings:
 
-$$ \begin{aligned}
-\textbf{D}\_{\varepsilon}(r) &= r \\
-\textbf{D}\_{ax}(r) &= \textbf{D}\_x(D\_a(r))
-\end{aligned} $$
+<div class="math">
+$$
+\begin{aligned}
+\textbf{D}_{\varepsilon}(r) &= r \\
+\textbf{D}_{ax}(r) &= \textbf{D}_x(D_a(r))
+\end{aligned}
+$$
+</div>
 
 You can think of this as taking a derivative with respect to each character of
-the string, in order, and accumulating the result. I now claim that $$r$$
-matches a string $$x$$ if and only if
+the string, in order, and accumulating the result. I now claim that $r$
+matches a string $x$ if and only if
 
-$$ E(\textbf{D}_x(r)) = \varepsilon $$
+<div class="math">
+$$
+E(\textbf{D}_x(r)) = \varepsilon
+$$
+</div>
 
-So how does this work? Well, $$\textbf{D}_x(r)$$ goes character-by-character in
-$$x$$, taking each character off of $$r$$. This means that by the end, we will
-have a regular expression that matches everything left in $$r$$ after taking the
-string $$x$$ off the front.
+So how does this work? Well, $\textbf{D}\_x(r)$ goes character-by-character in
+$x$, taking each character off of $r$. This means that by the end, we will
+have a regular expression that matches everything left in $r$ after taking the
+string $x$ off the front.
 
-If we take $$x$$ off of the strings in $$r$$ and that set contains the empty
-string, then it must be the case that $$x$$ was in $$r$$ to start with!
-Conversely, if we know that $$r$$ matched $$x$$ to start with, then removing
-$$x$$ from $$x$$ would leave us with $$\varepsilon$$.
+If we take $x$ off of the strings in $r$ and that set contains the empty
+string, then it must be the case that $x$ was in $r$ to start with!
+Conversely, if we know that $r$ matched $x$ to start with, then removing
+$x$ from $x$ would leave us with $\varepsilon$.
 
 Practically, this means that we can use Brzozowski derivatives to write regular
 expression matchers in code! I have a
@@ -157,9 +204,9 @@ verified version in Coq.
 ### Why I'm Excited
 When I first learned about regular expressions formally, we were given a process
 for implementing them:
-0. Transform the regular expression into an $$\varepsilon$$-NFA, using a
+0. Transform the regular expression into an $\varepsilon$-NFA, using a
    Thompson construction.
-0. Turn that $$\varepsilon$$-NFA into a normal NFA.
+0. Turn that $\varepsilon$-NFA into a normal NFA.
 0. Determinize the NFA to get a DFA.
 0. Run the DFA on the input string.
 
@@ -204,8 +251,8 @@ Notes:
     probably write another post about it.
 
 [^4]: I'm being sort of sloppy with my notation around equality. What I really
-    mean is that $$[\![\varnothing + r ]\!] = [\![ r ]\!]$$, etc., so $$E(r)$$
-    might not actually be equal to $$\varepsilon$$ or $$\varnothing$$, but it
+    mean is that $[\\![\varnothing + r ]\\!] = [\\![ r ]\\!]$, etc., so $E(r)$
+    might not actually be equal to $\varepsilon$ or $\varnothing$, but it
     will always be denotationally equal to one or the other.
 
 [^5]: To be clear, there's nothing wrong with "just solving the problem"---in

@@ -1,10 +1,15 @@
 base_url = "https://harrisongoldste.in"
 title = "Harrison Goldstein"
-description = ""
+description = "Harrison Goldstein is an Assistant Professor of Computer Science and Engineering at the University at Buffalo, working on property-based testing, formal methods, and usable software validation tools."
+author = "Harrison Goldstein"
 compile_sass = true
 build_search_index = false
 generate_feeds = true
 feed_filenames = ["atom.xml"]
+
+[markdown.highlighting]
+theme = "github-light"
+style = "class"
 
 [extra]
 author = "Harrison Goldstein"
@@ -25,4 +30,4 @@ link = "/resume.pdf"
 
 [[extra.nav]]
 name = "Contact"
-link = "#coordinates"
+link = "/#coordinates"

@@ -2,6 +2,9 @@
 title = "The (Regular) Language of Dance"
 date = 2018-04-02
 aliases = ["/languages/2018/04/02/language-of-dance.html"]
+
+[extra]
+math = true
 +++
 
 Over the last month or so, I've gotten really into swing dancing. It's a new and
@@ -134,17 +137,17 @@ there are no two arrows with the same label coming from the same source state.
 Technically speaking, labeling both "closed" and "closed, 8-count" as start
 states is a form of non-determinism, but this is resolved as soon as the dance
 starts, so it isn't very interesting. A more interesting form of non-determinism
-is "$$\varepsilon$$-transitions". An $$\varepsilon$$-transition is a transition
+is "$\varepsilon$-transitions". An $\varepsilon$-transition is a transition
 that happens without a symbol being read, or, in this case, without a move being
 done. It turns out that these transitions don't actually change the set of
 languages that automata can represent, but they do offer a compact and intuitive
 way to consider state changes that don't depend on the input/moves.
 
-If I allowed myself to use $$\varepsilon$$-transitions, I could encode things
+If I allowed myself to use $\varepsilon$-transitions, I could encode things
 like the music speeding up, or even something as silly as *getting tired*. In
 both of these cases, we might want to restrict ourselves to simpler moves that
 might be less time-consuming and labor-intensive. In the model, this would
-correspond to a set of $$\varepsilon$$-transitions into a copy of the original
+correspond to a set of $\varepsilon$-transitions into a copy of the original
 machine with the same states but fewer transitions.
 
 **Matching up with music.**

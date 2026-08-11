@@ -2,6 +2,9 @@
 title = "Encryption and Adjunctions"
 date = 2017-05-26
 aliases = ["/category-theory/2017/05/26/encryption-and-adjunctions.html"]
+
+[extra]
+math = true
 +++
 
 > This post goes pretty deep into Category Theory, fairly quickly. For
@@ -10,59 +13,79 @@ aliases = ["/category-theory/2017/05/26/encryption-and-adjunctions.html"]
 > The post on [adjunctions](https://bartoszmilewski.com/2016/04/18/adjunctions/)
 > is especially relevant.
 
-In Category Theory, a monad is (loosely) defined as a functor $$T$$ with two
+In Category Theory, a monad is (loosely) defined as a functor $T$ with two
 natural transformations:
 
-$$ \begin{aligned}
+<div class="math">
+$$
+\begin{aligned}
 \eta &: Id \to T \\
 \mu &: T \circ T \to T
-\end{aligned} $$
+\end{aligned}
+$$
+</div>
 
-I wondered what it would look like to replace the $$\mu$$ with a slightly
+I wondered what it would look like to replace the $\mu$ with a slightly
 different natural transformation:
 
-$$ \mu' : T \circ T \to Id $$
+<div class="math">
+$$
+\mu' : T \circ T \to Id
+$$
+</div>
 
 My intuition was that this might be useful for some kind of security
-application. If the functor represented some kind of encryption, then $$\eta$$
-allows one party to encrypt some data, and $$\mu'$$ allows the data to be used
+application. If the functor represented some kind of encryption, then $\eta$
+allows one party to encrypt some data, and $\mu'$ allows the data to be used
 after being properly decrypted.
 
 In practice, however, this didn't quite make sense. The biggest problem was that
 encryption and decryption are inverses, but they aren't symmetric. It seemed
-that if this was going to work, I'd need two functors (call them $$L$$ and
-$$R$$), and a natural transformation:
+that if this was going to work, I'd need two functors (call them $L$ and
+$R$), and a natural transformation:
 
-$$ \epsilon : L \circ R \to Id $$
+<div class="math">
+$$
+\epsilon : L \circ R \to Id
+$$
+</div>
 
-One party can encrypt some data using $$R$$, and the other can apply $$L$$ and
-use $$\epsilon$$ to retrieve the data.
+One party can encrypt some data using $R$, and the other can apply $L$ and
+use $\epsilon$ to retrieve the data.
 
 If you know some Category Theory, you might know where this is going:
-adjunctions! An adjunction is a pair of functors $$L$$ and $$R$$ with the
+adjunctions! An adjunction is a pair of functors $L$ and $R$ with the
 following natural transformations:
 
-$$ \begin{aligned}
+<div class="math">
+$$
+\begin{aligned}
 \eta &: Id \to R \circ L \\
 \epsilon &: L \circ R \to Id
-\end{aligned} $$
+\end{aligned}
+$$
+</div>
 
-We write $$L \dashv R$$ to express this condition. Note that $$\epsilon$$ is
+We write $L \dashv R$ to express this condition. Note that $\epsilon$ is
 exactly what we wrote before! If we want to represent encryption as a pair of
 functors, it would be smart to choose two *adjoined* functors. (If you're
-curious, the $$\eta$$ can actually be understood as the same $$\eta$$ from the
-monad definition. For any adjunction, $$R \circ L$$ is a monad.)
+curious, the $\eta$ can actually be understood as the same $\eta$ from the
+monad definition. For any adjunction, $R \circ L$ is a monad.)
 
 
-Since we'd like this construct to be useful, we want candidates for $$L$$ and
-$$R$$ that are endofunctors (functors from a category to itself) in the category
+Since we'd like this construct to be useful, we want candidates for $L$ and
+$R$ that are endofunctors (functors from a category to itself) in the category
 where objects are **types**, and morphisms are **pure functions**. (This
-category is often called $$Hask$$, named after the Haskell programming
+category is often called $Hask$, named after the Haskell programming
 language.) One such adjunction is
 
-$$ (X, -) \dashv (X \to -) $$
+<div class="math">
+$$
+(X, -) \dashv (X \to -)
+$$
+</div>
 
-where $$L$$ is the product (or `Tuple`) functor, and $$R$$ is the exponential
+where $L$ is the product (or `Tuple`) functor, and $R$ is the exponential
 (or `Reader`) functor. Using actual code (I'm
 using [Idris](https://www.idris-lang.org/) here), the functors are just data
 types, and are written as follows:
@@ -73,7 +96,7 @@ data R k a = MkR (k -> a)
 ```
 
 We can convince ourselves that these functors are adjoined by implementing
-$$\eta$$ and $$\epsilon$$, which are polymorphic functions that are
+$\eta$ and $\epsilon$, which are polymorphic functions that are
 conventionally called `unit` and `counit` respectively:
 
 ```haskell
