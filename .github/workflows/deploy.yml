@@ -30,9 +30,22 @@ jobs:
             latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode resume.tex
       - name: Publish resume PDF into the site
         run: cp resume/resume.pdf static/resume.pdf
-      - uses: taiki-e/install-action@v2
-        with:
-          tool: zola@0.23.3
+      # Installed from the release tarball rather than a third-party action.
+      # ubuntu-latest is x86_64; ZOLA_SHA256 is the sha256 of that asset and
+      # must be updated whenever ZOLA_VERSION is.
+      - name: Install Zola
+        shell: bash
+        env:
+          ZOLA_VERSION: "0.23.3"
+          ZOLA_SHA256: "f07c92607e5745268b576bd325ceef3a582aada253bb64db8d92a8a85303d958"
+        run: |
+          url="https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+          curl -sSfL "$url" -o "$RUNNER_TEMP/zola.tar.gz"
+          echo "${ZOLA_SHA256}  ${RUNNER_TEMP}/zola.tar.gz" | sha256sum -c -
+          mkdir -p "$RUNNER_TEMP/zola-bin"
+          tar -xzf "$RUNNER_TEMP/zola.tar.gz" -C "$RUNNER_TEMP/zola-bin" zola
+          "$RUNNER_TEMP/zola-bin/zola" --version
+          echo "$RUNNER_TEMP/zola-bin" >> "$GITHUB_PATH"
       - run: zola build
       - uses: actions/upload-pages-artifact@v3
         with:
