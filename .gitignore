@@ -5,7 +5,8 @@
 # Zola build output
 public
 
-# LaTeX build artifacts (resume/resume.pdf is published as static/resume.pdf)
+# LaTeX build artifacts. static/resume.pdf is generated from resume/resume.tex
+# by the Makefile (and by the deploy workflow), so it is not tracked either.
 *.aux
 *.fdb_latexmk
 *.fls
@@ -13,3 +14,4 @@ public
 *.out
 *.synctex.gz
 resume/resume.pdf
+static/resume.pdf

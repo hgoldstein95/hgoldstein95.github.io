@@ -4,12 +4,13 @@ Personal website and blog at [harrisongoldste.in](https://harrisongoldste.in), b
 
 ## Prerequisites
 
-Install Zola: `brew install zola`
+- Zola: `brew install zola`
+- A LaTeX toolchain with `latexmk` (MacTeX, or `brew install --cask mactex-no-gui`), used to build the CV
 
 ## Development
 
 ```
-zola serve
+make serve
 ```
 
 Starts a local server at `http://127.0.0.1:1111` with live reload.
@@ -17,16 +18,25 @@ Starts a local server at `http://127.0.0.1:1111` with live reload.
 ## Build
 
 ```
-zola build
+make
 ```
 
 Outputs to `public/`. Sass is compiled automatically (`compile_sass = true` in `config.toml`).
+
+Use `make` rather than `zola build` directly: the published CV at
+`static/resume.pdf` is generated from `resume/resume.tex` and is not checked
+into git, so a bare `zola build` will produce a site whose CV link 404s.
+The Makefile rebuilds it whenever the `.tex` is newer, and `make clean` removes
+the site output along with every LaTeX artifact.
 
 ## Deploy
 
 The site is hosted on GitHub Pages and published via GitHub Actions (`.github/workflows/deploy.yml`). Pushing to `master` triggers a build and deploy automatically — no manual steps needed.
 
-The workflow installs Zola, runs `zola build`, and deploys `public/` using the Actions-based Pages deployment. GitHub Pages must be configured to use **GitHub Actions** as the source (Settings → Pages → Source).
+The workflow compiles `resume/resume.tex` in a TeX Live container, copies the
+PDF into `static/`, installs Zola, runs `zola build`, and deploys `public/`
+using the Actions-based Pages deployment. GitHub Pages must be configured to
+use **GitHub Actions** as the source (Settings → Pages → Source).
 
 ## Structure
 
