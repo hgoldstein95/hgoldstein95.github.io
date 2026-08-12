@@ -1,11 +1,13 @@
 # hgoldstein95.github.io
 
-Personal website and blog at [harrisongoldste.in](https://harrisongoldste.in), built with [Zola](https://www.getzola.org/).
+Personal website and blog at [harrisongoldste.in](https://harrisongoldste.in), built with
+[Zola](https://www.getzola.org/).
 
 ## Prerequisites
 
 - Zola: `brew install zola`
-- A LaTeX toolchain with `latexmk` (MacTeX, or `brew install --cask mactex-no-gui`), used to build the CV
+- A LaTeX toolchain with `latexmk` (MacTeX, or `brew install --cask mactex-no-gui`), used to build
+  the CV
 
 ## Development
 
@@ -23,21 +25,21 @@ make
 
 Outputs to `public/`. Sass is compiled automatically (`compile_sass = true` in `config.toml`).
 
-Use `make` rather than `zola build` directly: the published CV at
-`static/resume.pdf` is generated from `resume/resume.tex` and is not checked
-into git, so a bare `zola build` will produce a site whose CV link 404s.
-The Makefile rebuilds it whenever the `.tex` is newer, and `make clean` removes
+Use `make` rather than `zola build` directly: the published CV at `static/resume.pdf` is generated
+from `resume/resume.tex` and is not checked into git, so a bare `zola build` will produce a site
+whose CV link 404s.  The Makefile rebuilds it whenever the `.tex` is newer, and `make clean` removes
 the site output along with every LaTeX artifact.
 
 ## Deploy
 
-The site is hosted on GitHub Pages and published via GitHub Actions (`.github/workflows/deploy.yml`). Pushing to `master` triggers a build and deploy automatically — no manual steps needed.
+The site is hosted on GitHub Pages and published via GitHub Actions
+(`.github/workflows/deploy.yml`). Pushing to `master` triggers a build and deploy automatically — no
+manual steps needed.
 
-The workflow compiles `resume/resume.tex` with `latexmk` in the official
-`texlive/texlive` image, copies the PDF into `static/`, installs Zola, runs
-`zola build`, and deploys `public/` using the Actions-based Pages deployment.
-GitHub Pages must be configured to use **GitHub Actions** as the source
-(Settings → Pages → Source).
+The workflow compiles `resume/resume.tex` with `latexmk` in the official `texlive/texlive` image,
+copies the PDF into `static/`, installs Zola, runs `zola build`, and deploys `public/` using the
+Actions-based Pages deployment.  GitHub Pages must be configured to use **GitHub Actions** as the
+source (Settings → Pages → Source).
 
 The same `docker run` works locally if you'd rather not install TeX Live:
 
@@ -76,14 +78,15 @@ sass/             # SCSS source, compiled to public/style.css at build time
 static/           # Copied verbatim: images, PDFs, slides, CNAME
 ```
 
-Code blocks are highlighted with the `github-light` theme; Zola generates
-`public/giallo.css` for it, which `base.html` links alongside `style.css`.
+Code blocks are highlighted with the `github-light` theme; Zola generates `public/giallo.css` for
+it, which `base.html` links alongside `style.css`.
 
 ## Updating Homepage Content
 
 Structured homepage data lives in `data/`. Edit the relevant TOML file:
 
-- **Publications** — `data/publications.toml`: sections with papers, each having `title`, `authors`, `venue`, `links`, and optional `awards`
+- **Publications** — `data/publications.toml`: sections with papers, each having `title`, `authors`,
+  `venue`, `links`, and optional `awards`
 - **Talks** — `data/talks.toml`: items with `title`, `venue`, and `links`
 - **Students** — `data/students.toml`: `[[current]]` and `[[past]]` arrays
 - **News** — `data/news.toml`: items with `date` and `text` (supports markdown)
@@ -109,13 +112,12 @@ Add `aliases = ["/old/path.html"]` if redirecting from a legacy URL.
 
 ### Math
 
-Set `math = true` under `[extra]` in the front matter to load MathJax on that
-post. Markdown is parsed before MathJax runs, so it will mangle unprotected
-LaTeX (`$a^*b^*$` becomes `a^<em>b^</em>`). Two conventions avoid that:
+Set `math = true` under `[extra]` in the front matter to load MathJax on that post. Markdown is
+parsed before MathJax runs, so it will mangle unprotected LaTeX (`$a^*b^*$` becomes
+`a^<em>b^</em>`). Two conventions avoid that:
 
-- **Display math** goes in a raw HTML block, which markdown passes through
-  verbatim — no escaping needed, so multi-line environments work as written:
-
+- **Display math** goes in a raw HTML block, which markdown passes through verbatim — no escaping
+  needed, so multi-line environments work as written:
   ```
   <div class="math">
   $$
@@ -123,6 +125,5 @@ LaTeX (`$a^*b^*$` becomes `a^<em>b^</em>`). Two conventions avoid that:
   $$
   </div>
   ```
-
-- **Inline math** uses single dollars, with `*` and `_` backslash-escaped:
-  `$a^\*b^\*$`. A literal LaTeX backslash pair must be written `\\\\`.
+- **Inline math** uses single dollars, with `*` and `_` backslash-escaped: `$a^\*b^\*$`. A literal
+  LaTeX backslash pair must be written `\\\\`.
