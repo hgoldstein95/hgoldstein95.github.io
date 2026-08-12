@@ -33,10 +33,19 @@ the site output along with every LaTeX artifact.
 
 The site is hosted on GitHub Pages and published via GitHub Actions (`.github/workflows/deploy.yml`). Pushing to `master` triggers a build and deploy automatically — no manual steps needed.
 
-The workflow compiles `resume/resume.tex` in a TeX Live container, copies the
-PDF into `static/`, installs Zola, runs `zola build`, and deploys `public/`
-using the Actions-based Pages deployment. GitHub Pages must be configured to
-use **GitHub Actions** as the source (Settings → Pages → Source).
+The workflow compiles `resume/resume.tex` with `latexmk` in the official
+`texlive/texlive` image, copies the PDF into `static/`, installs Zola, runs
+`zola build`, and deploys `public/` using the Actions-based Pages deployment.
+GitHub Pages must be configured to use **GitHub Actions** as the source
+(Settings → Pages → Source).
+
+The same `docker run` works locally if you'd rather not install TeX Live:
+
+```
+docker run --rm -v "$PWD:/work" -w /work/resume texlive/texlive:latest \
+  latexmk -pdf -halt-on-error -interaction=nonstopmode resume.tex
+cp resume/resume.pdf static/resume.pdf
+```
 
 ## Structure
 

@@ -19,11 +19,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      # Compiled in the official TeX Live image (Island of TeX, scheme-full --
+      # resume.tex needs firasans and montserrat from collection-fontsextra).
+      # `latest` currently tracks TL2026; pin to TL2026-historic to freeze it.
       - name: Build resume PDF
-        uses: xu-cheng/latex-action@v4
-        with:
-          root_file: resume.tex
-          working_directory: resume
+        run: |
+          docker run --rm \
+            -v "$GITHUB_WORKSPACE:/work" -w /work/resume \
+            texlive/texlive:latest \
+            latexmk -pdf -file-line-error -halt-on-error -interaction=nonstopmode resume.tex
       - name: Publish resume PDF into the site
         run: cp resume/resume.pdf static/resume.pdf
       - uses: taiki-e/install-action@v2
