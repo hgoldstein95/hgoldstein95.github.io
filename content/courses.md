@@ -4,19 +4,16 @@ description = "Courses taught by Harrison Goldstein at the University at Buffalo
 path = "courses"
 +++
 
-**TODO(harrison): this page is a stub.** It exists so the "…courses" entry in
-the directory resolves.
+I am currently on teaching leave. I will be teaching next in Spring 2027.
 
-## Currently teaching
+## Previous Courses
 
-TODO: course number, title, term, and a one-line description. Link to the syllabus
-or the course site if there is one.
+- CSE 305, Spring 2026
+- CSE 702, Fall 2025
 
-## Previously
+## Office Hours
 
-TODO: past courses, most recent first.
+My office is Davis Hall 336.
 
-## Office hours
-
-TODO: when and where — or delete this and keep it in the rail instead
-(`data/rail.toml`, the `note` field).
+I do not currently have regular office hours, but you can always reach out via
+[email](mailto://hgoldste@buffalo.edu) to schedule a meeting.

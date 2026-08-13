@@ -559,7 +559,6 @@ a.row-title:hover {
 /* ---------------------------------------------------------------- prose */
 
 .prose {
-    max-width: 68ch;
     font-size: 16px;
     line-height: 1.6;
     color: var(--body);
@@ -661,6 +660,19 @@ a.row-title:hover {
     }
 }
 
+/* The section-head rule spaces the prose under it exactly like a .prose h2 rule
+   spaces its own first paragraph, so the h1 and h2 blocks on a markdown page
+   read the same. Rows and cards stay flush — their own padding does the work. */
+.section-head+.prose {
+    margin-top: 16px;
+}
+
+/* Long-form reading only. Short markdown pages run the full column so their h2
+   rules line up with the h1 rule above them. */
+.prose--measure {
+    max-width: 68ch;
+}
+
 .post-meta {
     margin-top: 8px;
     font-size: 13px;
@@ -744,7 +756,7 @@ a.row-title:hover {
 }
 
 .rail-email {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 1.2;
     letter-spacing: -0.02em;
@@ -902,7 +914,7 @@ a.row-title:hover {
 
     /* Every content block opens with a `.section`, whose own top margin would
        stack on that padding. The padding alone sets the gap. */
-    .content-body > :first-child {
+    .content-body> :first-child {
         margin-top: 0;
     }
 

@@ -111,9 +111,6 @@ major = false
 [[papers.links]]
 label = "DOI"
 url = "https://doi.org/10.1145/3810991.3811632"
-[[papers.links]]
-label = "Preprint"
-url = "https://arxiv.org/abs/2604.16373"
 
 # ---------------------------------------------------------------- 2025 -------
 
@@ -254,10 +251,7 @@ venue_short = "OCaml"
 topic = "Property-Based Testing"
 major = false
 [[papers.links]]
-label = "PDF"
-url = "/papers/ocaml24-mica.pdf"
-[[papers.links]]
-label = "Preprint"
+label = "arXiv"
 url = "https://arxiv.org/abs/2408.14561"
 
 [[papers]]
