@@ -23,6 +23,13 @@
     <meta name="description" content="{{ desc }}">
     <link rel="alternate" type="application/rss+xml" title="{{ config.title }} RSS" href="/atom.xml"/>
 
+    {# The masthead portrait is the only image above the fold on every page. Without
+       this preload its fetch starts when the parser reaches the <img> in the body,
+       which races first paint against style.css and intermittently loses — the
+       portrait's 1px box paints empty for a frame. Discovering it here starts it
+       alongside the stylesheet instead. Keep it above the font/CSS links. #}
+    <link rel="preload" as="image" href="{{ config.extra.profile_thumbnail }}" fetchpriority="high">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
@@ -46,6 +53,8 @@
     <meta name="twitter:title" content="{{ config.title }}">
     <meta name="twitter:description" content="{{ desc }}">
     <meta name="twitter:url" content="{{ url }}">
+    {# Full-res on purpose: only scrapers fetch this, so it costs visitors nothing,
+       and the thumbnail is sized for an 84px slot rather than a social card. #}
     <meta name="twitter:image" content="{{ config.extra.profile_picture }}">
   </head>
 
@@ -58,7 +67,10 @@
       <header class="masthead">
         <div class="masthead-bar">
           <div class="masthead-id">
-            <img class="portrait" src="{{ config.extra.profile_picture }}" alt="">
+            {# decoding="sync": the default lets the browser present the page before
+               the portrait is decoded, which is the white-flash frame. #}
+            <img class="portrait" src="{{ config.extra.profile_thumbnail }}" alt=""
+                 decoding="sync" fetchpriority="high">
             <div>
               <a class="wordmark" href="/">{{ config.title }}</a>
               <div class="affiliation">
