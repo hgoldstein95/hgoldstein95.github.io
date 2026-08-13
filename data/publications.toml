@@ -349,6 +349,7 @@ venue = "SIGBOVIK 2022"
 venue_short = "SIGBOVIK"
 topic = "Fun Stuff"
 major = false
+selected = true
 [[papers.links]]
 label = "PDF"
 url = "/papers/cha-cha-slide.pdf"

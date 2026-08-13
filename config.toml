@@ -20,7 +20,7 @@ style = "class"
 [extra]
 author = "Harrison Goldstein"
 github_username = "hgoldstein95"
-# Full-resolution headshot, linked from /press/ and used as the social card image.
+# Full-resolution headshot, linked from /contact/ and used as the social card image.
 profile_picture = "/img/profile.jpeg"
 # Masthead portrait only: 252px, a 3x source for the 84px slot (44px on mobile),
 # same aspect ratio as the original so the CSS cover/position framing is unchanged.

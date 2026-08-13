@@ -176,7 +176,7 @@ multiples of three. Each section's `All N →` link goes to the full list; for t
 `#talks` anchor on `/publications/`.
 
 Several files still carry **`TODO(harrison)`** markers — the rail's email etiquette copy, the
-recruiting line, and the `/group/`, `/courses/`, `/press/` stubs. Those are waiting on
+recruiting line, and the `/group/`, `/courses/`, `/contact/` stubs. Those are waiting on
 Harrison's words; do not invent policy, bios, or course listings to fill them.
 
 ## Adding a blog post
