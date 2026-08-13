@@ -1,11 +1,6 @@
 # Everything in the persistent right rail (mobile: the panel under the header).
-#
-# TODO(harrison): the email etiquette copy below is a placeholder skeleton taken
-# from the design mockup -- it states policies you may not actually hold. Rewrite
-# `do`, `dont`, and `response` in your own words, or delete any of them (an empty
-# string hides that line). Same for `recruiting`: delete it if you are not.
 
-# recruiting = "TODO: recruiting line, e.g. \"Recruiting PhD students to start Fall 2027.\""
+# recruiting = "NOTE: recruiting line, e.g. \"Recruiting PhD students to start Fall 2027.\""
 
 [email]
 address = "hgoldste@buffalo.edu"

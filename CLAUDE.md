@@ -175,10 +175,6 @@ count is yours to choose — but the blog `.cards` grid is three across, so feat
 multiples of three. Each section's `All N →` link goes to the full list; for talks that is the
 `#talks` anchor on `/publications/`.
 
-Several files still carry **`TODO(harrison)`** markers — the rail's email etiquette copy, the
-recruiting line, and the `/group/`, `/courses/`, `/contact/` stubs. Those are waiting on
-Harrison's words; do not invent policy, bios, or course listings to fill them.
-
 ## Adding a blog post
 
 `content/blog/my-post.md`:
