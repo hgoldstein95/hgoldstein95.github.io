@@ -1,12 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-  {% set pubs = load_data(path="data/publications.toml") %}
-  {% set diss = load_data(path="data/dissertation.toml") %}
-  {% set talks = load_data(path="data/talks.toml") %}
-  {% set paper_count = pubs.papers | length %}
+  {% set pubs = load_data(path = "data/publications.toml") %}
+  {% set diss = load_data(path = "data/dissertation.toml") %}
+  {% set talks = load_data(path = "data/talks.toml") %}
 
-  {% set by_venue = pubs.papers | group_by(attribute="venue_short") %}
+  {# `major` splits refereed conference and journal papers from workshops,
+     demos, posters, and essays. The venue filter covers only the former, which
+     is why `venues` in the data file lists only major venues. #}
+  {% set majors = [p for p in pubs.papers if p.major] %}
+  {% set others = [p for p in pubs.papers if not p.major] %}
+  {% set major_count = majors | length %}
+
+  {% set by_venue = majors | group_by(attribute = "venue_short") %}
 
   <section class="section">
     <div class="section-head">
@@ -18,23 +24,36 @@
       <span class="filter-label">Filter by venue</span>
       <div class="chips">
         <button class="chip is-on" type="button" data-venue="all" aria-pressed="true">
-          All <span class="chip-count">{{ paper_count }}</span>
+          All <span class="chip-count">{{ major_count }}</span>
         </button>
         {% for venue in pubs.venues %}
           <button class="chip" type="button" data-venue="{{ venue }}" aria-pressed="false">
-            {{ venue }} <span class="chip-count">{{ by_venue[venue] | length }}</span>
+            {{ venue }}
+            <span class="chip-count">{{ by_venue[venue] | length }}</span>
           </button>
         {% endfor %}
       </div>
-      <span class="filter-meta"><b id="venue-shown">{{ paper_count }}</b> / {{ paper_count }} shown</span>
+      <span class="filter-meta">
+        <b id="venue-shown">{{ major_count }}</b> / {{ major_count }} shown</span>
     </div>
 
     <div class="rows" id="paper-rows">
-      {% for paper in pubs.papers %}
+      {% for paper in majors %}
         {% include "partials/paper-row.html" %}
       {% endfor %}
     </div>
     <p class="empty" id="venue-empty" hidden>No papers match that venue.</p>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Workshops, Demos, Etc.</h2>
+    </div>
+    <div class="rows">
+      {% for paper in others %}
+        {% include "partials/paper-row.html" %}
+      {% endfor %}
+    </div>
   </section>
 
   <section class="section">
@@ -54,7 +73,9 @@
         <span class="row-meta">
           <span class="row-venue">Defended {{ diss.defended }}</span>
           <span class="row-links">
-            {% for link in diss.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+            {% for link in diss.links %}
+              <a href="{{ link.url }}">{{ link.label }}</a>
+            {% endfor %}
           </span>
         </span>
       </div>
@@ -80,36 +101,62 @@
       var list = document.getElementById('paper-rows');
       var shown = document.getElementById('venue-shown');
       var empty = document.getElementById('venue-empty');
-      if (!bar || !list) return;
-
-      var rows = Array.prototype.slice.call(list.querySelectorAll('[data-venue]'));
-      var chips = Array.prototype.slice.call(bar.querySelectorAll('.chip'));
+      if (!bar || !list) 
+        return;
+      
+      var rows = Array
+        .prototype
+        .slice
+        .call(list.querySelectorAll('[data-venue]'));
+      var chips = Array
+        .prototype
+        .slice
+        .call(bar.querySelectorAll('.chip'));
       var active = 'all';
       bar.hidden = false;
 
       function apply(venue) {
         // Clicking the active chip resets to All.
-        active = venue === active ? 'all' : venue;
+        active = venue === active
+          ? 'all'
+          : venue;
         var count = 0;
         var revealed = [];
         rows.forEach(function (row) {
           var match = active === 'all' || row.getAttribute('data-venue') === active;
-          if (match && row.hidden) revealed.push(row);
+          if (match && row.hidden) 
+            revealed.push(row);
           row.hidden = !match;
-          if (match) count += 1;
-        });
+          if (match) 
+            count += 1;
+          }
+        );
 
-        var g = window.siteMotion ? window.siteMotion() : null;
+        var g = window.siteMotion
+          ? window.siteMotion()
+          : null;
         if (g && revealed.length) {
-          g.fromTo(revealed,
-            { opacity: 0, y: -3 },
-            { opacity: 1, y: 0, duration: 0.25, stagger: 0.02,
-              ease: 'power2.out', clearProps: 'opacity,transform' });
+          g.fromTo(revealed, {
+            opacity: 0,
+            y: -3
+          }, {
+            opacity: 1,
+            y: 0,
+            duration: 0.25,
+            stagger: 0.02,
+            ease: 'power2.out',
+            clearProps: 'opacity,transform'
+          });
         }
         chips.forEach(function (chip) {
           var on = chip.getAttribute('data-venue') === active;
-          chip.classList.toggle('is-on', on);
-          chip.setAttribute('aria-pressed', on ? 'true' : 'false');
+          chip
+            .classList
+            .toggle('is-on', on);
+          chip.setAttribute(
+            'aria-pressed', on
+            ? 'true'
+            : 'false');
         });
         shown.textContent = count;
         empty.hidden = count !== 0;

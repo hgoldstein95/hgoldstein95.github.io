@@ -15,8 +15,10 @@ Use `make`, not `zola build`. The published CV at `static/resume.pdf` is generat
 `resume/resume.tex` and is **not** in git, so a bare `zola build` ships a site whose CV link 404s.
 The Makefile rebuilds the PDF whenever the `.tex` is newer.
 
-`make check` currently reports three pre-existing broken links in old blog posts (a dead podcast URL,
-a StackOverflow anchor, a Twitter profile). They are content problems, not build problems.
+`make check` currently reports two pre-existing broken links in old blog posts (a dead podcast URL,
+a StackOverflow anchor). They are content problems, not build problems. Note that `zola check` only
+walks markdown — links that live in `data/*.toml` are invisible to it, so the same dead podcast URL
+also sits unchecked in `data/talks.toml`.
 
 ## Zola 0.23 runs Tera 2 — read this before touching a template
 
@@ -113,10 +115,18 @@ All structured content is TOML in `data/`, loaded with `load_data`.
 
 - **`publications.toml`** — one flat `[[papers]]` list. Keep it in **year-descending order**; nothing
   sorts it at render time. Each paper needs `year`, `title`, `authors`, `venue`, `venue_short`,
-  `topic`; optional `awards`, `kind`, `venue_date`, and `selected = true` to put it on the home page.
-  PDF links must be **root-relative** (`/papers/foo.pdf`) — a bare `papers/foo.pdf` breaks on
-  `/publications/`. Any new `venue_short` must also be added to the top-level `venues` array, which
-  fixes the chip order.
+  `topic`, `major`; optional `awards`, `kind`, `venue_date`, and `selected = true` to put it on the
+  home page. PDF links must be **root-relative** (`/papers/foo.pdf`) — a bare `papers/foo.pdf`
+  breaks on `/publications/`.
+
+  **`major = true`** marks refereed conference and journal papers. `/publications/` renders those in
+  the main list and everything else — workshops, experience reports, demos, posters, essays — under
+  "Workshops, Demos & Other". Every paper sets the flag explicitly (`true` or `false`) so an entry
+  that forgets it stands out. The venue filter covers **only** the major list, so the top-level
+  `venues` array holds only the `venue_short` values used by major papers; adding a major paper at a
+  new venue means adding that venue to the array too, which also fixes the chip order. Non-major
+  venues (`PLATEAU`, `HATRA`, `OCaml`, `SCF`, `SysML`, `DBTest`, `Draft`, …) are deliberately absent
+  from it. `topic` and `kind` are currently carried in the data but read by no template.
 - **`news.toml`** — `short` ("Aug 25") for the rail's date column, `date` for the long form, `text`
   in markdown.
 - **`directory.toml`** — the "I'm looking for…" destinations: `label`, `url`, optional `hint`. Order

@@ -36,6 +36,18 @@ motivation and techniques from both software engineering and human–computer
 interaction as well. His current projects center around the theoretical,
 practical, and human aspects of property-based testing and formal methods.
 
+## Awards and honors
+
+- **Victor Basili Postdoctoral Fellowship** — University of Maryland, Computer
+  Science Department
+- **Certificate in Engineering Leadership** — Cornell Engineering Leadership
+  Certification Program
+
+**TODO(harrison):** the CV also lists the **John C. Reynolds Doctoral
+Dissertation Award 2025** (SIGPLAN) and the **Morris and Dorothy Rubinoff Award
+2024** (Penn). Both are deliberately absent here — add them if this is where you
+want them to live, since the site has no other awards section.
+
 ## Photo
 
 A headshot is at [/img/profile.jpeg](/img/profile.jpeg). TODO: add a

@@ -1,3 +1,10 @@
+# Reverse-chronological; nothing sorts this at render time. `selected = true`
+# puts a talk on the home page. Podcast appearances use the episode-number
+# naming style ("Disseminate #55"), not the episode's topic.
+#
+# Remember: `selected` and `with` are scalars and must stay ABOVE the
+# `[[items.links]]` sub-table or TOML reads them as part of the link.
+
 [[items]]
 title = "Metaprogramming the Next Generation of Testing Tools"
 venue = "Lean Together 2026"
@@ -15,7 +22,8 @@ label = "VOD"
 url = "https://www.youtube.com/watch?v=c5LOYzZx-0c"
 
 [[items]]
-title = "Haskell Interlude 59"
+title = "Haskell Interlude #59"
+with = "Samantha Frohlich, Wouter Swierstra"
 venue = "Haskell Interlude"
 selected = false
 [[items.links]]
@@ -31,7 +39,8 @@ label = "VOD"
 url = "https://youtu.be/UgABi44gMcI?si=F8_m3_8m7kjCbpfK"
 
 [[items]]
-title = "Property-Based Testing in Practice"
+title = "Disseminate #55"
+with = "Jack Waudby"
 venue = "Disseminate Podcast"
 selected = false
 [[items.links]]
@@ -46,3 +55,28 @@ selected = true
 [[items.links]]
 label = "VOD"
 url = "https://www.youtube.com/watch?v=sSl-856qUOA"
+
+[[items]]
+title = "TheForkJoin #2"
+with = "Oliver Flatt, Rachit Nigam"
+venue = "TheForkJoin Podcast"
+selected = false
+[[items.links]]
+label = "Podcast"
+url = "https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n"
+
+[[items]]
+title = "Some Problems with Properties"
+venue = "NJPLS, October 2022"
+selected = false
+[[items.links]]
+label = "Abstract"
+url = "http://njpls.org/oct22.html#goldstein"
+
+[[items]]
+title = "Reflecting on Random Generation"
+venue = "NJPLS, May 2022"
+selected = false
+[[items.links]]
+label = "Abstract"
+url = "http://njpls.org/may22.html#goldstein"

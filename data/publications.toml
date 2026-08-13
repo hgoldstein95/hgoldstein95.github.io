@@ -2,17 +2,17 @@
 # `topic` preserves the old section grouping, and `selected = true` puts a paper
 # on the home page.
 #
-# Chip order on /publications. Every `venue_short` used below must appear here.
-venues = [
-  "PLDI",
-  "OOPSLA",
-  "ICFP",
-  "ICSE",
-  "UIST",
-  "PLATEAU",
-  "PL Perspectives",
-  "SIGBOVIK",
-]
+# `major = true` marks refereed conference and journal papers. Those render in
+# the main list on /publications and are the only ones the venue filter covers;
+# everything else (workshops, experience reports, demos, posters, essays) falls
+# into the "Workshops, Demos & Other" section below it. Every paper carries the
+# flag explicitly so a new entry that forgets it is obvious.
+#
+# Chip order on /publications. Every `venue_short` used by a `major` paper must
+# appear here; non-major venues are deliberately absent.
+venues = ["PLDI", "OOPSLA", "ICFP", "ICSE", "UIST", "CCS", "ESOP", "JFP"]
+
+# ---------------------------------------------------------------- 2026 -------
 
 [[papers]]
 year = 2026
@@ -21,10 +21,25 @@ authors = "Harrison Goldstein, Hila Peleg, Cassia Torczon, Daniel Sainati, Leoni
 venue = "PLDI 2026"
 venue_short = "PLDI"
 topic = "Property-Based Testing"
+major = true
 selected = true
 [[papers.links]]
 label = "DOI"
 url = "https://doi.org/10.1145/3808329"
+
+[[papers]]
+year = 2026
+title = "Etna: An Evaluation Platform for Property-Based Testing"
+authors = "Alperen Keles, Jessica Shi, Nikhil Kamath, Tin Nam Liu, Ceren Mert, Harrison Goldstein, Benjamin C. Pierce, Leonidas Lampropoulos"
+venue = "JFP 2026"
+venue_short = "JFP"
+topic = "Property-Based Testing"
+major = true
+# Journal version of the ICFP'23 experience report below. No JFP DOI is
+# published yet; swap this for the Cambridge Core link when it appears.
+[[papers.links]]
+label = "Preprint"
+url = "https://arxiv.org/abs/2603.27002"
 
 [[papers]]
 year = 2026
@@ -33,10 +48,63 @@ authors = "Cynthia Richey, Joseph W. Cutler, Harrison Goldstein, Benjamin C. Pie
 venue = "OOPSLA 2026"
 venue_short = "OOPSLA"
 topic = "Property-Based Testing"
+major = true
 selected = true
 [[papers.links]]
 label = "DOI"
 url = "https://dl.acm.org/doi/pdf/10.1145/3798263"
+
+[[papers]]
+year = 2026
+title = "Programmable Property-Based Testing"
+authors = "Alperen Keles, Justine Frank, Ceren Mert, Harrison Goldstein, Leonidas Lampropoulos"
+venue = "ICFP 2026"
+venue_short = "ICFP"
+topic = "Property-Based Testing"
+major = true
+# Conditionally accepted. Drop the parenthetical from `venue` once it is final.
+[[papers.links]]
+label = "Preprint"
+url = "https://arxiv.org/abs/2602.18545"
+
+[[papers]]
+year = 2026
+title = "Aporia: Asking Questions to Elicit User Decisions"
+authors = "Saketh Kasibatla, Sorin Lerner, Hila Peleg, Benjamin C. Pierce, Harrison Goldstein"
+venue = "PLATEAU 2026"
+venue_short = "PLATEAU"
+topic = "Usable Formal Methods and Specification"
+major = false
+# No public link found for the PLATEAU version.
+
+[[papers]]
+year = 2026
+title = "What's in a Specification? Exploring Student Conceptions of Formal Specifications"
+authors = "Harrison Goldstein, Cameron Moy, Daniel Patterson"
+venue = "PLATEAU 2026"
+venue_short = "PLATEAU"
+topic = "Usable Formal Methods and Specification"
+major = false
+[[papers.links]]
+label = "DOI"
+url = "https://doi.org/10.1184/R1/31816747"
+
+[[papers]]
+year = 2026
+title = "DIRT: Database-Integrated Random Testing"
+authors = "Alperen Keles, Ethan Chou, Harrison Goldstein, Leonidas Lampropoulos"
+venue = "DBTest 2026"
+venue_short = "DBTest"
+topic = "Property-Based Testing"
+major = false
+[[papers.links]]
+label = "DOI"
+url = "https://doi.org/10.1145/3810991.3811632"
+[[papers.links]]
+label = "Preprint"
+url = "https://arxiv.org/abs/2604.16373"
+
+# ---------------------------------------------------------------- 2025 -------
 
 [[papers]]
 year = 2025
@@ -45,6 +113,7 @@ authors = "Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin 
 venue = "OOPSLA 2025"
 venue_short = "OOPSLA"
 topic = "Property-Based Testing"
+major = true
 selected = true
 [[papers.links]]
 label = "DOI"
@@ -57,10 +126,11 @@ authors = "Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, And
 venue = "OOPSLA 2025"
 venue_short = "OOPSLA"
 topic = "Usable Formal Methods and Specification"
+major = true
 selected = true
 [[papers.links]]
-label = "Preprint"
-url = "https://jwshii.github.io/OOPSLA25.pdf"
+label = "DOI"
+url = "https://dl.acm.org/doi/10.1145/3720426"
 
 [[papers]]
 year = 2025
@@ -69,9 +139,22 @@ authors = "Valkyrie Savage, Harrison Goldstein, Nóra Püsök, Jia Yi Ren, Bhask
 venue = "UIST 2025"
 venue_short = "UIST"
 topic = "Usable Formal Methods and Specification"
+major = true
 [[papers.links]]
 label = "DOI"
 url = "https://dl.acm.org/doi/10.1145/3746059.3747739"
+
+[[papers]]
+year = 2025
+title = "A Qualitative Analysis of Fuzzer Usability and Challenges"
+authors = "Yuyang Zhao, Wentao Guo, Harrison Goldstein, Daniel Votipka, Kelsey R. Fulton, Michelle Mazurek"
+venue = "CCS 2025"
+venue_short = "CCS"
+topic = "Fuzzing and Security"
+major = true
+[[papers.links]]
+label = "DOI"
+url = "https://dl.acm.org/doi/10.1145/3719027.3765055"
 
 [[papers]]
 year = 2025
@@ -80,9 +163,10 @@ authors = "Jessica Shi, Cassia Torczon, Harrison Goldstein, Andrew Head, Benjami
 venue = "PLATEAU 2025"
 venue_short = "PLATEAU"
 topic = "Usable Formal Methods and Specification"
+major = false
 [[papers.links]]
-label = "PDF"
-url = "https://jwshii.github.io/deauto.pdf"
+label = "DOI"
+url = "https://doi.org/10.1184/R1/29087003"
 
 [[papers]]
 year = 2025
@@ -91,11 +175,13 @@ title = "Think Globally, Discuss PL Locally"
 authors = "Harrison Goldstein, Michael Greenberg, Noam Zilberstein"
 venue = "SIGPLAN PL Perspectives"
 venue_short = "PL Perspectives"
-venue_date = "September 16, 2025"
 topic = "Essays"
+major = false
 [[papers.links]]
 label = "Post"
 url = "https://blog.sigplan.org/2025/09/16/think-globally-discuss-pl-locally/"
+
+# ---------------------------------------------------------------- 2024 -------
 
 [[papers]]
 year = 2024
@@ -104,6 +190,7 @@ authors = "Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pier
 venue = "UIST 2024"
 venue_short = "UIST"
 topic = "Property-Based Testing"
+major = true
 selected = true
 [[papers.links]]
 label = "PDF"
@@ -117,10 +204,64 @@ venue = "ICSE 2024"
 venue_short = "ICSE"
 topic = "Property-Based Testing"
 awards = ["Distinguished Paper"]
+major = true
 selected = true
 [[papers.links]]
 label = "PDF"
 url = "/papers/icse24-pbt-in-practice.pdf"
+
+[[papers]]
+year = 2024
+title = "Stream Types"
+authors = "Joseph W. Cutler, Christopher Watson, Emeka Nkurumeh, Phillip Hilliard, Harrison Goldstein, Caleb Stanford, Benjamin C. Pierce"
+venue = "PLDI 2024"
+venue_short = "PLDI"
+topic = "Programming Languages"
+major = true
+[[papers.links]]
+label = "DOI"
+url = "https://dl.acm.org/doi/10.1145/3656434"
+
+[[papers]]
+year = 2024
+title = "Daedalus: Safer Document Parsing"
+authors = "Iavor Diatchki, Mike Dodds, Harrison Goldstein, Bill Harris, David Holland, Benoit Razet, Cole Schlesinger, Simon Winwood"
+venue = "PLDI 2024"
+venue_short = "PLDI"
+topic = "Programming Languages"
+major = true
+[[papers.links]]
+label = "DOI"
+url = "https://dl.acm.org/doi/10.1145/3656410"
+
+[[papers]]
+year = 2024
+title = "Mica: Automated Differential Testing for OCaml Modules"
+authors = "Ernest Ng, Harrison Goldstein, Benjamin C. Pierce"
+venue = "OCaml Workshop 2024"
+venue_short = "OCaml"
+topic = "Property-Based Testing"
+major = false
+[[papers.links]]
+label = "PDF"
+url = "/papers/ocaml24-mica.pdf"
+[[papers.links]]
+label = "Preprint"
+url = "https://arxiv.org/abs/2408.14561"
+
+[[papers]]
+year = 2024
+title = "Supporting Characterization Experiments in Fabrication Research"
+authors = "Valkyrie Savage, Nóra Püsök, Harrison Goldstein, Chandrakana Nandi, Jia Yi Ren, Lora Oehlberg"
+venue = "SCF 2024 Demo"
+venue_short = "SCF"
+topic = "Usable Formal Methods and Specification"
+major = false
+[[papers.links]]
+label = "DOI"
+url = "https://dl.acm.org/doi/10.1145/3665662.3673270"
+
+# ---------------------------------------------------------------- 2023 -------
 
 [[papers]]
 year = 2023
@@ -130,6 +271,7 @@ venue = "ICFP 2023"
 venue_short = "ICFP"
 topic = "Property-Based Testing"
 awards = ["Distinguished Paper"]
+major = true
 [[papers.links]]
 label = "PDF"
 url = "/papers/icfp23-reflective.pdf"
@@ -144,9 +286,27 @@ authors = "Jessica Shi, Alperen Keles, Harrison Goldstein, Benjamin C. Pierce, L
 venue = "ICFP 2023 Experience Report"
 venue_short = "ICFP"
 topic = "Property-Based Testing"
+major = false
 [[papers.links]]
 label = "PDF"
 url = "/papers/icfp23-etna.pdf"
+
+[[papers]]
+year = 2023
+title = "Tyche: In Situ Analysis of Random Testing Effectiveness"
+authors = "Harrison Goldstein, Benjamin C. Pierce, Andrew Head"
+venue = "UIST 2023 Demo"
+venue_short = "UIST"
+topic = "Property-Based Testing"
+major = false
+[[papers.links]]
+label = "PDF"
+url = "/papers/uist23.pdf"
+[[papers.links]]
+label = "DOI"
+url = "https://dl.acm.org/doi/10.1145/3586182.3615788"
+
+# ---------------------------------------------------------------- 2022 -------
 
 [[papers]]
 year = 2022
@@ -155,9 +315,25 @@ authors = "Harrison Goldstein, Benjamin C. Pierce"
 venue = "OOPSLA 2022"
 venue_short = "OOPSLA"
 topic = "Property-Based Testing"
+major = true
 [[papers.links]]
 label = "PDF"
 url = "/papers/oopsla22.pdf"
+
+[[papers]]
+year = 2022
+title = "Some Problems with Properties: A Study on Property-Based Testing in Industry"
+authors = "Harrison Goldstein, Joseph W. Cutler, Adam Stein, Benjamin C. Pierce, Andrew Head"
+venue = "HATRA 2022"
+venue_short = "HATRA"
+topic = "Property-Based Testing"
+major = false
+[[papers.links]]
+label = "PDF"
+url = "/papers/hatra2022.pdf"
+[[papers.links]]
+label = "Slides"
+url = "/slides/hatra2022.pptx"
 
 [[papers]]
 year = 2022
@@ -167,9 +343,56 @@ authors = "Harrison Goldstein"
 venue = "SIGBOVIK 2022"
 venue_short = "SIGBOVIK"
 topic = "Fun Stuff"
+major = false
 [[papers.links]]
 label = "PDF"
 url = "/papers/cha-cha-slide.pdf"
+
+# ---------------------------------------------------------------- 2021 -------
+
+[[papers]]
+year = 2021
+title = "Do Judge a Test by its Cover: Combining Combinatorial and Property-Based Testing"
+authors = "Harrison Goldstein, John Hughes, Leonidas Lampropoulos, Benjamin C. Pierce"
+venue = "ESOP 2021"
+venue_short = "ESOP"
+topic = "Property-Based Testing"
+major = true
+[[papers.links]]
+label = "PDF"
+url = "/papers/quick-cover.pdf"
+[[papers.links]]
+label = "DOI"
+url = "https://link.springer.com/chapter/10.1007/978-3-030-72019-3_10"
+[[papers.links]]
+label = "Video"
+url = "https://youtu.be/VCCz1AL3Jkc"
+
+[[papers]]
+year = 2021
+kind = "poster"
+title = "Ungenerators"
+authors = "Harrison Goldstein"
+venue = "ICFP 2021 SRC"
+venue_short = "ICFP"
+topic = "Property-Based Testing"
+major = false
+[[papers.links]]
+label = "PDF"
+url = "/papers/icfpsrc21.pdf"
+
+[[papers]]
+year = 2021
+kind = "draft"
+title = "Delimited Continuations and Monads"
+authors = "Harrison Goldstein"
+venue = "Unpublished PhD Milestone"
+venue_short = "Draft"
+topic = "Programming Languages"
+major = false
+[[papers.links]]
+label = "Draft"
+url = "/papers/drafts/wpe-ii.pdf"
 
 [[papers]]
 year = 2021
@@ -178,8 +401,37 @@ title = "Conferences after COVID: An Early-Career Perspective"
 authors = "Joseph W. Cutler, Harry Goldstein, Andrew K. Hirsch, Jaemin Hong, Chandrakana Nandi"
 venue = "SIGPLAN PL Perspectives"
 venue_short = "PL Perspectives"
-venue_date = "March 25, 2021"
 topic = "Essays"
+major = false
 [[papers.links]]
 label = "Post"
 url = "https://blog.sigplan.org/2021/03/25/conferences-after-covid-an-early-career-perspective/"
+
+# ---------------------------------------------------------------- 2020 -------
+
+[[papers]]
+year = 2020
+kind = "poster"
+title = "Algebraic Combinatorial Testing"
+authors = "Harrison Goldstein"
+venue = "POPL 2020 SRC"
+venue_short = "POPL"
+topic = "Property-Based Testing"
+major = false
+[[papers.links]]
+label = "PDF"
+url = "/papers/poplsrc20.pdf"
+
+# ---------------------------------------------------------------- 2018 -------
+
+[[papers]]
+year = 2018
+title = "Programming Language Support for Natural Language Interaction"
+authors = "Alex Renda, Harrison Goldstein, Sarah Bird, Chris Quirk, Adrian Sampson"
+venue = "SysML 2018"
+venue_short = "SysML"
+topic = "Programming Languages"
+major = false
+[[papers.links]]
+label = "PDF"
+url = "/papers/sysml18.pdf"
