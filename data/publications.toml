@@ -54,7 +54,6 @@ venue = "ICFP 2026"
 venue_short = "ICFP"
 topic = "Property-Based Testing"
 major = true
-# TODO: drop the parenthetical from `venue` once acceptance is final.
 [[papers.links]]
 label = "Preprint"
 url = "https://arxiv.org/abs/2602.18545"
@@ -147,7 +146,7 @@ url = "https://dl.acm.org/doi/10.1145/3746059.3747739"
 [[papers]]
 year = 2025
 title = "A Qualitative Analysis of Fuzzer Usability and Challenges"
-authors = "Yuyang Zhao, Wentao Guo, Harrison Goldstein, Daniel Votipka, Kelsey R. Fulton, Michelle Mazurek"
+authors = "Yunze Zhao, Wentao Guo, Harrison Goldstein, Daniel Votipka, Kelsey R. Fulton, Michelle Mazurek"
 venue = "CCS 2025"
 venue_short = "CCS"
 topic = "Fuzzing and Security"
@@ -158,7 +157,7 @@ url = "https://dl.acm.org/doi/10.1145/3719027.3765055"
 
 [[papers]]
 year = 2025
-title = "Designing Proof Deautomation in Rocq"
+title = "Designing Proof Deautomation for Rocq"
 authors = "Jessica Shi, Cassia Torczon, Harrison Goldstein, Andrew Head, Benjamin Pierce"
 venue = "PLATEAU 2025"
 venue_short = "PLATEAU"
