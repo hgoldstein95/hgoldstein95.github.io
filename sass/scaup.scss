@@ -103,26 +103,18 @@ img {
     color: var(--sc-mute);
 }
 
-.sc-nav {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 26px;
+/* The way back to the main site — the header's only link; there is no nav. */
+.sc-back {
     font-family: var(--sc-serif);
     font-size: 17px;
-}
-
-.sc-nav a {
-    color: var(--sc-mute);
+    color: var(--sc-accent);
     text-decoration: none;
+    white-space: nowrap;
 }
 
-.sc-nav a:hover {
-    color: var(--sc-accent);
-}
-
-/* The way back to the main site, held apart from the in-page anchors. */
-.sc-nav .sc-nav-home {
-    color: var(--sc-accent);
+.sc-back:hover {
+    color: var(--sc-accent-deep);
+    text-decoration: underline;
 }
 
 /* ---------------------------------------------------------------- hero */
@@ -201,24 +193,17 @@ img {
     padding-top: 72px;
 }
 
+/* Section headings. The design set these as tiny uppercase mono labels; they
+   are serif here, at the same size as .sc-prose h2, so they are legible as
+   headings rather than as captions. */
 .sc-label {
-    font-family: var(--sc-mono);
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--sc-mute);
-    font-weight: 500;
-    margin: 0 0 36px;
-}
-
-.sc-sublabel {
-    font-family: var(--sc-mono);
-    font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--sc-faint);
-    font-weight: 500;
-    margin: 52px 0 18px;
+    font-family: var(--sc-serif);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--sc-ink);
+    margin: 0 0 32px;
 }
 
 /* ---------------------------------------------------------------- people */
@@ -278,28 +263,6 @@ img {
     font-size: 12px;
     display: inline-block;
     margin-top: 8px;
-}
-
-.sc-past {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 10px 32px;
-}
-
-.sc-past li {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 10px;
-    font-size: 15px;
-}
-
-.sc-past-note {
-    font-size: 13px;
-    color: var(--sc-faint);
 }
 
 /* ---------------------------------------------------------------- band */
@@ -511,12 +474,7 @@ img {
         gap: 10px;
     }
 
-    .sc-nav {
-        /* Without this the column's align-items: flex-start sizes the nav to
-           fit-content, and on the narrowest phones the last item can push past
-           the gutter instead of wrapping. */
-        align-self: stretch;
-        gap: 18px;
+    .sc-back {
         font-size: 16px;
     }
 

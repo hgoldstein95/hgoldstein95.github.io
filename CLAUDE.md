@@ -201,11 +201,11 @@ Adding a page is `content/scaup/whatever.md` with a title — `page_template` on
 to the sub-site shell automatically, so no `template =` in the front matter.
 
 **The main site's house rules do not apply here.** Rounded corners (10px on photos, 12px on cards), a
-hover shadow on the "wider homes" cards, and IBM Plex Mono for the small labels are all load-bearing
+hover shadow on the Connections cards, and IBM Plex Mono for the small labels are all load-bearing
 parts of the imported design. Do not normalize them toward `style.scss`. Colors are `--sc-`-prefixed
 custom properties on `:root`; `scaup.css` is only ever loaded on `/scaup/`, so that is safe.
 
-Two things about the port worth knowing:
+Things about the port worth knowing:
 
 - The design was drawn at desktop width only. Both media queries in `scaup.scss` (860px collapses the
   hero, 560px tightens the gutters and stacks the header) are additions, as is the `clamp()` on the
@@ -213,6 +213,14 @@ Two things about the port worth knowing:
 - A person in `scaup.toml` with no `photo` renders the empty tinted well the card is already sized
   for, which is what the source design does for an unfilled image slot. Adding a photo later never
   reflows the grid. Photos want a 4:5 crop.
+- Section headings (`.sc-label`) were tiny uppercase mono in the source design and are now serif at
+  26px, matching `.sc-prose h2`. Mono survives only in the small metadata bits — person links, card
+  hosts, the footer email, the colophon.
+- There is **no nav.** The header is the eyebrow and a single link back to the main site
+  (`.sc-back`, from the `[home]` table in `scaup.toml`). The sections still carry `id`s
+  (`#people`, `#homes`, `#contact`) so they can be linked from elsewhere.
+- The `homes` array in `scaup.toml` backs the section now titled **Connections**; the key kept the
+  name it had when the section was "Wider homes".
 
 `/group/` is now a `redirect.html` stub pointing at `/scaup/`, the same pattern `content/resume.md`
 uses. The `data/directory.toml` entry ("the research group.") points at `/scaup/`.

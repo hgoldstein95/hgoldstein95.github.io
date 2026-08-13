@@ -34,15 +34,9 @@
 
     <header class="sc-head">
       <div class="sc-eyebrow">{{ scaup.eyebrow }}</div>
-      <nav class="sc-nav">
-        {% for item in scaup.nav %}
-          {% if item.home | default(value=false) %}
-            <a class="sc-nav-home" href="{{ item.url }}">{{ item.label }} &rarr;</a>
-          {% else %}
-            <a href="{{ item.url }}">{{ item.label }}</a>
-          {% endif %}
-        {% endfor %}
-      </nav>
+      {# No nav: the page is one screenful of sections and does not need one.
+         The only header link is the way back to the main site. #}
+      <a class="sc-back" href="{{ scaup.home.url }}">{{ scaup.home.label }} &rarr;</a>
     </header>
 
     <main id="main">

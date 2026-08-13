@@ -44,18 +44,6 @@
         </div>
       {% endfor %}
     </div>
-
-    {% if scaup.past %}
-      <h3 class="sc-sublabel">Past students &amp; collaborators</h3>
-      <ul class="sc-past">
-        {% for person in scaup.past %}
-          <li>
-            <a href="{{ person.url }}">{{ person.name }}</a>
-            <span class="sc-past-note">{{ person.note }}</span>
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
   </section>
 
   <section class="sc-band" id="homes">
@@ -63,7 +51,7 @@
        assistive tech; the real one is in the hero. #}
     <img class="sc-watermark" src="/img/scaup.svg" alt="" aria-hidden="true">
     <div class="sc-band-inner">
-      <h2 class="sc-label">Wider homes</h2>
+      <h2 class="sc-label">Connections</h2>
       <p class="sc-band-blurb">{{ scaup.homes_blurb }}</p>
 
       <div class="sc-homes">
