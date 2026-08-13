@@ -167,6 +167,15 @@ button {
     display: block;
 }
 
+/* Only the home page wraps the wordmark in an <h1>; it must look identical to
+   the plain link every other page carries. */
+.wordmark-head {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
 .wordmark {
     display: block;
     font-size: 27px;

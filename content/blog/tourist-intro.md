@@ -35,7 +35,7 @@ repositories.[^1]
 Tourist provides a simple interface for building and viewing tours. The GIF
 below shows what it's like to view a tour in Visual Studio Code.
 
-<img src="/img/tourist-demo.gif" />
+<img src="/img/tourist-demo.gif" alt="An animated screen recording of Visual Studio Code: clicking a tour stop jumps the editor to the right file and line, and the stop's markdown is rendered in a side panel." />
 
 When you click on a tour stop, your editor jumps to the appropriate file and
 line, and the stop's markdown content is rendered in a "web-view".
@@ -104,7 +104,7 @@ things that I think tours are really good for:
 If you have other ideas, reach out and let me know! I'm really excited to see
 what we can do with this framework.
 
-# How can I get it?
+## How can I get it?
 
 Tourist is in extremely early alpha, so you'll need to build everything
 yourself. First and foremost, you'll need `tourist` from

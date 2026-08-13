@@ -3,10 +3,12 @@
 
   <head>
     <title>
-      {%- if page is defined and page.title %}{{ page.title }} &middot; {{ config.title }}
-      {%- elif section is defined and section.title and section.title != config.title %}{{ section.title }} &middot; {{ config.title }}
-      {%- else %}{{ config.title }}
-      {%- endif -%}
+      {%- block title -%}
+        {%- if page is defined and page.title %}{{ page.title }} &middot; {{ config.title }}
+        {%- elif section is defined and section.title and section.title != config.title %}{{ section.title }} &middot; {{ config.title }}
+        {%- else %}{{ config.title }}
+        {%- endif -%}
+      {%- endblock title -%}
     </title>
 
     <meta charset="utf-8">
@@ -16,12 +18,42 @@
     {% set desc = config.description %}
     {% if page is defined and page.description %}
       {% set desc = page.description %}
+    {% elif page is defined and page.content %}
+      {# Blog posts carry no `description`, and the site bio says nothing about
+         any one of them. The opening lines are a far better search result and
+         link preview. Posts are hard-wrapped, so collapse the newlines. #}
+      {% set desc = page.content | striptags | trim | truncate(length = 180) | replace(from = "
+", to = " ") %}
     {% elif section is defined and section.description %}
       {% set desc = section.description %}
     {% endif %}
     {% set url = current_url | default(value = config.base_url) %}
     <meta name="description" content="{{ desc }}">
+    <link rel="canonical" href="{{ url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ config.title }} RSS" href="/atom.xml"/>
+
+    {# Link previews on social, chat and mail clients. `og_title` is the bare
+       page title without the " · Harrison Goldstein" suffix, which the site
+       name carries already. og-card.jpg is regenerated from profile.jpeg with
+         sips -Z 1200 --setProperty formatOptions 72 static/img/profile.jpeg \
+           --out static/img/og-card.jpg #}
+    {% set og_title = config.title %}
+    {% if page is defined and page.title %}
+      {% set og_title = page.title %}
+    {% elif section is defined and section.title and section.title != config.title %}
+      {% set og_title = section.title %}
+    {% endif %}
+    <meta property="og:type" content="{% if page is defined and page.date %}article{% else %}website{% endif %}">
+    <meta property="og:site_name" content="{{ config.title }}">
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:description" content="{{ desc }}">
+    <meta property="og:url" content="{{ url }}">
+    <meta property="og:image" content="{{ get_url(path = 'img/og-card.jpg') }}">
+    <meta property="og:image:alt" content="Portrait of {{ config.extra.author }}">
+    <meta name="twitter:card" content="summary">
+
+    {# Outlined, so it does not depend on the visitor having Fira Code. #}
+    <link rel="icon" type="image/svg+xml" href="/img/hg-favicon.svg">
 
     {# Starts the portrait's fetch alongside the stylesheet instead of when the
        parser reaches the <img>, which loses the race against first paint. Keep
@@ -53,7 +85,14 @@
             <img class="portrait" src="{{ config.extra.profile_thumbnail }}" alt=""
                  decoding="sync" fetchpriority="high">
             <div>
-              <a class="wordmark" href="/">{{ config.title }}</a>
+              {# The home page has no other candidate for its <h1>; every other
+                 page opens with one in the content block, so the wordmark stays
+                 a plain link there rather than giving the page a second. #}
+              {% if current_path is defined and current_path == "/" %}
+                <h1 class="wordmark-head"><a class="wordmark" href="/">{{ config.title }}</a></h1>
+              {% else %}
+                <a class="wordmark" href="/">{{ config.title }}</a>
+              {% endif %}
               <div class="affiliation">
                 <span class="affiliation-full">
                   Assistant Professor,

@@ -138,6 +138,47 @@ Two things depend on JavaScript to *hide* rather than to show, so the page degra
 
 Keep that polarity for anything new.
 
+## Head metadata, headings, and the 404
+
+`base.html` emits `<link rel="canonical">` and an Open Graph / Twitter block on every page, so link
+previews in social, chat, and mail clients are not bare. Three things there are easy to break:
+
+- **`og:title` is the bare page title**, without the `· Harrison Goldstein` suffix that `<title>`
+  carries; `og:site_name` supplies the site name already, so the suffixed form reads as a stutter in
+  a card.
+- **`og:image` is `static/img/og-card.jpg`**, which is *not* in git-ignored territory but *is*
+  generated, from the same source as the portrait. Regenerate it with the recipe in the template
+  comment — `sips -Z 1200 … profile.jpeg`. Do not point `og:image` at `profile.jpeg` itself: it is
+  3938px and 2.9MB, and scrapers either time out or refuse it. The card is `summary`, not
+  `summary_large_image`, because the artwork is a square-ish portrait.
+- **The description falls back in three steps**: the page's own `description`, then — for anything
+  with a body, which in practice means blog posts — its first 180 characters, then the section's, then
+  `config.description`. Posts are hard-wrapped, so that middle branch pipes through `replace` to
+  collapse the newlines. `replace` *does* still exist in Tera 2, unlike most of the filters in the
+  table above.
+
+The SCAUP sub-site carries the same tags from its own `base.html`, under the lab's name rather than
+the site's, and deliberately with **no `og:image`** — the only artwork there is `scaup.svg`, and most
+scrapers will not render an SVG.
+
+The main site's favicon is `static/img/hg-favicon.svg`: "HG" on a white rounded tile, matching the
+shape of the scaup one. **Its letterforms are outlined paths, not a `<text>` element, and must stay
+that way.** An SVG favicon is rendered by the *visitor's* browser using the *visitor's* fonts, so the
+original `font-family:'Fira Code'` resolved to a fallback for anyone without that font — and every
+fallback is wider than Fira Code's, wide enough to push the G off the right edge of the tile. There
+is no text and no font dependency in the file now. To restyle the letters, set the type, convert to
+outlines, and paste the paths back; never reintroduce a `<text>` element.
+
+**Exactly one `<h1>` per page.** Every page but the home page opens with one in its content block, so
+the masthead wordmark is a plain link there. The home page has no other candidate, so `base.html`
+wraps the wordmark in an `<h1 class="wordmark-head">` when `current_path == "/"`; `.wordmark-head`
+exists only to zero out the margin and inherit the type, so the two forms look identical.
+
+`templates/404.html` is what GitHub Pages serves for any unresolved path. Because it renders at
+*arbitrary* URLs, every link and asset reference that reaches it must be root-relative — which the
+shell's already are, so the thing to watch is anything new added to the 404 body itself. The header's
+directory is the real recovery UI; the body only explains.
+
 ## Content
 
 All structured content is TOML in `data/`, loaded with `load_data`.
@@ -200,15 +241,16 @@ static/img/scaup-favicon.svg  the bird's head on a white tile, for the tab icon
 
 The favicon is a hand-cut derivative of `scaup.svg`, not a copy of it. The whole bird is an
 illegible smudge at 16px, so it crops to the head — the dark crown, the blue-grey bill and the
-yellow eye are what survive — inside a 512-square white tile with `rx="96"` corners. **Rounded
-corners on the main site are forbidden and on `/scaup/` they are the house style**, which is why
-this is fine here and would not be for a main-site icon.
+yellow eye are what survive — inside a 512-square white tile with `rx="96"` corners. Rounded corners
+are forbidden in the main site's *layout* but are the convention for a tab icon, which is why both
+favicons have them.
 
 Two edits from the source, both deliberate: the viewBox is `1040 190 330 330` on a nested `<svg>`
 (the outer one stays `0 0 512 512` so the tile and clip path are in round numbers), and the
 translucent far wing rising above the crown is deleted, because inside that crop it reads as a
 brown smear rather than as part of the bird. Nothing regenerates the file at build time — if the
-artwork ever changes, re-cut it by hand. Only `/scaup/` links it; the main site has no favicon.
+artwork ever changes, re-cut it by hand. Only `/scaup/` links it; the main site has its own,
+`static/img/hg-favicon.svg`, described under "Head metadata".
 
 Adding a page is `content/scaup/whatever.md` with a title — `page_template` on the section routes it
 to the sub-site shell automatically, so no `template =` in the front matter.
@@ -251,6 +293,21 @@ to put the post on the home page — a new post does **not** appear there on its
 class-based markup against `public/giallo.css`, which Zola generates and `base.html` links **before**
 `style.css` so the prose rules still own the `<pre>` container.
 
+Two things about a post's opening, because the first ~180 characters of the body get reused three
+ways — the `/blog/` row summary, the home page card, and the post's `meta description` / `og:description`:
+
+- **No `<style>` or `<script>` near the top of a post.** `striptags` removes the tags but keeps what
+  is *between* them, so a stylesheet in the body leaks its selectors into all three. One post used to
+  advertise itself as "…who doesn't like chocolate chip cookies?? blockquote…" for exactly this
+  reason. The house `.prose` rules cover blockquotes, code, and images; a post should not need its
+  own CSS at all.
+- Anything that reads badly as a bare sentence — a lone image, a pull quote — is better placed after
+  a line or two of prose.
+
+Raw `<img>` tags in a post need an explicit `alt`, since markdown's `![alt](src)` form is not being
+used. Decorative images (the stairs beside "Next Steps" in the dance post) take `alt=""` so screen
+readers skip them rather than announcing a filename.
+
 ### Math
 
 Set `math = true` under `[extra]` to load MathJax on that post. Markdown runs first and will mangle
@@ -278,6 +335,7 @@ templates/
   index.html             home
   publications.html      full list + venue filter
   blog-list.html, blog-page.html, page.html, redirect.html
+  404.html               what GitHub Pages serves for an unresolved path
   scaup/                 the SCAUP Lab sub-site: its own base.html, no inheritance
   partials/
     rail.html            email, news, "Also here"

@@ -18,7 +18,7 @@ like a regular language.
 ### Crash Course in Swing Dancing
 
 <div style="text-align: center; margin: 20px">
-  <img src="/img/swingout.gif" />
+  <img src="/img/swingout.gif" alt="An animated loop of two dancers performing a swingout." />
 </div>
 
 The dance that I've been learning is usually called
@@ -59,7 +59,7 @@ built based on the first few moves that I learned when I started doing
 swing.[^1]
 
 <div style="text-align: center; margin: 20px">
-  <img width="90%" src="/img/dance.svg" />
+  <img width="90%" src="/img/dance.svg" alt="A finite automaton with two states, Closed and Open, joined by arrows labelled with six-count swing moves: basic, tuck-turn, inside turn, and a right-side pass." />
 </div>
 
 As you can see, even with just a few moves and states, the diagram gets pretty
@@ -75,7 +75,7 @@ interesting things that we can add to the model. Here's a slightly more
 complicated automaton that incorporates some 8-count "Lindy Hop" moves.
 
 <div style="text-align: center; margin: 20px">
-  <img width="90%" src="/img/dance2.svg" />
+  <img width="90%" src="/img/dance2.svg" alt="A larger finite automaton of swing moves, with extra states added so that the eight-count Lindy Hop moves have somewhere to return to." />
 </div>
 
 The main thing to notice is that when I added 8-count moves, I added extra
@@ -122,7 +122,7 @@ strings and languages, but thinking about moves this way gives me a framework
 for deciding what to do next. If the "strings" that my partner and I dance are
 in the language of swing, I can be sure that the dance will feel natural.
 
-### Next Steps <img height="30px" src="/img/steps.jpg" />
+### Next Steps <img height="30px" src="/img/steps.jpg" alt="" />
 
 I have a lot of cool ideas for ways to use this language model of dance, and
 I'll probably write another post exploring one or more of those options later.
@@ -159,7 +159,7 @@ automata model, one place to start might be representing the music as an
 automaton as well.
 
 <div style="text-align: center; margin: 20px">
-  <img width="60%" src="/img/dance3.svg" />
+  <img width="60%" src="/img/dance3.svg" alt="A four-state cycle of an automaton counting out the four beats in a measure of swing music." />
 </div>
 
 This simple automaton counts out the four beats in a measure of swing music.

@@ -19,6 +19,17 @@
     {% if page is defined and page.description %}{% set desc = page.description %}
     {% endif %}
     <meta name="description" content="{{ desc }}">
+    {% set url = current_url | default(value = config.base_url ~ "/scaup/") %}
+    <link rel="canonical" href="{{ url }}">
+
+    {# The lab's cards carry the lab's name, not the main site's. No og:image:
+       the only artwork here is scaup.svg, and most scrapers will not render an
+       SVG -- a card with no image beats a card with a broken one. #}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ scaup.name }}">
+    <meta property="og:title" content="{% if page is defined and page.title %}{{ page.title }} &middot; {{ scaup.name }}{% else %}{{ scaup.name }}{% endif %}">
+    <meta property="og:description" content="{{ desc }}">
+    <meta property="og:url" content="{{ url }}">
 
     <link rel="icon" type="image/svg+xml" href="/img/scaup-favicon.svg">
 

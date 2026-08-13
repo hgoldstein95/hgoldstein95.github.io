@@ -10,13 +10,6 @@ featured = true
 I know all two of you who read this blog are here for my computer science
 content, but who doesn't like chocolate chip cookies??
 
-<style>
-blockquote {
-  font-style: normal;
-  color: #777;
-}
-</style>
-
 TL;DR: [Jump to the recipe](#recipe) or [jump to the super short, condensed recipe.](#condensed)
 
 ### The Setup
