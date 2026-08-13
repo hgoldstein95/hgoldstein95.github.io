@@ -9,7 +9,7 @@ label = "the blog."
 url = "/blog/"
 
 [[items]]
-label = "my research group."
+label = "the research group."
 url = "/group/"
 
 [[items]]
@@ -17,7 +17,7 @@ label = "courses."
 url = "/courses/"
 
 [[items]]
-label = "projects."
+label = "software projects."
 url = "/projects/"
 
 [[items]]

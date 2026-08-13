@@ -7,7 +7,7 @@
     {% for item in directory.items %}
       <a class="directory-item" href="{{ item.url }}"
          {% if current_path is defined and current_path == item.url %}aria-current="page"{% endif %}>
-        <span class="directory-label">&hellip;{{ item.label }}</span>
+        <span class="directory-label">&hellip;&nbsp;{{ item.label }}</span>
         <span class="directory-end">
           {% if item.hint %}
             <span class="directory-hint">{{ item.hint }}</span>{% endif %}

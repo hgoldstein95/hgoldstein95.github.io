@@ -2,21 +2,11 @@
 # form, kept for a future full news page.
 
 [[items]]
-short = "Aug 25"
-date = "August 25, 2025"
-text = "Started as an **Assistant Professor at UB**!"
+short = "Aug 6"
+date = "August 6, 2026"
+text = "We'll be hosting the [1st Workshop on the Future of Property-Based Testing (FPBT'27)](https://popl27.sigplan.org/home/fpbt-2027), co-located with POPL in January."
 
 [[items]]
-short = "Jun 19"
-date = "June 19, 2025"
-text = "Received SIGPLAN's [John C. Reynolds Doctoral Dissertation Award](https://www.sigplan.org/Awards/Dissertation/). Congratulations to [Rachit Nigam](https://people.csail.mit.edu/rachit/) who also received the award this year!"
-
-[[items]]
-short = "May 7"
-date = "May 7, 2025"
-text = "Accepted a position as **Assistant Professor at the University at Buffalo**!"
-
-[[items]]
-short = "Mar 11"
-date = "March 11, 2025"
-text = "Received the **Morris and Dorothy Rubinoff Award** from the University of Pennsylvania Department of Computer and Information Science."
+short = "Jul 18"
+date = "July 18, 2026"
+text = "[Cassia Torczon](https://cassiatorczon.github.io/) just presented our new paper [The Search for Constrained Random Generators](https://dl.acm.org/doi/10.1145/3808329) at PLDI'26."
