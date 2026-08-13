@@ -1,10 +1,8 @@
-# Everything in the persistent right rail (mobile: the panel under the header).
-
 # recruiting = "NOTE: recruiting line, e.g. \"Recruiting PhD students to start Fall 2027.\""
 
 [email]
 address = "hgoldste@buffalo.edu"
-# One string per paragraph; each is rendered as markdown, so **bold** works.
+# One string per paragraph, each rendered as markdown.
 instructions = [
   "Please feel free to email me about potential collaborations, committee invitations, speaking opportunities, etc.",
   "I am currently **not** hiring new PhD students. If you are a student reaching out about working with me, I unfortunately may not have bandwidth to respond.",

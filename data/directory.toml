@@ -1,5 +1,3 @@
-# The "I'm looking for..." directory.
-
 [[items]]
 label = "publications."
 url = "/publications/"
@@ -10,7 +8,6 @@ url = "/blog/"
 
 [[items]]
 label = "the research group."
-# The SCAUP Lab sub-site: its own shell and stylesheet, still built by Zola.
 url = "/scaup/"
 
 [[items]]

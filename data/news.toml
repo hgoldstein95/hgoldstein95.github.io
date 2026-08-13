@@ -1,5 +1,4 @@
-# `short` is what the rail shows in its 66px date column; `date` is the long
-# form, kept for a future full news page.
+# The rail shows `short`; `date` is unused, kept for a future news page.
 
 [[items]]
 short = "Aug 6"

@@ -5,7 +5,6 @@
   </div>
   <div class="directory-list">
     {% for item in directory.items %}
-      {# The tile for the page you are on points home instead: clicking it backs out. #}
       {% set here = current_path is defined and current_path == item.url %}
       {% set external = item.url is starting_with(pat="http") %}
       <a class="directory-item" href="{% if here %}/{% else %}{{ item.url }}{% endif %}"

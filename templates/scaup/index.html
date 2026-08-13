@@ -9,8 +9,6 @@
       <p class="sc-acronym">{{ scaup.acronym | markdown(inline=true) | safe }}</p>
       <div class="sc-lede">{{ section.content | safe }}</div>
     </div>
-    {# The bird carries the page; it is decoration, so it is not in the tab order
-       and its alt describes it rather than restating the heading. #}
     <div class="sc-bird">
       <img src="/img/scaup.svg" alt="A greater scaup, the diving duck the lab is named for">
     </div>
@@ -26,9 +24,6 @@
     <div class="sc-people">
       {% for person in scaup.people %}
         <div class="sc-person">
-          {# A person with no photo yet gets a silhouette in the tinted block the
-             card is already sized for, so the grid does not reflow when one is
-             added. The SVG is decorative — the name is right below it. #}
           <div class="sc-photo">
             {% if person.photo | default(value = "") %}
               <img src="{{ person.photo }}" alt="{{ person.name }}">
@@ -55,8 +50,6 @@
   </section>
 
   <section class="sc-band" id="homes">
-    {# Watermark: the same bird, flipped and nearly transparent. Hidden from
-       assistive tech; the real one is in the hero. #}
     <img class="sc-watermark" src="/img/scaup.svg" alt="" aria-hidden="true">
     <div class="sc-band-inner">
       <h2 class="sc-label">Connections</h2>

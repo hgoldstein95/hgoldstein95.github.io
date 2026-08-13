@@ -1,4 +1,3 @@
-{# The persistent rail: contact, news, off-site links. Same on every page. #}
 {% set rail = load_data(path = "data/rail.toml") %}
 {% set news = load_data(path = "data/news.toml") %}
 <aside class="rail" aria-label="Contact and news">
@@ -33,7 +32,6 @@
     </div>
   </section>
 
-  {# Pushed to the foot of the rail by `.rail-links { margin-top: auto }`. #}
   <section class="rail-links">
     <div class="rail-head">
       <h2>Links</h2>

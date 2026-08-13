@@ -1,20 +1,11 @@
-/* ------------------------------------------------------------------------ *
- * SCAUP Lab sub-site — /scaup/ only.
- *
- * Compiled by Zola to public/scaup.css and loaded by templates/scaup/base.html.
- * It shares nothing with style.scss: no _tokens, no Archivo, and none of the
- * main site's house rules. Rounded corners, a hover shadow, and IBM Plex Mono
- * are all deliberate here — they come from the imported design. Do not
- * "correct" them toward the rest of the site.
- * ------------------------------------------------------------------------ */
+/* SCAUP Lab sub-site — /scaup/ only. Standalone: no _tokens, and none of the
+   main site's house rules apply. See CLAUDE.md before normalizing anything. */
 
 :root {
     --sc-paper: #f6f4ee;
     --sc-band: #eeece2;
     --sc-slot: #eceadf;
-    /* empty photo well */
     --sc-slot-mark: #dbd7c6;
-    /* the silhouette drawn in it */
     --sc-ink: #1b1a17;
     --sc-body: #33312c;
     --sc-mute: #6f6a5c;
@@ -32,7 +23,6 @@
     --sc-gutter: 40px;
 }
 
-/* The shell every full-width band re-centers its content in. */
 %sc-shell {
     max-width: var(--sc-shell);
     margin: 0 auto;
@@ -121,7 +111,6 @@ img {
 .sc-wordmark {
     font-family: var(--sc-serif);
     font-weight: 600;
-    /* 76px is the design's size; the clamp only takes over on narrow screens. */
     font-size: clamp(46px, 8.5vw, 76px);
     line-height: 0.98;
     letter-spacing: -0.02em;
@@ -161,7 +150,6 @@ img {
 .sc-bird img {
     width: 100%;
     height: auto;
-    /* Reserve the box before the SVG lands so the hero does not jump. */
     aspect-ratio: 1395 / 1145;
     display: block;
 }
@@ -182,9 +170,6 @@ img {
     padding-top: 72px;
 }
 
-/* Section headings. The design set these as tiny uppercase mono labels; they
-   are serif here, at the same size as .sc-prose h2, so they are legible as
-   headings rather than as captions. */
 .sc-label {
     font-family: var(--sc-serif);
     font-size: 26px;
@@ -210,8 +195,6 @@ img {
     align-self: start;
 }
 
-/* Holds its 4:5 box whether or not there is a photo in it yet, so adding one
-   never reflows the grid. */
 .sc-photo {
     width: 100%;
     aspect-ratio: 4 / 5;
@@ -227,8 +210,7 @@ img {
     display: block;
 }
 
-/* Stand-in until there is a photo: a head and shoulders, a shade darker than
-   the well, filling the same 4:5 box. */
+/* Stand-in until there is a photo, in the same 4:5 box. */
 .sc-photo-blank {
     width: 100%;
     height: 100%;
@@ -291,7 +273,6 @@ img {
     padding-bottom: 68px;
 }
 
-/* Tighter than in the people section — a blurb follows it here, not the grid. */
 .sc-band .sc-label {
     margin-bottom: 10px;
 }
@@ -306,7 +287,7 @@ img {
 .sc-homes {
     display: grid;
     /* auto-fill, not auto-fit: a lone card keeps its column instead of
-       stretching the full width while the list is still short. */
+       stretching the full width. */
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
     gap: 18px;
 }
@@ -419,9 +400,6 @@ img {
 
 /* ---------------------------------------------------------------- narrow */
 
-/* The design was drawn at desktop width only; everything below is added.
-   860px collapses the two-column hero, 560px tightens the gutters. */
-
 @media (max-width: 860px) {
     .sc-hero {
         grid-template-columns: 1fr;
@@ -429,8 +407,7 @@ img {
         padding-bottom: 56px;
     }
 
-    /* Bird first: it is the identity, and stacked under the lede it would sit
-       below the fold on every phone. */
+    /* Bird first: under the lede it would sit below the fold on every phone. */
     .sc-bird {
         order: -1;
         justify-self: start;

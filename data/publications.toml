@@ -1,15 +1,8 @@
-# One flat, year-sorted list. `venue_short` is the filter key on /publications,
-# `topic` preserves the old section grouping, and `selected = true` puts a paper
-# on the home page.
-#
-# `major = true` marks refereed conference and journal papers. Those render in
-# the main list on /publications and are the only ones the venue filter covers;
-# everything else (workshops, experience reports, demos, posters, essays) falls
-# into the "Workshops, Demos & Other" section below it. Every paper carries the
-# flag explicitly so a new entry that forgets it is obvious.
-#
-# Chip order on /publications. Every `venue_short` used by a `major` paper must
-# appear here; non-major venues are deliberately absent.
+# One flat list, kept in year-descending order; nothing sorts it at render time.
+# `major = true` marks refereed conference and journal papers, which are the only
+# ones /publications puts in the main list and the only ones the venue filter
+# covers. Every `venue_short` used by a major paper must appear in `venues`
+# below, which also sets the chip order.
 venues = ["PLDI", "OOPSLA", "ICFP", "ICSE", "UIST", "CCS", "ESOP", "JFP"]
 
 # ---------------------------------------------------------------- 2026 -------
@@ -35,8 +28,7 @@ venue = "JFP 2026"
 venue_short = "JFP"
 topic = "Property-Based Testing"
 major = true
-# Journal version of the ICFP'23 experience report below. No JFP DOI is
-# published yet; swap this for the Cambridge Core link when it appears.
+# TODO: swap in the Cambridge Core link once the JFP DOI is published.
 [[papers.links]]
 label = "Preprint"
 url = "https://arxiv.org/abs/2603.27002"
@@ -62,7 +54,7 @@ venue = "ICFP 2026"
 venue_short = "ICFP"
 topic = "Property-Based Testing"
 major = true
-# Conditionally accepted. Drop the parenthetical from `venue` once it is final.
+# TODO: drop the parenthetical from `venue` once acceptance is final.
 [[papers.links]]
 label = "Preprint"
 url = "https://arxiv.org/abs/2602.18545"

@@ -1,6 +1,5 @@
-# The published CV is generated from resume/resume.tex rather than committed,
-# so the site has to be built through here (or with the same steps in CI) to
-# pick up an up-to-date static/resume.pdf.
+# static/resume.pdf is generated from resume/resume.tex rather than committed,
+# so a bare `zola build` ships a site whose CV link 404s.
 
 ZOLA ?= zola
 LATEXMK ?= latexmk
@@ -12,8 +11,7 @@ all: build
 build: static/resume.pdf
 	$(ZOLA) build
 
-# zola only watches content/, templates/, sass/, static/ and config.toml, so the
-# data/ TOML files need to be added explicitly or edits to them do nothing.
+# zola does not watch data/, so edits there do nothing without this.
 serve: static/resume.pdf
 	$(ZOLA) serve --extra-watch-path data
 

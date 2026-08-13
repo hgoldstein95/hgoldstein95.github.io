@@ -5,9 +5,6 @@
   {% set diss = load_data(path = "data/dissertation.toml") %}
   {% set talks = load_data(path = "data/talks.toml") %}
 
-  {# `major` splits refereed conference and journal papers from workshops,
-     demos, posters, and essays. The venue filter covers only the former, which
-     is why `venues` in the data file lists only major venues. #}
   {% set majors = [p for p in pubs.papers if p.major] %}
   {% set others = [p for p in pubs.papers if not p.major] %}
   {% set major_count = majors | length %}
@@ -94,8 +91,6 @@
   </section>
 
   <script>
-    // Venue filter. The chip row ships hidden; enabling it here keeps the page
-    // complete for anyone without JavaScript.
     (function () {
       var bar = document.getElementById('venue-filter');
       var list = document.getElementById('paper-rows');

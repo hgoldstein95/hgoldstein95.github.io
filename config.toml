@@ -8,9 +8,8 @@ generate_feeds = true
 feed_filenames = ["atom.xml"]
 
 [link_checker]
-# Stack Overflow serves a 403 to anything that is not a browser, so `zola check`
-# cannot see the page and reports both the status and any anchor as broken. The
-# links themselves are fine; skip the host rather than lose real failures in noise.
+# Serves a 403 to anything that is not a browser, so `zola check` reports a
+# working link as broken. Only add a host here after checking it in a browser.
 skip_prefixes = ["https://stackoverflow.com/"]
 
 [markdown.highlighting]
@@ -20,17 +19,11 @@ style = "class"
 [extra]
 author = "Harrison Goldstein"
 github_username = "hgoldstein95"
-# Full-resolution headshot, linked from /contact/ and used as the social card image.
 profile_picture = "/img/profile.jpeg"
-# Masthead portrait only: 252px, a 3x source for the 84px slot (44px on mobile),
-# same aspect ratio as the original so the CSS cover/position framing is unchanged.
-# Keep it small — base.html preloads it to beat first paint, and an image much
-# heavier than style.css loses that race. Regenerate with:
+# Keep it small: base.html preloads it to beat first paint. Regenerate with
 #   sips -Z 252 --setProperty formatOptions 78 static/img/profile.jpeg \
 #     --out static/img/profile-thumb.jpg
 profile_thumbnail = "/img/profile-thumb.jpg"
 footer = true
 footer_url = "https://github.com/hgoldstein95/hgoldstein95.github.io"
 footer_text = "Website Source on GitHub"
-# Navigation now lives in data/directory.toml (the "I'm looking for..." block)
-# and data/rail.toml (the "Also here" links), so there is no extra.nav here.

@@ -1,8 +1,5 @@
-{# The SCAUP Lab sub-site's shell. Deliberately does NOT extend the main site's
-   base.html: /scaup/ has its own design, its own fonts, and its own stylesheet,
-   and shares nothing with the rest of the site but the Zola build and static/.
-   The main site's house rules (no rounded corners, no shadows, no monospace)
-   do not apply in here — see CLAUDE.md. #}
+{# The SCAUP Lab sub-site's shell. Deliberately does not extend the main site's
+   base.html; it shares nothing with it but the Zola build and static/. #}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +20,6 @@
     {% endif %}
     <meta name="description" content="{{ desc }}">
 
-    {# The bird, re-framed square so it fills the tab icon rather than letterboxing. #}
     <link rel="icon" type="image/svg+xml" href="/img/scaup-favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,8 +33,6 @@
     <a class="sc-skip" href="#main">Skip to content</a>
 
     <header class="sc-head">
-      {# No nav, and no link out: the page is one screenful of sections and the
-         header carries the eyebrow alone. #}
       <div class="sc-eyebrow">{{ scaup.eyebrow }}</div>
     </header>
 

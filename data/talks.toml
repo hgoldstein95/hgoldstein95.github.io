@@ -1,9 +1,5 @@
-# Reverse-chronological; nothing sorts this at render time. `selected = true`
-# puts a talk on the home page. Podcast appearances use the episode-number
-# naming style ("Disseminate #55"), not the episode's topic.
-#
-# Remember: `selected` and `with` are scalars and must stay ABOVE the
-# `[[items.links]]` sub-table or TOML reads them as part of the link.
+# Nothing sorts this at render time. `selected` and `with` are scalars and must
+# stay ABOVE `[[items.links]]` or TOML reads them as part of the link.
 
 [[items]]
 title = "Metaprogramming the Next Generation of Testing Tools"

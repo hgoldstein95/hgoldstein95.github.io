@@ -10,10 +10,6 @@
 
 html {
     -webkit-text-size-adjust: 100%;
-    /* Reserve the scrollbar's width whether or not it is showing, so a short
-       page and a long one put the centered shell in the same place. Only bites
-       where scrollbars take up layout space -- Windows, Linux, and macOS set to
-       always show them; overlay scrollbars never shifted anything. */
     scrollbar-gutter: stable;
 }
 
@@ -40,8 +36,8 @@ img {
     max-width: 100%;
 }
 
-/* Any author `display` beats the UA's `[hidden] { display: none }`, so `.row`
-   and `.filters` would stay visible when the venue filter hides them. */
+/* Any author `display` beats the UA's `[hidden]` rule, so the venue filter
+   could not hide `.row`. */
 [hidden] {
     display: none !important;
 }
@@ -78,11 +74,6 @@ button {
 
 /* ---------------------------------------------------------------- shell */
 
-/*
- * Two columns on desktop, with the rail spanning both rows so it can hold the
- * page's full height. On mobile the areas restack head -> rail -> main, which
- * puts email and news above the fold the way the mobile mockup does.
- */
 .shell {
     position: relative;
     display: grid;
@@ -90,10 +81,8 @@ button {
     grid-template-areas:
         "head rail"
         "main rail";
-    /* Explicit, because the rail spans both rows and is a full viewport tall:
-       left to `auto`, grid hands each spanned row an equal share of that
-       height, which inflates the header and drops short pages to mid-screen.
-       Pinning the header to its content sends all the slack to `main`. */
+    /* Explicit: with `auto` rows, grid splits the rail's viewport height across
+       both rows it spans and inflates the header. */
     grid-template-rows: auto 1fr;
     align-content: start;
     max-width: var(--shell-max);
@@ -127,14 +116,11 @@ button {
     min-width: 0;
 }
 
-/* Grows into whatever height `main` was given, so `.footer` keeps its own
-   48px margin rather than an `auto` one that collapses on a long page. */
 .content-body {
     flex: 1 0 auto;
 }
 
-/* Held at a full viewport so `.rail-links` can sit on the bottom edge; taller
-   content simply scrolls inside the rail and the links follow it down. */
+/* Held at exactly a viewport so `.rail-links` can sit on the bottom edge. */
 .rail {
     position: sticky;
     top: 0;
@@ -152,10 +138,6 @@ button {
 
 /* ------------------------------------------------------------- masthead */
 
-/*
- * Order is bar -> directory -> lede at every width: the menu sits directly under
- * the button that opens it, and nothing below the directory moves when it opens.
- */
 .masthead {
     display: flex;
     flex-direction: column;
@@ -235,15 +217,8 @@ button {
     }
 }
 
-/*
- * The home page's About Me: a white band on the page's --paper ground, hairline
- * top and bottom, bleeding through the main column's gutters so it runs flush to
- * the rail. White plus a four-sided border is the directory tile -- i.e. a
- * control -- so the band stays open at the sides on purpose. Nothing clickable
- * here touches the column edge, which is what keeps this reading as a surface.
- * The horizontal values track --main-pad-x, so the bleed follows the gutter at
- * every width. The heading rule and the lede keep their own styling inside it.
- */
+/* Negative margins bleed the band through the main column's gutters, so the
+   horizontal values have to track --main-pad-x. */
 .about {
     margin: 32px calc(var(--main-pad-x) * -1) 0;
     padding: 22px var(--main-pad-x) 24px;
@@ -302,10 +277,7 @@ button {
     white-space: nowrap;
 }
 
-/*
- * The arrow keeps its space at all times and only fades in, so a tile never
- * changes size on hover.
- */
+/* The arrow holds its 12px whatever the state, so a tile never resizes. */
 .directory-go {
     display: inline-block;
     width: 12px;
@@ -321,12 +293,8 @@ button {
     transform: translateX(0);
 }
 
-/*
- * The tile for the current page links home, so it carries a back arrow that is
- * always showing -- the tile is the way out, and nothing announces that on a
- * touch screen where there is no hover. It leans left on hover, the mirror of
- * the other tiles, and the 12px slot keeps every tile the same size regardless.
- */
+/* The current page's tile links home; its back arrow always shows, since there
+   is no hover on a touch screen to reveal it. */
 .directory-item[aria-current="page"] .directory-go {
     opacity: 1;
     transform: translateX(0);
@@ -516,11 +484,8 @@ a.row-title:hover {
     gap: 16px;
 }
 
-/*
- * Flat text chips, not pills: the underline carries the state. Weight is a
- * constant 500 in every state -- switching weights on click would resize the
- * chip and shove its neighbours sideways.
- */
+/* Weight stays 500 in every state: switching weights on click would resize the
+   chip and shove its neighbours sideways. */
 .chip {
     padding: 3px 0;
     border: 0;
@@ -676,15 +641,11 @@ a.row-title:hover {
     }
 }
 
-/* The section-head rule spaces the prose under it exactly like a .prose h2 rule
-   spaces its own first paragraph, so the h1 and h2 blocks on a markdown page
-   read the same. Rows and cards stay flush — their own padding does the work. */
 .section-head+.prose {
     margin-top: 16px;
 }
 
-/* Long-form reading only. Short markdown pages run the full column so their h2
-   rules line up with the h1 rule above them. */
+/* Long-form reading only; short markdown pages run the full column. */
 .prose--measure {
     max-width: 68ch;
 }
@@ -836,7 +797,7 @@ a.row-title:hover {
     }
 }
 
-/* Bottom-anchored: eats the rail's leftover height instead of the news block. */
+/* Eats the rail's leftover height, so the links sit on its bottom edge. */
 .rail-links {
     margin-top: auto;
 }
@@ -894,9 +855,7 @@ a.row-title:hover {
             "head"
             "rail"
             "main";
-        /* Nothing spans rows here, so the two fixed rows size to their content
-           and `main` still takes the slack -- keeping the footer on the bottom
-           edge of a short page the same way it does on desktop. */
+        /* Explicit for the same reason as the desktop rows. */
         grid-template-rows: auto auto 1fr;
     }
 
@@ -916,10 +875,8 @@ a.row-title:hover {
         padding: 22px var(--rail-pad-x) 26px;
     }
 
-    /* The rail is a home-page fixture on a phone: it puts email and news above
-       the fold there. Everywhere else it is a long detour before the content the
-       visitor came for -- and repeated verbatim on every one of them -- so it
-       goes away. The home page keeps it, one tap from anywhere via the wordmark. */
+    /* On the home page the rail is email and news above the fold; anywhere else
+       it is a long detour before the content the visitor came for. */
     body:not(.is-home) .rail {
         display: none;
     }
@@ -928,8 +885,7 @@ a.row-title:hover {
         padding-top: 24px;
     }
 
-    /* Every content block opens with a `.section`, whose own top margin would
-       stack on that padding. The padding alone sets the gap. */
+    /* The leading `.section`'s own margin would stack on that padding. */
     .content-body> :first-child {
         margin-top: 0;
     }
@@ -985,7 +941,6 @@ a.row-title:hover {
         display: inline;
     }
 
-    /* The directory becomes the hamburger menu. */
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -1001,10 +956,8 @@ a.row-title:hover {
         color: var(--ink);
         cursor: pointer;
 
-        /*
-         * The icon slot is a fixed 12px box in both states, so swapping the
-         * bars for the cross never moves the label underneath it.
-         */
+        /* Fixed box in both states, so swapping the bars for the cross never
+           moves the label underneath. */
         .icon {
             position: relative;
             width: 18px;
@@ -1099,8 +1052,6 @@ a.row-title:hover {
         line-height: 1.5;
     }
 
-    /* Horizontal bleed follows --main-pad-x on its own; only the vertical
-       rhythm needs tightening. */
     .about {
         margin-top: 22px;
         padding-top: 18px;

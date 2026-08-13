@@ -231,8 +231,6 @@ Things about the port worth knowing:
   hosts, the footer email, the colophon.
 - There is **no nav and no link back to the main site.** The header is the eyebrow alone. The
   sections still carry `id`s (`#people`, `#homes`, `#contact`) so they can be linked from elsewhere.
-- The `homes` array in `scaup.toml` backs the section now titled **Connections**; the key kept the
-  name it had when the section was "Wider homes".
 
 `/group/` is now a `redirect.html` stub pointing at `/scaup/`, the same pattern `content/resume.md`
 uses. The `data/directory.toml` entry ("the research group.") points at `/scaup/`.

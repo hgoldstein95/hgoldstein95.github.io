@@ -1,28 +1,15 @@
-# Content for the SCAUP Lab sub-site at /scaup/.
-#
-# Nothing here is read by the main site. The sub-site has its own shell
-# (templates/scaup/) and its own stylesheet (sass/scaup.scss); see the "SCAUP Lab
-# sub-site" section of CLAUDE.md before editing either.
-#
-# Top-level scalars must stay above the first [table] or [[array]] below, or TOML
-# reads them as part of it.
+# The SCAUP Lab sub-site at /scaup/; read by templates/scaup/ only. Top-level
+# scalars must stay above the first [table] or [[array]] below.
 
 name = "SCAUP Lab"
-# Sits opposite the way back to the main site in the header.
 eyebrow = "University at Buffalo · CSE"
-# The expansion under the wordmark. Rendered as markdown, so the bolded letters
-# are the acronym: S-C-A-U-P.
 acronym = "**S**oftware **C**orrectness **A**nd **U**ser-oriented **P**rogramming"
 
-# The lede paragraphs beside the illustration are the body of
-# content/scaup/_index.md, not data.
+# The lede beside the illustration is the body of content/scaup/_index.md.
 
 # ---------------------------------------------------------------- people
 #
-# One card each, in the order given. `photo` is optional — a person without one
-# gets the empty tinted block the card is sized for, which is what the design
-# does for an unfilled slot. Photos want a 4:5 crop; they are object-fit: cover.
-# `url` and `note` are both optional.
+# `photo`, `url` and `note` are optional; photos want a 4:5 crop.
 
 [[people]]
 name = "Harry Goldstein"
@@ -47,14 +34,9 @@ role = "PhD Student"
 name = "Francille Zhuang"
 role = "PhD Student"
 
-# ---------------------------------------------------------------- connections
+# ------------------------------------------------- connections (key: `homes`)
 #
-# The cards under the "Connections" heading. The key is still `homes` — the
-# section was called "Wider homes" in the design it was ported from.
-#
-# `host` is the short text under the arrow, not the URL — write it the way you
-# want it read. The grid is auto-fill, so a short list keeps its column widths
-# instead of stretching; add more entries as they become real.
+# `host` is the short text under the arrow, not the URL.
 
 [[homes]]
 title = "UB Computer Science and Engineering"
