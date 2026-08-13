@@ -60,6 +60,19 @@ On desktop the rail is held at exactly `100vh` (`min-height` **and** `max-height
 section, `.rail-links`, can take `margin-top: auto` and sit on the bottom edge of the viewport. Both
 are reset in the 900px block, where the rail is static and stacks with the rest of the page.
 
+`grid-template-rows` is **explicit at both widths** (`auto 1fr`, and `auto auto 1fr` below 900px) and
+must stay that way. The rail spans both desktop rows and is a full viewport tall; with `auto` rows,
+grid splits that height evenly across the rows it spans, which inflates the header and leaves a short
+page looking vertically centered. Pinning the header to its content sends all the slack to `main`.
+`main` then holds `.content-body` — a wrapper around the `content` block that takes the slack with
+`flex: 1 0 auto` so `.footer` sits on the bottom edge of a short page while keeping its own 48px
+margin on a long one. The mobile "first section" rule targets `.content-body > :first-child`, not
+`.content`, because of that wrapper.
+
+Below 900px the rail is hidden on every page but the home page (`body:not(.is-home) .rail`). The home
+template is the only one that sets `{% block body_class %}`; the rail is a phone visitor's email and
+news block above the fold there, and a long detour on a sub-page.
+
 Order inside the header is always **bar → directory → lede**. Do not reintroduce CSS `order` to
 rearrange it; the directory sits directly under the button that opens it so nothing below moves when
 the mobile menu expands.

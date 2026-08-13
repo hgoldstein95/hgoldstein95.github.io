@@ -10,6 +10,11 @@
 
 html {
     -webkit-text-size-adjust: 100%;
+    /* Reserve the scrollbar's width whether or not it is showing, so a short
+       page and a long one put the centered shell in the same place. Only bites
+       where scrollbars take up layout space -- Windows, Linux, and macOS set to
+       always show them; overlay scrollbars never shifted anything. */
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -85,6 +90,11 @@ button {
     grid-template-areas:
         "head rail"
         "main rail";
+    /* Explicit, because the rail spans both rows and is a full viewport tall:
+       left to `auto`, grid hands each spanned row an equal share of that
+       height, which inflates the header and drops short pages to mid-screen.
+       Pinning the header to its content sends all the slack to `main`. */
+    grid-template-rows: auto 1fr;
     align-content: start;
     max-width: var(--shell-max);
     min-height: 100vh;
@@ -111,8 +121,16 @@ button {
 
 .content {
     grid-area: main;
+    display: flex;
+    flex-direction: column;
     padding: 0 var(--main-pad-x) 48px;
     min-width: 0;
+}
+
+/* Grows into whatever height `main` was given, so `.footer` keeps its own
+   48px margin rather than an `auto` one that collapses on a long page. */
+.content-body {
+    flex: 1 0 auto;
 }
 
 /* Held at a full viewport so `.rail-links` can sit on the bottom edge; taller
@@ -848,7 +866,10 @@ a.row-title:hover {
             "head"
             "rail"
             "main";
-        min-height: 0;
+        /* Nothing spans rows here, so the two fixed rows size to their content
+           and `main` still takes the slack -- keeping the footer on the bottom
+           edge of a short page the same way it does on desktop. */
+        grid-template-rows: auto auto 1fr;
     }
 
     .shell::after {
@@ -867,8 +888,22 @@ a.row-title:hover {
         padding: 22px var(--rail-pad-x) 26px;
     }
 
+    /* The rail is a home-page fixture on a phone: it puts email and news above
+       the fold there. Everywhere else it is a long detour before the content the
+       visitor came for -- and repeated verbatim on every one of them -- so it
+       goes away. The home page keeps it, one tap from anywhere via the wordmark. */
+    body:not(.is-home) .rail {
+        display: none;
+    }
+
     .content {
         padding-top: 24px;
+    }
+
+    /* Every content block opens with a `.section`, whose own top margin would
+       stack on that padding. The padding alone sets the gap. */
+    .content-body > :first-child {
+        margin-top: 0;
     }
 
     .cards {

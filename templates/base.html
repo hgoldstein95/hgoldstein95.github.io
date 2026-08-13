@@ -49,7 +49,9 @@
     <meta name="twitter:image" content="{{ config.extra.profile_picture }}">
   </head>
 
-  <body>
+  {# `is-home` is the only page-level body hook: below 900px the rail is hidden
+     everywhere but the home page, where it carries email and news above the fold. #}
+  <body class="{% block body_class %}{% endblock %}">
     <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="shell">
@@ -91,7 +93,11 @@
       </header>
 
       <main class="content" id="main">
-        {% block content %}{% endblock %}
+        {# The wrapper takes the slack on a short page, so the footer lands on
+           the bottom edge instead of floating up under the content. #}
+        <div class="content-body">
+          {% block content %}{% endblock %}
+        </div>
 
         {% if config.extra.footer %}
           <footer class="footer">
