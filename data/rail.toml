@@ -15,8 +15,6 @@ instructions = [
   "I am currently **not** hiring new PhD students. If you are a student reaching out about working with me, keep in mind that I may not have time to respond.",
 ]
 
-# "Also here" -- the off-site links. Sourced from data/coordinates.toml plus the
-# CV. TODO(harrison): add Google Scholar / DBLP / Bluesky if you want them here.
 [[links]]
 label = "CV (PDF)"
 url = "/resume.pdf"

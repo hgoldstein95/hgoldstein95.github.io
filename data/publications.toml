@@ -2,9 +2,6 @@
 # `topic` preserves the old section grouping, and `selected = true` puts a paper
 # on the home page.
 #
-# TODO(harrison): check the `selected` picks -- right now it is the six most
-# recent, which may not be the six you want to lead with.
-
 # Chip order on /publications. Every `venue_short` used below must appear here.
 venues = [
   "PLDI",
