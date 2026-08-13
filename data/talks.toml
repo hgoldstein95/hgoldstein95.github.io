@@ -45,7 +45,7 @@ venue = "Disseminate Podcast"
 selected = false
 [[items.links]]
 label = "Podcast"
-url = "https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-property-based-testing-55"
+url = "https://shows.acast.com/disseminate/episodes/harry-goldstein-property-based-testing-55"
 
 [[items]]
 title = "Consider Collaboration"

@@ -7,6 +7,12 @@ build_search_index = false
 generate_feeds = true
 feed_filenames = ["atom.xml"]
 
+[link_checker]
+# Stack Overflow serves a 403 to anything that is not a browser, so `zola check`
+# cannot see the page and reports both the status and any anchor as broken. The
+# links themselves are fine; skip the host rather than lose real failures in noise.
+skip_prefixes = ["https://stackoverflow.com/"]
+
 [markdown.highlighting]
 theme = "github-light"
 style = "class"

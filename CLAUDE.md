@@ -15,10 +15,14 @@ Use `make`, not `zola build`. The published CV at `static/resume.pdf` is generat
 `resume/resume.tex` and is **not** in git, so a bare `zola build` ships a site whose CV link 404s.
 The Makefile rebuilds the PDF whenever the `.tex` is newer.
 
-`make check` currently reports two pre-existing broken links in old blog posts (a dead podcast URL,
-a StackOverflow anchor). They are content problems, not build problems. Note that `zola check` only
-walks markdown — links that live in `data/*.toml` are invisible to it, so the same dead podcast URL
-also sits unchecked in `data/talks.toml`.
+`make check` passes clean. Two caveats about what it can and cannot see:
+
+- `zola check` only walks markdown, so links in `data/*.toml` are invisible to it. When a URL in a
+  post also appears in a data file — the Disseminate episode is in both `content/blog/disseminate.md`
+  and `data/talks.toml` — fix both; the checker will only ever flag the first.
+- `config.toml` has a `[link_checker] skip_prefixes` entry for `stackoverflow.com`, which serves a
+  403 to non-browser clients. Without it the checker reports a working link as a bad status or a
+  missing anchor. Add a host there only when you have confirmed in a browser that the link is fine.
 
 ## Zola 0.23 runs Tera 2 — read this before touching a template
 
