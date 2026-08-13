@@ -7,13 +7,15 @@
     {% for item in directory.items %}
       {# The tile for the page you are on points home instead: clicking it backs out. #}
       {% set here = current_path is defined and current_path == item.url %}
+      {% set external = item.url is starting_with(pat="http") %}
       <a class="directory-item" href="{% if here %}/{% else %}{{ item.url }}{% endif %}"
+         {% if external %}target="_blank" rel="noopener"{% endif %}
          {% if here %}aria-current="page" aria-label="You are here &mdash; back to home"{% endif %}>
         <span class="directory-label">&hellip;&nbsp;{{ item.label }}</span>
         <span class="directory-end">
           {% if item.hint %}
             <span class="directory-hint">{{ item.hint }}</span>{% endif %}
-          <span class="directory-go" aria-hidden="true">{% if here %}&larr;{% else %}&rarr;{% endif %}</span>
+          <span class="directory-go" aria-hidden="true">{% if here %}&larr;{% elif external %}&nearr;{% else %}&rarr;{% endif %}</span>
         </span>
       </a>
     {% endfor %}

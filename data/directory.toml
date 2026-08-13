@@ -18,7 +18,7 @@ url = "/courses/"
 
 [[items]]
 label = "software projects."
-url = "/projects/"
+url = "https://github.com/hgoldstein95"
 
 [[items]]
 label = "contact information."
