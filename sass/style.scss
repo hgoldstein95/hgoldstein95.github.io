@@ -115,12 +115,15 @@ button {
     min-width: 0;
 }
 
+/* Held at a full viewport so `.rail-links` can sit on the bottom edge; taller
+   content simply scrolls inside the rail and the links follow it down. */
 .rail {
     position: sticky;
     top: 0;
     z-index: 1;
     grid-area: rail;
     align-self: start;
+    min-height: 100vh;
     max-height: 100vh;
     overflow-y: auto;
     padding: 34px var(--rail-pad-x) 36px;
@@ -211,6 +214,27 @@ button {
 
     p+p {
         margin-top: 12px;
+    }
+}
+
+/*
+ * The home page's About Me: a white band on the page's --paper ground, hairline
+ * top and bottom, bleeding through the main column's gutters so it runs flush to
+ * the rail. White plus a four-sided border is the directory tile -- i.e. a
+ * control -- so the band stays open at the sides on purpose. Nothing clickable
+ * here touches the column edge, which is what keeps this reading as a surface.
+ * The horizontal values track --main-pad-x, so the bleed follows the gutter at
+ * every width. The heading rule and the lede keep their own styling inside it.
+ */
+.about {
+    margin: 32px calc(var(--main-pad-x) * -1) 0;
+    padding: 22px var(--main-pad-x) 24px;
+    background: #fff;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+
+    .lede {
+        margin-top: 13px;
     }
 }
 
@@ -766,6 +790,11 @@ a.row-title:hover {
     }
 }
 
+/* Bottom-anchored: eats the rail's leftover height instead of the news block. */
+.rail-links {
+    margin-top: auto;
+}
+
 .links-list {
     display: flex;
     flex-direction: column;
@@ -828,6 +857,7 @@ a.row-title:hover {
 
     .rail {
         position: static;
+        min-height: 0;
         max-height: none;
         overflow: visible;
         background: var(--panel);
@@ -1004,6 +1034,14 @@ a.row-title:hover {
         margin-top: 18px;
         font-size: 14.5px;
         line-height: 1.5;
+    }
+
+    /* Horizontal bleed follows --main-pad-x on its own; only the vertical
+       rhythm needs tightening. */
+    .about {
+        margin-top: 22px;
+        padding-top: 18px;
+        padding-bottom: 20px;
     }
 
     .row {

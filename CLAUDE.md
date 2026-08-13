@@ -56,6 +56,10 @@ The rail restacking **between** the header and the main content on narrow screen
 email and news land above the fold on a phone. `.shell::after` paints the rail's panel stripe at full
 page height behind the sticky rail.
 
+On desktop the rail is held at exactly `100vh` (`min-height` **and** `max-height`), so its last
+section, `.rail-links`, can take `margin-top: auto` and sit on the bottom edge of the viewport. Both
+are reset in the 900px block, where the rail is static and stacks with the rest of the page.
+
 Order inside the header is always **bar → directory → lede**. Do not reintroduce CSS `order` to
 rearrange it; the directory sits directly under the button that opens it so nothing below moves when
 the mobile menu expands.
@@ -72,7 +76,12 @@ properties (`--ink`, `--paper`, `--panel`, `--hair`, `--border`, `--mute`, `--bo
 House rules, taken from the design this was built to:
 
 - **No rounded corners, no shadows, no gradients, no monospace in the UI, no icons.** Arrows (`→`,
-  `↗`) are Unicode and are the only decoration.
+  `↗`) are Unicode and are the only decoration. To set a block apart, give it a flat fill: **white**
+  brings it forward, `--panel` pushes it back, and `--paper` sits between them, so the two read in
+  opposite directions. Then pick the edge by what the block *is* — a **closed 1px box** is a control
+  (the directory tiles, the menu button), while a **band** with hairlines top and bottom that bleeds
+  through the gutters is a surface (`.about` on the home page, the rail below 900px). White inside a
+  four-sided border is the directory tile exactly; use it only for something clickable.
 - Hierarchy comes from **weight and rules**, never from shrinking text. Nothing is below 12.5px.
   Section headings are 16px/600 — the same size as body copy — sitting on a 1px ink rule.
 - `font-variant-numeric: tabular-nums` on every date, year, and count.
