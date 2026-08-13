@@ -10,7 +10,8 @@ url = "/blog/"
 
 [[items]]
 label = "the research group."
-url = "/group/"
+# The SCAUP Lab sub-site: its own shell and stylesheet, still built by Zola.
+url = "/scaup/"
 
 [[items]]
 label = "courses."

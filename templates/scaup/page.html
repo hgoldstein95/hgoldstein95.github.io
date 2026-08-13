@@ -1,0 +1,11 @@
+{# Sub-pages of /scaup/. Nothing uses this yet — it is here so that dropping a
+   markdown file into content/scaup/ renders in the sub-site's shell without any
+   front-matter ceremony (the section sets page_template). #}
+{% extends "scaup/base.html" %}
+
+{% block content %}
+  <section class="sc-section">
+    <h1 class="sc-page-title">{{ page.title }}</h1>
+    <div class="sc-prose">{{ page.content | safe }}</div>
+  </section>
+{% endblock content %}

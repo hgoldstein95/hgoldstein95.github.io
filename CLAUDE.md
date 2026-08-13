@@ -86,6 +86,9 @@ rows stack). There are no others.
 
 ## Design system
 
+Everything in this section is about the **main site**. The SCAUP Lab sub-site at `/scaup/` has its
+own design system and deliberately breaks every rule below; see "The SCAUP Lab sub-site".
+
 Tokens live in `sass/_tokens.scss`; everything else is `sass/style.scss`. Colors are CSS custom
 properties (`--ink`, `--paper`, `--panel`, `--hair`, `--border`, `--mute`, `--body`, `--accent`,
 `--wash`). Type is Archivo 400/500/600 from Google Fonts.
@@ -164,7 +167,9 @@ All structured content is TOML in `data/`, loaded with `load_data`.
   **above** the `[[items.links]]` sub-table or TOML reads it as part of the link. Order here is order
   on the page; nothing sorts it. Every talk, selected or not, is listed under "Talks & Appearances"
   on `/publications/`.
-- **`students.toml`**, **`dissertation.toml`** — self-explanatory.
+- **`scaup.toml`** — everything on the SCAUP Lab sub-site except its lede. Read only by
+  `templates/scaup/`. See below.
+- **`dissertation.toml`** — self-explanatory.
 
 Home page prose is the body of `content/_index.md`.
 
@@ -174,6 +179,43 @@ and posts with `featured = true` under `[extra]` in their front matter. Nothing 
 count is yours to choose — but the blog `.cards` grid is three across, so featured posts look best in
 multiples of three. Each section's `All N →` link goes to the full list; for talks that is the
 `#talks` anchor on `/publications/`.
+
+## The SCAUP Lab sub-site
+
+`/scaup/` is a separate site — its own design, its own type, its own stylesheet — that happens to be
+built by the same Zola invocation. It is a plain section whose templates simply never extend
+`base.html`, which is the whole trick: Zola shares nothing between templates that do not inherit
+from each other.
+
+```
+content/scaup/_index.md    section; body is the lede beside the bird
+data/scaup.toml            everything else on the page
+templates/scaup/base.html  its own <html>, <head>, fonts, header, footer
+templates/scaup/index.html the home page
+templates/scaup/page.html  any future sub-page (the section sets page_template)
+sass/scaup.scss            → public/scaup.css; standalone, does not import _tokens
+static/img/scaup.svg       the bird, in the hero and as the band watermark
+```
+
+Adding a page is `content/scaup/whatever.md` with a title — `page_template` on the section routes it
+to the sub-site shell automatically, so no `template =` in the front matter.
+
+**The main site's house rules do not apply here.** Rounded corners (10px on photos, 12px on cards), a
+hover shadow on the "wider homes" cards, and IBM Plex Mono for the small labels are all load-bearing
+parts of the imported design. Do not normalize them toward `style.scss`. Colors are `--sc-`-prefixed
+custom properties on `:root`; `scaup.css` is only ever loaded on `/scaup/`, so that is safe.
+
+Two things about the port worth knowing:
+
+- The design was drawn at desktop width only. Both media queries in `scaup.scss` (860px collapses the
+  hero, 560px tightens the gutters and stacks the header) are additions, as is the `clamp()` on the
+  wordmark. The bird takes `order: -1` below 860px so the identity is not pushed under the lede.
+- A person in `scaup.toml` with no `photo` renders the empty tinted well the card is already sized
+  for, which is what the source design does for an unfilled image slot. Adding a photo later never
+  reflows the grid. Photos want a 4:5 crop.
+
+`/group/` is now a `redirect.html` stub pointing at `/scaup/`, the same pattern `content/resume.md`
+uses. The `data/directory.toml` entry ("the research group.") points at `/scaup/`.
 
 ## Adding a blog post
 
@@ -217,8 +259,8 @@ templates/
   base.html              shell, masthead, rail include, menu toggle, siteMotion
   index.html             home
   publications.html      full list + venue filter
-  group.html             stub prose + real student list
   blog-list.html, blog-page.html, page.html, redirect.html
+  scaup/                 the SCAUP Lab sub-site: its own base.html, no inheritance
   partials/
     rail.html            email, news, "Also here"
     directory.html       the "I'm looking for…" nav / mobile menu
@@ -227,6 +269,7 @@ templates/
 sass/
   _tokens.scss           colors, layout vars
   style.scss             everything else
+  scaup.scss             the sub-site, standalone → public/scaup.css
 static/                  copied verbatim: img/, papers/, slides/, js/gsap.min.js, CNAME
 resume/                  resume.tex → static/resume.pdf at build time
 ```

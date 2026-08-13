@@ -1,0 +1,64 @@
+{# The SCAUP Lab sub-site's shell. Deliberately does NOT extend the main site's
+   base.html: /scaup/ has its own design, its own fonts, and its own stylesheet,
+   and shares nothing with the rest of the site but the Zola build and static/.
+   The main site's house rules (no rounded corners, no shadows, no monospace)
+   do not apply in here — see CLAUDE.md. #}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% set scaup = load_data(path="data/scaup.toml") %}
+
+    <title>
+      {%- if page is defined and page.title %}{{ page.title }} &middot; {{ scaup.name }}
+      {%- else %}{{ scaup.name }} &middot; {{ config.title }}
+      {%- endif -%}
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ config.extra.author }}">
+    {% set desc = section.description | default(value=config.description) %}
+    {% if page is defined and page.description %}{% set desc = page.description %}{% endif %}
+    <meta name="description" content="{{ desc }}">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/scaup.css">
+  </head>
+
+  <body>
+    <a class="sc-skip" href="#main">Skip to content</a>
+
+    <header class="sc-head">
+      <div class="sc-eyebrow">{{ scaup.eyebrow }}</div>
+      <nav class="sc-nav">
+        {% for item in scaup.nav %}
+          {% if item.home | default(value=false) %}
+            <a class="sc-nav-home" href="{{ item.url }}">{{ item.label }} &rarr;</a>
+          {% else %}
+            <a href="{{ item.url }}">{{ item.label }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
+    </header>
+
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="sc-foot" id="contact">
+      <div>
+        <div class="sc-foot-head">{{ scaup.contact.heading }}</div>
+        <div class="sc-foot-lines">
+          {% for line in scaup.contact.lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+        </div>
+        <a class="sc-foot-mail" href="mailto:{{ scaup.contact.email }}">{{ scaup.contact.email }}</a>
+      </div>
+      <div class="sc-colophon">{{ scaup.colophon | markdown(inline=true) | safe }}</div>
+    </footer>
+  </body>
+
+</html>

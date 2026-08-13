@@ -1,0 +1,141 @@
+# Content for the SCAUP Lab sub-site at /scaup/.
+#
+# Nothing here is read by the main site. The sub-site has its own shell
+# (templates/scaup/) and its own stylesheet (sass/scaup.scss); see the "SCAUP Lab
+# sub-site" section of CLAUDE.md before editing either.
+#
+# Top-level scalars must stay above the first [table] or [[array]] below, or TOML
+# reads them as part of it.
+
+name = "SCAUP Lab"
+# Sits opposite the nav in the header.
+eyebrow = "University at Buffalo · CSE"
+# The expansion under the wordmark. Rendered as markdown, so the bolded letters
+# are the acronym: S-C-A-U-P.
+acronym = "**S**oftware **C**orrectness **a**nd **U**ser-oriented **P**rogramming"
+# Stands above the "Wider homes" cards.
+homes_blurb = "The lab is small by design. Most of what we do happens alongside these larger groups."
+# Bottom-right of the footer.
+colophon = "Scaup: *Aythya marila* — a diving duck"
+
+# The lede paragraphs beside the illustration are the body of
+# content/scaup/_index.md, not data.
+
+[[nav]]
+label = "People"
+url = "#people"
+
+[[nav]]
+label = "Wider homes"
+url = "#homes"
+
+[[nav]]
+label = "Contact"
+url = "#contact"
+
+# The way back to the main site. Rendered at the end of the nav, set apart.
+[[nav]]
+label = "harrisongoldste.in"
+url = "/"
+home = true
+
+# ---------------------------------------------------------------- people
+#
+# One card each, in the order given. `photo` is optional — a person without one
+# gets the empty tinted block the card is sized for, which is what the design
+# does for an unfilled slot. Photos want a 4:5 crop; they are object-fit: cover.
+# `url` and `note` are both optional.
+
+[[people]]
+name = "Harry Goldstein"
+role = "Assistant Professor, CSE"
+url = "/"
+link_label = "site"
+photo = "/img/profile.jpeg"
+
+[[people]]
+name = "Cassia Torczon"
+role = "PhD Student"
+note = "coadvised with Benjamin C. Pierce at UPenn"
+url = "https://cassiatorczon.github.io"
+link_label = "site"
+
+# ---------------------------------------------------------------- past
+#
+# Rendered as a plain list under the photo grid, not as cards.
+
+[[past]]
+name = "Joseph W. Cutler"
+url = "https://www.cutler.pl"
+note = "UPenn / Jane Street"
+
+[[past]]
+name = "Jessica Shi"
+url = "https://jwshii.github.io"
+note = "UPenn"
+
+[[past]]
+name = "Ernest Ng"
+url = "https://ngernest.github.io"
+note = "Cornell"
+
+[[past]]
+name = "Ryan Tjoa"
+url = "https://rtjoa.com"
+note = "Jane Street"
+
+[[past]]
+name = "Segev Elazar Mittelman"
+url = "https://www.cs.umd.edu/people/segevem"
+note = "UMD"
+
+[[past]]
+name = "Alperen Keles"
+url = "https://alperenkeles.com"
+note = "UMD"
+
+[[past]]
+name = "Pierce Darragh"
+url = "https://pdarragh.github.io"
+note = "UMD"
+
+[[past]]
+name = "Caspar Popova"
+url = "https://cjpopova.github.io/"
+note = "UMD"
+
+[[past]]
+name = "Saketh Kasibatla"
+url = "https://www.sakekasi.com/"
+note = "UCSD"
+
+# ---------------------------------------------------------------- wider homes
+#
+# `host` is the short text under the arrow, not the URL — write it the way you
+# want it read. The grid is auto-fill, so one card stays a third of the width
+# instead of stretching; add more entries as they become real.
+#
+# TODO(harrison): the design mocked three of these. Add the other two groups you
+# want to point at, e.g.
+#
+#   [[homes]]
+#   title = "Second group"
+#   blurb = "One line on what it is."
+#   url = "https://example.edu/"
+#   host = "example.edu"
+
+[[homes]]
+title = "UB Computer Science and Engineering"
+blurb = "Our department."
+url = "https://engineering.buffalo.edu/computer-science-engineering.html"
+host = "buffalo.edu"
+
+# ---------------------------------------------------------------- contact
+
+[contact]
+heading = "Get in touch"
+lines = [
+  "Department of Computer Science and Engineering",
+  "University at Buffalo, Buffalo, NY",
+]
+email = "hgoldste@buffalo.edu"

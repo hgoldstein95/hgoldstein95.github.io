@@ -1,0 +1,80 @@
+{% extends "scaup/base.html" %}
+
+{% block content %}
+  {% set scaup = load_data(path="data/scaup.toml") %}
+
+  <section class="sc-hero">
+    <div>
+      <h1 class="sc-wordmark">{{ scaup.name }}</h1>
+      <p class="sc-acronym">{{ scaup.acronym | markdown(inline=true) | safe }}</p>
+      <div class="sc-lede">{{ section.content | safe }}</div>
+    </div>
+    {# The bird carries the page; it is decoration, so it is not in the tab order
+       and its alt describes it rather than restating the heading. #}
+    <div class="sc-bird">
+      <img src="/img/scaup.svg" alt="A greater scaup, the diving duck the lab is named for">
+    </div>
+  </section>
+
+  <div class="sc-rule-wrap"><div class="sc-rule"></div></div>
+
+  <section class="sc-section" id="people">
+    <h2 class="sc-label">People</h2>
+
+    <div class="sc-people">
+      {% for person in scaup.people %}
+        <div class="sc-person">
+          {# A person with no photo yet gets the empty tinted block the card is
+             already sized for, so the grid does not reflow when one is added. #}
+          <div class="sc-photo">
+            {% if person.photo | default(value="") %}
+              <img src="{{ person.photo }}" alt="{{ person.name }}">
+            {% endif %}
+          </div>
+          <div>
+            <div class="sc-person-name">{{ person.name }}</div>
+            <div class="sc-person-role">{{ person.role }}</div>
+            {% if person.note | default(value="") %}
+              <div class="sc-person-note">{{ person.note }}</div>
+            {% endif %}
+            {% if person.url | default(value="") %}
+              <a class="sc-person-link" href="{{ person.url }}">{{ person.link_label | default(value="site") }} &nearr;</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if scaup.past %}
+      <h3 class="sc-sublabel">Past students &amp; collaborators</h3>
+      <ul class="sc-past">
+        {% for person in scaup.past %}
+          <li>
+            <a href="{{ person.url }}">{{ person.name }}</a>
+            <span class="sc-past-note">{{ person.note }}</span>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </section>
+
+  <section class="sc-band" id="homes">
+    {# Watermark: the same bird, flipped and nearly transparent. Hidden from
+       assistive tech; the real one is in the hero. #}
+    <img class="sc-watermark" src="/img/scaup.svg" alt="" aria-hidden="true">
+    <div class="sc-band-inner">
+      <h2 class="sc-label">Wider homes</h2>
+      <p class="sc-band-blurb">{{ scaup.homes_blurb }}</p>
+
+      <div class="sc-homes">
+        {% for home in scaup.homes %}
+          <a class="sc-home" href="{{ home.url }}">
+            <div class="sc-home-title">{{ home.title }}</div>
+            <div class="sc-home-blurb">{{ home.blurb }}</div>
+            <div class="sc-home-host">{{ home.host }} &nearr;</div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock content %}
