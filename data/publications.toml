@@ -69,6 +69,17 @@ url = "https://arxiv.org/abs/2602.18545"
 
 [[papers]]
 year = 2026
+title = "Explorable Theorems: Making Written Theorems Explorable by Grounding Them in Formal Representations"
+authors = "Hita Kambhamettu, Will Crichton, Sean Welleck, Harrison Goldstein, Andrew Head"
+venue = "UIST 2026"
+venue_short = "UIST"
+major = true
+[[papers.links]]
+label = "Preprint"
+url = "https://arxiv.org/abs/2604.02598"
+
+[[papers]]
+year = 2026
 title = "Aporia: Asking Questions to Elicit User Decisions"
 authors = "Saketh Kasibatla, Sorin Lerner, Hila Peleg, Benjamin C. Pierce, Harrison Goldstein"
 venue = "PLATEAU 2026"
