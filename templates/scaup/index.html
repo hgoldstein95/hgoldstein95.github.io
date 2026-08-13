@@ -1,0 +1,68 @@
+{% extends "scaup/base.html" %}
+
+{% block content %}
+  {% set scaup = load_data(path = "data/scaup.toml") %}
+
+  <section class="sc-hero">
+    <div>
+      <h1 class="sc-wordmark">{{ scaup.name }}</h1>
+      <p class="sc-acronym">{{ scaup.acronym | markdown(inline=true) | safe }}</p>
+      <div class="sc-lede">{{ section.content | safe }}</div>
+    </div>
+    <div class="sc-bird">
+      <img src="/img/scaup.svg" alt="A greater scaup, the diving duck the lab is named for">
+    </div>
+  </section>
+
+  <div class="sc-rule-wrap">
+    <div class="sc-rule"></div>
+  </div>
+
+  <section class="sc-section" id="people">
+    <h2 class="sc-label">People</h2>
+
+    <div class="sc-people">
+      {% for person in scaup.people %}
+        <div class="sc-person">
+          <div class="sc-photo">
+            {% if person.photo | default(value = "") %}
+              <img src="{{ person.photo }}" alt="{{ person.name }}">
+            {% else %}
+              <svg class="sc-photo-blank" viewBox="0 0 80 100" aria-hidden="true" focusable="false">
+                <circle cx="40" cy="40" r="15"/>
+                <path d="M40 62c15.5 0 28 12.5 28 28v10H12V90c0-15.5 12.5-28 28-28z"/>
+              </svg>
+            {% endif %}
+          </div>
+          <div>
+            <div class="sc-person-name">{{ person.name }}</div>
+            <div class="sc-person-role">{{ person.role }}</div>
+            {% if person.note | default(value = "") %}
+              <div class="sc-person-note">{{ person.note }}</div>
+            {% endif %}
+            {% if person.url | default(value = "") %}
+              <a class="sc-person-link" href="{{ person.url }}">{{ person.link_label | default(value="site") }} &nearr;</a>
+            {% endif %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="sc-band" id="homes">
+    <img class="sc-watermark" src="/img/scaup.svg" alt="" aria-hidden="true">
+    <div class="sc-band-inner">
+      <h2 class="sc-label">Connections</h2>
+
+      <div class="sc-homes">
+        {% for home in scaup.homes %}
+          <a class="sc-home" href="{{ home.url }}">
+            <div class="sc-home-title">{{ home.title }}</div>
+            <div class="sc-home-blurb">{{ home.blurb }}</div>
+            <div class="sc-home-host">{{ home.host }} &nearr;</div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+{% endblock content %}

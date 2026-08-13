@@ -1,0 +1,25 @@
+:root {
+    --ink: #111;
+    --paper: #f7f7f5;
+    --panel: #f0f0ed;
+    --hair: #dcdcd8;
+    --border: #d8d8d4;
+    --mute: #6f6f6a;
+    --body: #3d3d39;
+    --accent: #1f4fd8;
+    --accent-soft: rgba(31, 79, 216, 0.35);
+    --wash: #f5f7ff;
+
+    /* Layout */
+    --shell-max: 1160px;
+    --rail-w: 336px;
+    --main-pad-x: 44px;
+    --rail-pad-x: 30px;
+}
+
+@media (max-width: 640px) {
+    :root {
+        --main-pad-x: 18px;
+        --rail-pad-x: 18px;
+    }
+}

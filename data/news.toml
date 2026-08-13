@@ -1,0 +1,11 @@
+# The rail shows `short`; `date` is unused, kept for a future news page.
+
+[[items]]
+short = "Aug 6"
+date = "August 6, 2026"
+text = "We'll be hosting the [1st Workshop on the Future of Property-Based Testing (FPBT'27)](https://popl27.sigplan.org/home/fpbt-2027), co-located with POPL in January."
+
+[[items]]
+short = "Jun 18"
+date = "June 18, 2026"
+text = "[Cassia Torczon](https://cassiatorczon.github.io/) just presented our new paper [The Search for Constrained Random Generators](https://dl.acm.org/doi/10.1145/3808329) at PLDI'26."

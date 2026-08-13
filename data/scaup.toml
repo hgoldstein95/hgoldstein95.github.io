@@ -1,0 +1,61 @@
+# The SCAUP Lab sub-site at /scaup/; read by templates/scaup/ only. Top-level
+# scalars must stay above the first [table] or [[array]] below.
+
+name = "SCAUP Lab"
+eyebrow = "University at Buffalo · CSE"
+acronym = "**S**oftware **C**orrectness **A**nd **U**ser-oriented **P**rogramming"
+
+# The lede beside the illustration is the body of content/scaup/_index.md.
+
+# ---------------------------------------------------------------- people
+#
+# `photo`, `url` and `note` are optional; photos want a 4:5 crop.
+
+[[people]]
+name = "Harry Goldstein"
+role = "Assistant Professor"
+url = "/"
+link_label = "site"
+photo = "/img/profile.jpeg"
+
+[[people]]
+name = "Cassia Torczon"
+role = "PhD Student"
+note = "co-advised with Benjamin C. Pierce at UPenn"
+url = "https://cassiatorczon.github.io"
+link_label = "site"
+photo = "/img/cassia.jpg"
+
+[[people]]
+name = "Julia Montuori-Ahuja"
+role = "PhD Student"
+
+[[people]]
+name = "Francille Zhuang"
+role = "PhD Student"
+
+# ------------------------------------------------- connections (key: `homes`)
+#
+# `host` is the short text under the arrow, not the URL.
+
+[[homes]]
+title = "UB Computer Science and Engineering"
+blurb = "Our department."
+url = "https://engineering.buffalo.edu/computer-science-engineering.html"
+host = "buffalo.edu"
+
+[[homes]]
+title = "UB Databases and Programming Languages"
+blurb = "Our members are all members of the DBPL group."
+url = "https://cse.buffalo.edu/dbpl/"
+host = "cse.buffalo.edu/dbpl"
+
+# ---------------------------------------------------------------- contact
+
+[contact]
+heading = "Get in Touch"
+lines = [
+  "Department of Computer Science and Engineering",
+  "University at Buffalo, Buffalo, NY",
+]
+email = "hgoldste@buffalo.edu"

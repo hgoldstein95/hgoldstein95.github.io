@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block body_class %}is-home{% endblock %}
+
+{% block intro %}
+  <section class="section about">
+    <div class="section-head">
+      <h2>About Me</h2>
+    </div>
+    <div class="lede">{{ section.content | safe }}</div>
+  </section>
+{% endblock intro %}
+
+{% block content %}
+  {% set pubs = load_data(path = "data/publications.toml") %}
+  {% set talks = load_data(path = "data/talks.toml") %}
+  {% set blog = get_section(path = "blog/_index.md") %}
+  {% set paper_count = pubs.papers | length %}
+  {% set talk_count = talks.items | length %}
+  {% set post_count = blog.pages | length %}
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Selected Publications</h2>
+      <a class="section-more" href="/publications/">All {{ paper_count }} &rarr;</a>
+    </div>
+    <div class="rows">
+      {% for paper in[p for p in pubs.papers if p.selected] %}
+        {% include "partials/paper-row.html" %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Recent Talks</h2>
+      <a class="section-more" href="/publications/#talks">All {{ talk_count }} &rarr;</a>
+    </div>
+    <div class="rows">
+      {% for item in[t for t in talks.items if t.selected] %}
+        {% include "partials/talk-row.html" %}
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>From the Blog</h2>
+      <a class="section-more" href="/blog/">All {{ post_count }} &rarr;</a>
+    </div>
+    <div class="cards">
+      {% for post in[p for p in blog.pages if p.extra.featured | default(value = false)] %}
+        <a class="card" href="{{ post.permalink }}">
+          <span class="card-date">{{ post.date | date(format="%b %-d, %Y") }}</span>
+          <span class="card-title">{{ post.title }}</span>
+          <span class="card-snippet">{{ post.content | striptags | trim | truncate(length=110) }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock content %}

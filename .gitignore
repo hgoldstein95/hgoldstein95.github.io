@@ -1,20 +1,17 @@
-_site
-.sass-cache
-.jekyll-metadata
-
 .vscode
-.jekyll-cache
 
 .DS_Store
 
-.bundle
-.gems
-vendor
-serve.sh
+# Zola build output
+public
+
+# LaTeX build artifacts. static/resume.pdf is generated from resume/resume.tex
+# by the Makefile (and by the deploy workflow), so it is not tracked either.
 *.aux
 *.fdb_latexmk
 *.fls
 *.log
 *.out
 *.synctex.gz
-resume.pdf
+resume/resume.pdf
+static/resume.pdf

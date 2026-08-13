@@ -1,0 +1,48 @@
+{% set directory = load_data(path = "data/directory.toml") %}
+<nav class="directory" id="site-menu" aria-label="Sections of this site">
+  <div class="section-head">
+    <h2>I&rsquo;m here for&hellip;</h2>
+  </div>
+  <div class="directory-list">
+    {% for item in directory.items %}
+      {% set here = current_path is defined and current_path == item.url %}
+      {% set another_site = item.url is starting_with(pat="http") %}
+      {# Off the site by URL, or off it in spirit — the lab, which is its own
+         design. Either way it gets the mark and sorts last. A new tab is the
+         narrower question and stays keyed to the real URL, so the lab, being
+         the same domain and the same build, opens in this one. #}
+      {% set offsite = another_site or item.offsite | default(value=false) %}
+      <a class="directory-item{% if offsite and not here %} directory-item--offsite{% endif %}"
+         href="{% if here %}/{% else %}{{ item.url }}{% endif %}"
+         {% if another_site %}target="_blank" rel="noopener"{% endif %}
+         {% if here %}aria-current="page" aria-label="You are here &mdash; back to home"{% endif %}>
+        <span class="directory-label">&hellip;&nbsp;{{ item.label }}</span>
+        <span class="directory-end">
+          {% if item.hint %}
+            <span class="directory-hint">{{ item.hint }}</span>{% endif %}
+          {% if offsite %}<span class="directory-away">&nbsp;&mdash; leaves this site</span>{% endif %}
+          {# The one icon on the site. Everything else decorates with a Unicode
+             arrow; nothing in that set reads unmistakably as "off to another
+             site", so the conventional glyph earns its exception here.
+
+             feather/external-link, MIT © 2013-2023 Cole Bemis
+             https://github.com/feathericons/feather/blob/main/LICENSE
+
+             Verbatim except for the caps and joins, which Feather rounds and
+             this squares off, and which are the only two of its attributes the
+             house style would otherwise reject. Drawn on a 24 grid at 2 and
+             rendered at 12, so every stroke lands on exactly 1px and the mark
+             reads as the same hairline as the tile border around it. Inline
+             rather than an <img> so currentColor rides the color transition. #}
+          <span class="directory-go" aria-hidden="true">{% if offsite %}<svg class="directory-icon" viewBox="0 0 24 24" width="12" height="12"
+                 fill="none" stroke="currentColor" stroke-width="2"
+                 stroke-linecap="square" stroke-linejoin="miter" focusable="false">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>{% elif here %}&larr;{% else %}&rarr;{% endif %}</span>
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</nav>

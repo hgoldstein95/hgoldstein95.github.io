@@ -1,0 +1,78 @@
+# Nothing sorts this at render time. `selected` and `with` are scalars and must
+# stay ABOVE `[[items.links]]` or TOML reads them as part of the link.
+
+[[items]]
+title = "Metaprogramming the Next Generation of Testing Tools"
+venue = "Lean Together 2026"
+selected = true
+[[items.links]]
+label = "VOD"
+url = "https://www.youtube.com/watch?v=AFbnS9xuPhY"
+
+[[items]]
+title = "The Best New Programming Language is a Proof Assistant"
+venue = "DC Systems 006"
+selected = true
+[[items.links]]
+label = "VOD"
+url = "https://www.youtube.com/watch?v=c5LOYzZx-0c"
+
+[[items]]
+title = "Haskell Interlude #59"
+with = "Samantha Frohlich, Wouter Swierstra"
+venue = "Haskell Interlude"
+selected = false
+[[items.links]]
+label = "Podcast"
+url = "https://haskell.foundation/podcast/59/"
+
+[[items]]
+title = "My PhD Compass: 6 Ways to Guide a PhD Towards Success"
+venue = "PLMW @ ICFP 2024"
+selected = true
+[[items.links]]
+label = "VOD"
+url = "https://youtu.be/UgABi44gMcI?si=F8_m3_8m7kjCbpfK"
+
+[[items]]
+title = "Disseminate #55"
+with = "Jack Waudby"
+venue = "Disseminate Podcast"
+selected = false
+[[items.links]]
+label = "Podcast"
+url = "https://shows.acast.com/disseminate/episodes/harry-goldstein-property-based-testing-55"
+
+[[items]]
+title = "Consider Collaboration"
+with = "Samantha Frohlich"
+venue = "PLMW @ POPL 2024"
+selected = true
+[[items.links]]
+label = "VOD"
+url = "https://www.youtube.com/watch?v=sSl-856qUOA"
+
+[[items]]
+title = "TheForkJoin #2"
+with = "Oliver Flatt, Rachit Nigam"
+venue = "TheForkJoin Podcast"
+selected = false
+[[items.links]]
+label = "Podcast"
+url = "https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n"
+
+[[items]]
+title = "Some Problems with Properties"
+venue = "NJPLS, October 2022"
+selected = false
+[[items.links]]
+label = "Abstract"
+url = "http://njpls.org/oct22.html#goldstein"
+
+[[items]]
+title = "Reflecting on Random Generation"
+venue = "NJPLS, May 2022"
+selected = false
+[[items.links]]
+label = "Abstract"
+url = "http://njpls.org/may22.html#goldstein"

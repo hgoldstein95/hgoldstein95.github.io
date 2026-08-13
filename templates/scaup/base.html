@@ -1,0 +1,67 @@
+{# The SCAUP Lab sub-site's shell. Deliberately does not extend the main site's
+   base.html; it shares nothing with it but the Zola build and static/. #}
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    {% set scaup = load_data(path = "data/scaup.toml") %}
+
+    <title>
+      {%- if page is defined and page.title %}{{ page.title }} &middot; {{ scaup.name }}
+      {%- else %}{{ scaup.name }} &middot; {{ config.title }}
+      {%- endif -%}
+    </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="{{ config.extra.author }}">
+    {% set desc = section.description | default(value = config.description) %}
+    {% if page is defined and page.description %}{% set desc = page.description %}
+    {% endif %}
+    <meta name="description" content="{{ desc }}">
+    {% set url = current_url | default(value = config.base_url ~ "/scaup/") %}
+    <link rel="canonical" href="{{ url }}">
+
+    {# The lab's cards carry the lab's name, not the main site's. No og:image:
+       the only artwork here is scaup.svg, and most scrapers will not render an
+       SVG -- a card with no image beats a card with a broken one. #}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="{{ scaup.name }}">
+    <meta property="og:title" content="{% if page is defined and page.title %}{{ page.title }} &middot; {{ scaup.name }}{% else %}{{ scaup.name }}{% endif %}">
+    <meta property="og:description" content="{{ desc }}">
+    <meta property="og:url" content="{{ url }}">
+
+    <link rel="icon" type="image/svg+xml" href="/img/scaup-favicon.svg">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="/scaup.css">
+  </head>
+
+  <body>
+    <a class="sc-skip" href="#main">Skip to content</a>
+
+    <header class="sc-head">
+      <div class="sc-eyebrow">{{ scaup.eyebrow }}</div>
+    </header>
+
+    <main id="main">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="sc-foot" id="contact">
+      <div>
+        <div class="sc-foot-head">{{ scaup.contact.heading }}</div>
+        <div class="sc-foot-lines">
+          {% for line in scaup.contact.lines %}{{ line }}
+            {% if not loop.last %}<br>{% endif %}
+          {% endfor %}
+        </div>
+        <a class="sc-foot-mail" href="mailto:{{ scaup.contact.email }}">{{ scaup.contact.email }}</a>
+      </div>
+    </footer>
+  </body>
+
+</html>

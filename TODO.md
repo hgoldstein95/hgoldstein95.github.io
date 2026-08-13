@@ -1,0 +1,1 @@
+- In repo Settings → Pages → Source, switch from "Deploy from a branch" to "GitHub Actions"

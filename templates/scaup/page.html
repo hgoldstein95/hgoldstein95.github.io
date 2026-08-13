@@ -1,0 +1,9 @@
+{# Unused so far: the section's page_template routes any content/scaup/*.md here. #}
+{% extends "scaup/base.html" %}
+
+{% block content %}
+  <section class="sc-section">
+    <h1 class="sc-page-title">{{ page.title }}</h1>
+    <div class="sc-prose">{{ page.content | safe }}</div>
+  </section>
+{% endblock content %}

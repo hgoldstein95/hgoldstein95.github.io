@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Favicon for the main site. The "HG" was set in Fira Code and then CONVERTED
+     TO OUTLINES: an SVG favicon renders in the visitor's browser, not here, and
+     with a live <text> element anyone without Fira Code installed got a fallback
+     font wide enough to push the G off the right edge of the tile. There is no
+     text in this file and no font to depend on. To change the letterforms,
+     re-set the type and re-outline it; do not paste a <text> element back in. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88 88" width="100%" height="100%"
+     style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <!-- The rounded white tile. Rounded corners are forbidden on the main site
+       and are the convention for app/tab icons; see CLAUDE.md. -->
+  <path d="M87.763,15.266L87.763,72.497C87.763,80.923 80.923,87.763 72.497,87.763L15.266,87.763C6.84,87.763 0,80.923 0,72.497L0,15.266C0,6.84 6.84,0 15.266,0L72.497,0C80.923,0 87.763,6.84 87.763,15.266Z" fill="#ffffff"/>
+  <g transform="matrix(1.294467,0,0,1.294467,-592.333853,-1222.892082)" fill="#000000">
+    <path d="M481.64 997.33V979.56H467.49V997.33H462.78V959.86H467.49V975.69H481.64V959.86H486.35V997.33Z"/>
+    <path d="M507.95 997.95Q501.29 997.95 497.33 993.12Q493.37 988.29 493.37 978.58Q493.37 973.74 494.66 970.12Q495.95 966.5 498.18 964.08Q500.41 961.65 503.22 960.46Q506.02 959.26 509.04 959.26Q512.71 959.26 515.14 960.31Q517.56 961.35 519.76 963.37L516.9 966.33Q513.56 963.2 509.07 963.2Q506.35 963.2 503.91 964.65Q501.48 966.09 499.95 969.44Q498.43 972.78 498.43 978.58Q498.43 986.74 500.96 990.36Q503.49 993.98 508.39 993.98Q512.2 993.98 515.52 992.18V980.76H508.14L507.57 976.84H520.2V994.69Q517.67 996.08 514.8 997.02Q511.93 997.95 507.95 997.95Z"/>
+  </g>
+</svg>

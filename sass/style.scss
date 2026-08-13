@@ -1,0 +1,1165 @@
+@import "tokens";
+
+/* ---------------------------------------------------------------- reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: Archivo, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+figure {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* Any author `display` beats the UA's `[hidden]` rule, so the venue filter
+   could not hide `.row`. */
+[hidden] {
+    display: none !important;
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+
+    &:focus {
+        left: 8px;
+        top: 8px;
+        z-index: 10;
+        padding: 8px 12px;
+        background: #fff;
+        border: 1px solid var(--ink);
+        color: var(--ink);
+    }
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- shell */
+
+.shell {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr var(--rail-w);
+    grid-template-areas:
+        "head rail"
+        "main rail";
+    /* Explicit: with `auto` rows, grid splits the rail's viewport height across
+       both rows it spans and inflates the header. */
+    grid-template-rows: auto 1fr;
+    align-content: start;
+    max-width: var(--shell-max);
+    min-height: 100vh;
+    margin: 0 auto;
+}
+
+/* The rail's panel stripe, painted full-height behind the sticky rail. */
+.shell::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: var(--rail-w);
+    background: var(--panel);
+    border-left: 1px solid var(--hair);
+}
+
+.masthead {
+    grid-area: head;
+    padding: 40px var(--main-pad-x) 0;
+    min-width: 0;
+}
+
+.content {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    padding: 0 var(--main-pad-x) 48px;
+    min-width: 0;
+}
+
+.content-body {
+    flex: 1 0 auto;
+}
+
+/* Held at exactly a viewport so `.rail-links` can sit on the bottom edge. */
+.rail {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    grid-area: rail;
+    align-self: start;
+    min-height: 100vh;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 34px var(--rail-pad-x) 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* ------------------------------------------------------------- masthead */
+
+.masthead {
+    display: flex;
+    flex-direction: column;
+}
+
+.masthead-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.masthead-id {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    min-width: 0;
+    color: inherit;
+}
+
+.portrait {
+    width: 84px;
+    height: 84px;
+    flex: none;
+    border: 1px solid var(--border);
+    object-fit: cover;
+    object-position: 50% 20%;
+    display: block;
+}
+
+/* Only the home page wraps the wordmark in an <h1>; it must look identical to
+   the plain link every other page carries. */
+.wordmark-head {
+    margin: 0;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+}
+
+.wordmark {
+    display: block;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+
+    &:hover {
+        color: var(--accent);
+    }
+}
+
+.affiliation {
+    margin-top: 4px;
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--mute);
+
+    a {
+        color: inherit;
+        border-bottom: 1px solid var(--border);
+    }
+
+    a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+}
+
+.affiliation-short {
+    display: none;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.lede {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--body);
+    text-wrap: pretty;
+
+    p+p {
+        margin-top: 12px;
+    }
+}
+
+/* Negative margins bleed the band through the main column's gutters, so the
+   horizontal values have to track --main-pad-x. */
+.about {
+    margin: 32px calc(var(--main-pad-x) * -1) 0;
+    padding: 22px var(--main-pad-x) 24px;
+    background: #fff;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+
+    .lede {
+        margin-top: 13px;
+    }
+}
+
+/* ------------------------------------------------------------ directory */
+
+.directory {
+    margin-top: 30px;
+
+    .section-head {
+        margin-bottom: 11px;
+    }
+}
+
+.directory-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+}
+
+.directory-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 12px;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--ink);
+    transition: border-color 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+
+    &:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: var(--wash);
+    }
+
+    &[aria-current="page"] {
+        border-color: var(--ink);
+        background: var(--panel);
+    }
+}
+
+.directory-end {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    white-space: nowrap;
+}
+
+/* The arrow holds its 12px whatever the state, so a tile never resizes. */
+.directory-go {
+    display: inline-block;
+    width: 12px;
+    color: var(--accent);
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.directory-item:hover .directory-go,
+.directory-item:focus-visible .directory-go {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* A tile that leaves the site says so at rest — the mark is the point, and a
+   hover-only one is invisible on a touch screen. Muted until hovered so it
+   reads as a label rather than as the accent arrow the other tiles reveal.
+   It occupies the same 12px slot as the arrows, so no tile changes size. */
+.directory-item--offsite .directory-go {
+    display: inline-flex;
+    align-items: center;
+    height: 19px; /* .directory-label's line box: 16px × 1.2 */
+    color: var(--mute);
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.directory-item--offsite:hover .directory-go,
+.directory-item--offsite:focus-visible .directory-go {
+    color: var(--accent);
+    transform: translateX(3px);
+}
+
+.directory-icon {
+    display: block;
+    overflow: visible; /* square caps put half a stroke past the viewBox */
+}
+
+/* The icon is the only cue that a tile goes off-site, and it is aria-hidden;
+   this is the same fact for a screen reader. */
+.directory-away {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* The current page's tile links home; its back arrow always shows, since there
+   is no hover on a touch screen to reveal it. */
+.directory-item[aria-current="page"] .directory-go {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.directory-item[aria-current="page"]:hover .directory-go,
+.directory-item[aria-current="page"]:focus-visible .directory-go {
+    transform: translateX(-4px);
+}
+
+.directory-label {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.directory-hint {
+    font-size: 12.5px;
+    line-height: 1.3;
+    color: var(--mute);
+    white-space: nowrap;
+}
+
+/* -------------------------------------------------------- section heads */
+
+.section {
+    margin-top: 40px;
+}
+
+.section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    padding-bottom: 7px;
+    border-bottom: 1px solid var(--ink);
+
+    h2,
+    h1 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+    }
+}
+
+.section-more {
+    font-size: 13px;
+    line-height: 1.3;
+    color: var(--mute);
+    white-space: nowrap;
+
+    &:hover {
+        color: var(--accent);
+    }
+}
+
+/* ---------------------------------------------------------------- rows */
+
+.rows {
+    display: flex;
+    flex-direction: column;
+}
+
+.sub-label {
+    margin: 20px 0 2px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--mute);
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 52px 1fr auto;
+    gap: 20px;
+    align-items: baseline;
+    padding: 15px 4px;
+    border-bottom: 1px solid var(--hair);
+    color: var(--ink);
+}
+
+.row--two {
+    grid-template-columns: 1fr auto;
+    padding: 12px 4px;
+}
+
+a.row:hover {
+    background: var(--panel);
+    color: var(--accent);
+}
+
+.row-year {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+}
+
+.row-title {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+}
+
+.row-sub {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--mute);
+    text-wrap: pretty;
+}
+
+a.row-title:hover {
+    color: var(--accent);
+}
+
+.row-meta {
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--mute);
+    text-align: right;
+    text-wrap: pretty;
+}
+
+.row-venue {
+    display: block;
+    white-space: nowrap;
+}
+
+.row-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 6px;
+    justify-content: flex-end;
+    font-size: 13px;
+
+    a {
+        color: var(--mute);
+        border-bottom: 1px solid var(--border);
+    }
+
+    a:hover {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+}
+
+.award {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 1px 6px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-size: 12.5px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    vertical-align: 2px;
+    white-space: nowrap;
+}
+
+/* --------------------------------------------------------- venue filter */
+
+.filters {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 18px;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--hair);
+}
+
+.filter-label {
+    font-size: 13px;
+    color: var(--mute);
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* Weight stays 500 in every state: switching weights on click would resize the
+   chip and shove its neighbours sideways. */
+.chip {
+    padding: 3px 0;
+    border: 0;
+    border-bottom: 1px solid transparent;
+    background: none;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    cursor: pointer;
+    transition: color 0.18s ease, border-color 0.18s ease;
+
+    &:hover {
+        border-bottom-color: var(--ink);
+    }
+
+    &.is-on {
+        color: var(--accent);
+        border-bottom-color: var(--accent);
+    }
+}
+
+.chip-count {
+    margin-left: 4px;
+    font-size: 12.5px;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+}
+
+.chip.is-on .chip-count {
+    color: var(--accent);
+}
+
+.filter-meta {
+    font-size: 12.5px;
+    color: var(--mute);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+
+    b {
+        font-weight: 600;
+        color: var(--ink);
+    }
+}
+
+.empty {
+    padding: 32px 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--mute);
+}
+
+/* ---------------------------------------------------------------- prose */
+
+.prose {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--body);
+
+    >*+* {
+        margin-top: 16px;
+    }
+
+    h2 {
+        margin-top: 32px;
+        padding-bottom: 7px;
+        border-bottom: 1px solid var(--ink);
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    h3 {
+        margin-top: 24px;
+        font-size: 15px;
+        font-weight: 600;
+        color: var(--ink);
+    }
+
+    a {
+        border-bottom: 1px solid var(--accent-soft);
+    }
+
+    ul,
+    ol {
+        padding-left: 22px;
+    }
+
+    li+li {
+        margin-top: 6px;
+    }
+
+    blockquote {
+        padding-left: 14px;
+        border-left: 2px solid var(--border);
+        color: var(--mute);
+    }
+
+    img {
+        display: block;
+        border: 1px solid var(--border);
+    }
+
+    code {
+        padding: 1px 4px;
+        background: var(--panel);
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 13.5px;
+    }
+
+    pre {
+        padding: 14px;
+        background: var(--panel);
+        border: 1px solid var(--hair);
+        overflow-x: auto;
+        font-size: 13px;
+
+        code {
+            padding: 0;
+            background: none;
+        }
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    td,
+    th {
+        padding: 8px 10px;
+        border-bottom: 1px solid var(--hair);
+        text-align: left;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid var(--hair);
+    }
+
+    .footnote-definition {
+        font-size: 13.5px;
+        color: var(--mute);
+
+        p {
+            display: inline;
+        }
+    }
+
+    .math {
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+}
+
+.section-head+.prose {
+    margin-top: 16px;
+}
+
+/* Long-form reading only; short markdown pages run the full column. */
+.prose--measure {
+    max-width: 68ch;
+}
+
+.post-meta {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ---------------------------------------------------------- blog cards */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--hair);
+    border-bottom: 1px solid var(--hair);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 16px 16px 20px;
+    background: var(--paper);
+    color: var(--ink);
+
+    &:hover {
+        background: var(--panel);
+        color: var(--accent);
+    }
+}
+
+.card-date {
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+}
+
+.card-title {
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    text-wrap: pretty;
+}
+
+.card-snippet {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--mute);
+    text-wrap: pretty;
+}
+
+/* ----------------------------------------------------------------- rail */
+
+.rail-note {
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--accent);
+    border-left: 2px solid var(--accent);
+    padding-left: 10px;
+}
+
+.rail-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    padding-bottom: 7px;
+    margin-bottom: 11px;
+    border-bottom: 1px solid var(--ink);
+
+    h2 {
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 1.3;
+        letter-spacing: -0.01em;
+        color: var(--ink);
+    }
+}
+
+.rail-email {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    border-bottom: 1px solid var(--accent-soft);
+}
+
+.rail-p {
+    margin-top: 13px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--body);
+    text-wrap: pretty;
+
+    strong {
+        font-weight: 600;
+    }
+
+    &+& {
+        margin-top: 8px;
+    }
+}
+
+.rail-aside {
+    margin-top: 10px;
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--mute);
+    text-wrap: pretty;
+}
+
+.news {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.news-item {
+    display: grid;
+    grid-template-columns: 66px 1fr;
+    gap: 10px;
+    align-items: baseline;
+}
+
+.news-date {
+    font-size: 12.5px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--mute);
+    font-variant-numeric: tabular-nums;
+}
+
+.news-text {
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
+    text-wrap: pretty;
+
+    a {
+        border-bottom: 1px solid var(--accent-soft);
+    }
+}
+
+/* Eats the rail's leftover height, so the links sit on its bottom edge. */
+.rail-links {
+    margin-top: auto;
+}
+
+.links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    a {
+        font-size: 13px;
+        line-height: 1.3;
+        color: var(--ink);
+    }
+
+    a:hover {
+        color: var(--accent);
+    }
+}
+
+.links-note {
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+    color: var(--mute);
+}
+
+/* --------------------------------------------------------------- footer */
+
+.footer {
+    margin-top: 48px;
+    padding-top: 14px;
+    border-top: 1px solid var(--ink);
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 12.5px;
+    color: var(--mute);
+
+    a {
+        color: var(--mute);
+    }
+
+    a:hover {
+        color: var(--accent);
+    }
+}
+
+/* --------------------------------------------------------------- mobile */
+
+@media (max-width: 900px) {
+    .shell {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "head"
+            "rail"
+            "main";
+        /* Explicit for the same reason as the desktop rows. */
+        grid-template-rows: auto auto 1fr;
+    }
+
+    .shell::after {
+        display: none;
+    }
+
+    .rail {
+        position: static;
+        min-height: 0;
+        max-height: none;
+        overflow: visible;
+        background: var(--panel);
+        border-top: 1px solid var(--hair);
+        border-bottom: 1px solid var(--hair);
+        margin-top: 24px;
+        padding: 22px var(--rail-pad-x) 26px;
+    }
+
+    /* On the home page the rail is email and news above the fold; anywhere else
+       it is a long detour before the content the visitor came for. */
+    body:not(.is-home) .rail {
+        display: none;
+    }
+
+    .content {
+        padding-top: 24px;
+    }
+
+    /* The leading `.section`'s own margin would stack on that padding. */
+    .content-body> :first-child {
+        margin-top: 0;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Three columns leave the chips a sliver in the middle once the main column
+       narrows, so label and count share the first row and the chips get the
+       full width underneath. Placement is explicit: the chips span every
+       column, and sparse auto-placement would otherwise push the count — which
+       follows them in the DOM — onto a third row. */
+    .filters {
+        grid-template-columns: 1fr auto;
+        gap: 10px 12px;
+        align-items: baseline;
+    }
+
+    .filter-label {
+        grid-area: 1 / 1;
+    }
+
+    .filter-meta {
+        grid-area: 1 / 2;
+    }
+
+    .chips {
+        grid-area: 2 / 1 / 3 / -1;
+    }
+}
+
+@media (max-width: 640px) {
+    .masthead {
+        padding-top: 0;
+    }
+
+    .masthead-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 0;
+    }
+
+    .portrait {
+        width: 44px;
+        height: 44px;
+    }
+
+    .masthead-id {
+        gap: 11px;
+    }
+
+    .wordmark {
+        font-size: 17px;
+        letter-spacing: -0.028em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .affiliation {
+        margin-top: 1px;
+        font-size: 11.5px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .affiliation-full {
+        display: none;
+    }
+
+    .affiliation-short {
+        display: inline;
+    }
+
+    .menu-toggle {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        flex: none;
+        width: 52px;
+        height: 44px;
+        padding: 0;
+        border: 1px solid var(--ink);
+        background: #fff;
+        color: var(--ink);
+        cursor: pointer;
+
+        /* Fixed box in both states, so swapping the bars for the cross never
+           moves the label underneath. */
+        .icon {
+            position: relative;
+            width: 18px;
+            height: 12px;
+        }
+
+        .bars,
+        .close-x {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bars {
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .bars span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+        }
+
+        .close-x {
+            font-size: 17px;
+            line-height: 1;
+            opacity: 0;
+        }
+
+        .label {
+            font-size: 12.5px;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .label-close {
+            display: none;
+        }
+
+        &[aria-expanded="true"] {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: #fff;
+
+            .bars {
+                opacity: 0;
+            }
+
+            .close-x {
+                opacity: 1;
+            }
+
+            .label-open {
+                display: none;
+            }
+
+            .label-close {
+                display: block;
+            }
+        }
+    }
+
+    .directory {
+        margin: 0 calc(-1 * var(--main-pad-x));
+        padding: 16px var(--main-pad-x) 20px;
+        background: var(--panel);
+        border-bottom: 1px solid var(--ink);
+    }
+
+    /* Closed by the toggle script; without JS it never gets this class. */
+    .directory.is-closed {
+        display: none;
+    }
+
+    .directory-list {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .directory-item {
+        min-height: 50px;
+        padding: 0 14px;
+    }
+
+    .lede {
+        margin-top: 18px;
+        font-size: 14.5px;
+        line-height: 1.5;
+    }
+
+    .about {
+        margin-top: 22px;
+        padding-top: 18px;
+        padding-bottom: 20px;
+    }
+
+    .row {
+        grid-template-columns: 1fr;
+        gap: 4px;
+        padding: 12px 2px;
+    }
+
+    .row-year {
+        order: -1;
+    }
+
+    .row-meta,
+    .row-links {
+        text-align: left;
+        justify-content: flex-start;
+    }
+
+    .row-title {
+        font-size: 15.5px;
+    }
+
+    .section {
+        margin-top: 28px;
+    }
+
+    /* Taller chips for a finger; the row gap keeps the underline of a wrapped
+       row clear of the row below it. Horizontal gap stays 16px — the underline
+       is the only thing separating two chips, so they must not crowd. */
+    .chip {
+        padding: 6px 0;
+    }
+
+    .chips {
+        gap: 6px 16px;
+    }
+}

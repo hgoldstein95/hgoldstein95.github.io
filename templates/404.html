@@ -1,0 +1,27 @@
+{# GitHub Pages serves this for any path it cannot resolve, so every asset and
+   link in it -- including the ones base.html emits -- must be root-relative.
+   The header's directory is the actual recovery UI; the body just explains. #}
+{% extends "base.html" %}
+
+{% block title %}Page not found &middot; {{ config.title }}{% endblock title %}
+
+{% block content %}
+  <section class="section">
+    <div class="section-head">
+      <h1>Page not found</h1>
+    </div>
+    <div class="prose prose--measure">
+      <p>
+        There is nothing at this address. It may have moved, or the link that
+        sent you here may be out of date.
+      </p>
+      <p>
+        The list above covers everything on this site. If you were looking for a
+        paper, it is on the <a href="/publications/">publications page</a>; older
+        blog posts all live under <a href="/blog/">the blog</a>. If something
+        here is broken,
+        <a href="mailto:hgoldste@buffalo.edu">let me know</a>.
+      </p>
+    </div>
+  </section>
+{% endblock content %}

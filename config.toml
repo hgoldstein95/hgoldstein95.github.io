@@ -1,0 +1,29 @@
+base_url = "https://harrisongoldste.in"
+title = "Harrison Goldstein"
+description = "Harrison Goldstein is an Assistant Professor of Computer Science and Engineering at the University at Buffalo, working on property-based testing, formal methods, and usable software validation tools."
+author = "Harrison Goldstein"
+compile_sass = true
+build_search_index = false
+generate_feeds = true
+feed_filenames = ["atom.xml"]
+
+[link_checker]
+# Serves a 403 to anything that is not a browser, so `zola check` reports a
+# working link as broken. Only add a host here after checking it in a browser.
+skip_prefixes = ["https://stackoverflow.com/"]
+
+[markdown.highlighting]
+theme = "github-light"
+style = "class"
+
+[extra]
+author = "Harrison Goldstein"
+github_username = "hgoldstein95"
+profile_picture = "/img/profile.jpeg"
+# Keep it small: base.html preloads it to beat first paint. Regenerate with
+#   sips -Z 252 --setProperty formatOptions 78 static/img/profile.jpeg \
+#     --out static/img/profile-thumb.jpg
+profile_thumbnail = "/img/profile-thumb.jpg"
+footer = true
+footer_url = "https://github.com/hgoldstein95/hgoldstein95.github.io"
+footer_text = "Website Source on GitHub"

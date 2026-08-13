@@ -1,0 +1,477 @@
+/* SCAUP Lab sub-site — /scaup/ only. Standalone: no _tokens, and none of the
+   main site's house rules apply. See CLAUDE.md before normalizing anything. */
+
+:root {
+    --sc-paper: #f6f4ee;
+    --sc-band: #eeece2;
+    --sc-slot: #eceadf;
+    --sc-slot-mark: #dbd7c6;
+    --sc-ink: #1b1a17;
+    --sc-body: #33312c;
+    --sc-mute: #6f6a5c;
+    --sc-faint: #8b8677;
+    --sc-accent: #23423f;
+    --sc-accent-deep: #0f2a28;
+    --sc-hair: #ddd8c9;
+    --sc-hair-soft: #d8d3c4;
+
+    --sc-serif: "Source Serif 4", Georgia, serif;
+    --sc-sans: "IBM Plex Sans", system-ui, sans-serif;
+    --sc-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+    --sc-shell: 1080px;
+    --sc-gutter: 40px;
+}
+
+%sc-shell {
+    max-width: var(--sc-shell);
+    margin: 0 auto;
+    padding-left: var(--sc-gutter);
+    padding-right: var(--sc-gutter);
+}
+
+/* ---------------------------------------------------------------- reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--sc-paper);
+    color: var(--sc-ink);
+    font-family: var(--sc-sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--sc-accent);
+    text-decoration-color: rgba(35, 66, 63, 0.35);
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    color: var(--sc-accent-deep);
+    text-decoration-color: rgba(35, 66, 63, 0.9);
+}
+
+img {
+    max-width: 100%;
+}
+
+.sc-skip {
+    position: absolute;
+    left: -9999px;
+}
+
+.sc-skip:focus {
+    left: 12px;
+    top: 12px;
+    z-index: 2;
+    background: var(--sc-paper);
+    border: 1px solid var(--sc-hair);
+    padding: 8px 14px;
+}
+
+/* ---------------------------------------------------------------- header */
+
+.sc-head {
+    @extend %sc-shell;
+    padding-top: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.sc-eyebrow {
+    font-family: var(--sc-serif);
+    font-size: 16px;
+    letter-spacing: 0.01em;
+    color: var(--sc-mute);
+}
+
+/* ---------------------------------------------------------------- hero */
+
+.sc-hero {
+    @extend %sc-shell;
+    padding-top: 40px;
+    padding-bottom: 84px;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.sc-wordmark {
+    font-family: var(--sc-serif);
+    font-weight: 600;
+    font-size: clamp(46px, 8.5vw, 76px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+}
+
+.sc-acronym {
+    font-family: var(--sc-serif);
+    font-size: 25px;
+    line-height: 1.45;
+    margin: 0 0 26px;
+    max-width: 26ch;
+    color: var(--sc-accent);
+}
+
+.sc-acronym strong {
+    font-weight: 600;
+}
+
+.sc-lede p {
+    margin: 0 0 18px;
+    max-width: 52ch;
+    text-wrap: pretty;
+    color: var(--sc-body);
+}
+
+.sc-lede p:last-child {
+    margin-bottom: 0;
+}
+
+.sc-bird {
+    justify-self: center;
+    width: 100%;
+    max-width: 420px;
+}
+
+.sc-bird img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1395 / 1145;
+    display: block;
+}
+
+.sc-rule-wrap {
+    @extend %sc-shell;
+}
+
+.sc-rule {
+    height: 1px;
+    background: linear-gradient(90deg, var(--sc-hair-soft), rgba(216, 211, 196, 0));
+}
+
+/* ---------------------------------------------------------------- sections */
+
+.sc-section {
+    @extend %sc-shell;
+    padding-top: 72px;
+}
+
+.sc-label {
+    font-family: var(--sc-serif);
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    color: var(--sc-ink);
+    margin: 0 0 32px;
+}
+
+/* ---------------------------------------------------------------- people */
+
+.sc-people {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 40px 32px;
+}
+
+.sc-person {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-self: start;
+}
+
+.sc-photo {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    background: var(--sc-slot);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.sc-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Stand-in until there is a photo, in the same 4:5 box. */
+.sc-photo-blank {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: var(--sc-slot-mark);
+}
+
+.sc-person-name {
+    font-family: var(--sc-serif);
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.sc-person-role {
+    font-size: 14px;
+    color: var(--sc-mute);
+    margin-top: 3px;
+}
+
+.sc-person-note {
+    font-size: 13.5px;
+    line-height: 1.4;
+    color: var(--sc-faint);
+    margin-top: 4px;
+}
+
+.sc-person-link {
+    font-family: var(--sc-mono);
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+/* ---------------------------------------------------------------- band */
+
+.sc-band {
+    position: relative;
+    margin-top: 88px;
+    background: var(--sc-band);
+    border-top: 1px solid var(--sc-hair);
+    border-bottom: 1px solid var(--sc-hair);
+    overflow: hidden;
+}
+
+.sc-watermark {
+    position: absolute;
+    right: -90px;
+    bottom: -70px;
+    width: 460px;
+    opacity: 0.07;
+    pointer-events: none;
+    transform: scaleX(-1);
+}
+
+.sc-band-inner {
+    @extend %sc-shell;
+    position: relative;
+    padding-top: 64px;
+    padding-bottom: 68px;
+}
+
+.sc-band .sc-label {
+    margin-bottom: 10px;
+}
+
+.sc-band-blurb {
+    margin: 0 0 34px;
+    max-width: 56ch;
+    color: var(--sc-body);
+    text-wrap: pretty;
+}
+
+.sc-homes {
+    display: grid;
+    /* auto-fill, not auto-fit: a lone card keeps its column instead of
+       stretching the full width. */
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.sc-home {
+    display: block;
+    background: var(--sc-paper);
+    border: 1px solid var(--sc-hair);
+    border-radius: 12px;
+    padding: 22px 24px;
+    text-decoration: none;
+    color: var(--sc-ink);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.sc-home:hover {
+    color: var(--sc-ink);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 26px rgba(35, 66, 63, 0.1);
+}
+
+.sc-home-title {
+    font-family: var(--sc-serif);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sc-home-blurb {
+    font-size: 14px;
+    color: var(--sc-mute);
+    margin-top: 6px;
+}
+
+.sc-home-host {
+    font-family: var(--sc-mono);
+    font-size: 12px;
+    color: var(--sc-accent);
+    margin-top: 14px;
+}
+
+/* ---------------------------------------------------------------- footer */
+
+.sc-foot {
+    @extend %sc-shell;
+    padding-top: 56px;
+    padding-bottom: 72px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.sc-foot-head {
+    font-family: var(--sc-serif);
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.sc-foot-lines {
+    color: var(--sc-body);
+}
+
+.sc-foot-mail {
+    font-family: var(--sc-mono);
+    font-size: 14px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* ---------------------------------------------------------------- sub-pages */
+
+.sc-page-title {
+    font-family: var(--sc-serif);
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1.1;
+    letter-spacing: -0.015em;
+    margin: 0 0 24px;
+}
+
+.sc-prose {
+    max-width: 66ch;
+    color: var(--sc-body);
+}
+
+.sc-prose h2 {
+    font-family: var(--sc-serif);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--sc-ink);
+    margin: 40px 0 12px;
+}
+
+.sc-prose h3 {
+    font-family: var(--sc-serif);
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--sc-ink);
+    margin: 28px 0 10px;
+}
+
+.sc-prose p,
+.sc-prose ul,
+.sc-prose ol {
+    margin: 0 0 18px;
+    text-wrap: pretty;
+}
+
+/* ---------------------------------------------------------------- narrow */
+
+@media (max-width: 860px) {
+    .sc-hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-bottom: 56px;
+    }
+
+    /* Bird first: under the lede it would sit below the fold on every phone. */
+    .sc-bird {
+        order: -1;
+        justify-self: start;
+        max-width: 300px;
+    }
+
+    .sc-band {
+        margin-top: 64px;
+    }
+
+    .sc-watermark {
+        width: 320px;
+        right: -70px;
+        bottom: -50px;
+    }
+}
+
+@media (max-width: 560px) {
+    :root {
+        --sc-gutter: 22px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .sc-head {
+        padding-top: 32px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .sc-acronym {
+        font-size: 21px;
+    }
+
+    .sc-section {
+        padding-top: 52px;
+    }
+
+    .sc-people {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 28px 20px;
+    }
+
+    .sc-band-inner {
+        padding-top: 48px;
+        padding-bottom: 52px;
+    }
+
+    .sc-foot {
+        padding-top: 44px;
+        padding-bottom: 52px;
+        align-items: flex-start;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .sc-home {
+        transition: none;
+    }
+
+    .sc-home:hover {
+        transform: none;
+    }
+}
