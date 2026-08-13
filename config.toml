@@ -13,7 +13,6 @@ style = "class"
 
 [extra]
 author = "Harrison Goldstein"
-twitter_username = "hgoldstein95"
 github_username = "hgoldstein95"
 # Full-resolution headshot, linked from /press/ and used as the social card image.
 profile_picture = "/img/profile.jpeg"
@@ -26,6 +25,6 @@ profile_picture = "/img/profile.jpeg"
 profile_thumbnail = "/img/profile-thumb.jpg"
 footer = true
 footer_url = "https://github.com/hgoldstein95/hgoldstein95.github.io"
-footer_text = "Website source on GitHub"
+footer_text = "Website Source on GitHub"
 # Navigation now lives in data/directory.toml (the "I'm looking for..." block)
 # and data/rail.toml (the "Also here" links), so there is no extra.nav here.

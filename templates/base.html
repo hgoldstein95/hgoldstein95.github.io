@@ -44,18 +44,6 @@
        from a CDN: shield-style content blockers drop third-party script hosts,
        which silently turned every animation off. #}
     <script src="/js/gsap.min.js" defer></script>
-
-    {% if config.extra.twitter_username %}
-      <link rel="author" href="https://twitter.com/{{ config.extra.twitter_username }}">
-    {% endif %}
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="{{ config.title }}">
-    <meta name="twitter:description" content="{{ desc }}">
-    <meta name="twitter:url" content="{{ url }}">
-    {# Full-res on purpose: only scrapers fetch this, so it costs visitors nothing,
-       and the thumbnail is sized for an 84px slot rather than a social card. #}
-    <meta name="twitter:image" content="{{ config.extra.profile_picture }}">
   </head>
 
   {# `is-home` is the only page-level body hook: below 900px the rail is hidden
@@ -89,7 +77,10 @@
 
           <button class="menu-toggle" type="button" aria-expanded="true" aria-controls="site-menu">
             <span class="icon" aria-hidden="true">
-              <span class="bars"><span></span><span></span><span></span></span>
+              <span class="bars">
+                <span></span>
+                <span></span>
+                <span></span></span>
               <span class="close-x">&times;</span>
             </span>
             <span class="label label-open">MENU</span>
@@ -124,14 +115,17 @@
 
     <script>
       (function () {
-        var reduced = window.matchMedia
-          && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var reduced = window.matchMedia && window
+          .matchMedia('(prefers-reduced-motion: reduce)')
+          .matches;
 
         // GSAP loads deferred, so ask for it at call time rather than caching it.
         // Returns null when animation should not run at all; every caller treats
         // that as "just set the final state".
         function motion() {
-          return (!reduced && window.gsap) ? window.gsap : null;
+          return (!reduced && window.gsap)
+            ? window.gsap
+            : null;
         }
         window.siteMotion = motion;
 
@@ -144,17 +138,29 @@
           var settled = false;
 
           function setOpen(open) {
-            button.setAttribute('aria-expanded', open ? 'true' : 'false');
+            button.setAttribute(
+              'aria-expanded', open
+              ? 'true'
+              : 'false');
             // A class, not `hidden`: above the mobile breakpoint the directory
             // stays visible, and nothing has to override the attribute.
-            menu.classList.toggle('is-closed', !open);
+            menu
+              .classList
+              .toggle('is-closed', !open);
 
             var g = motion();
             if (open && settled && g) {
-              g.fromTo(menu.querySelectorAll('.directory-item'),
-                { opacity: 0, y: -6 },
-                { opacity: 1, y: 0, duration: 0.22, stagger: 0.03,
-                  ease: 'power2.out', clearProps: 'opacity,transform' });
+              g.fromTo(menu.querySelectorAll('.directory-item'), {
+                opacity: 0,
+                y: -6
+              }, {
+                opacity: 1,
+                y: 0,
+                duration: 0.22,
+                stagger: 0.03,
+                ease: 'power2.out',
+                clearProps: 'opacity,transform'
+              });
             }
           }
 
@@ -168,23 +174,41 @@
 
         document.addEventListener('DOMContentLoaded', function () {
           var g = motion();
-          if (!g) return;
-
+          if (!g) 
+            return;
+          
           // Press feedback: boxes take a scale, text chips take a nudge.
           function pressable(selector, down, up) {
-            Array.prototype.forEach.call(document.querySelectorAll(selector), function (el) {
-              function press() { g.to(el, Object.assign({ duration: 0.08, ease: 'power1.out' }, down)); }
-              function release() { g.to(el, Object.assign({ duration: 0.22, ease: 'power2.out' }, up)); }
-              el.addEventListener('pointerdown', press);
-              el.addEventListener('pointerup', release);
-              el.addEventListener('pointerleave', release);
-              el.addEventListener('pointercancel', release);
-              el.addEventListener('blur', release);
-            });
+            Array
+              .prototype
+              .forEach
+              .call(document.querySelectorAll(selector), function (el) {
+                function press() {
+                  g.to(el, Object.assign({
+                    duration: 0.08,
+                    ease: 'power1.out'
+                  }, down));
+                }
+                function release() {
+                  g.to(el, Object.assign({
+                    duration: 0.22,
+                    ease: 'power2.out'
+                  }, up));
+                }
+                el.addEventListener('pointerdown', press);
+                el.addEventListener('pointerup', release);
+                el.addEventListener('pointerleave', release);
+                el.addEventListener('pointercancel', release);
+                el.addEventListener('blur', release);
+              });
           }
 
-          pressable('.directory-item', { scale: 0.985 }, { scale: 1 });
-          pressable('.chip', { y: 1 }, { y: 0 });
+          pressable('.directory-item', {
+            scale: 0.985
+          }, {scale: 1});
+          pressable('.chip', {
+            y: 1
+          }, {y: 0});
         });
       })();
     </script>
