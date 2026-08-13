@@ -2,6 +2,9 @@
 title = "Don't Give a No-Op Talk"
 date = 2024-04-22
 aliases = ["/communication/2024/04/22/dont-give-a-no-op-talk.html"]
+
+[extra]
+featured = true
 +++
 
 I've noticed a common failure mode among academic conference keynotes and other large audience talks

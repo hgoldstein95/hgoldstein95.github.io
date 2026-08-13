@@ -1,0 +1,13 @@
+title = "Property-Based Testing for the People"
+author = "Harrison Goldstein"
+advisor = "Benjamin C. Pierce"
+committee = "Stephanie Weirich (chair), Andrew Head, Mayur Naik, Hila Peleg"
+defended = "May 24, 2024"
+
+[[links]]
+label = "PDF"
+url = "/papers/dissertation.pdf"
+
+[[links]]
+label = "Talk"
+url = "https://youtu.be/S05JywB-xDE"

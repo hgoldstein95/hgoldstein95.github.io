@@ -1,0 +1,52 @@
+{# The persistent rail: contact, news, off-site links. Same on every page. #}
+{% set rail = load_data(path="data/rail.toml") %}
+{% set news = load_data(path="data/news.toml") %}
+<aside class="rail" aria-label="Contact and news">
+  {% if rail.recruiting %}
+    <div class="rail-note">{{ rail.recruiting }}</div>
+  {% endif %}
+
+  <section>
+    <div class="rail-head">
+      <h2>Email</h2>
+    </div>
+    <a class="rail-email" href="mailto:{{ rail.email.address }}">{{ rail.email.address }}</a>
+    {% if rail.email.do %}
+      <p class="rail-p"><strong>Do write about:</strong> {{ rail.email.do }}</p>
+    {% endif %}
+    {% if rail.email.dont %}
+      <p class="rail-p"><strong>Please don&rsquo;t:</strong> {{ rail.email.dont }}</p>
+    {% endif %}
+    {% if rail.email.response %}
+      <p class="rail-aside">{{ rail.email.response }}</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <div class="rail-head">
+      <h2>Recent news</h2>
+    </div>
+    <div class="news">
+      {% for item in news.items %}
+        <div class="news-item">
+          <span class="news-date">{{ item.short }}</span>
+          <span class="news-text">{{ item.text | markdown(inline=true) | safe }}</span>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <div class="rail-head">
+      <h2>Also here</h2>
+    </div>
+    <div class="links-list">
+      {% for link in rail.links %}
+        <a href="{{ link.url }}"{% if link.external %} target="_blank" rel="noopener"{% endif %}>{{ link.label }}</a>
+      {% endfor %}
+    </div>
+    {% if rail.note %}
+      <div class="links-note">{{ rail.note }}</div>
+    {% endif %}
+  </section>
+</aside>

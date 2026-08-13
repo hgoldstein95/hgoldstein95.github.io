@@ -1,7 +1,10 @@
 +++
-title = "A Fun Little Mocktail"
+title = "My New Favorite Mocktail"
 date = 2024-09-16
 aliases = ["/food/2024/09/16/mocktail.html"]
+
+[extra]
+featured = true
 +++
 
 Here's a quick post, just sharing a mocktail that I'm workshopping.[^1]

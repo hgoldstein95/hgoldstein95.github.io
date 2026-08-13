@@ -1,0 +1,16 @@
+{# Expects `paper`. Included from index.html and publications.html. #}
+<div class="row"{% if paper.venue_short %} data-venue="{{ paper.venue_short }}"{% endif %}>
+  <span class="row-year">{{ paper.year }}</span>
+  <span>
+    <span class="row-title">{{ paper.title }}{% for award in paper.awards | default(value=[]) %}<span class="award">{{ award }}</span>{% endfor %}</span>
+    <span class="row-sub">{{ paper.authors }}</span>
+  </span>
+  <span class="row-meta">
+    <span class="row-venue">{{ paper.venue }}{% if paper.venue_date %} &middot; {{ paper.venue_date }}{% endif %}</span>
+    {% if paper.links %}
+      <span class="row-links">
+        {% for link in paper.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+      </span>
+    {% endif %}
+  </span>
+</div>

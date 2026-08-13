@@ -2,7 +2,13 @@
 title = "Brown Butter Chocolate Chip Cookies"
 date = 2019-02-24
 aliases = ["/food/2019/02/24/chocolate-chip-cookies.html"]
+
+[extra]
+featured = true
 +++
+
+I know all two of you who read this blog are here for my computer science
+content, but who doesn't like chocolate chip cookies??
 
 <style>
 blockquote {
@@ -12,9 +18,6 @@ blockquote {
 </style>
 
 TL;DR: [Jump to the recipe](#recipe) or [jump to the super short, condensed recipe.](#condensed)
-
-I know all two of you who read this blog are here for my Computer Science
-content, but who doesn't like chocolate chip cookies??
 
 ### The Setup
 

@@ -1,130 +1,179 @@
-[[sections]]
-name = "Property-Based Testing"
+# One flat, year-sorted list. `venue_short` is the filter key on /publications,
+# `topic` preserves the old section grouping, and `selected = true` puts a paper
+# on the home page.
+#
+# TODO(harrison): check the `selected` picks -- right now it is the six most
+# recent, which may not be the six you want to lead with.
 
-[[sections.papers]]
+# Chip order on /publications. Every `venue_short` used below must appear here.
+venues = ["PLDI", "OOPSLA", "ICFP", "ICSE", "UIST", "PLATEAU", "PL Perspectives", "SIGBOVIK"]
+
+[[papers]]
+year = 2026
 title = "The Search for Constrained Random Generators"
 authors = "Harrison Goldstein, Hila Peleg, Cassia Torczon, Daniel Sainati, Leonidas Lampropoulos, Benjamin C. Pierce"
 venue = "PLDI 2026"
-[[sections.papers.links]]
+venue_short = "PLDI"
+topic = "Property-Based Testing"
+selected = true
+[[papers.links]]
 label = "DOI"
 url = "https://doi.org/10.1145/3808329"
 
-[[sections.papers]]
+[[papers]]
+year = 2026
 title = "Fail Faster: Staging and Fast Randomness for High-Performance PBT"
 authors = "Cynthia Richey, Joseph W. Cutler, Harrison Goldstein, Benjamin C. Pierce"
 venue = "OOPSLA 2026"
-[[sections.papers.links]]
+venue_short = "OOPSLA"
+topic = "Property-Based Testing"
+selected = true
+[[papers.links]]
 label = "DOI"
 url = "https://dl.acm.org/doi/pdf/10.1145/3798263"
 
-[[sections.papers]]
+[[papers]]
+year = 2025
 title = "Tuning Random Generators: Property-Based Testing as Probabilistic Programming"
 authors = "Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin C. Pierce, Guy Van den Broeck"
 venue = "OOPSLA 2025"
-[[sections.papers.links]]
+venue_short = "OOPSLA"
+topic = "Property-Based Testing"
+selected = true
+[[papers.links]]
 label = "DOI"
 url = "https://dl.acm.org/doi/abs/10.1145/3763082"
 
-[[sections.papers]]
-title = "Tyche: Making Sense of Property-Based Testing Effectiveness"
-authors = "Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head"
-venue = "UIST 2024"
-[[sections.papers.links]]
-label = "PDF"
-url = "papers/uist24-tyche.pdf"
-
-[[sections.papers]]
-title = "Property-Based Testing in Practice"
-authors = "Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head"
-venue = "ICSE 2024"
-awards = ["Distinguished Paper"]
-[[sections.papers.links]]
-label = "PDF"
-url = "papers/icse24-pbt-in-practice.pdf"
-
-[[sections.papers]]
-title = "Reflecting on Random Generation"
-authors = "Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce"
-venue = "ICFP 2023"
-awards = ["Distinguished Paper"]
-[[sections.papers.links]]
-label = "PDF"
-url = "papers/icfp23-reflective.pdf"
-[[sections.papers.links]]
-label = "Talk"
-url = "https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316"
-
-[[sections.papers]]
-title = "Etna: An Evaluation Platform for Property-Based Testing"
-authors = "Jessica Shi, Alperen Keles, Harrison Goldstein, Benjamin C. Pierce, Leonidas Lampropoulos"
-venue = "ICFP 2023 Experience Report"
-[[sections.papers.links]]
-label = "PDF"
-url = "papers/icfp23-etna.pdf"
-
-[[sections.papers]]
-title = "Parsing Randomness"
-authors = "Harrison Goldstein, Benjamin C. Pierce"
-venue = "OOPSLA 2022"
-[[sections.papers.links]]
-label = "PDF"
-url = "papers/oopsla22.pdf"
-
-[[sections]]
-name = "Usable Formal Methods and Specification"
-
-[[sections.papers]]
+[[papers]]
+year = 2025
 title = "QED in Context: An Observation Study of Proof Assistant Users"
 authors = "Jessica Shi, Cassia Torczon, Harrison Goldstein, Benjamin Pierce, Andrew Head"
 venue = "OOPSLA 2025"
-[[sections.papers.links]]
+venue_short = "OOPSLA"
+topic = "Usable Formal Methods and Specification"
+selected = true
+[[papers.links]]
 label = "Preprint"
 url = "https://jwshii.github.io/OOPSLA25.pdf"
 
-[[sections.papers]]
+[[papers]]
+year = 2025
 title = "FEDT: Supporting Experiment Design and Execution in HCI Fabrication Research"
 authors = "Valkyrie Savage, Harrison Goldstein, Nóra Püsök, Jia Yi Ren, Bhaskar Dutt, Chandrakana Nandi, Lora Oehlberg"
 venue = "UIST 2025"
-[[sections.papers.links]]
+venue_short = "UIST"
+topic = "Usable Formal Methods and Specification"
+[[papers.links]]
 label = "DOI"
 url = "https://dl.acm.org/doi/10.1145/3746059.3747739"
 
-[[sections.papers]]
+[[papers]]
+year = 2025
 title = "Designing Proof Deautomation in Rocq"
 authors = "Jessica Shi, Cassia Torczon, Harrison Goldstein, Andrew Head, Benjamin Pierce"
 venue = "PLATEAU 2025"
-[[sections.papers.links]]
+venue_short = "PLATEAU"
+topic = "Usable Formal Methods and Specification"
+[[papers.links]]
 label = "PDF"
 url = "https://jwshii.github.io/deauto.pdf"
 
-[[sections]]
-name = "Blog Posts"
-
-[[sections.papers]]
+[[papers]]
+year = 2025
+kind = "essay"
 title = "Think Globally, Discuss PL Locally"
 authors = "Harrison Goldstein, Michael Greenberg, Noam Zilberstein"
 venue = "SIGPLAN PL Perspectives"
+venue_short = "PL Perspectives"
 venue_date = "September 16, 2025"
-[[sections.papers.links]]
+topic = "Essays"
+[[papers.links]]
 label = "Post"
 url = "https://blog.sigplan.org/2025/09/16/think-globally-discuss-pl-locally/"
 
-[[sections.papers]]
-title = "Conferences after COVID: An Early-Career Perspective"
-authors = "Joseph W. Cutler, Harry Goldstein, Andrew K. Hirsch, Jaemin Hong, Chandrakana Nandi"
-venue = "SIGPLAN PL Perspectives"
-venue_date = "March 25, 2021"
-[[sections.papers.links]]
-label = "Post"
-url = "https://blog.sigplan.org/2021/03/25/conferences-after-covid-an-early-career-perspective/"
+[[papers]]
+year = 2024
+title = "Tyche: Making Sense of Property-Based Testing Effectiveness"
+authors = "Harrison Goldstein, Jeffrey Tao, Zac Hatfield-Dodds, Benjamin C. Pierce, Andrew Head"
+venue = "UIST 2024"
+venue_short = "UIST"
+topic = "Property-Based Testing"
+selected = true
+[[papers.links]]
+label = "PDF"
+url = "/papers/uist24-tyche.pdf"
 
-[[sections]]
-name = "Fun Stuff"
+[[papers]]
+year = 2024
+title = "Property-Based Testing in Practice"
+authors = "Harrison Goldstein, Joseph W. Cutler, Daniel Dickstein, Benjamin C. Pierce, Andrew Head"
+venue = "ICSE 2024"
+venue_short = "ICSE"
+topic = "Property-Based Testing"
+awards = ["Distinguished Paper"]
+selected = true
+[[papers.links]]
+label = "PDF"
+url = "/papers/icse24-pbt-in-practice.pdf"
 
-[[sections.papers]]
+[[papers]]
+year = 2023
+title = "Reflecting on Random Generation"
+authors = "Harrison Goldstein, Samantha Frohlich, Meng Wang, Benjamin C. Pierce"
+venue = "ICFP 2023"
+venue_short = "ICFP"
+topic = "Property-Based Testing"
+awards = ["Distinguished Paper"]
+[[papers.links]]
+label = "PDF"
+url = "/papers/icfp23-reflective.pdf"
+[[papers.links]]
+label = "Talk"
+url = "https://www.youtube.com/live/ZQ_U-LANbc4?si=nJWlcufGBYnzcF3-&t=1316"
+
+[[papers]]
+year = 2023
+title = "Etna: An Evaluation Platform for Property-Based Testing"
+authors = "Jessica Shi, Alperen Keles, Harrison Goldstein, Benjamin C. Pierce, Leonidas Lampropoulos"
+venue = "ICFP 2023 Experience Report"
+venue_short = "ICFP"
+topic = "Property-Based Testing"
+[[papers.links]]
+label = "PDF"
+url = "/papers/icfp23-etna.pdf"
+
+[[papers]]
+year = 2022
+title = "Parsing Randomness"
+authors = "Harrison Goldstein, Benjamin C. Pierce"
+venue = "OOPSLA 2022"
+venue_short = "OOPSLA"
+topic = "Property-Based Testing"
+[[papers.links]]
+label = "PDF"
+url = "/papers/oopsla22.pdf"
+
+[[papers]]
+year = 2022
+kind = "fun"
 title = "Everybody Clap Your Hands: The Cha-Cha Slide is Turing Complete"
 authors = "Harrison Goldstein"
 venue = "SIGBOVIK 2022"
-[[sections.papers.links]]
+venue_short = "SIGBOVIK"
+topic = "Fun Stuff"
+[[papers.links]]
 label = "PDF"
-url = "papers/cha-cha-slide.pdf"
+url = "/papers/cha-cha-slide.pdf"
+
+[[papers]]
+year = 2021
+kind = "essay"
+title = "Conferences after COVID: An Early-Career Perspective"
+authors = "Joseph W. Cutler, Harry Goldstein, Andrew K. Hirsch, Jaemin Hong, Chandrakana Nandi"
+venue = "SIGPLAN PL Perspectives"
+venue_short = "PL Perspectives"
+venue_date = "March 25, 2021"
+topic = "Essays"
+[[papers.links]]
+label = "Post"
+url = "https://blog.sigplan.org/2021/03/25/conferences-after-covid-an-early-career-perspective/"

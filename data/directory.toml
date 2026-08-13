@@ -1,0 +1,25 @@
+# The "I'm looking for..." directory.
+
+[[items]]
+label = "publications."
+url = "/publications/"
+
+[[items]]
+label = "the blog."
+url = "/blog/"
+
+[[items]]
+label = "my research group."
+url = "/group/"
+
+[[items]]
+label = "courses."
+url = "/courses/"
+
+[[items]]
+label = "projects."
+url = "/projects/"
+
+[[items]]
+label = "contact information."
+url = "/press/"

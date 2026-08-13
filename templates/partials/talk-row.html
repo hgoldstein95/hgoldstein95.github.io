@@ -1,0 +1,12 @@
+{# Expects `item`. Included from index.html and publications.html. #}
+<div class="row row--two">
+  <span>
+    <span class="row-title">{{ item.title }}</span>
+    <span class="row-sub">{{ item.venue }}{% if item.with %} &middot; with {{ item.with }}{% endif %}</span>
+  </span>
+  {% if item.links %}
+    <span class="row-links">
+      {% for link in item.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}
+    </span>
+  {% endif %}
+</div>

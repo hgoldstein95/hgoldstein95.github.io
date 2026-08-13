@@ -12,36 +12,15 @@ Personal website and blog at [harrisongoldste.in](https://harrisongoldste.in), b
 ## Development
 
 ```
-make serve
+make serve    # http://127.0.0.1:1111, live reload
+make          # build into public/
+make check    # validate links
 ```
 
-Starts a local server at `http://127.0.0.1:1111` with live reload.
+Use `make` rather than `zola build` directly — the CV at `static/resume.pdf` is generated from
+`resume/resume.tex` and isn't checked into git.
 
-## Build
-
-```
-make
-```
-
-Outputs to `public/`. Sass is compiled automatically (`compile_sass = true` in `config.toml`).
-
-Use `make` rather than `zola build` directly: the published CV at `static/resume.pdf` is generated
-from `resume/resume.tex` and is not checked into git, so a bare `zola build` will produce a site
-whose CV link 404s.  The Makefile rebuilds it whenever the `.tex` is newer, and `make clean` removes
-the site output along with every LaTeX artifact.
-
-## Deploy
-
-The site is hosted on GitHub Pages and published via GitHub Actions
-(`.github/workflows/deploy.yml`). Pushing to `master` triggers a build and deploy automatically — no
-manual steps needed.
-
-The workflow compiles `resume/resume.tex` with `latexmk` in the official `texlive/texlive` image,
-copies the PDF into `static/`, installs Zola, runs `zola build`, and deploys `public/` using the
-Actions-based Pages deployment.  GitHub Pages must be configured to use **GitHub Actions** as the
-source (Settings → Pages → Source).
-
-The same `docker run` works locally if you'd rather not install TeX Live:
+If you'd rather not install TeX Live, the CV also builds in Docker:
 
 ```
 docker run --rm -v "$PWD:/work" -w /work/resume texlive/texlive:latest \
@@ -49,81 +28,13 @@ docker run --rm -v "$PWD:/work" -w /work/resume texlive/texlive:latest \
 cp resume/resume.pdf static/resume.pdf
 ```
 
-## Structure
+## Deploy
 
-```
-config.toml       # Site config: base URL, nav links, author info
-data/             # Structured homepage content (loaded by templates/index.html)
-  news.toml
-  publications.toml
-  talks.toml
-  students.toml
-  featured_posts.toml
-  coordinates.toml
-content/          # Markdown content (TOML front matter, +++ delimiters)
-  _index.md       # Homepage prose (about-me paragraphs only)
-  about.md
-  resume.md
-  blog/
-    _index.md     # Blog section config (sort_by, page_template)
-    *.md          # Blog posts
-templates/        # Tera HTML templates
-  base.html       # Base layout with nav and footer
-  index.html      # Homepage (loads data/ files via load_data)
-  blog-list.html  # /blog/ listing page
-  blog-page.html  # Individual blog post
-  page.html       # Generic page (about, resume)
-  redirect.html   # For aliases
-sass/             # SCSS source, compiled to public/style.css at build time
-static/           # Copied verbatim: images, PDFs, slides, CNAME
-```
+Hosted on GitHub Pages. Pushing to `master` builds and deploys automatically via
+`.github/workflows/deploy.yml` — no manual steps.
 
-Code blocks are highlighted with the `github-light` theme; Zola generates `public/giallo.css` for
-it, which `base.html` links alongside `style.css`.
+## Maintenance
 
-## Updating Homepage Content
-
-Structured homepage data lives in `data/`. Edit the relevant TOML file:
-
-- **Publications** — `data/publications.toml`: sections with papers, each having `title`, `authors`,
-  `venue`, `links`, and optional `awards`
-- **Talks** — `data/talks.toml`: items with `title`, `venue`, and `links`
-- **Students** — `data/students.toml`: `[[current]]` and `[[past]]` arrays
-- **News** — `data/news.toml`: items with `date` and `text` (supports markdown)
-- **Featured posts** — `data/featured_posts.toml`: manually curated list with `title`, `url`, `date`
-- **Coordinates** — `data/coordinates.toml`: contact rows with `label`, `url`, `display`, `note`
-
-The about-me prose lives in `content/_index.md` (body only, no front matter changes needed).
-
-## Adding a Blog Post
-
-Create `content/blog/my-post.md` with front matter:
-
-```toml
-+++
-title = "Post Title"
-date = 2026-04-17
-+++
-
-Post content here.
-```
-
-Add `aliases = ["/old/path.html"]` if redirecting from a legacy URL.
-
-### Math
-
-Set `math = true` under `[extra]` in the front matter to load MathJax on that post. Markdown is
-parsed before MathJax runs, so it will mangle unprotected LaTeX (`$a^*b^*$` becomes
-`a^<em>b^</em>`). Two conventions avoid that:
-
-- **Display math** goes in a raw HTML block, which markdown passes through verbatim — no escaping
-  needed, so multi-line environments work as written:
-  ```
-  <div class="math">
-  $$
-  D_a(r^*) = D_a(r)r^*
-  $$
-  </div>
-  ```
-- **Inline math** uses single dollars, with `*` and `_` backslash-escaped: `$a^\*b^\*$`. A literal
-  LaTeX backslash pair must be written `\\\\`.
+Content lives in TOML files under `data/` and markdown under `content/`; templates are Tera, styles
+are SCSS in `sass/`. See [CLAUDE.md](CLAUDE.md) for how it all fits together — the design rules, the
+data formats, and the Tera 2 gotchas worth knowing before editing a template.

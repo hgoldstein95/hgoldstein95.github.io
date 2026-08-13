@@ -1,0 +1,19 @@
+{% set directory = load_data(path = "data/directory.toml") %}
+<nav class="directory" id="site-menu" aria-label="Sections of this site">
+  <div class="section-head">
+    <h2>I&rsquo;m here for&hellip;</h2>
+  </div>
+  <div class="directory-list">
+    {% for item in directory.items %}
+      <a class="directory-item" href="{{ item.url }}"
+         {% if current_path is defined and current_path == item.url %}aria-current="page"{% endif %}>
+        <span class="directory-label">&hellip;{{ item.label }}</span>
+        <span class="directory-end">
+          {% if item.hint %}
+            <span class="directory-hint">{{ item.hint }}</span>{% endif %}
+          <span class="directory-go" aria-hidden="true">&rarr;</span>
+        </span>
+      </a>
+    {% endfor %}
+  </div>
+</nav>

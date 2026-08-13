@@ -19,15 +19,5 @@ profile_picture = "/img/profile.jpeg"
 footer = true
 footer_url = "https://github.com/hgoldstein95/hgoldstein95.github.io"
 footer_text = "Website source on GitHub"
-
-[[extra.nav]]
-name = "Blog"
-link = "/blog/"
-
-[[extra.nav]]
-name = "CV"
-link = "/resume.pdf"
-
-[[extra.nav]]
-name = "Contact"
-link = "/#coordinates"
+# Navigation now lives in data/directory.toml (the "I'm looking for..." block)
+# and data/rail.toml (the "Also here" links), so there is no extra.nav here.

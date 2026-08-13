@@ -1,6 +1,7 @@
 [[items]]
 title = "Metaprogramming the Next Generation of Testing Tools"
 venue = "Lean Together 2026"
+selected = true
 [[items.links]]
 label = "VOD"
 url = "https://www.youtube.com/watch?v=AFbnS9xuPhY"
@@ -8,6 +9,7 @@ url = "https://www.youtube.com/watch?v=AFbnS9xuPhY"
 [[items]]
 title = "The Best New Programming Language is a Proof Assistant"
 venue = "DC Systems 006"
+selected = true
 [[items.links]]
 label = "VOD"
 url = "https://www.youtube.com/watch?v=c5LOYzZx-0c"
@@ -15,6 +17,7 @@ url = "https://www.youtube.com/watch?v=c5LOYzZx-0c"
 [[items]]
 title = "Haskell Interlude 59"
 venue = "Haskell Interlude"
+selected = true
 [[items.links]]
 label = "Podcast"
 url = "https://haskell.foundation/podcast/59/"
@@ -22,6 +25,7 @@ url = "https://haskell.foundation/podcast/59/"
 [[items]]
 title = "My PhD Compass: 6 Ways to Guide a PhD Towards Success"
 venue = "PLMW @ ICFP 2024"
+selected = true
 [[items.links]]
 label = "VOD"
 url = "https://youtu.be/UgABi44gMcI?si=F8_m3_8m7kjCbpfK"
@@ -29,6 +33,7 @@ url = "https://youtu.be/UgABi44gMcI?si=F8_m3_8m7kjCbpfK"
 [[items]]
 title = "Property-Based Testing in Practice"
 venue = "Disseminate Podcast"
+selected = true
 [[items.links]]
 label = "Podcast"
 url = "https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-property-based-testing-55"
@@ -37,6 +42,7 @@ url = "https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-propert
 title = "Consider Collaboration"
 with = "Samantha Frohlich"
 venue = "PLMW @ POPL 2024"
+selected = true
 [[items.links]]
 label = "VOD"
 url = "https://www.youtube.com/watch?v=sSl-856qUOA"

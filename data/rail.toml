@@ -1,0 +1,37 @@
+# Everything in the persistent right rail (mobile: the panel under the header).
+#
+# TODO(harrison): the email etiquette copy below is a placeholder skeleton taken
+# from the design mockup -- it states policies you may not actually hold. Rewrite
+# `do`, `dont`, and `response` in your own words, or delete any of them (an empty
+# string hides that line). Same for `recruiting`: delete it if you are not.
+
+recruiting = "TODO: recruiting line, e.g. \"Recruiting PhD students to start Fall 2027.\""
+note = "TODO: office hours or location, or delete this line."
+
+[email]
+address = "hgoldste@buffalo.edu"
+do = "TODO: what you welcome -- a paper of mine, collaboration, prospective students who have read the work."
+dont = "TODO: what you would rather not get, or delete this line."
+response = "TODO: response-time expectation, or delete this line."
+
+# "Also here" -- the off-site links. Sourced from data/coordinates.toml plus the
+# CV. TODO(harrison): add Google Scholar / DBLP / Bluesky if you want them here.
+[[links]]
+label = "CV (PDF)"
+url = "/resume.pdf"
+external = true
+
+[[links]]
+label = "GitHub"
+url = "https://github.com/hgoldstein95"
+external = true
+
+[[links]]
+label = "YouTube"
+url = "https://www.youtube.com/channel/UCcc1UtCXkMfmkKnjjFIC7Zg"
+external = true
+
+[[links]]
+label = "Beli"
+url = "https://beliapp.co/profile/hgoldstein95"
+external = true

@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
+    <div class="section-head">
+      <h1 itemprop="name headline">{{ page.title }}</h1>
+      <a class="section-more" href="/blog/">All posts &rarr;</a>
+    </div>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date(format="%Y-%m-%dT%H:%M:%S+00:00") }}" itemprop="datePublished">
+        {{ page.date | date(format="%b %-d, %Y") }}
+      </time>
+    </p>
 
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-      <p class="post-meta">
-        <time datetime="{{ page.date | date(format="%Y-%m-%dT%H:%M:%S+00:00") }}" itemprop="datePublished">
-          {{ page.date | date(format="%b %-d, %Y") }}
-        </time>
-      </p>
-    </header>
-
-    <div class="post-content" itemprop="articleBody">
+    <div class="prose" itemprop="articleBody">
       {{ page.content | safe }}
     </div>
 
@@ -28,7 +28,7 @@
         };
       </script>
       <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
+              src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js"></script>
     {% endif %}
   </article>
-{% endblock %}
+{% endblock content %}
