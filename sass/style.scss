@@ -321,6 +321,22 @@ button {
     transform: translateX(0);
 }
 
+/*
+ * The tile for the current page links home, so it carries a back arrow that is
+ * always showing -- the tile is the way out, and nothing announces that on a
+ * touch screen where there is no hover. It leans left on hover, the mirror of
+ * the other tiles, and the 12px slot keeps every tile the same size regardless.
+ */
+.directory-item[aria-current="page"] .directory-go {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.directory-item[aria-current="page"]:hover .directory-go,
+.directory-item[aria-current="page"]:focus-visible .directory-go {
+    transform: translateX(-4px);
+}
+
 .directory-label {
     font-size: 16px;
     font-weight: 500;
