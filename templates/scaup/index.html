@@ -1,7 +1,7 @@
 {% extends "scaup/base.html" %}
 
 {% block content %}
-  {% set scaup = load_data(path="data/scaup.toml") %}
+  {% set scaup = load_data(path = "data/scaup.toml") %}
 
   <section class="sc-hero">
     <div>
@@ -16,7 +16,9 @@
     </div>
   </section>
 
-  <div class="sc-rule-wrap"><div class="sc-rule"></div></div>
+  <div class="sc-rule-wrap">
+    <div class="sc-rule"></div>
+  </div>
 
   <section class="sc-section" id="people">
     <h2 class="sc-label">People</h2>
@@ -24,20 +26,26 @@
     <div class="sc-people">
       {% for person in scaup.people %}
         <div class="sc-person">
-          {# A person with no photo yet gets the empty tinted block the card is
-             already sized for, so the grid does not reflow when one is added. #}
+          {# A person with no photo yet gets a silhouette in the tinted block the
+             card is already sized for, so the grid does not reflow when one is
+             added. The SVG is decorative — the name is right below it. #}
           <div class="sc-photo">
-            {% if person.photo | default(value="") %}
+            {% if person.photo | default(value = "") %}
               <img src="{{ person.photo }}" alt="{{ person.name }}">
+            {% else %}
+              <svg class="sc-photo-blank" viewBox="0 0 80 100" aria-hidden="true" focusable="false">
+                <circle cx="40" cy="40" r="15"/>
+                <path d="M40 62c15.5 0 28 12.5 28 28v10H12V90c0-15.5 12.5-28 28-28z"/>
+              </svg>
             {% endif %}
           </div>
           <div>
             <div class="sc-person-name">{{ person.name }}</div>
             <div class="sc-person-role">{{ person.role }}</div>
-            {% if person.note | default(value="") %}
+            {% if person.note | default(value = "") %}
               <div class="sc-person-note">{{ person.note }}</div>
             {% endif %}
-            {% if person.url | default(value="") %}
+            {% if person.url | default(value = "") %}
               <a class="sc-person-link" href="{{ person.url }}">{{ person.link_label | default(value="site") }} &nearr;</a>
             {% endif %}
           </div>
@@ -52,7 +60,6 @@
     <img class="sc-watermark" src="/img/scaup.svg" alt="" aria-hidden="true">
     <div class="sc-band-inner">
       <h2 class="sc-label">Connections</h2>
-      <p class="sc-band-blurb">{{ scaup.homes_blurb }}</p>
 
       <div class="sc-homes">
         {% for home in scaup.homes %}

@@ -6,9 +6,8 @@ page_template = "scaup/page.html"
 sort_by = "weight"
 +++
 
-We study how programs can be shown correct, and how the people writing them can actually get that
-assurance. Verification tools, type systems, and program analyses only pay off if a working
-programmer can pick them up, so we treat the human side of a technique as part of the technique.
+The SCAUP lab (["scaup"](https://en.wikipedia.org/wiki/Greater_scaup) rhymes with "hop") works across
+programming languages, software engineering, and human-computer interaction to help real-world
+programmers write better, more correct code.
 
-Our work runs from proof automation and language design through to studies of how developers read,
-debug, and trust their code.
+Our lab's home is the University at Buffalo, but we have members and collaborators around the world.

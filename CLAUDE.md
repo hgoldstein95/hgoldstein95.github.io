@@ -195,7 +195,20 @@ templates/scaup/index.html the home page
 templates/scaup/page.html  any future sub-page (the section sets page_template)
 sass/scaup.scss            → public/scaup.css; standalone, does not import _tokens
 static/img/scaup.svg       the bird, in the hero and as the band watermark
+static/img/scaup-favicon.svg  the bird's head on a white tile, for the tab icon
 ```
+
+The favicon is a hand-cut derivative of `scaup.svg`, not a copy of it. The whole bird is an
+illegible smudge at 16px, so it crops to the head — the dark crown, the blue-grey bill and the
+yellow eye are what survive — inside a 512-square white tile with `rx="96"` corners. **Rounded
+corners on the main site are forbidden and on `/scaup/` they are the house style**, which is why
+this is fine here and would not be for a main-site icon.
+
+Two edits from the source, both deliberate: the viewBox is `1040 190 330 330` on a nested `<svg>`
+(the outer one stays `0 0 512 512` so the tile and clip path are in round numbers), and the
+translucent far wing rising above the crown is deleted, because inside that crop it reads as a
+brown smear rather than as part of the bird. Nothing regenerates the file at build time — if the
+artwork ever changes, re-cut it by hand. Only `/scaup/` links it; the main site has no favicon.
 
 Adding a page is `content/scaup/whatever.md` with a title — `page_template` on the section routes it
 to the sub-site shell automatically, so no `template =` in the front matter.
@@ -216,9 +229,8 @@ Things about the port worth knowing:
 - Section headings (`.sc-label`) were tiny uppercase mono in the source design and are now serif at
   26px, matching `.sc-prose h2`. Mono survives only in the small metadata bits — person links, card
   hosts, the footer email, the colophon.
-- There is **no nav.** The header is the eyebrow and a single link back to the main site
-  (`.sc-back`, from the `[home]` table in `scaup.toml`). The sections still carry `id`s
-  (`#people`, `#homes`, `#contact`) so they can be linked from elsewhere.
+- There is **no nav and no link back to the main site.** The header is the eyebrow alone. The
+  sections still carry `id`s (`#people`, `#homes`, `#contact`) so they can be linked from elsewhere.
 - The `homes` array in `scaup.toml` backs the section now titled **Connections**; the key kept the
   name it had when the section was "Wider homes".
 

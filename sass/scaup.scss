@@ -11,7 +11,10 @@
 :root {
     --sc-paper: #f6f4ee;
     --sc-band: #eeece2;
-    --sc-slot: #eceadf; /* empty photo well */
+    --sc-slot: #eceadf;
+    /* empty photo well */
+    --sc-slot-mark: #dbd7c6;
+    /* the silhouette drawn in it */
     --sc-ink: #1b1a17;
     --sc-body: #33312c;
     --sc-mute: #6f6a5c;
@@ -103,20 +106,6 @@ img {
     color: var(--sc-mute);
 }
 
-/* The way back to the main site — the header's only link; there is no nav. */
-.sc-back {
-    font-family: var(--sc-serif);
-    font-size: 17px;
-    color: var(--sc-accent);
-    text-decoration: none;
-    white-space: nowrap;
-}
-
-.sc-back:hover {
-    color: var(--sc-accent-deep);
-    text-decoration: underline;
-}
-
 /* ---------------------------------------------------------------- hero */
 
 .sc-hero {
@@ -144,7 +133,7 @@ img {
     font-size: 25px;
     line-height: 1.45;
     margin: 0 0 26px;
-    max-width: 23ch;
+    max-width: 26ch;
     color: var(--sc-accent);
 }
 
@@ -236,6 +225,15 @@ img {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Stand-in until there is a photo: a head and shoulders, a shade darker than
+   the well, filling the same 4:5 box. */
+.sc-photo-blank {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: var(--sc-slot-mark);
 }
 
 .sc-person-name {
@@ -380,14 +378,6 @@ img {
     margin-top: 10px;
 }
 
-.sc-colophon {
-    font-family: var(--sc-mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--sc-faint);
-}
-
 /* ---------------------------------------------------------------- sub-pages */
 
 .sc-page-title {
@@ -472,10 +462,6 @@ img {
         flex-direction: column;
         align-items: flex-start;
         gap: 10px;
-    }
-
-    .sc-back {
-        font-size: 16px;
     }
 
     .sc-acronym {

@@ -7,7 +7,7 @@
 <html lang="en">
 
   <head>
-    {% set scaup = load_data(path="data/scaup.toml") %}
+    {% set scaup = load_data(path = "data/scaup.toml") %}
 
     <title>
       {%- if page is defined and page.title %}{{ page.title }} &middot; {{ scaup.name }}
@@ -18,9 +18,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="{{ config.extra.author }}">
-    {% set desc = section.description | default(value=config.description) %}
-    {% if page is defined and page.description %}{% set desc = page.description %}{% endif %}
+    {% set desc = section.description | default(value = config.description) %}
+    {% if page is defined and page.description %}{% set desc = page.description %}
+    {% endif %}
     <meta name="description" content="{{ desc }}">
+
+    {# The bird, re-framed square so it fills the tab icon rather than letterboxing. #}
+    <link rel="icon" type="image/svg+xml" href="/img/scaup-favicon.svg">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,10 +37,9 @@
     <a class="sc-skip" href="#main">Skip to content</a>
 
     <header class="sc-head">
+      {# No nav, and no link out: the page is one screenful of sections and the
+         header carries the eyebrow alone. #}
       <div class="sc-eyebrow">{{ scaup.eyebrow }}</div>
-      {# No nav: the page is one screenful of sections and does not need one.
-         The only header link is the way back to the main site. #}
-      <a class="sc-back" href="{{ scaup.home.url }}">{{ scaup.home.label }} &rarr;</a>
     </header>
 
     <main id="main">
@@ -47,11 +50,12 @@
       <div>
         <div class="sc-foot-head">{{ scaup.contact.heading }}</div>
         <div class="sc-foot-lines">
-          {% for line in scaup.contact.lines %}{{ line }}{% if not loop.last %}<br>{% endif %}{% endfor %}
+          {% for line in scaup.contact.lines %}{{ line }}
+            {% if not loop.last %}<br>{% endif %}
+          {% endfor %}
         </div>
         <a class="sc-foot-mail" href="mailto:{{ scaup.contact.email }}">{{ scaup.contact.email }}</a>
       </div>
-      <div class="sc-colophon">{{ scaup.colophon | markdown(inline=true) | safe }}</div>
     </footer>
   </body>
 
