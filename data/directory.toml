@@ -1,3 +1,8 @@
+# Order here is order on the page, with one rule: everything that sends the
+# visitor off this site goes last. Set `offsite = true` for a destination that
+# is off-site in spirit but not in URL — the lab, which is its own design.
+# (Not `external`, which rail.toml already uses to mean "open in a new tab".)
+
 [[items]]
 label = "publications."
 url = "/publications/"
@@ -7,17 +12,18 @@ label = "the blog."
 url = "/blog/"
 
 [[items]]
-label = "the research group."
-url = "/scaup/"
-
-[[items]]
 label = "courses."
 url = "/courses/"
 
 [[items]]
-label = "software projects."
-url = "https://github.com/hgoldstein95"
-
-[[items]]
 label = "contact information."
 url = "/contact/"
+
+[[items]]
+label = "the research group."
+url = "/scaup/"
+offsite = true
+
+[[items]]
+label = "software projects."
+url = "https://github.com/hgoldstein95"

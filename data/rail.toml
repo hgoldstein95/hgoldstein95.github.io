@@ -14,11 +14,6 @@ url = "/resume.pdf"
 external = true
 
 [[links]]
-label = "GitHub"
-url = "https://github.com/hgoldstein95"
-external = true
-
-[[links]]
 label = "YouTube"
 url = "https://www.youtube.com/channel/UCcc1UtCXkMfmkKnjjFIC7Zg"
 external = true

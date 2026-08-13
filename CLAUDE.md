@@ -95,8 +95,17 @@ properties (`--ink`, `--paper`, `--panel`, `--hair`, `--border`, `--mute`, `--bo
 
 House rules, taken from the design this was built to:
 
-- **No rounded corners, no shadows, no gradients, no monospace in the UI, no icons.** Arrows (`→`,
-  `↗`) are Unicode and are the only decoration. To set a block apart, give it a flat fill: **white**
+- **No rounded corners, no shadows, no gradients, no monospace in the UI, and one icon.** Arrows
+  (`→`, `↗`) are Unicode and are otherwise the only decoration. The single exception is
+  `.directory-icon`, the box-and-arrow mark on the directory's off-site tiles — `↗` was tried there
+  first and read as too close to the `→` the other tiles reveal on hover. It is
+  [Feather](https://github.com/feathericons/feather)'s `external-link`, MIT, inlined in
+  `partials/directory.html` with the attribution beside it, and squared off at the caps and joins;
+  Feather draws on a 24 grid at stroke 2, so rendering it at 12px puts every stroke on exactly 1px
+  and the mark carries the same weight as the hairline around it. Treat it as a one-off rather than
+  as permission for an icon set — and if a second one ever *is* warranted, take it from Feather at
+  12px with the same two overrides, so the two agree. To set a block apart, give it a flat fill:
+  **white**
   brings it forward, `--panel` pushes it back, and `--paper` sits between them, so the two read in
   opposite directions. Then pick the edge by what the block *is* — a **closed 1px box** is a control
   (the directory tiles, the menu button), while a **band** with hairlines top and bottom that bleeds
@@ -200,7 +209,15 @@ All structured content is TOML in `data/`, loaded with `load_data`.
 - **`news.toml`** — `short` ("Aug 25") for the rail's date column, `date` for the long form, `text`
   in markdown.
 - **`directory.toml`** — the "I'm looking for…" destinations: `label`, `url`, optional `hint`. Order
-  here is order on the page. Adding an entry with no matching page will fail `make check`.
+  here is order on the page, with one convention: **everything that sends the visitor off the site
+  goes last**. Those tiles carry the box-and-arrow icon instead of the hover arrow, and unlike the
+  arrow it is visible at rest — a hover-only mark is nothing on a phone, which is where the directory
+  doubles as the menu. Off-site is detected from a `http`-prefixed `url`; set `offsite = true` to
+  claim a tile that is off-site in spirit but not in URL, which today means `/scaup/` alone. That
+  flag governs the icon and the ordering only — `target="_blank"` still keys off the real URL, so the
+  lab opens in the same tab. It is deliberately **not** named `external`: `rail.toml` already uses
+  that key on its links, including a local `/resume.pdf`, to mean "open in a new tab", which is the
+  narrower thing. Adding an entry with no matching page will fail `make check`.
 - **`rail.toml`** — recruiting line, email block copy, "Also here" links, closing note. Top-level
   scalars must stay above the `[email]` table and `[[links]]` array or TOML reads them as part of it.
 - **`talks.toml`** — one flat `[[items]]` list: `title`, `venue`, optional `with` and `[[items.links]]`.
