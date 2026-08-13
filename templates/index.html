@@ -47,7 +47,7 @@
       <a class="section-more" href="/blog/">All {{ post_count }} &rarr;</a>
     </div>
     <div class="cards">
-      {% for post in[p for p in blog.pages if p.extra.featured | default(value=false)] %}
+      {% for post in[p for p in blog.pages if p.extra.featured | default(value = false)] %}
         <a class="card" href="{{ post.permalink }}">
           <span class="card-date">{{ post.date | date(format="%b %-d, %Y") }}</span>
           <span class="card-title">{{ post.title }}</span>

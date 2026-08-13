@@ -1,6 +1,6 @@
 {# The persistent rail: contact, news, off-site links. Same on every page. #}
-{% set rail = load_data(path="data/rail.toml") %}
-{% set news = load_data(path="data/news.toml") %}
+{% set rail = load_data(path = "data/rail.toml") %}
+{% set news = load_data(path = "data/news.toml") %}
 <aside class="rail" aria-label="Contact and news">
   {% if rail.recruiting %}
     <div class="rail-note">{{ rail.recruiting }}</div>
@@ -8,15 +8,12 @@
 
   <section>
     <div class="rail-head">
-      <h2>Email</h2>
+      <h2>Get In Touch</h2>
     </div>
     <a class="rail-email" href="mailto:{{ rail.email.address }}">{{ rail.email.address }}</a>
-    {% if rail.email.do %}
-      <p class="rail-p"><strong>Do write about:</strong> {{ rail.email.do }}</p>
-    {% endif %}
-    {% if rail.email.dont %}
-      <p class="rail-p"><strong>Please don&rsquo;t:</strong> {{ rail.email.dont }}</p>
-    {% endif %}
+    {% for para in rail.email.instructions %}
+      <p class="rail-p">{{ para | markdown(inline=true) | safe }}</p>
+    {% endfor %}
     {% if rail.email.response %}
       <p class="rail-aside">{{ rail.email.response }}</p>
     {% endif %}
@@ -24,7 +21,7 @@
 
   <section>
     <div class="rail-head">
-      <h2>Recent news</h2>
+      <h2>Recent News</h2>
     </div>
     <div class="news">
       {% for item in news.items %}

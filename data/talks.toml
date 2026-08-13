@@ -17,7 +17,7 @@ url = "https://www.youtube.com/watch?v=c5LOYzZx-0c"
 [[items]]
 title = "Haskell Interlude 59"
 venue = "Haskell Interlude"
-selected = true
+selected = false
 [[items.links]]
 label = "Podcast"
 url = "https://haskell.foundation/podcast/59/"
@@ -33,7 +33,7 @@ url = "https://youtu.be/UgABi44gMcI?si=F8_m3_8m7kjCbpfK"
 [[items]]
 title = "Property-Based Testing in Practice"
 venue = "Disseminate Podcast"
-selected = true
+selected = false
 [[items.links]]
 label = "Podcast"
 url = "https://disseminatepodcast.podcastpage.io/episode/harry-goldstein-property-based-testing-55"

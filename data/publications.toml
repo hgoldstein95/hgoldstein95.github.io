@@ -6,7 +6,16 @@
 # recent, which may not be the six you want to lead with.
 
 # Chip order on /publications. Every `venue_short` used below must appear here.
-venues = ["PLDI", "OOPSLA", "ICFP", "ICSE", "UIST", "PLATEAU", "PL Perspectives", "SIGBOVIK"]
+venues = [
+  "PLDI",
+  "OOPSLA",
+  "ICFP",
+  "ICSE",
+  "UIST",
+  "PLATEAU",
+  "PL Perspectives",
+  "SIGBOVIK",
+]
 
 [[papers]]
 year = 2026
@@ -34,7 +43,7 @@ url = "https://dl.acm.org/doi/pdf/10.1145/3798263"
 
 [[papers]]
 year = 2025
-title = "Tuning Random Generators: Property-Based Testing as Probabilistic Programming"
+title = "Tuning Random Generators: PBT as Probabilistic Programming"
 authors = "Ryan Tjoa, Poorva Garg, Harrison Goldstein, Todd Millstein, Benjamin C. Pierce, Guy Van den Broeck"
 venue = "OOPSLA 2025"
 venue_short = "OOPSLA"
