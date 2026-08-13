@@ -35,6 +35,12 @@ img {
     max-width: 100%;
 }
 
+/* Any author `display` beats the UA's `[hidden] { display: none }`, so `.row`
+   and `.filters` would stay visible when the venue filter hides them. */
+[hidden] {
+    display: none !important;
+}
+
 a {
     color: var(--accent);
     text-decoration: none;
