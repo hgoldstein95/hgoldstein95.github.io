@@ -12,8 +12,10 @@ all: build
 build: static/resume.pdf
 	$(ZOLA) build
 
+# zola only watches content/, templates/, sass/, static/ and config.toml, so the
+# data/ TOML files need to be added explicitly or edits to them do nothing.
 serve: static/resume.pdf
-	$(ZOLA) serve
+	$(ZOLA) serve --extra-watch-path data
 
 check: static/resume.pdf
 	$(ZOLA) check
