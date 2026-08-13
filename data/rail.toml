@@ -12,7 +12,7 @@ address = "hgoldste@buffalo.edu"
 # One string per paragraph; each is rendered as markdown, so **bold** works.
 instructions = [
   "Please feel free to email me about potential collaborations, committee invitations, speaking opportunities, etc.",
-  "I am currently **not** hiring new PhD students. If you are a student reaching out about working with me, keep in mind that I may not have time to respond.",
+  "I am currently **not** hiring new PhD students. If you are a student reaching out about working with me, I unfortunately may not have bandwidth to respond.",
 ]
 
 [[links]]
