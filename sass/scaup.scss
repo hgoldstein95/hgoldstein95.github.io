@@ -359,6 +359,16 @@ img {
     margin-top: 10px;
 }
 
+/* Sits on the right of the footer's space-between row on desktop, and wraps
+   under the contact block once the footer runs out of width. */
+.sc-colophon {
+    font-family: var(--sc-mono);
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--sc-mute);
+    max-width: 34ch;
+}
+
 /* ---------------------------------------------------------------- sub-pages */
 
 .sc-page-title {

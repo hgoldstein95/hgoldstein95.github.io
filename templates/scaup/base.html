@@ -61,6 +61,8 @@
         </div>
         <a class="sc-foot-mail" href="mailto:{{ scaup.contact.email }}">{{ scaup.contact.email }}</a>
       </div>
+
+      <div class="sc-colophon">{{ scaup.colophon.text | markdown(inline = true) | safe }}</div>
     </footer>
   </body>
 

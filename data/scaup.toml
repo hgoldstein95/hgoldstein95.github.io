@@ -59,3 +59,13 @@ lines = [
   "University at Buffalo, Buffalo, NY",
 ]
 email = "hgoldste@buffalo.edu"
+
+# ---------------------------------------------------------------- colophon
+#
+# The credit line at the foot of the page. `text` is markdown, rendered inline.
+
+[colophon]
+text = """
+The scaup image on this site was inspired by a photograph posted by the \
+[Southern Wisconsin Bird Alliance](https://swibirds.org/fff/2019/4/5/scaup).
+"""
