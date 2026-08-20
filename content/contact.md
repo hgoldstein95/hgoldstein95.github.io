@@ -41,3 +41,8 @@ tools for software validation that address the needs of real users. His main are
 programming languages, but he borrows motivation and techniques from both software engineering and
 human–computer interaction as well. His current projects center around the theoretical, practical,
 and human aspects of property-based testing and formal methods.
+
+## Headshot
+
+A square headshot, suitable for event pages and programs:
+[download (JPEG, 1.2 MB)](/img/defense-headshot-square.jpg).
