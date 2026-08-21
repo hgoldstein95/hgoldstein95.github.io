@@ -53,7 +53,9 @@ authors = "Alperen Keles, Justine Frank, Ceren Mert, Harrison Goldstein, Leonida
 venue = "ICFP 2026"
 venue_short = "ICFP"
 topic = "Property-Based Testing"
+awards = ["Distinguished Paper"]
 major = true
+selected = true
 [[papers.links]]
 label = "Preprint"
 url = "https://arxiv.org/abs/2602.18545"
@@ -268,6 +270,7 @@ venue_short = "ICFP"
 topic = "Property-Based Testing"
 awards = ["Distinguished Paper"]
 major = true
+selected = true
 [[papers.links]]
 label = "PDF"
 url = "/papers/icfp23-reflective.pdf"
