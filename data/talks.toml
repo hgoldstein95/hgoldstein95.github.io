@@ -1,18 +1,39 @@
-# Nothing sorts this at render time. `selected` and `with` are scalars and must
+# Nothing sorts this at render time. Every talk in the resume is here so the two stay in sync,
+# but templates only render talks that have at least one link. `selected`, `invited`, and `with` are scalars and must
 # stay ABOVE `[[items.links]]` or TOML reads them as part of the link.
+
+[[items]]
+title = "Language Support for Property-Based Testing"
+venue = "ML Family Workshop 2026"
+selected = true
+invited = true
+[[items.links]]
+label = "VOD"
+url = "https://www.youtube.com/live/MWjGoQxL-Jg?si=9OZfdQw-rClrXSHl&t=21867"
+[[items.links]]
+label = "Slides"
+url = "https://harrisongoldste.in/ml-family-2026-talk/"
 
 [[items]]
 title = "Metaprogramming the Next Generation of Testing Tools"
 venue = "Lean Together 2026"
 selected = true
+invited = false
 [[items.links]]
 label = "VOD"
 url = "https://www.youtube.com/watch?v=AFbnS9xuPhY"
 
 [[items]]
+title = "Property-Based Testing for the People"
+venue = "Cornell + UT Software Engineering Seminar"
+selected = false
+invited = true
+
+[[items]]
 title = "The Best New Programming Language is a Proof Assistant"
 venue = "DC Systems 006"
 selected = true
+invited = false
 [[items.links]]
 label = "VOD"
 url = "https://www.youtube.com/watch?v=c5LOYzZx-0c"
@@ -22,6 +43,7 @@ title = "Haskell Interlude #59"
 with = "Samantha Frohlich, Wouter Swierstra"
 venue = "Haskell Interlude"
 selected = false
+invited = true
 [[items.links]]
 label = "Podcast"
 url = "https://haskell.foundation/podcast/59/"
@@ -30,6 +52,7 @@ url = "https://haskell.foundation/podcast/59/"
 title = "My PhD Compass: 6 Ways to Guide a PhD Towards Success"
 venue = "PLMW @ ICFP 2024"
 selected = true
+invited = true
 [[items.links]]
 label = "VOD"
 url = "https://youtu.be/UgABi44gMcI?si=F8_m3_8m7kjCbpfK"
@@ -39,24 +62,45 @@ title = "Disseminate #55"
 with = "Jack Waudby"
 venue = "Disseminate Podcast"
 selected = false
+invited = true
 [[items.links]]
 label = "Podcast"
 url = "https://shows.acast.com/disseminate/episodes/harry-goldstein-property-based-testing-55"
+
+[[items]]
+title = "Usable Property-Based Testing"
+venue = "Amazon Web Services, June 2024"
+selected = false
+invited = false
 
 [[items]]
 title = "Consider Collaboration"
 with = "Samantha Frohlich"
 venue = "PLMW @ POPL 2024"
 selected = true
+invited = true
 [[items.links]]
 label = "VOD"
 url = "https://www.youtube.com/watch?v=sSl-856qUOA"
+
+[[items]]
+title = "Advancing Property-Based Testing in Theory and Practice"
+venue = "Microsoft Research, UC Berkeley, Galois, Inc., UCSC, University of Bristol"
+selected = false
+invited = true
+
+[[items]]
+title = "Property-Based Testing in Practice"
+venue = "Jane Street Programming Languages Colloquium, December 2023"
+selected = false
+invited = false
 
 [[items]]
 title = "TheForkJoin #2"
 with = "Oliver Flatt, Rachit Nigam"
 venue = "TheForkJoin Podcast"
 selected = false
+invited = true
 [[items.links]]
 label = "Podcast"
 url = "https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n"
@@ -65,6 +109,7 @@ url = "https://youtu.be/tEXq-eSiFwk?si=0tmSmEp2oK5Ucv4n"
 title = "Some Problems with Properties"
 venue = "NJPLS, October 2022"
 selected = false
+invited = false
 [[items.links]]
 label = "Abstract"
 url = "http://njpls.org/oct22.html#goldstein"
@@ -73,6 +118,7 @@ url = "http://njpls.org/oct22.html#goldstein"
 title = "Reflecting on Random Generation"
 venue = "NJPLS, May 2022"
 selected = false
+invited = false
 [[items.links]]
 label = "Abstract"
 url = "http://njpls.org/may22.html#goldstein"

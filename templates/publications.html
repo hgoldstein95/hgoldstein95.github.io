@@ -84,7 +84,7 @@
       <h2>Talks &amp; Appearances</h2>
     </div>
     <div class="rows">
-      {% for item in talks.items %}
+      {% for item in [t for t in talks.items if t.links] %}
         {% include "partials/talk-row.html" %}
       {% endfor %}
     </div>

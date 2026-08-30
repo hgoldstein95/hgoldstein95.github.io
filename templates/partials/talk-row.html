@@ -2,7 +2,7 @@
 <div class="row row--two">
   <span>
     <span class="row-title">{{ item.title }}</span>
-    <span class="row-sub">{{ item.venue }}{% if item.with %} &middot; with {{ item.with }}{% endif %}</span>
+    <span class="row-sub">{{ item.venue }}{% if item.invited %} &middot; Invited{% endif %}{% if item.with %} &middot; with {{ item.with }}{% endif %}</span>
   </span>
   {% if item.links %}
     <span class="row-links">

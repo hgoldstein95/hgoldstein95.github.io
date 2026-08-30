@@ -220,11 +220,13 @@ All structured content is TOML in `data/`, loaded with `load_data`.
   narrower thing. Adding an entry with no matching page will fail `make check`.
 - **`rail.toml`** — recruiting line, email block copy, "Also here" links, closing note. Top-level
   scalars must stay above the `[email]` table and `[[links]]` array or TOML reads them as part of it.
-- **`talks.toml`** — one flat `[[items]]` list: `title`, `venue`, optional `with` and `[[items.links]]`.
-  Add `selected = true` to put a talk on the home page. Like `rail.toml`, that scalar must sit
+- **`talks.toml`** — one flat `[[items]]` list: `title`, `venue`, optional `with` and `[[items.links]]`, plus `invited` (`true`/`false`,
+  set explicitly on every talk; mirrors the "Invited" tag in the resume and renders as "· Invited" in
+  the row's sub-line). Add `selected = true` to put a talk on the home page. Like `rail.toml`, that scalar must sit
   **above** the `[[items.links]]` sub-table or TOML reads it as part of the link. Order here is order
-  on the page; nothing sorts it. Every talk, selected or not, is listed under "Talks & Appearances"
-  on `/publications/`.
+  on the page; nothing sorts it. Every talk with at least one link, selected or not, is listed under "Talks &
+  Appearances" on `/publications/`. Talks with **no** `[[items.links]]` are carried in the data so it
+  stays in sync with the resume, but neither template renders them and the `All N →` count skips them.
 - **`scaup.toml`** — everything on the SCAUP Lab sub-site except its lede. Read only by
   `templates/scaup/`. See below.
 - **`dissertation.toml`** — self-explanatory.

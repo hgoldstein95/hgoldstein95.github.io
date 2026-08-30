@@ -16,7 +16,7 @@
   {% set talks = load_data(path = "data/talks.toml") %}
   {% set blog = get_section(path = "blog/_index.md") %}
   {% set paper_count = pubs.papers | length %}
-  {% set talk_count = talks.items | length %}
+  {% set talk_count = [t for t in talks.items if t.links] | length %}
   {% set post_count = blog.pages | length %}
 
   <section class="section">
@@ -37,7 +37,7 @@
       <a class="section-more" href="/publications/#talks">All {{ talk_count }} &rarr;</a>
     </div>
     <div class="rows">
-      {% for item in[t for t in talks.items if t.selected] %}
+      {% for item in[t for t in talks.items if t.selected and t.links] %}
         {% include "partials/talk-row.html" %}
       {% endfor %}
     </div>
