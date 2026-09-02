@@ -33,6 +33,7 @@ role = "PhD Student"
 [[people]]
 name = "Francille Zhuang"
 role = "PhD Student"
+photo = "/img/francille.jpg"
 
 # ------------------------------------------------- connections (key: `homes`)
 #
