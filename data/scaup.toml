@@ -35,6 +35,12 @@ name = "Francille Zhuang"
 role = "PhD Student"
 photo = "/img/francille.jpg"
 
+[[people]]
+name = "Christopher Wilson"
+role = "Undergraduate Student"
+link_label = "LinkedIn"
+url = "https://www.linkedin.com/in/christopher-wilson-258342386/"
+
 # ------------------------------------------------- connections (key: `homes`)
 #
 # `host` is the short text under the arrow, not the URL.
