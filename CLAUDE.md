@@ -206,6 +206,11 @@ All structured content is TOML in `data/`, loaded with `load_data`.
   new venue means adding that venue to the array too, which also fixes the chip order. Non-major
   venues (`PLATEAU`, `HATRA`, `OCaml`, `SCF`, `SysML`, `DBTest`, `Draft`, …) are deliberately absent
   from it. `topic` and `kind` are currently carried in the data but read by no template.
+
+  **A publication lives in two places: `publications.toml` and `resume/resume.tex`.** Nothing
+  generates one from the other yet, so when a paper is added or changed in either, update the
+  other in the same change. That covers its title, authors, venue, link, and awards. The resume also
+  carries a page count and the venue's long name, which the data does not.
 - **`news.toml`** — `short` ("Aug 25") for the rail's date column, `date` for the long form, `text`
   in markdown.
 - **`directory.toml`** — the "I'm looking for…" destinations: `label`, `url`, optional `hint`. Order
