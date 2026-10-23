@@ -1,6 +1,11 @@
 # The rail shows `short`; `date` is unused, kept for a future news page.
 
 [[items]]
+short = "Oct 23"
+date = "October 23, 2026"
+text = "Our project [Software Foundations in Lean](https://www.renaissancephilanthropy.org/software-foundations-in-lean) was selected for the [AI for Math Fund](https://www.renaissancephilanthropy.org/ai-for-math-fund-2026-projects), a fund of Renaissance Philanthropy anchored by founding donor XTX Markets."
+
+[[items]]
 short = "Aug 6"
 date = "August 6, 2026"
 text = "We'll be hosting the [1st Workshop on the Future of Property-Based Testing (FPBT'27)](https://popl27.sigplan.org/home/fpbt-2027), co-located with POPL in January."
