@@ -48,6 +48,19 @@ url = "https://dl.acm.org/doi/pdf/10.1145/3798263"
 
 [[papers]]
 year = 2026
+title = "Testing Theorems, Fully Automatically"
+authors = "Segev Elazar Mittelman, Harrison Goldstein, Leonidas Lampropoulos"
+venue = "OOPSLA 2026"
+venue_short = "OOPSLA"
+topic = "Property-Based Testing"
+major = true
+selected = true
+[[papers.links]]
+label = "DOI"
+url = "https://doi.org/10.1145/3839453"
+
+[[papers]]
+year = 2026
 title = "Programmable Property-Based Testing"
 authors = "Alperen Keles, Justine Frank, Ceren Mert, Harrison Goldstein, Leonidas Lampropoulos"
 venue = "ICFP 2026"
