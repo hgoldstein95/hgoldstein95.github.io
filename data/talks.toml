@@ -3,6 +3,24 @@
 # stay ABOVE `[[items.links]]` or TOML reads them as part of the link.
 
 [[items]]
+title = "Trustworthy Foundations for Random Testing"
+venue = "AI4AI Fall Retreat"
+selected = false
+invited = true
+[[items.links]]
+label = "Slides"
+url = "https://harrisongoldste.in/aws-ai-talk-2026/"
+
+[[items]]
+title = "New Foundations for Property-Based Testing"
+venue = "IFIP WG 2.11, October 2026"
+selected = false
+invited = true
+[[items.links]]
+label = "Slides"
+url = "https://harrisongoldste.in/wg211-2026-talk/"
+
+[[items]]
 title = "Language Support for Property-Based Testing"
 venue = "ML Family Workshop 2026"
 selected = true
